@@ -105,6 +105,4 @@ Update the content in each component file to match your business needs.
 
 MIT
 
-## Contact
 
-For any queries, reach out to contact@finyzerassets.com
