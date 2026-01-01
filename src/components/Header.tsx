@@ -29,7 +29,7 @@ const Header = () => {
                             <FontAwesomeIcon icon={faPhone} size="sm" />
                             <span>+91 98765 43210</span>
                         </a> | 
-                        <a href="mailto:contact@finyzerassets.com" className="flex items-center gap-2 hover:text-[#E6AF1C]">
+                        <a href="#" className="flex items-center gap-2 hover:text-[#E6AF1C]">
                             <span>CONTACT US</span>
                         </a>
                     </div>
