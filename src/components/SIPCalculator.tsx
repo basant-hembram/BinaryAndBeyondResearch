@@ -15,24 +15,24 @@ const SIPCalculator = () => {
   return (
     <section id="calculator" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid xl:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="">
             <div>
-              <h2 className="text-3xl md:text-4xl text-[#0A1A3A] mb-2">
+              <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-2">
                 Know how much you might need, Do goal planning with
               </h2>
-              <h3 className="text-3xl md:text-4xl font-semibold text-[#E6AF1C]">
+              <h3 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C]">
                 Finyser Calculators
               </h3>
             </div>
 
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[18px] pt-[14px] lg:pt-[27px] xl:pt-[19px] mb-[34px] lg:mb-[28px] xl:mb-[28px]">
               Zero Paperwork- Zero hassle - 100% Guidance
             </p>
 
             {/* Calculators Grid - 2 columns */}
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mb-[45px] lg:mb-[53px] xl:mb-[65px]">
               {calculators.map((calc, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="bg-[#E6AF1C] rounded-full p-3 flex items-center justify-center w-10 h-10 flex-shrink-0">
@@ -52,7 +52,7 @@ const SIPCalculator = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative pl-[100px] md:pl-[80px]">
+          <div className="relative lg:max-w-[620px] mx-auto pl-[100px] md:pl-[80px]">
             <div className="rounded-[40px] overflow-hidden shadow-2xl">
               <img 
                 src="/images/finyser-calculator.avif" 

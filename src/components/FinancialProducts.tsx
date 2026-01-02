@@ -39,21 +39,19 @@ const FinancialProducts = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-12 md:items-center">
           {/* Left Content */}
-          <div className="space-y-6 md:w-[40%]">
-            <div>
-              <h2 className="text-3xl md:text-4xl text-[#0A1A3A] mb-2">
-                Our Suite Of
-              </h2>
-              <h3 className="text-3xl md:text-4xl font-semibold text-[#E6AF1C]">
+          <div className="md:w-[40%]">
+             <div>
+              <p className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">Our Suite Of</p>
+              <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C] mb-[30px] lg:mb-[18px] xl:mb-[24px]">
                 Financial Products
-              </h3>
+              </h2>
             </div>
 
-            <p className="text-[#575455] text-base leading-relaxed">
+            <p className="text-[#575455] text-[16px] lg:text-[16px] xl:text-[18px] !leading-[32px]">
               At Finyzer Assets, we offer a diverse array of innovative financial products, from advanced investment tools to comprehensive portfolio management solutions. Our products empower distributors to deliver exceptional value to their clients and drive growth.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-[42px] lg:pt-[95px] xl:pt-[59px]">
               <Button 
                 size="lg" 
                 className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
@@ -65,7 +63,7 @@ const FinancialProducts = () => {
           </div>
 
           {/* Right Products Grid */}
-          <div className="grid md:grid-cols-3 gap-y-6 md:w-[60%]">
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-y-6 md:w-[60%]">
             {products.map((product, index) => (
               <div 
                 key={index}
@@ -74,7 +72,7 @@ const FinancialProducts = () => {
                 <div className="bg-[#E6AF1C] rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                   <FontAwesomeIcon icon={product.icon} className="text-white text-xl" />
                 </div>
-                <h4 className="font-medium text-[#0A1A3A] text-sm">
+                <h4 className="font-medium text-[#0A1A3A] text-[16px]">
                   {product.title}
                 </h4>
               </div>

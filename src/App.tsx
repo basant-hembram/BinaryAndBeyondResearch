@@ -5,6 +5,7 @@ import MeetYourPartner from './components/MeetYourPartner';
 import FinancialProducts from './components/FinancialProducts';
 import SIPCalculator from './components/SIPCalculator';
 import MutualFundResources from './components/MutualFundResources';
+import Founders from './components/Founders';
 
 import Footer from './components/Footer';
 
@@ -18,7 +19,8 @@ function App() {
       <FinancialProducts />
       <SIPCalculator />
       <MutualFundResources />
-    
+      <Founders />
+     
       <Footer />
     </div>
   );

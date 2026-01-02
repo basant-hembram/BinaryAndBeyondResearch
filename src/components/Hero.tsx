@@ -5,19 +5,19 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-gradient-to-br from-white to-gray-50 py-16 md:py-24">
+    <section id="home" className="bg-gradient-to-br from-white to-gray-50 py-[48px] lg:py-[65px]">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#0A1A3A] !leading-[1.2]">
-              Jharkhand's Most Trusted Mutual Fund Distributor
+          <div className="">
+            <h1 className="text-[32px] lg:text-[36px] xl:text-[48px] font-medium text-[#0A1A3A] !leading-[1.2]">
+              Jharkhand's Most <br></br>Trusted Mutual Fund <br></br>Distributor
             </h1>
-            <p className="text-lg text-[#575455] leading-relaxed">
+            <p className="text-[16px] lg:text-[16px] xl:text-[20px] text-[#575455] leading-relaxed mt-[25px]">
               Finyzer Assets is helping you to setting up the financial without required any finance skills or knowledge before
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 mt-[30px]">
               <Button size="lg" className="text-base flex items-center gap-2">
                 Request A Call Back
                 <FontAwesomeIcon icon={faArrowRight} />
@@ -43,26 +43,26 @@ const Hero = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left - Branding */}
             <div className="">
-              <h3 className="text-2xl md:text-[28px] text-[#0A1A3A] mb-2">
+              <h3 className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#0A1A3A] mb-2">
                 Partnering for Success
               </h3>
               <div className="flex items-baseline gap-2">
-                <h2 className="text-3xl md:text-[28px] text-[#E6AF1C]">
+                <h2 className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#E6AF1C]">
                   Finyzer Assets
                 </h2>
-                <span className="text-3xl text-[#0A1A3A]">(analytics)</span>
+                <span className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#0A1A3A]">(analytics)</span>
               </div>
             </div>
 
             {/* Right - Stats */}
             <div className="grid grid-cols-2">
               <div className="text-center">
-                <p className="text-4xl md:text-[32px] text-[#E6AF1C] mb-2">50k +</p>
-                <p className="text-gray-600 font-medium">Trusted Client</p>
+                <p className="text-[26px] lg:text-[32px] xl:text-[32px] text-[#E6AF1C] mb-2">50k +</p>
+                <p className="text-[16px] text-[#090914] font-medium">Trusted Client</p>
               </div>
               <div className="text-center border-l border-[#D9D9D9]">
-                <p className="text-4xl md:text-[32px] text-[#E6AF1C] mb-2">2.2L +</p>
-                <p className="text-gray-600 font-medium">Investor Base</p>
+                <p className="text-[26px] lg:text-[32px] xl:text-[32px] text-[#E6AF1C] mb-2">2.2L +</p>
+                <p className="text-[16px] text-[#090914] font-medium">Investor Base</p>
               </div>
             </div>
           </div>

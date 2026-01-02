@@ -28,10 +28,10 @@ const MeetYourPartner = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
-          <div className="space-y-6">
+          <div className="">
             <div>
-              <p className="text-white text-lg mb-2">Meet Your Health Coach</p>
-              <h2 className="text-4xl md:text-[36px] text-[#E6AF1C] font-semibold mb-8">
+              <p className="text-white text-[18px] lg:text-[20px] xl:text-[22px] mb-2">Meet Your Health Coach</p>
+              <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#E6AF1C] font-semibold mb-[25px] lg:mb-[34px] xl:mb-[25px]">
                 Rajesh Choudhary
               </h2>
             </div>
@@ -39,13 +39,13 @@ const MeetYourPartner = () => {
             <div className="space-y-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-1">•</span>
-                  <p className="text-white text-base">{feature}</p>
+                  <span className="text-white text-[16px] lg:text-[18px] xl:text-[20px]">•</span>
+                  <p className="text-white text-[16px] lg:text-[18px] xl:text-[20px]">{feature}</p>
                 </div>
               ))}
             </div>
 
-            <div className="pt-6">
+            <div className="pt-[34px] lg:pt-[34px] xl:pt-[79px]">
               <Button 
                 size="lg" 
                 className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
