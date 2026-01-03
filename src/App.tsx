@@ -6,7 +6,8 @@ import FinancialProducts from './components/FinancialProducts';
 import SIPCalculator from './components/SIPCalculator';
 import MutualFundResources from './components/MutualFundResources';
 import Founders from './components/Founders';
-
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       <SIPCalculator />
       <MutualFundResources />
       <Founders />
-     
+      <Testimonials />
+      <FAQ />
       <Footer />
     </div>
   );

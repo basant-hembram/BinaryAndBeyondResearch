@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="relative">
             <div className="bg-gray-200 rounded-[50px] overflow-hidden aspect-[4/3]">
               <img 
-                src="/images/office entrance.jpg" 
+                src="/images/office-entrance.jpg" 
                 alt="Modern Office" 
                 className="w-full h-full object-cover"
               />

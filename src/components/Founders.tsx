@@ -55,7 +55,7 @@ const Founders = () => {
                 key={index}
                 className="overflow-hidden group"
               >
-                <div className="aspect-[3/4] overflow-hidden">
+                <div className="aspect-[5/4] lg:aspect-[3/3] xl:aspect-[4/5] overflow-hidden">
                   <img
                     src={founder.image}
                     alt={founder.name}
@@ -63,27 +63,27 @@ const Founders = () => {
                   />
                 </div>
                 <CardContent className="">
-                  <h4 className="font-semibold text-lg text-[#0A1A3A] mb-1">
+                  <h4 className="font-semibold text-[20px] text-[#0A1A3A] mb-1">
                     {founder.name}
                   </h4>
-                  <p className="text-[#E6AF1C] text-sm mb-3">{founder.role}</p>
+                  <p className="text-[#E6AF1C] text-[18px] mb-3">{founder.role}</p>
 
                   <div className="flex justify-start gap-3">
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-[#E6AF1C] transition-colors"
+                      className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faTwitter} />
                     </a>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-[#E6AF1C] transition-colors"
+                      className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-[#E6AF1C] transition-colors"
+                      className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faDribbble} />
                     </a>

@@ -1,70 +1,86 @@
-import { Card, CardContent } from './ui/card';
-import { Quote, Star } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Amit Sharma",
-      role: "CEO, Founder of Websmith",
-      text: "This was undoubtedly the confidence in MFD Investors and our MFD partners, our strategies for a transparent and timeless financial advice for individual growth.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop"
+      name: "Ankita Jain",
+      role: "Co-Founder of Womenia",
+      text: "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      image: "/images/ankita-jain.png"
     },
     {
-      name: "Priya Kumari",
+      name: "Rahul Sharma",
       role: "Software Engineer",
-      text: "This was undoubtedly the confidence in MFD Investors and our MFD partners, our strategies for a transparent and timeless financial advice for individual growth.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop"
+      text: "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      image: "/images/rahul-sharma.png"
+    },
+    {
+      name: "Ankita Jain",
+      role: "Co-Founder of Womenia",
+      text: "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      image: "/images/ankita-jain.png"
+    },
+    {
+      name: "Rahul Sharma",
+      role: "Software Engineer",
+      text: "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      image: "/images/rahul-sharma.png"
     }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#0A1A3A] to-[#162d52]">
+    <section className="py-16 md:py-24 bg-[#E9E9EB]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-[#E6AF1C]">Take Our Words</span>
+        <div className="text-center mb-16">
+          <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
+            <span className="text-[#E6AF1C]">Don't Just </span>
+            <span className="text-[#0A1A3A] font-semibold ">Take Our Words</span>
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Hear what our clients say about their investment journey with us
+          <p className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[20px]">
+            Everything you need to know about the Finyzer Assets.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={32}
+          slidesPerView={1}
+          pagination={{ 
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet w-4 !h-2 !rounded-full',
+            bulletActiveClass: 'swiper-pagination-bullet-active !w-8 !bg-[#CA8A00]'
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2
+            }
+          }}
+          className="testimonials-swiper pb-12"
+        >
           {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index}
-              className="bg-white hover:shadow-2xl transition-all duration-300"
-            >
-              <CardContent className="p-8">
-                <Quote className="text-[#E6AF1C] mb-4" size={40} />
-                
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#E6AF1C] text-[#E6AF1C]" />
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-4 pt-4 border-t">
-                  <img 
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-bold text-[#0A1A3A]">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+            <SwiperSlide key={index}>
+              <div className="flex flex-row gap-6 items-start lg:items-center px-2">
+                <img 
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-[136px] h-[136px] lg:w-[180px] lg:h-[180px] xl:w-[239px] xl:h-[239px] rounded-[15px] object-cover flex-shrink-0"
+                />
+                <div className="flex flex-col justify-center">
+                  <p className="text-[#090914] font-light mb-[10px] xl:mb-[20px] leading-relaxed text-[14px] lg:text-[16px] xl:text-[18px]">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex flex-col xl:flex-row gap-2">
+                    <h4 className="font-semibold text-[#E6AF1C] text-[14px] lg:text-[16px] xl:text-[18px]">{testimonial.name}</h4>
+                    <p className="text-[#575455] text-[14px] lg:text-[16px] xl:text-[18px]">{testimonial.role}</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
