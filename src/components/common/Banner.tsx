@@ -28,13 +28,13 @@ const Banner = ({ title, breadcrumbs, backgroundImage }: BannerProps) => {
             <div key={index} className="flex items-center gap-2">
               {index < breadcrumbs.length - 1 ? (
                 <>
-                  <Link to={item.path} className="hover:text-[#E6AF1C] transition-colors capitalize">
+                  <Link to={item.path} className="hover:text-[#E6AF1C] transition-colors uppercase">
                     {item.label}
                   </Link>
                   <span>/</span>
                 </>
               ) : (
-                <span className="text-[#E6AF1C] capitalize">{item.label}</span>
+                <span className="text-[#E6AF1C] uppercase">{item.label}</span>
               )}
             </div>
           ))}

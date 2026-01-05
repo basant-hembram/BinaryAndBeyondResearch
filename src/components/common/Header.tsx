@@ -1,12 +1,13 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
 
     return (
         <>
@@ -52,13 +53,13 @@ const Header = () => {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden xl:flex items-center gap-8">
-                            <Link to="/" className="text-white hover:text-[#E6AF1C] font-medium">Home</Link>
-                            <Link to="/about" className="text-white hover:text-[#E6AF1C] font-medium">About Us</Link>
-                            <a href="/services" className="text-white hover:text-[#E6AF1C] font-medium">Services</a>
-                            <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Calculator</a>
-                            <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">MF Research</a>
-                            <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Become a Distributer</a>
+                        <nav className="hidden xl:flex items-center gap-[15px]">
+                            <Link to="/" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Home</Link>
+                            <Link to="/about" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/about' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>About Us</Link>
+                            <Link to="/services" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/services' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Services</Link>
+                            <Link to="/calculator" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/calculator' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Calculator</Link>
+                            <a href="#" className="px-[13px] py-[8px] text-white hover:text-[#E6AF1C] font-medium border-b border-transparent">MF Research</a>
+                            <a href="#" className="px-[13px] py-[8px] text-white hover:text-[#E6AF1C] font-medium border-b border-transparent">Become a Distributer</a>
                         </nav>
 
                         {/* Mobile Menu Button */}
@@ -76,12 +77,12 @@ const Header = () => {
                             }`}
                     >
                         <div className="flex flex-col gap-4 px-4">
-                            <Link to="/" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
-                            <Link to="/about" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-                            <Link to="/services" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>Services</Link>
-                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Calculator</a>
-                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">MF Research</a>
-                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Become a Distributer</a>
+                            <Link to="/" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Home</Link>
+                            <Link to="/about" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/about' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>About Us</Link>
+                            <Link to="/services" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/services' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Services</Link>
+                            <Link to="/calculator" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/calculator' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Calculator</Link>
+                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors border-b-2 border-transparent">MF Research</a>
+                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors border-b-2 border-transparent">Become a Distributer</a>
                         </div>
                     </nav>
                 </div>

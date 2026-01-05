@@ -98,20 +98,6 @@ const serviceContent: Record<string, { title: string; description: string[] }> =
             'Welcome to a realm where investment isn\'t just about numbers; it\'s about narratives. At our mutual fund company, we don\'t just offer opportunities; we curate stories of success, weaving together the threads of innovation, expertise, and vision. Invest with us, and you\'re not just investing in funds; you\'re investing in a partnership dedicated to sculpting your financial legacy.',
             'Join us, where your aspirations meet our commitment to redefine the very fabric of wealth creation.'
         ]
-    },
-    'sip-planning': {
-        title: 'SIP Planning',
-        description: [
-            'Systematic Investment Plan (SIP) is a smart way to invest in mutual funds. It allows you to invest a fixed amount regularly, helping you build wealth over time through the power of compounding.',
-            'Our SIP planning services help you choose the right funds based on your financial goals, risk appetite, and investment horizon. Start your journey towards financial freedom with disciplined investing.'
-        ]
-    },
-    'insurance': {
-        title: 'Insurance',
-        description: [
-            'Protect what matters most with our comprehensive insurance solutions. We offer a wide range of insurance products designed to safeguard your health, life, and assets.',
-            'From health insurance to life insurance, motor insurance to term insurance, we provide coverage that gives you peace of mind and financial security for you and your loved ones.'
-        ]
     }
 };
 
@@ -141,7 +127,11 @@ const ServiceContent = () => {
                     <div className="lg:col-span-3">
                         <div className="bg-[#0A1A3A] overflow-hidden">
                             {serviceCategories.map((category) => (
-                                <div key={category.id} className="border-b border-white last:border-b-0">
+                                <div key={category.id} className={`border-b border-white last:border-b-0  border-r-4 ${
+                                            (selectedService === category.id && !category.items) || (expandedCategories.includes(category.id) && category.expandable) 
+                                                ? 'text-[#E6AF1C] border-r-[#E6AF1C]' 
+                                                : 'text-white border-r-transparent'
+                                            }`}>
                                     <button
                                         onClick={() => {
                                             if (category.expandable) {
@@ -151,7 +141,10 @@ const ServiceContent = () => {
                                                 handleServiceClick(category.id);
                                             }
                                         }}
-                                        className={`w-full px-6 py-4 flex items-center justify-between text-left hover:text-[#E6AF1C] transition-colors relative ${selectedService === category.id && !category.items ? 'text-[#E6AF1C]' : 'text-white'
+                                        className={`w-full px-6 py-4 flex items-center justify-between text-left hover:text-[#E6AF1C] transition-colors relative ${
+                                            (selectedService === category.id && !category.items) || (expandedCategories.includes(category.id) && category.expandable) 
+                                                ? 'text-[#E6AF1C]' 
+                                                : 'text-white'
                                             }`}
                                     >
                                         <div className="flex items-center gap-3">
