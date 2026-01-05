@@ -11,11 +11,11 @@ const Footer = () => {
               <img 
                 src="/images/Web_Logo.png" 
                 alt="Finyzer Assets Logo" 
-                className="h-12 w-auto mb-2 brightness-0 invert"
+                className="h-12 w-auto mb-2"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Building your financial future with transparency and trust since 2010.
+              Mutual Fund investments are subject to market risks, read all scheme related documents carefully before investing. Past performance is not indicative of future performance.
             </p>
           </div>
 

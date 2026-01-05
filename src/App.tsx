@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import Calculator from './pages/Calculator';
+import MFResearch from './pages/MFResearch';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/calculator" element={<Calculator />} />
+          <Route path="/mf-research" element={<MFResearch />} />
         </Routes>
         <Footer />
       </div>
