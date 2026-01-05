@@ -50,7 +50,7 @@ const Hero = () => {
                 <h2 className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#E6AF1C]">
                   Finyzer Assets
                 </h2>
-                <span className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#0A1A3A]">(analytics)</span>
+                <span className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#0A1A3A]"></span>
               </div>
             </div>
 
