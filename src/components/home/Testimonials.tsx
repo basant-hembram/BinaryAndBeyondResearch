@@ -32,7 +32,20 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-[#E9E9EB]">
+    <section className="py-16 md:py-24 bg-[#E9E9EB] relative overflow-hidden">
+       {/* Top Left Circle */}
+      <img
+        src="/images/top-left-circle.png"
+        alt=""
+        className="absolute left-0 top-0 w-64 h-64 pointer-events-none"
+      />
+
+      {/* Bottom Right Circle */}
+      <img
+        src="/images/bottom-right-circle.png"
+        alt=""
+        className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
+      />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">

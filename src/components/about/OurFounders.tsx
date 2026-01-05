@@ -1,11 +1,9 @@
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '../ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faLinkedin, faDribbble} from '@fortawesome/free-brands-svg-icons';
-import { Button } from './ui/button';
 
-const Founders = () => {
-  const founders = [
+const OurFounders = () => {
+   const founders = [
     {
       name: "Orlando Diggs",
       role: "Founder & CEO",
@@ -20,42 +18,33 @@ const Founders = () => {
       name: "Drew Cano",
       role: "Founding Member",
       image: "/images/drew.png"
+    },
+    {
+      name: "Drew Cano",
+      role: "Founding Member",
+      image: "/images/drew.png"
     }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-16 md:py-24 bg-[#E9E9EB]">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 items-start">
-          {/* Left side - Text content */}
-          <div className="w-full xl:w-2/5">
-            <div>
-              <p className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">Meet your</p>
-              <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C] mb-[30px] lg:mb-[18px] xl:mb-[24px]">
-                Finyzer Assets Founders
-              </h2>
-            </div>
-            <p className="text-gray-600 mb-6">
-              At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.
-            </p>
-            
-            <Button 
-                size="lg" 
-                className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
-              >
-                 Our Team
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Button>
-          </div>
-
-          {/* Right side - Founder cards */}
-          <div className="w-full xl:w-3/5 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="text-center mb-12">
+          <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
+            <span className="text-gray-700">Meet your </span>
+            <span className="text-[#E6AF1C] font-semibold">Finyser Assets Founders</span>
+          </h2>
+          <p className="text-[#575455] text-[16px] lg:text-[18px] max-w-3xl mx-auto">
+            At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.
+          </p>
+        </div>
+        <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-6">
             {founders.map((founder, index) => (
               <Card
                 key={index}
                 className="overflow-hidden group"
               >
-                <div className="aspect-[5/4] lg:aspect-[3/3] xl:aspect-[4/5] overflow-hidden">
+                <div className="aspect-[1/1] lg:aspect-[1/1] xl:aspect-[1/1] overflow-hidden">
                   <img
                     src={founder.image}
                     alt={founder.name}
@@ -92,10 +81,9 @@ const Founders = () => {
               </Card>
             ))}
           </div>
-        </div>
       </div>
     </section>
   );
 };
 
-export default Founders;
+export default OurFounders;

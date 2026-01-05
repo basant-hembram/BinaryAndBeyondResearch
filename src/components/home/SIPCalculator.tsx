@@ -1,4 +1,4 @@
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator, faCamera, faUmbrella, faMoneyBill, faSackDollar, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 

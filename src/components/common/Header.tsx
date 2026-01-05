@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +28,7 @@ const Header = () => {
                         <a href="tel:+919876543210" className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
                             <FontAwesomeIcon icon={faPhone} size="sm" />
                             <span>+91 98765 43210</span>
-                        </a> | 
+                        </a> |
                         <a href="#" className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
                             <span>CONTACT US</span>
                         </a>
@@ -42,17 +42,19 @@ const Header = () => {
                     <div className="flex justify-between items-center py-2">
                         {/* Logo */}
                         <div className="flex items-center gap-3">
-                            <img
-                                src="/images/Web_Logo.png"
-                                alt="Finyzer Assets Logo"
-                                className="h-[48px] lg:h-[84px] w-auto"
-                            />
+                            <Link to="/">
+                                <img
+                                    src="/images/Web_Logo.png"
+                                    alt="Finyzer Assets Logo"
+                                    className="h-[48px] lg:h-[84px] w-auto"
+                                />
+                            </Link>
                         </div>
 
                         {/* Desktop Navigation */}
                         <nav className="hidden xl:flex items-center gap-8">
-                            <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Home</a>
-                            <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">About Us</a>
+                            <Link to="/" className="text-white hover:text-[#E6AF1C] font-medium">Home</Link>
+                            <Link to="/about" className="text-white hover:text-[#E6AF1C] font-medium">About Us</Link>
                             <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Services</a>
                             <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Calculator</a>
                             <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">MF Research</a>
@@ -69,14 +71,13 @@ const Header = () => {
                     </div>
 
                     {/* Mobile Navigation */}
-                    <nav 
-                        className={`xl:hidden absolute left-0 right-0 bg-[#0A1A3A] border-t border-[#E6AF1C] overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${
-                            isMenuOpen ? 'max-h-[400px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
-                        }`}
+                    <nav
+                        className={`xl:hidden absolute left-0 right-0 bg-[#0A1A3A] border-t border-[#E6AF1C] overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${isMenuOpen ? 'max-h-[400px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
+                            }`}
                     >
                         <div className="flex flex-col gap-4 px-4">
-                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Home</a>
-                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">About Us</a>
+                            <Link to="/" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                            <Link to="/about" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>About Us</Link>
                             <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Services</a>
                             <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Calculator</a>
                             <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">MF Research</a>

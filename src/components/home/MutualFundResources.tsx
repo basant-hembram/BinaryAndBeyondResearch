@@ -1,4 +1,4 @@
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightDots, faHandHoldingDollar, faSackDollar, faCoins, faMoneyBillTrendUp, faMoneyBillTransfer, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 

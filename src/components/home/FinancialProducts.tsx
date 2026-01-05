@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandHoldingDollar, faBuildingColumns, faArrowUpRightDots, faPeopleRoof, faCoins, faBriefcaseMedical, faCarBurst, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 const FinancialProducts = () => {
   const products = [
