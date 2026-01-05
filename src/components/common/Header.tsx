@@ -55,7 +55,7 @@ const Header = () => {
                         <nav className="hidden xl:flex items-center gap-8">
                             <Link to="/" className="text-white hover:text-[#E6AF1C] font-medium">Home</Link>
                             <Link to="/about" className="text-white hover:text-[#E6AF1C] font-medium">About Us</Link>
-                            <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Services</a>
+                            <a href="/services" className="text-white hover:text-[#E6AF1C] font-medium">Services</a>
                             <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Calculator</a>
                             <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">MF Research</a>
                             <a href="#" className="text-white hover:text-[#E6AF1C] font-medium">Become a Distributer</a>
@@ -78,7 +78,7 @@ const Header = () => {
                         <div className="flex flex-col gap-4 px-4">
                             <Link to="/" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
                             <Link to="/about" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-                            <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Services</a>
+                            <Link to="/services" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors" onClick={() => setIsMenuOpen(false)}>Services</Link>
                             <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Calculator</a>
                             <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">MF Research</a>
                             <a href="#" className="text-white font-medium py-[7px] text-right lg:text-left hover:text-[#E6AF1C] transition-colors">Become a Distributer</a>
