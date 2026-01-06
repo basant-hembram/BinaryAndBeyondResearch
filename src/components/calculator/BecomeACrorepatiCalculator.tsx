@@ -10,6 +10,7 @@ const BecomeACrorepatiCalculator = () => {
   const [targetAge, setTargetAge] = useState(60);
   const [returnRate, setReturnRate] = useState(12);
   const [savings, setSavings] = useState(140260);
+  const [inflationRate, setInflationRate] = useState(0);
 
   // Calculate chart data
   const amountInvested = 19007940; // Example calculation
@@ -125,7 +126,7 @@ const BecomeACrorepatiCalculator = () => {
                 <div className="flex flex-col items-end w-full gap-[25px]">
                   <input
                     type="text"
-                    value="0"
+                    value={inflationRate}
                     readOnly
                     className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
                   />
@@ -133,10 +134,11 @@ const BecomeACrorepatiCalculator = () => {
                     type="range"
                     min="0"
                     max="15"
-                    value={0}
+                    value={inflationRate}
+                    onChange={(e) => setInflationRate(Number(e.target.value))}
                     className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
                     style={{
-                      background: `linear-gradient(to right, #E6AF1C 0%, #E6AF1C 0%, #d1d5db 0%, #d1d5db 100%)`
+                      background: `linear-gradient(to right, #E6AF1C 0%, #E6AF1C ${(inflationRate / 15) * 100}%, #d1d5db ${(inflationRate / 15) * 100}%, #d1d5db 100%)`
                     }}
                   />
                 </div>
