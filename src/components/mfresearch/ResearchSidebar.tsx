@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 interface MenuItem {
   id: string;
@@ -31,25 +33,33 @@ const menuItems: MenuItem[] = [
 
 const ResearchSidebar = () => {
   const [activeItem, setActiveItem] = useState('trailing-returns');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#F6F8F9] py-[16px] px-[14px] border-r border-[#E5E9EB] overflow-hidden">
+    <div className="bg-[#F6F8F9] py-[16px] px-[14px] rounded-[5px] xl:rounded-[0px] border border-[#E6AF1C] xl:border-r xl:border-[#E5E9EB] overflow-hidden">
       {/* Header */}
-      <div className="py-[8px] mb-[14px] border-b border-[#E6AF1C]">
-        <h2 className="text-[16px] text-[#0A1A3A] font-semibold">
-          Mutual Funds <span className="text-[#E6AF1C]">Research Menu</span>
+      <div className="lg:py-[8px] xl:mb-[14px] xl:border-b xl:border-[#E6AF1C] lg:py-3 lg:px-[8px] xl:px-0 flex items-center justify-between">
+        <h2 className="text-[16px] text-[#0A1A3A]">
+          Mutual Funds <span className="text-[#E6AF1C] font-semibold">Research Menu</span>
         </h2>
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="text-[#E6AF1C] hover:text-[#d49a15] transition-colors xl:hidden"
+          aria-label="Toggle menu"
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
       </div>
 
       {/* Menu Items */}
-      <div>
+      <div className={`${isMenuOpen ? 'mt-[10px] xl:mt-0 block' : 'xl:block hidden'}`}>
         {menuItems.map((item) => (
           <button
             key={item.id}
             onClick={() => setActiveItem(item.id)}
-            className={`w-full px-6 py-3 text-left text-[14px] transition-colors border-t rounded-[5px] border-[#E5E9EB] first:border-t-0 ${
+            className={`w-full py-3 text-left text-[14px] transition-colors border-t rounded-[5px] border-[#E5E9EB] first:border-t-0 ${
               activeItem === item.id
-                ? 'bg-[#01A382] text-white font-medium'
+                ? 'bg-[#01A382] px-6 text-white font-medium'
                 : 'text-[#0A1A3A] hover:bg-gray-50'
             }`}
           >

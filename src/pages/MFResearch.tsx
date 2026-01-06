@@ -15,11 +15,11 @@ const MFResearch = () => {
       />
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[14px]">
-            <div className="lg:col-span-3">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-[14px]">
+            <div className="xl:col-span-3">
               <ResearchSidebar />
             </div>
-            <div className="lg:col-span-9">
+            <div className="xl:col-span-9">
               <TrailingReturns />
             </div>
           </div>

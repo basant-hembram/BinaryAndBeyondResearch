@@ -14,7 +14,7 @@ interface BannerProps {
 const Banner = ({ title, breadcrumbs, backgroundImage }: BannerProps) => {
   return (
     <section 
-      className="relative h-[126px] lg:h-[450px] flex items-center justify-start bg-cover bg-center"
+      className="relative h-[126px] lg:h-[320px] xl:h-[450px] flex items-center justify-start bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute inset-0 bg-[#0A1A3A]/70"></div>

@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <>
             {/* Top Info Bar */}
-            <div className="bg-[#0A1A3A] text-white py-2 border-b border-[#E6AF1C]">
+            <div className="bg-[#0A1A3A] text-white py-2 border-b border-[#E6AF1C] sticky top-0 z-50">
                 <div className="container flex justify-between items-center text-sm px-4">
                     <div className="flex items-center gap-4">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6AF1C] transition-colors">
@@ -38,7 +38,7 @@ const Header = () => {
             </div>
 
             {/* Main Header */}
-            <header className="bg-[#0A1A3A] shadow-md sticky top-0 z-50">
+            <header className="bg-[#0A1A3A] shadow-md sticky top-[37px] z-50">
                 <div className="container mx-auto px-4 relative">
                     <div className="flex justify-between items-center py-2">
                         {/* Logo */}
