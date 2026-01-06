@@ -226,7 +226,7 @@ const BecomeACrorepatiCalculator = () => {
                       dataKey="value"
                       stroke="none"
                     >
-                      {chartData.map((entry, index) => (
+                      {chartData.map((_entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index]} stroke="none" />
                       ))}
                     </Pie>
