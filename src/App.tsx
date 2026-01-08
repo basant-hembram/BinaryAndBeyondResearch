@@ -14,6 +14,7 @@ import Disclaimer from './pages/Disclaimer';
 import TermsOfUse from './pages/TermsOfUse';
 import ImportantLinks from './pages/ImportantLinks';
 import Testimonials from './pages/Testimonials';
+import Team from './pages/Team';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/important-links" element={<ImportantLinks />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/our-team" element={<Team />} />
         </Routes>
         <Footer />
       </div>
