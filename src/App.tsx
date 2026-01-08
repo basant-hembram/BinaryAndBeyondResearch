@@ -11,6 +11,8 @@ import BecomeDistributor from './pages/BecomeDistributor';
 import ContactUs from './pages/ContactUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Disclaimer from './pages/Disclaimer';
+import TermsOfUse from './pages/TermsOfUse';
+import ImportantLinks from './pages/ImportantLinks';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/important-links" element={<ImportantLinks />} />
         </Routes>
         <Footer />
       </div>
