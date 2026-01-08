@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import TestimonialCard from '../common/TestimonialCard';
 
 const Testimonials = () => {
   const testimonials = [
@@ -75,22 +76,12 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-row gap-6 items-start lg:items-center px-2">
-                <img 
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-[136px] h-[136px] lg:w-[180px] lg:h-[180px] xl:w-[239px] xl:h-[239px] rounded-[15px] object-cover flex-shrink-0"
-                />
-                <div className="flex flex-col justify-center">
-                  <p className="text-[#090914] font-light mb-[10px] xl:mb-[20px] leading-relaxed text-[14px] lg:text-[16px] xl:text-[18px]">
-                    "{testimonial.text}"
-                  </p>
-                  <div className="flex flex-col xl:flex-row gap-2">
-                    <h4 className="font-semibold text-[#E6AF1C] text-[14px] lg:text-[16px] xl:text-[18px]">{testimonial.name}</h4>
-                    <p className="text-[#575455] text-[14px] lg:text-[16px] xl:text-[18px]">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCard
+                name={testimonial.name}
+                role={testimonial.role}
+                text={testimonial.text}
+                image={testimonial.image}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
