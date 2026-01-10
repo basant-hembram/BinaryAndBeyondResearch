@@ -1,6 +1,6 @@
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faHandHoldingDollar, faLandmark, faChartLine, faMoneyBillTransfer, faHandHoldingHand, faPiggyBank } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faHandHoldingDollar, faLandmark, faChartLine, faMoneyBillTransfer, faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 
 const offerings = [
   { icon: faHandHoldingDollar, title: 'Readymade Mutual Fund Baskets' },
