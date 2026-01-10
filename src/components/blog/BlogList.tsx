@@ -1,13 +1,12 @@
 import BlogCard from './BlogCard';
 
-const blogs = [
+export const blogs = [
   {
     id: 1,
     image: '/images/blog.png',
     date: '18 Jan 2025 • Edition',
     title: 'Navigating Market Volatility',
     description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-    link: '#',
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ const blogs = [
     date: '18 Jan 2025 • Edition',
     title: 'Navigating Market Volatility',
     description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-    link: '#',
   },
   {
     id: 3,
@@ -23,7 +21,6 @@ const blogs = [
     date: '18 Jan 2025 • Edition',
     title: 'Navigating Market Volatility',
     description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-    link: '#',
   },
   {
     id: 4,
@@ -31,11 +28,14 @@ const blogs = [
     date: '18 Jan 2025 • Edition',
     title: 'Navigating Market Volatility',
     description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-    link: '#',
   },
 ];
 
 const BlogList = () => {
+  const generateSlug = (title: string) => {
+    return title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+  };
+
   return (
     <section className="container mx-auto px-4 py-16">
       <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-center mb-4">
@@ -49,7 +49,7 @@ const BlogList = () => {
             date={blog.date}
             title={blog.title}
             description={blog.description}
-            link={blog.link}
+            link={`/blog/${generateSlug(blog.title)}`}
           />
         ))}
       </div>
