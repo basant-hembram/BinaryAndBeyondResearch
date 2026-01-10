@@ -1,3 +1,4 @@
+import Banner from '../components/common/Banner';
 import HeroSection from '../components/become-distributor/HeroSection';
 import IndustryGrowthSection from '../components/become-distributor/IndustryGrowthSection';
 import WhyBecomeSection from '../components/become-distributor/WhyBecomeSection';
@@ -11,6 +12,16 @@ import ComplianceSection from '../components/become-distributor/ComplianceSectio
 const BecomeDistributor = () => {
   return (
     <div className="bg-white">
+      <div className='block lg:hidden'>
+        <Banner
+          title="MF RESEARCH"
+          breadcrumbs={[
+            { label: 'HOME', path: '/' },
+            { label: 'MF RESEARCH', path: '/mf-research' }
+          ]}
+          backgroundImage="/images/banner-bg.jpg"
+        />
+      </div>
       <HeroSection />
       <IndustryGrowthSection />
       <WhyBecomeSection />

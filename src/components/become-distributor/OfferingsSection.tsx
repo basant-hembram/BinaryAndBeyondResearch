@@ -1,46 +1,62 @@
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faHandHoldingDollar, faLandmark, faChartLine, faMoneyBillTransfer, faHandHoldingHand, faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 
 const offerings = [
-  { icon: '💎', title: 'Personalized Mutual Funds' },
-  { icon: '💰', title: 'Pre-Planned Schemes' },
-  { icon: '📈', title: 'Goal Based Investments' },
-  { icon: '🎯', title: 'Expert Redemption' },
-  { icon: '📊', title: 'Lowest Expenses' },
-  { icon: '💼', title: 'Strong Investment Strategy' },
+  { icon: faHandHoldingDollar, title: 'Readymade Mutual Fund Baskets' },
+  { icon: faLandmark, title: 'Free Financial Planner' },
+  { icon: faChartLine, title: 'Expert Rated Schemes' },
+  { icon: faLandmark, title: 'Govt Based Investment' },
+  { icon: faMoneyBillTransfer, title: 'Instant Redemption' },
+  { icon: faPiggyBank, title: 'Family Investment Tracker' },
 ];
 
 const OfferingsSection = () => {
   return (
     <section className="container mx-auto px-4 py-16">
-      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 text-center">
-        Offerings
-      </h2>
-      <p className="text-xl text-[#E6AF1C] font-semibold mb-8 text-center">
-        For Your Clients
-      </p>
-      <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
-        Our commitment to providing a unified service across multiple brands
-        gives you a sense that you are dealing with a professional who genuinely
-        understands you. We have a flexible way to navigating the complexities
-        of the financial world.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {offerings.map((offering, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-4 bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
-          >
-            <div className="text-4xl">{offering.icon}</div>
-            <h3 className="font-semibold text-gray-900">{offering.title}</h3>
+      <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 items-start">
+        <div className='col-span-2'>
+          <h2 className="text-[24px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">
+            Offerings
+          </h2>
+          <h2 className="text-[24px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C] mb-6">
+            For Your Clients
+          </h2>
+          <p className="text-[#575455] mb-8 leading-relaxed">
+            Our commitment to excellence, cutting-edge technology, and personalized
+            support ensures that you have a reliable ally in navigating the complexities of the
+            financial world.
+          </p>
+          <div className="lg:hidden grid grid-cols-1 gap-6 mb-[45px]">
+            {offerings.map((offering, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#E6AF1C] flex items-center justify-center flex-shrink-0">
+                  <FontAwesomeIcon icon={offering.icon} className="text-white text-lg" />
+                </div>
+                <h3 className="font-medium text-[#090914] text-[16px]">{offering.title}</h3>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="mt-8 text-center">
-        <Button className="bg-[#01A382] hover:bg-[#018f72] text-white">
-          Know more <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-        </Button>
+          <Button className="bg-[#01A382] hover:bg-[#018f72] text-white text-[16px] px-8">
+            Know More <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+          </Button>
+        </div>
+        <div className="hidden col-span-4 lg:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          {offerings.map((offering, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-4"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6AF1C] flex items-center justify-center flex-shrink-0">
+                <FontAwesomeIcon icon={offering.icon} className="text-white text-lg" />
+              </div>
+              <h3 className="font-medium text-[#090914] text-[16px]">{offering.title}</h3>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

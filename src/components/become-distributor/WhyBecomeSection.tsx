@@ -1,56 +1,44 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 
 const WhyBecomeSection = () => {
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <section className="container mx-auto px-4 py-[48px] lg:py-[65px] xl:py-[110px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-6">
             Why Become A Mutual Fund Distributor With{' '}
-            <span className="text-[#E6AF1C]">Finyzor Assets</span>
+            <span className="text-[#E6AF1C] font-semibold">Finyser Assets</span>
           </h2>
-          <p className="text-gray-600 mb-6">
-            Finyzer Assets is a professionally managed mutual fund distribution
-            platform offering proprietary market leading technology backed
-            distribution system, offering:
+          <p className="text-[#575455] text-[16px] lg:text-[18px] mb-8">
+            Finyser Assets is a professionally managed mutual fund distribution
+            platform helping partners scale their business through technology,
+            research and local support.
           </p>
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <FontAwesomeIcon icon={faCheck} className="text-[#01A382] mt-1" />
-              <div>
-                <h3 className="font-semibold text-gray-900">100% funded investors</h3>
-                <p className="text-sm text-gray-600">Get access to verified investors</p>
-              </div>
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <div className="flex items-center gap-3">
+              <FontAwesomeIcon icon={faHandPointRight} className="text-[#E6AF1C] text-xl" />
+              <span className="text-[#0A1A3A] font-medium">1100+ Trusted Investors</span>
             </div>
-            <div className="flex items-start gap-3">
-              <FontAwesomeIcon icon={faCheck} className="text-[#01A382] mt-1" />
-              <div>
-                <h3 className="font-semibold text-gray-900">24x7 Inquiry Services</h3>
-                <p className="text-sm text-gray-600">Round the clock support</p>
-              </div>
+            <div className="flex items-center gap-3">
+              <FontAwesomeIcon icon={faHandPointRight} className="text-[#E6AF1C] text-xl" />
+              <span className="text-[#0A1A3A] font-medium">Dedicated Relationship Manager</span>
             </div>
-            <div className="flex items-start gap-3">
-              <FontAwesomeIcon icon={faCheck} className="text-[#01A382] mt-1" />
-              <div>
-                <h3 className="font-semibold text-gray-900">Dedicated Relationship Manager</h3>
-                <p className="text-sm text-gray-600">Personal assistance for growth</p>
-              </div>
+            <div className="flex items-center gap-3">
+              <FontAwesomeIcon icon={faHandPointRight} className="text-[#E6AF1C] text-xl" />
+              <span className="text-[#0A1A3A] font-medium">200+ Happy Families</span>
             </div>
-            <div className="flex items-start gap-3">
-              <FontAwesomeIcon icon={faCheck} className="text-[#01A382] mt-1" />
-              <div>
-                <h3 className="font-semibold text-gray-900">100% Legacy Services</h3>
-                <p className="text-sm text-gray-600">Complete business continuity</p>
-              </div>
+            <div className="flex items-center gap-3">
+              <FontAwesomeIcon icon={faHandPointRight} className="text-[#E6AF1C] text-xl" />
+              <span className="text-[#0A1A3A] font-medium">200+ Happy Families</span>
             </div>
           </div>
         </div>
         <div>
           <img
-            src="/images/photo-1551135049-8a33b5883817.avif"
+            src="/images/why-become-mutual-fund-investor.avif"
             alt="Team"
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-[50px] w-full"
           />
         </div>
       </div>

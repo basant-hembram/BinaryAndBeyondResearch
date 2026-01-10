@@ -1,67 +1,111 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend } from 'recharts';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandHoldingUsd, faUserGroup, faSackDollar } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from 'react';
 
 const growthData = [
-  { year: '2019', domestic: 40, foreign: 20, total: 15 },
-  { year: '2020', domestic: 45, foreign: 22, total: 18 },
-  { year: '2021', domestic: 50, foreign: 25, total: 20 },
-  { year: '2022', domestic: 60, foreign: 28, total: 25 },
-  { year: '2023', domestic: 70, foreign: 30, total: 30 },
-  { year: '2024', domestic: 80, foreign: 35, total: 35 },
+  { month: 'Apr', aum: 8, folios: 20, investors: 10 },
+  { month: 'May', aum: 13, folios: 22, investors: 9 },
+  { month: 'Jun', aum: 15, folios: 24, investors: 10 },
+  { month: 'Jul', aum: 18, folios: 27, investors: 10 },
+  { month: 'Aug', aum: 23, folios: 27, investors: 10 },
+  { month: 'Sep', aum: 28, folios: 26, investors: 11 },
+  { month: 'Oct', aum: 34, folios: 24, investors: 12 },
 ];
 
 const IndustryGrowthSection = () => {
+  const [isXlScreen, setIsXlScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsXlScreen(window.innerWidth >= 1440);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-[#E9E9EB] py-16">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 lg:mb-0">
-            Mutual fund <span className="text-[#E6AF1C]">Industry Growth story</span>
-          </h2>
-          <div className="flex gap-4">
-            <button className="px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-100">
-              Digital of business
-            </button>
-            <button className="px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-100">
-              Net flow
-            </button>
-            <button className="px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-100">
-              In Distributors
-            </button>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-normal text-[#0A1A3A] mb-4">
+              Mutual fund
+              <br />
+              <span className="text-[#E6AF1C] font-semibold">Industry Growth story</span>
+            </h2>
 
-        <p className="text-gray-600 mb-8">
-          The Indian Mutual Fund Industry globally grew from 9bn to 12 Lakh crore
-          in just 10 years. By 2030, it is expected to triple these numbers and
-          increase to 100 Lakh crores.
-        </p>
+            <p className="text-[#575455] text-[16px] xl:text-[18px] mb-8">
+              The Indian Mutual Fund Industry AUM has grown from Rs 1 Lakh crore
+              in May 2004 to Rs 75.36 lakh Cr in July 2025 translating into a growth
+              of more than 75 times in last 2 decades.
+            </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-[#01A382] mb-2">₹36 Lakh Cr</div>
-            <p className="text-gray-600">Industry AUM</p>
+            <div className="flex flex-col lg:flex-row gap-6">
+              <div className='text-center lg:text-start'>
+                <FontAwesomeIcon icon={faHandHoldingUsd} className="text-[#0A1A3A] text-2xl mb-2" />
+                <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">₹ Rs 75.36 lakh Cr</div>
+                <p className="text-[#575455] text-[14px]">Mutual Fund AUM</p>
+              </div>
+              <div className='text-center lg:text-start pt-[30px] lg:px-[30px] lg:pt-[0] border-t lg:border-t-0 lg:border-l border-[#D9D9D9]'>
+                <FontAwesomeIcon icon={faUserGroup} className="text-[#0A1A3A] text-2xl mb-2" />
+                <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">₹ 24.57 Cr.</div>
+                <p className="text-[#575455] text-[14px]">MF Folios</p>
+              </div>
+              <div className='text-center lg:text-start pt-[30px] lg:px-[30px] lg:pt-[0] border-t lg:border-t-0 lg:border-l border-[#D9D9D9]'>
+                <FontAwesomeIcon icon={faSackDollar} className="text-[#0A1A3A] text-2xl mb-2" />
+                <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">₹ 5.59 Cr.</div>
+                <p className="text-[#575455] text-[14px]">Unique Investors</p>
+              </div>
+            </div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-[#01A382] mb-2">48 AMCs</div>
-            <p className="text-gray-600">No. AMCs</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-[#01A382] mb-2">16.6 Crores +</div>
-            <p className="text-gray-600">Unique Investors</p>
-          </div>
-        </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={growthData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="year" />
-              <YAxis />
-              <Bar dataKey="domestic" stackId="a" fill="#01A382" />
-              <Bar dataKey="foreign" stackId="a" fill="#E6AF1C" />
-              <Bar dataKey="total" stackId="a" fill="#FF6B6B" />
-            </BarChart>
-          </ResponsiveContainer>
+          <div className="">
+            <ResponsiveContainer width="100%" height={450}>
+              <BarChart data={growthData} barCategoryGap="20%" barGap={1} margin={{ bottom: 20, left: -20 }}>
+                <CartesianGrid stroke="#E6AF1C" vertical={false} />
+                <XAxis dataKey="month" axisLine={false} tick={{ fontSize: 14, fill: '#64748B' }} tickMargin={25} />
+                <YAxis axisLine={false} ticks={[0, 10, 20, 30, 40, 50, 60, 70]} domain={[0, 70]} tick={{ fontSize: 14, fill: '#64748B' }} width={45} />
+                <Legend 
+                  verticalAlign={isXlScreen ? "top" : "bottom"}
+                  align="center"
+                  wrapperStyle={{ paddingBottom: isXlScreen ? '32px' : '0', paddingTop: isXlScreen ? '0' : '32px', fontSize: '12px', color: '#191D23' }}
+                  iconType="circle"
+                  iconSize={8}
+                  layout="horizontal"
+                  content={(props) => {
+                    const { payload } = props;
+                    return (
+                      <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', fontSize: '12px', color: '#191D23' }}>
+                        {payload?.map((entry, index) => (
+                          <div key={`item-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                            <div
+                              style={{
+                                width: '8px',
+                                height: '8px',
+                                borderRadius: '50%',
+                                backgroundColor: entry.color,
+                              }}
+                            />
+                            <span style={{ fontSize: '12px', color: '#191D23' }}>
+                              {entry.value === 'aum' ? 'Mutual Fund AUM' : 
+                               entry.value === 'folios' ? 'MF Folios' : 
+                               'Unique Investors'}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  }}
+                />
+                <Bar dataKey="aum" stackId="a" fill="#E6AF1C" radius={[2, 2, 0, 0]} stroke="#f5f5f5" strokeWidth={1} />
+                <Bar dataKey="folios" stackId="a" fill="#01A382" radius={[2, 2, 2, 2]} stroke="#f5f5f5" strokeWidth={1} />
+                <Bar dataKey="investors" stackId="a" fill="#0A1A3A" radius={[2, 2, 2, 2]} stroke="#f5f5f5" strokeWidth={1} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </section>
