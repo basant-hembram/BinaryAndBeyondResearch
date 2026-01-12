@@ -71,19 +71,19 @@ const Team: React.FC = () => {
                                     <div className="flex justify-start gap-3">
                                         <a
                                             href="#"
-                                            className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
+                                            className="text-[#98A2B3] text-[24px] transition-colors"
                                         >
                                             <FontAwesomeIcon icon={faTwitter} />
                                         </a>
                                         <a
                                             href="#"
-                                            className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
+                                            className="text-[#98A2B3] text-[24px] transition-colors"
                                         >
                                             <FontAwesomeIcon icon={faLinkedin} />
                                         </a>
                                         <a
                                             href="#"
-                                            className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
+                                            className="text-[#98A2B3] text-[24px] transition-colors"
                                         >
                                             <FontAwesomeIcon icon={faDribbble} />
                                         </a>

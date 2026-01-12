@@ -102,7 +102,7 @@ const serviceContent: Record<string, { title: string; description: string[] }> =
 };
 
 const ServiceContent = () => {
-    const [expandedCategories, setExpandedCategories] = useState<string[]>(['mutual-fund', 'insurance']);
+    const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
     const [selectedService, setSelectedService] = useState<string>('mutual-fund');
 
     const toggleCategory = (categoryId: string) => {

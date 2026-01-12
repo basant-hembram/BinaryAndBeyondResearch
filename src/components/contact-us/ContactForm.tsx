@@ -43,7 +43,7 @@ const ContactForm = () => {
               placeholder="First name"
               value={formData.firstName}
               onChange={handleChange}
-              className="w-full px-[16px] py-[12px] border-2 border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
+              className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white"
               required
             />
           </div>
@@ -55,7 +55,7 @@ const ContactForm = () => {
               placeholder="Last name"
               value={formData.lastName}
               onChange={handleChange}
-              className="w-full px-[16px] py-[12px] border-2 border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
+              className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
               required
             />
           </div>
@@ -69,7 +69,7 @@ const ContactForm = () => {
             placeholder="you@company.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-[16px] py-[12px] border-2 border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
+            className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
             required
           />
         </div>
@@ -77,7 +77,7 @@ const ContactForm = () => {
         <div>
           <label className="block text-[#344054] text-[16px] mb-2">Phone number</label>
           <div className="relative">
-            <select className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent border-none focus:outline-none text-gray-700 pr-8 appearance-none cursor-pointer z-10">
+            <select className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent focus:border-[#E6AF1C] border-none focus:outline-none text-gray-700 pr-8 appearance-none cursor-pointer z-10">
               <option value="IN">IN</option>
               <option value="US">US</option>
               <option value="UK">UK</option>
@@ -91,7 +91,7 @@ const ContactForm = () => {
               placeholder="+91 (555) 000-0000"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full pl-24 pr-[16px] py-[12px] border-2 border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
+              className="w-full pl-24 pr-[16px] py-[12px] border-2 border-[#e6af1c80] rounded-[8px] focus:outline-none bg-white"
               required
             />
           </div>
@@ -103,13 +103,12 @@ const ContactForm = () => {
             name="userType"
             value={formData.userType}
             onChange={handleChange}
-            className="w-full px-[16px] py-[12px] border-2 border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white text-gray-500"
+            className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white text-gray-500"
             required
           >
             <option value="">Select User Type</option>
             <option value="investor">Investor</option>
             <option value="distributor">Distributor</option>
-            <option value="partner">Partner</option>
             <option value="other">Other</option>
           </select>
         </div>
@@ -122,7 +121,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className="w-full px-[16px] py-[12px] border-2 border-[#E6AF1C] rounded-[8px] focus:outline-none resize-none bg-white"
+            className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none resize-none bg-white"
             required
           ></textarea>
         </div>
