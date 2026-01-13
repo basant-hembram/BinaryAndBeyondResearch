@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
 
           {/* Information */}
-          <div className='md:col-span-2'>
+          <div className='md:col-span-2 xl:pl-[50px]'>
             <h4 className="font-semibold text-[16px] mb-4">INFORMATION</h4>
             <ul className="space-y-[20px]">
               <li><Link to="/privacy-policy" className="text-white hover:text-[#E6AF1C] transition-colors text-[16px]">Privacy Policy</Link></li>
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className='md:col-span-4'>
+          <div className='md:col-span-4 xl:pl-[50px]'>
             <h4 className="font-semibold text-[16px] mb-4">KEEP IN TOUCH</h4>
             <ul className="space-y-[20px]">
               <li className="flex items-center gap-3 text-[16px]">

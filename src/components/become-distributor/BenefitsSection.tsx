@@ -44,7 +44,7 @@ const BenefitsSection = () => {
             </div>
           </div>
         </div>
-        <div className="text-center">
+        <div className="text-left">
           <Button className="bg-[#01A382] hover:bg-[#018f72] text-white px-8 text-[16px]">
             Join Finyzer Assets <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
           </Button>
