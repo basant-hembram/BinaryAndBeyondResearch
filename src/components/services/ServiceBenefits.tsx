@@ -38,7 +38,7 @@ const benefits: Benefit[] = [
 const ServiceBenefits = () => {
   return (
     <div className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-[38px]">
           {/* Left Content */}
           <div className="lg:col-span-4">

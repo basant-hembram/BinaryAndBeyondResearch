@@ -14,7 +14,7 @@ interface BlogDetailProps {
 
 const BlogDetail = ({ title, subtitle, date, image, content }: BlogDetailProps) => {
     return (
-        <section className="container mx-auto px-4 py-16">
+        <section className="container mx-auto py-16">
             {/* Title and Date */}
             <div className="mb-8">
                 <h1 className="text-[26px] lg:text-[32px] text-[#0A1A3A] mb-4">

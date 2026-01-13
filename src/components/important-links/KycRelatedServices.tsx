@@ -3,7 +3,7 @@ import React from 'react';
 const KycRelatedServices: React.FC = () => {
     return (
         <div className="bg-[#E9E9EB] py-[38px]">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h3 className="text-[20px] font-semibold text-[#01A382] mb-4">Kyc Related Services</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[22px] lg:gap-[46px]">
                     <div>

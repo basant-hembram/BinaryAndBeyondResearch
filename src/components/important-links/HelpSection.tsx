@@ -24,7 +24,7 @@ const HelpSection: React.FC<HelpSectionProps> = ({
 }) => {
     return (
         <div className="bg-gray-50 py-12">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div className="text-left">
                         <h3 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-4">

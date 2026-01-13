@@ -4,7 +4,7 @@ import { faArrowRight, faLaptop, faBookBookmark, faHandshake, faCoins, faHandHol
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto px-4 py-16">
+    <section className="container mx-auto py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] xl:gap-[52px] items-start">
         <div>
           <img

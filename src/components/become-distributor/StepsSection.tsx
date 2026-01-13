@@ -30,7 +30,7 @@ const StepsSection = () => {
 
   return (
     <section className="bg-[#E9E9EB] py-[44px] lg:py-[50px] xl:py-[92px]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <h2 className="text-[24px] lg:text-[32px] xl:text-[36px] text-[#090914] mb-2 text-center">
           Steps To Become A <span className="text-[#E6AF1C] font-medium">Mutual Fund Distributor</span>{' '}
           With <span className="text-[#E6AF1C] font-medium">Finyzer Assets</span>

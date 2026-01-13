@@ -3,7 +3,7 @@ import React from 'react';
 const EmailMobileUpdate: React.FC = () => {
     return (
         <div className="py-[38px]">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h3 className="text-[20px] font-semibold text-[#01A382] mb-4">Email/Mobile Number Update</h3>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[22px] lg:gap-[46px]">

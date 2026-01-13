@@ -14,7 +14,7 @@ const MFResearch = () => {
        backgroundImage="/images/banner-bg.jpg"
       />
       <div className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-[14px]">
             <div className="xl:col-span-3">
               <ResearchSidebar />

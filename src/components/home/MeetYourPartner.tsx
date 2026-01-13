@@ -25,7 +25,7 @@ const MeetYourPartner = () => {
         alt="" 
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div className="">

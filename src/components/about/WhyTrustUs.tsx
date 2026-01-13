@@ -51,7 +51,7 @@ const WhyTrustUs = () => {
         alt=""
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-[53px]">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#090914] mb-2">
             Why investors trust <br className='lg:hidden'></br> <span className="text-[#E6AF1C] font-semibold">Finyzer Assets</span>

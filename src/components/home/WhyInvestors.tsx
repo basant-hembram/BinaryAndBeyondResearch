@@ -26,7 +26,7 @@ const WhyInvestors = () => {
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-[20px] lg:mb-[24px] xl:mb-[28px]">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px]">
             Why investors trust <br className='block md:hidden'></br> <span className="text-[#E6AF1C] font-semibold">Finyzer Assets</span>

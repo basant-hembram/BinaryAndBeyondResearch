@@ -18,7 +18,7 @@ const CareerSection = () => {
         alt="" 
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-[24px] lg:text-[32px] xl:text-[36px]">

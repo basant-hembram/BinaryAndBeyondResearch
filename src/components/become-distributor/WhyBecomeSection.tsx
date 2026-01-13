@@ -3,7 +3,7 @@ import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 
 const WhyBecomeSection = () => {
   return (
-    <section className="container mx-auto px-4 py-[48px] lg:py-[65px] xl:py-[110px]">
+    <section className="container mx-auto py-[48px] lg:py-[65px] xl:py-[110px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div>
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-6">

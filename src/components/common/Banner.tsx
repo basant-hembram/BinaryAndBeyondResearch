@@ -18,7 +18,7 @@ const Banner = ({ title, breadcrumbs, backgroundImage }: BannerProps) => {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute inset-0 bg-[#0A1A3A]/70"></div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <h1 
           className="text-white text-[16px] lg:text-[32px] xl:text-[40px] font-bold mb-4"
           dangerouslySetInnerHTML={{ __html: title }}

@@ -56,7 +56,7 @@ const resultCards: ResultCard[] = [
 const CalculatorResults = () => {
   return (
     <div className="py-16 bg-[#E9E9EB]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className='flex flex-col-reverse xl:flex-col gap-[62px]'>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {resultCards.map((card, index) => (

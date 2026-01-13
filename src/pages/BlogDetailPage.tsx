@@ -57,7 +57,7 @@ const BlogDetailPage = () => {
                     ]}
                     backgroundImage="/images/terms-banner.jpg"
                 />
-                <div className="container mx-auto px-4 py-16 text-center">
+                <div className="container mx-auto py-16 text-center">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">Blog Not Found</h2>
                     <p className="text-gray-600">The blog post you're looking for doesn't exist.</p>
                 </div>

@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <h2 className="hidden lg:block xl:hidden text-[26px] lg:text-[32px] xl:text-[36px] mb-[38px]">
           <span className="text-[#0A1A3A">Why Choose Us As : </span><br className='lg:block xl:hidden'></br>
           <span className="text-[#E6AF1C] font-semibold">Your<br className='hidden lg:hidden'></br>Trusted Investment Advisor</span>

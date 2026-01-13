@@ -24,7 +24,7 @@ const CalculatorButtons = () => {
 
   return (
     <div className="py-16 bg-[#E9E9EB]">
-      <div className="container px-4">
+      <div className="container">
         <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-center mb-12">
           Choose and explore our <span className="text-[#E6AF1C] font-semibold">Mutual fund Calculators</span>
         </h2>

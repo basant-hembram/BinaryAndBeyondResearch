@@ -28,7 +28,7 @@ const IndustryGrowthSection = () => {
 
   return (
     <section className="bg-[#E9E9EB] py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-normal text-[#0A1A3A] mb-4">

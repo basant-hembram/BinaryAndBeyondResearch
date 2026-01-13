@@ -1,7 +1,7 @@
 const AboutSection = () => {
     return (
         <section className="py-16 md:py-24 bg-white">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-6">
