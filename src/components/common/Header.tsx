@@ -83,7 +83,7 @@ const Header = () => {
 
                     {/* Mobile Navigation */}
                     <nav
-                        className={`xl:hidden absolute left-0 right-0 bg-[#0A1A3A] border-t border-[#E6AF1C] overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${isMenuOpen ? 'max-h-[400px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
+                        className={`xl:hidden absolute left-0 right-0 z-50 bg-[#0A1A3A] border-t border-[#E6AF1C] overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${isMenuOpen ? 'max-h-[400px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
                             }`}
                     >
                         <div className="flex flex-col gap-4 px-4">
