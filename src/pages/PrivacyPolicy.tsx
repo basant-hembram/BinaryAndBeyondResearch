@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
             />
 
             {/* Content Section */}
-            <section className="container mx-auto py-16">
+            <section className="container max-md:px-4 mx-auto py-16">
                 <div className="">
                     <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-8">
                         {privacyPolicyData.title} <span className="text-[#E6AF1C] font-semibold">{privacyPolicyData.titleHighlight}</span>

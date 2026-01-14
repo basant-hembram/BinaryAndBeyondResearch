@@ -16,7 +16,7 @@ const OfferingsSection = () => {
   const { offerings } = data.becomeDistributor;
 
   return (
-    <section className="container mx-auto py-16">
+    <section className="container max-md:px-4 mx-auto py-16">
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 items-start">
         <div className='col-span-2'>
           <h2 className="text-[24px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">

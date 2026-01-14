@@ -17,7 +17,7 @@ const SIPCalculator = () => {
 
   return (
     <section id="calculator" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <div className="grid xl:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="">

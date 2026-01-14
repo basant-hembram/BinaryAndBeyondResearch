@@ -9,7 +9,7 @@ const Footer = () => {
   
   return (
     <footer id="contact" className="bg-[#0A1A3A] text-white">
-      <div className="container mx-auto py-12">
+      <div className="container max-md:px-4 mx-auto py-12">
         <div className="grid md:grid-cols-12 gap-12 mb-8">
           {/* Company Info */}
           <div className='md:col-span-4'>

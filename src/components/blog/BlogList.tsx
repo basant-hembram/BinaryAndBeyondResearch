@@ -9,7 +9,7 @@ const BlogList = () => {
   };
 
   return (
-    <section className="container mx-auto py-[48px]  lg:py-[65px] xl:py-[115px]">
+    <section className="container max-md:px-4 mx-auto py-[48px]  lg:py-[65px] xl:py-[115px]">
       <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-center mb-4">
         Latest Market <span className="text-[#E6AF1C] font-semibold">Newsletters</span>
       </h2>

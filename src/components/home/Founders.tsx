@@ -12,7 +12,7 @@ const Founders = () => {
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 items-start">
           {/* Left side - Text content */}
           <div className="w-full xl:w-2/5">

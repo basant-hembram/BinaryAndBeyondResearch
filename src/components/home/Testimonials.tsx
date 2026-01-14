@@ -25,7 +25,7 @@ const Testimonials = () => {
         alt=""
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
             <span className="text-[#E6AF1C]">{testimonials.title} </span>

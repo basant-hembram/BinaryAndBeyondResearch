@@ -15,8 +15,8 @@ const Header = () => {
         <>
             {/* Top Info Bar */}
             <div className="bg-[#0A1A3A] text-white py-2 border-b border-[#E6AF1C]">
-                <div className="container flex justify-between items-center text-sm">
-                    <div className="flex items-center gap-4">
+                <div className="container max-md:px-4 flex justify-between items-center text-sm">
+                    <div className="flex items-center gap-2 lg:gap-4">
                         {headerData.socialLinks.map((social) => {
                             const iconMap: any = { faFacebook, faLinkedin, faInstagram };
                             return (
@@ -32,7 +32,7 @@ const Header = () => {
                             );
                         })}
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 lg:gap-4">
                         <a href={headerData.contact.phoneLink} className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
                             <FontAwesomeIcon icon={faPhone} size="sm" />
                             <span>{headerData.contact.phone}</span>
@@ -46,7 +46,7 @@ const Header = () => {
 
             {/* Main Header */}
             <header className="bg-[#0A1A3A] shadow-md">
-                <div className="container mx-auto relative">
+                <div className="container max-md:px-4 mx-auto relative">
                     <div className="flex justify-between items-center py-2">
                         {/* Logo */}
                         <div className="flex items-center gap-3">
@@ -87,16 +87,12 @@ const Header = () => {
                             }`}
                     >
                         <div className="flex flex-col gap-4 px-4">
-                            {headerData.navigation.map((item) => (
-                                <Link
-                                    key={item.path}
-                                    to={item.path}
-                                    className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === item.path ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
+                            <Link to="/" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Home</Link>
+                            <Link to="/about" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/about' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>About Us</Link>
+                            <Link to="/services" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/services' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Services</Link>
+                            <Link to="/calculator" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/calculator' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Calculator</Link>
+                            <Link to="/mf-research" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/mf-research' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>MF Research</Link>
+                            <Link to="/become-distributor" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/become-distributor' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Become a Distributer</Link>
                         </div>
                     </nav>
                 </div>

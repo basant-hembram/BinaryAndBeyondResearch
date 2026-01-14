@@ -6,7 +6,7 @@ const NomineeServices: React.FC = () => {
 
     return (
         <div className="bg-[#E9E9EB] py-[38px]">
-            <div className="container mx-auto">
+            <div className="container max-md:px-4 mx-auto">
                 <h3 className="text-[20px] font-semibold text-[#01A382] mb-4">{nomineeServices.title}</h3>
 
                 <p className="text-[#575455] text-[16px] lg:text-[18px] mb-4">{nomineeServices.description}</p>

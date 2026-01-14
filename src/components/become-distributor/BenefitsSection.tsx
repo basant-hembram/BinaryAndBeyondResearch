@@ -19,7 +19,7 @@ const BenefitsSection = () => {
 
   return (
     <section className="bg-[#E9E9EB] py-16">
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <h2 className="text-[24px] lg:text-[32px] xl:text-[36px] text-center lg:text-left text-[#090914] mb-12">
           {benefits.title} <span className="text-[#E6AF1C] font-semibold">{benefits.titleHighlight}</span>
         </h2>

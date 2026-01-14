@@ -15,7 +15,7 @@ const HeroSection = () => {
   const { hero } = data.becomeDistributor;
 
   return (
-    <section className="container mx-auto py-16">
+    <section className="container max-md:px-4 mx-auto py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] xl:gap-[52px] items-start">
         <div>
           <img

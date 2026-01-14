@@ -10,7 +10,7 @@ const OurFounders = () => {
 
   return (
     <section className="py-16 md:py-24 bg-[#E9E9EB]">
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
             <span className="text-gray-700">{founders.title} </span>

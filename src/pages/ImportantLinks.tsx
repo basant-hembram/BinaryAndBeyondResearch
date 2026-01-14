@@ -21,7 +21,7 @@ const ImportantLinks: React.FC = () => {
 
             {/* Main Content */}
             <div className="mb-8">
-                <div className="container mx-auto pt-16">
+                <div className="container max-md:px-4 mx-auto pt-16">
                     <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">
                         {importantLinksData.titlePrefix} <span className="text-[#E6AF1C] font-semibold">{importantLinksData.titleHighlight}</span>
                     </h2>

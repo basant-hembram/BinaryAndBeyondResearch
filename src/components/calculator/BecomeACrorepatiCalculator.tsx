@@ -28,7 +28,7 @@ const BecomeACrorepatiCalculator = () => {
 
   return (
     <div className="py-16 bg-white">
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <div className="mb-8">
           <h2 className="text-[22px] lg:text-[24px] font-semibold text-[#E6AF1C] mb-2">
             {becomeACrorepati.title}

@@ -63,7 +63,7 @@ const ServiceContent = () => {
 
     return (
         <div className="py-16 bg-[#E9E9EB]">
-            <div className="container mx-auto">
+            <div className="container max-md:px-4 mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                     {/* Sidebar Navigation */}
                     <div className="lg:col-span-3">

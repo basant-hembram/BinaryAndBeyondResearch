@@ -16,7 +16,7 @@ const StepsSection = () => {
 
   return (
     <section className="bg-[#E9E9EB] py-[44px] lg:py-[50px] xl:py-[92px]">
-      <div className="container mx-auto">
+      <div className="container max-md:px-4 mx-auto">
         <h2 className="text-[24px] lg:text-[32px] xl:text-[36px] text-[#090914] mb-2 text-center">
           {stepsData.title} <span className="text-[#E6AF1C] font-medium">{stepsData.titleHighlight1}</span>{' '}
           With <span className="text-[#E6AF1C] font-medium">{stepsData.titleHighlight2}</span>

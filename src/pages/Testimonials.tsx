@@ -16,7 +16,7 @@ const Testimonials: React.FC = () => {
 
             {/* Main Content */}
             <div className="py-16 md:py-24">
-                <div className="container mx-auto">
+                <div className="container max-md:px-4 mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
                             <span className="text-[#E6AF1C]">{testimonialsData.sectionTitle} </span>

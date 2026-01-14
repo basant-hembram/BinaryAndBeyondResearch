@@ -14,7 +14,7 @@ const CalculatorButtons = () => {
 
   return (
     <div className="py-16 bg-[#E9E9EB]">
-      <div className="container">
+      <div className="container max-md:px-4">
         <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-center mb-12">
           {calculatorButtons.title} <span className="text-[#E6AF1C] font-semibold">{calculatorButtons.titleHighlight}</span>
         </h2>

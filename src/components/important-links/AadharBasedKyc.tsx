@@ -6,7 +6,7 @@ const AadharBasedKyc: React.FC = () => {
 
     return (
         <div className="py-[38px]">
-            <div className="container mx-auto">
+            <div className="container max-md:px-4 mx-auto">
                 <h3 className="text-[20px] font-semibold text-[#01A382] mb-4">{aadharBasedKyc.title}</h3>
                 {aadharBasedKyc.links.map((link, index) => (
                     <div key={index}>
