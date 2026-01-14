@@ -3,17 +3,17 @@ import AboutSection from '../components/about/AboutSection';
 import WhyTrustUs from '../components/about/WhyTrustUs';
 import WhyChooseUs from '../components/about/WhyChooseUs';
 import OurFounders from '../components/about/OurFounders';
+import { data } from '../data';
 
 const AboutUs = () => {
+  const aboutData = data.about;
+  
   return (
     <div className="bg-white">
       <Banner 
-        title="India's Fastest Growing Mutual Fund<br />Distributor"
-        breadcrumbs={[
-          { label: 'Home', path: '/' },
-          { label: 'About Us', path: '/about' }
-        ]}
-        backgroundImage="/images/banner-bg.jpg"
+        title={aboutData.banner.title}
+        breadcrumbs={aboutData.banner.breadcrumbs}
+        backgroundImage={aboutData.banner.backgroundImage}
       />
       <AboutSection />
       <WhyTrustUs />

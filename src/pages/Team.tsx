@@ -3,56 +3,33 @@ import Banner from '../components/common/Banner';
 import { Card, CardContent } from '../components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faDribbble } from '@fortawesome/free-brands-svg-icons';
+import { data } from '../data';
 
 const Team: React.FC = () => {
-    const founders = [
-        {
-            name: "Orlando Diggs",
-            role: "Founder & CEO",
-            image: "/images/orlando.png"
-        },
-        {
-            name: "Phoenix Baker",
-            role: "Founding Member",
-            image: "/images/phoenix.png"
-        },
-        {
-            name: "Drew Cano",
-            role: "Founding Member",
-            image: "/images/drew.png"
-        },
-        {
-            name: "Drew Cano",
-            role: "Founding Member",
-            image: "/images/drew.png"
-        }
-    ];
+    const teamData = data.team;
 
     return (
         <div className="bg-white">
             <Banner
-                title="Our Team"
-                breadcrumbs={[
-                    { label: 'HOME', path: '/' },
-                    { label: 'OUR TEAM', path: '/our-team' }
-                ]}
-                backgroundImage="/images/banner-bg.jpg"
+                title={teamData.title}
+                breadcrumbs={teamData.breadcrumbs}
+                backgroundImage={teamData.backgroundImage}
             />
             <section className="py-16 md:py-24 bg-[#E9E9EB]">
                 <div className="container mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
-                            <span className="text-gray-700">Meet your </span>
-                            <span className="text-[#E6AF1C] font-semibold">Finyser Assets Founders</span>
+                            <span className="text-gray-700">{teamData.sectionTitle} </span>
+                            <span className="text-[#E6AF1C] font-semibold">{teamData.sectionTitleHighlight}</span>
                         </h2>
                         <p className="text-[#575455] text-[16px] lg:text-[18px] max-w-3xl mx-auto">
-                            At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.
+                            {teamData.sectionDescription}
                         </p>
                     </div>
                     <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-6">
-                        {founders.map((founder, index) => (
+                        {teamData.founders.map((founder) => (
                             <Card
-                                key={index}
+                                key={founder.id}
                                 className="overflow-hidden group"
                             >
                                 <div className="aspect-[1/1] lg:aspect-[1/1] xl:aspect-[1/1] overflow-hidden">
@@ -70,19 +47,19 @@ const Team: React.FC = () => {
 
                                     <div className="flex justify-start gap-3">
                                         <a
-                                            href="#"
+                                            href={founder.social.twitter}
                                             className="text-[#98A2B3] text-[24px] transition-colors"
                                         >
                                             <FontAwesomeIcon icon={faTwitter} />
                                         </a>
                                         <a
-                                            href="#"
+                                            href={founder.social.linkedin}
                                             className="text-[#98A2B3] text-[24px] transition-colors"
                                         >
                                             <FontAwesomeIcon icon={faLinkedin} />
                                         </a>
                                         <a
-                                            href="#"
+                                            href={founder.social.dribbble}
                                             className="text-[#98A2B3] text-[24px] transition-colors"
                                         >
                                             <FontAwesomeIcon icon={faDribbble} />

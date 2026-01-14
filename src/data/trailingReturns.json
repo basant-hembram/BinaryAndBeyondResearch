@@ -1,0 +1,85 @@
+{
+  "title": "Mutual Fund",
+  "titleHighlight": "Trailing Returns",
+  "periods": ["1 Year", "3 Year", "5 Year", "10 year"],
+  "filters": {
+    "categories": [
+      "Equity: Flexi Cap",
+      "Equity: Large Cap",
+      "Equity: Mid Cap"
+    ],
+    "planTypes": ["Regular", "Direct"],
+    "selectPeriods": ["1 Year", "3 Years", "5 Years", "10 Years"]
+  },
+  "entriesOptions": ["10", "25", "50", "100"],
+  "sampleData": [
+    {
+      "schemeName": "ABSL Flexi Cap Gr Reg",
+      "launchDate": "Aug 14, 1998 12:00:00",
+      "aum": "24,809.74",
+      "ter": "1.66",
+      "year1Rtn": "5.08",
+      "year1Rank": "3",
+      "year3Rtn": "16.61",
+      "year3Rank": "12",
+      "year5Rtn": "16.73",
+      "year5Rank": "9",
+      "year10Rtn": "14.95",
+      "year10Rank": "6",
+      "rtnPercent": "",
+      "rtnRank": "",
+      "sinceLaunch": "21.08"
+    },
+    {
+      "schemeName": "Bandhan Flexi Cap Reg Gr",
+      "launchDate": "Sep 14, 2005 12:00:00",
+      "aum": "7,748.49",
+      "ter": "1.85",
+      "year1Rtn": "4.31",
+      "year1Rank": "5",
+      "year3Rtn": "14.66",
+      "year3Rank": "17",
+      "year5Rtn": "15.69",
+      "year5Rank": "13",
+      "year10Rtn": "11.75",
+      "year10Rank": "17",
+      "rtnPercent": "",
+      "rtnRank": "",
+      "sinceLaunch": "16.34"
+    },
+    {
+      "schemeName": "Canara Robeco Flexi Cap Reg  Gr",
+      "launchDate": "Sep 5, 2003 12:00:00",
+      "aum": "13,927.60",
+      "ter": "1.68",
+      "year1Rtn": "1.84",
+      "year1Rank": "9",
+      "year3Rtn": "14.27",
+      "year3Rank": "20",
+      "year5Rtn": "15.57",
+      "year5Rank": "15",
+      "year10Rtn": "14.34",
+      "year10Rank": "10",
+      "rtnPercent": "",
+      "rtnRank": "",
+      "sinceLaunch": "17.25"
+    },
+    {
+      "schemeName": "360 One Flexi Cap Fund Reg GR",
+      "launchDate": "Jun 4, 2023 12:00:00",
+      "aum": "2,113.42",
+      "ter": "1.99",
+      "year1Rtn": "-4.95",
+      "year1Rank": "31",
+      "year3Rtn": "0",
+      "year3Rank": "",
+      "year5Rtn": "0",
+      "year5Rank": "",
+      "year10Rtn": "0",
+      "year10Rank": "",
+      "rtnPercent": "",
+      "rtnRank": "",
+      "sinceLaunch": "17.63"
+    }
+  ]
+}

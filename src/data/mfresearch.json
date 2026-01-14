@@ -1,0 +1,104 @@
+{
+  "banner": {
+    "title": "MF RESEARCH",
+    "breadcrumbs": [
+      {
+        "label": "HOME",
+        "path": "/"
+      },
+      {
+        "label": "MF RESEARCH",
+        "path": "/mf-research"
+      }
+    ],
+    "backgroundImage": "/images/banner-bg.jpg"
+  },
+  "title": "Mutual Funds",
+  "titleHighlight": "Research Menu",
+  "menuItems": [
+    {
+      "id": "trailing-returns",
+      "label": "Mutual Fund Trailing Returns"
+    },
+    {
+      "id": "annual-returns",
+      "label": "Mutual Fund Annual Returns"
+    },
+    {
+      "id": "best-performing",
+      "label": "Best Performing Funds - AMC Wise"
+    },
+    {
+      "id": "quartile-ranking",
+      "label": "Mutual Fund Quartile Ranking"
+    },
+    {
+      "id": "volatility-ranking",
+      "label": "Mutual Fund Volatility Ranking"
+    },
+    {
+      "id": "category-monitor",
+      "label": "Mutual Fund Category Monitor"
+    },
+    {
+      "id": "sip-returns",
+      "label": "Mutual Fund SIP Returns"
+    },
+    {
+      "id": "ppf-elss",
+      "label": "PPF vs ELSS"
+    },
+    {
+      "id": "funds-calculator",
+      "label": "Mutual Funds Sip Calculator"
+    },
+    {
+      "id": "stp-calculator",
+      "label": "Mutual Fund STP Calculator"
+    },
+    {
+      "id": "top-swp",
+      "label": "Top SWP Funds"
+    },
+    {
+      "id": "lumpsum-returns",
+      "label": "Mutual Fund Lumpsum Returns"
+    },
+    {
+      "id": "category-returns",
+      "label": "Mutual Fund Category Returns"
+    },
+    {
+      "id": "market-capture",
+      "label": "Market Capture Ratio"
+    },
+    {
+      "id": "dividend-fund",
+      "label": "Highest Dividend Paying Fund"
+    },
+    {
+      "id": "category-dividends",
+      "label": "Category Dividends"
+    },
+    {
+      "id": "swp-calculator",
+      "label": "SWP Return Calculator"
+    },
+    {
+      "id": "fund-information",
+      "label": "Mutual Fund Information"
+    },
+    {
+      "id": "lumpsum-calculator",
+      "label": "LumpSum Return Calculator"
+    },
+    {
+      "id": "rolling-category",
+      "label": "Rolling Return Category"
+    },
+    {
+      "id": "rolling-benchmark",
+      "label": "Rolling Return Benchmark"
+    }
+  ]
+}

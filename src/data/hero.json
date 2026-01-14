@@ -1,0 +1,30 @@
+{
+  "title": "Jharkhand's Most Trusted Mutual Fund Distributor",
+  "subtitle": "Finyzer Assets is helping you to setting up the financial without required any finance skills or knowledge before",
+  "ctaButton": {
+    "text": "Request A Call Back",
+    "icon": "arrow-right"
+  },
+  "image": {
+    "src": "/images/office-entrance.jpg",
+    "alt": "Modern Office"
+  },
+  "branding": {
+    "title": "Partnering for Success",
+    "companyName": "Finyzer Assets"
+  },
+  "stats": [
+    {
+      "value": "50k +",
+      "label": "Trusted Client"
+    },
+    {
+      "value": "2.2L +",
+      "label": "Investor Base"
+    }
+  ],
+  "whatsapp": {
+    "number": "919234567890",
+    "url": "https://wa.me/919234567890"
+  }
+}

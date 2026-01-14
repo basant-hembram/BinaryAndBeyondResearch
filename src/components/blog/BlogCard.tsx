@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,12 +19,12 @@ const BlogCard = ({ image, date, title, description, link }: BlogCardProps) => {
         <h3 className="text-[18px] font-semibold text-[#0A1A3A] mb-3">{title}</h3>
         <p className="text-[#575455] text-[14px] mb-4 line-clamp-3">{description}</p>
         <div className="flex items-center justify-between">
-          <a 
-            href={link}
+          <Link 
+            to={link}
             className="inline-flex text-[14px] items-center gap-2 bg-[#01A382] hover:bg-[#018f72] text-white px-4 py-2 rounded-[5px] transition-colors"
           >
             Learn More
-          </a>
+          </Link>
           <div className="w-10 h-10 rounded-full bg-[#E6AF1C] flex items-center justify-center">
             <FontAwesomeIcon icon={faDownload} className="text-white" />
           </div>

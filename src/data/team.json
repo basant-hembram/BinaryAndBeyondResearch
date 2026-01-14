@@ -1,0 +1,63 @@
+{
+  "title": "Our Team",
+  "breadcrumbs": [
+    {
+      "label": "HOME",
+      "path": "/"
+    },
+    {
+      "label": "OUR TEAM",
+      "path": "/our-team"
+    }
+  ],
+  "backgroundImage": "/images/banner-bg.jpg",
+  "sectionTitle": "Meet your",
+  "sectionTitleHighlight": "Finyser Assets Founders",
+  "sectionDescription": "At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.",
+  "founders": [
+    {
+      "id": 1,
+      "name": "Orlando Diggs",
+      "role": "Founder & CEO",
+      "image": "/images/orlando.png",
+      "social": {
+        "twitter": "#",
+        "linkedin": "#",
+        "dribbble": "#"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Phoenix Baker",
+      "role": "Founding Member",
+      "image": "/images/phoenix.png",
+      "social": {
+        "twitter": "#",
+        "linkedin": "#",
+        "dribbble": "#"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Drew Cano",
+      "role": "Founding Member",
+      "image": "/images/drew.png",
+      "social": {
+        "twitter": "#",
+        "linkedin": "#",
+        "dribbble": "#"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Drew Cano",
+      "role": "Founding Member",
+      "image": "/images/drew.png",
+      "social": {
+        "twitter": "#",
+        "linkedin": "#",
+        "dribbble": "#"
+      }
+    }
+  ]
+}

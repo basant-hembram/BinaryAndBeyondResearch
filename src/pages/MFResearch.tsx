@@ -1,17 +1,17 @@
 import Banner from '../components/common/Banner';
 import ResearchSidebar from '../components/mfresearch/ResearchSidebar';
 import TrailingReturns from '../components/mfresearch/TrailingReturns';
+import { data } from '../data';
 
 const MFResearch = () => {
+  const mfresearchData = data.mfresearch;
+  
   return (
     <div className="bg-white">
       <Banner 
-        title="MF RESEARCH"
-        breadcrumbs={[
-          { label: 'HOME', path: '/' },
-          { label: 'MF RESEARCH', path: '/mf-research' }
-        ]}
-       backgroundImage="/images/banner-bg.jpg"
+        title={mfresearchData.banner.title}
+        breadcrumbs={mfresearchData.banner.breadcrumbs}
+        backgroundImage={mfresearchData.banner.backgroundImage}
       />
       <div className="py-16 bg-white">
         <div className="container mx-auto">

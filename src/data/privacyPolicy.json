@@ -1,0 +1,26 @@
+{
+  "title": "Privacy",
+  "titleHighlight": "Policy",
+  "sections": [
+    {
+      "id": "our-commitment",
+      "title": "Our Commitment",
+      "paragraphs": [
+        "Finyzer Assets Fintech Services Private Limited (Finyzer Assets) is a mutual fund distributor (ARN 130604) registered with AMFI and is also engaged in providing other financial and related services. To enable this, Finyzer Assets would need to complete user's Know Your Clients (KYC) in accordance with regulatory/government and legal agencies and authorities; your Personal Data may be provided/verified or updated in this process with respective regulatory agencies as per the regulations applicable at that time. This Privacy Policy outlines how Finyzer Assets collects, uses, disclose, and safeguard your data when you use services or interact with Finyzer Assets through the website or any other platforms.",
+        "Finyzer Assets is governed by the provisions of applicable laws in India including the Information Technology Act, 2000, Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 and and Digital Personal Data Protection Act, 2023 and such other rules/regulations (Collectively hereinafter referred to as \"Applicable Law(s)\"), as amended from time to time, to maintain the privacy of your Personal Data. Finyzer Assets collect and process your Personal Data only to the extent necessary for Finyzer Assets to process your requirement(s) in accordance with such Applicable Laws. In case you choose not to share your Personal Data as required with Finyzer Assets, Finyzer Assets may not be able to provide you the services.",
+        "Finyzer Assets collects and generates various data points about you. Data by which you are identified is termed as \"Personal Data\". Personal Data does not include the Data that is freely available or accessible in the public domain. Your privacy is of utmost importance to Finyzer Assets and the protection of your Personal Data is a key commitment for Finyzer Assets."
+      ]
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "Privacy Policy",
+      "path": "/privacy-policy"
+    }
+  ],
+  "backgroundImage": "/images/terms-banner.jpg"
+}

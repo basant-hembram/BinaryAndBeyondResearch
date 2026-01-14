@@ -1,36 +1,11 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { data } from '../../data';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>();
-
-  const faqs = [
-    {
-      question: "Is there a free trial available?",
-      answer: "Yes, you can try us for free for 30 days. If you want, we'll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
-    },
-    {
-      question: "Can I change my plan later?",
-      answer: "Yes, you can change your plan at any time. We offer flexible plans to suit your needs."
-    },
-    {
-      question: "What is your cancellation policy?",
-      answer: "You can cancel your subscription at any time. We offer a hassle-free cancellation process."
-    },
-    {
-      question: "Can other info be added to an invoice?",
-      answer: "Yes, you can add additional information to your invoices as needed."
-    },
-    {
-      question: "How does billing work?",
-      answer: "We bill on a monthly or annual basis depending on your chosen plan."
-    },
-    {
-      question: "How do I change my account email?",
-      answer: "You can change your account email from your account settings page."
-    }
-  ];
+  const faqData = data.faq;
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -41,12 +16,12 @@ const FAQ = () => {
             <span className="text-[#0A1A3A] font-semibold">Asked Questions</span>
           </h2>
           <p className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[20px]">
-            Everything you need to know about the Finyzer Assets.
+            {faqData.subtitle}
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-1">
-          {faqs.map((faq, index) => (
+          {faqData.faqs.map((faq, index) => (
             <div 
               key={index}
               className="border-b border-gray-200"

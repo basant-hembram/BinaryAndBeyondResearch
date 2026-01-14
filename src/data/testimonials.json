@@ -1,0 +1,47 @@
+{
+  "title": "Testimonials",
+  "breadcrumbs": [
+    {
+      "label": "HOME",
+      "path": "/"
+    },
+    {
+      "label": "TESTIMONIALS",
+      "path": "/testimonials"
+    }
+  ],
+  "backgroundImage": "/images/testimonials-banner.jpg",
+  "sectionTitle": "Don't Just",
+  "sectionTitleHighlight": "Take Our Words",
+  "sectionDescription": "Everything you need to know about the Finyzer Assets.",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Ankita Jain",
+      "role": "Co-Founder of Womenia",
+      "text": "We love LandingFolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      "image": "/images/ankita-jain.png"
+    },
+    {
+      "id": 2,
+      "name": "Rahul Sharma",
+      "role": "Software Engineer",
+      "text": "We love LandingFolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      "image": "/images/rahul-sharma.png"
+    },
+    {
+      "id": 3,
+      "name": "Sam John",
+      "role": "Business Owner",
+      "text": "We love LandingFolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      "image": "/images/sam-john.png"
+    },
+    {
+      "id": 4,
+      "name": "Mohan Khanna",
+      "role": "Sales Manager",
+      "text": "We love LandingFolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+      "image": "/images/mohan-khanna.png"
+    }
+  ]
+}

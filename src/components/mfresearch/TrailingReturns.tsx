@@ -1,95 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { data } from '../../data';
 
-interface FundData {
-    schemeName: string;
-    launchDate: string;
-    aum: string;
-    ter: string;
-    year1Rtn: string;
-    year1Rank: string;
-    year3Rtn: string;
-    year3Rank: string;
-    year5Rtn: string;
-    year5Rank: string;
-    year10Rtn: string;
-    year10Rank: string;
-    rtnPercent: string;
-    rtnRank: string;
-    sinceLaunch: string;
-}
-
-const sampleData: FundData[] = [
-    {
-        schemeName: 'ABSL Flexi Cap Gr Reg',
-        launchDate: 'Aug 14, 1998 12:00:00',
-        aum: '24,809.74',
-        ter: '1.66',
-        year1Rtn: '5.08',
-        year1Rank: '3',
-        year3Rtn: '16.61',
-        year3Rank: '12',
-        year5Rtn: '16.73',
-        year5Rank: '9',
-        year10Rtn: '14.95',
-        year10Rank: '6',
-        rtnPercent: '',
-        rtnRank: '',
-        sinceLaunch: '21.08'
-    },
-    {
-        schemeName: 'Bandhan Flexi Cap Reg Gr',
-        launchDate: 'Sep 14, 2005 12:00:00',
-        aum: '7,748.49',
-        ter: '1.85',
-        year1Rtn: '4.31',
-        year1Rank: '5',
-        year3Rtn: '14.66',
-        year3Rank: '17',
-        year5Rtn: '15.69',
-        year5Rank: '13',
-        year10Rtn: '11.75',
-        year10Rank: '17',
-        rtnPercent: '',
-        rtnRank: '',
-        sinceLaunch: '16.34'
-    },
-    {
-        schemeName: 'Canara Robeco Flexi Cap Reg  Gr',
-        launchDate: 'Sep 5, 2003 12:00:00',
-        aum: '13,927.60',
-        ter: '1.68',
-        year1Rtn: '1.84',
-        year1Rank: '9',
-        year3Rtn: '14.27',
-        year3Rank: '20',
-        year5Rtn: '15.57',
-        year5Rank: '15',
-        year10Rtn: '14.34',
-        year10Rank: '10',
-        rtnPercent: '',
-        rtnRank: '',
-        sinceLaunch: '17.25'
-    },
-    {
-        schemeName: '360 One Flexi Cap Fund Reg GR',
-        launchDate: 'Jun 4, 2023 12:00:00',
-        aum: '2,113.42',
-        ter: '1.99',
-        year1Rtn: '-4.95',
-        year1Rank: '31',
-        year3Rtn: '0',
-        year3Rank: '',
-        year5Rtn: '0',
-        year5Rank: '',
-        year10Rtn: '0',
-        year10Rank: '',
-        rtnPercent: '',
-        rtnRank: '',
-        sinceLaunch: '17.63'
-    }
-];
+const { trailingReturns: trailingReturnsData } = data;
 
 const TrailingReturns = () => {
     const [selectedPeriod, setSelectedPeriod] = useState('1 Year');
@@ -97,13 +11,11 @@ const TrailingReturns = () => {
     const [showEntries, setShowEntries] = useState('10');
     const [currentPage, setCurrentPage] = useState(1);
 
-    const periods = ['1 Year', '3 Year', '5 Year', '10 year'];
-
     // Generate more sample data for testing
     const allData = useMemo(() => {
         const multipliedData = [];
         for (let i = 0; i < 20; i++) {
-            multipliedData.push(...sampleData);
+            multipliedData.push(...trailingReturnsData.sampleData);
         }
         return multipliedData;
     }, []);
@@ -181,8 +93,8 @@ const TrailingReturns = () => {
             </button>
         );
 
-        // Second page (if not current)
-        if (totalPages > 1) {
+        // Second page
+        if (totalPages > 1 && totalPages !== 2) {
             buttons.push(
                 <button
                     key={2}
@@ -197,8 +109,8 @@ const TrailingReturns = () => {
             );
         }
 
-        // Third page (if not current)
-        if (totalPages > 2) {
+        // Third page
+        if (totalPages > 2 && totalPages !== 3) {
             buttons.push(
                 <button
                     key={3}
@@ -231,8 +143,8 @@ const TrailingReturns = () => {
             );
         }
 
-        // Second to last page
-        if (totalPages > 3) {
+        // Second to last page (only if it's not already shown above)
+        if (totalPages > 3 && totalPages - 1 > 3) {
             buttons.push(
                 <button
                     key={totalPages - 1}
@@ -247,8 +159,8 @@ const TrailingReturns = () => {
             );
         }
 
-        // Last page
-        if (totalPages > 1) {
+        // Last page (only if more than 1 page and last page wasn't already shown)
+        if (totalPages > 1 && totalPages > 3) {
             buttons.push(
                 <button
                     key={totalPages}
@@ -259,6 +171,49 @@ const TrailingReturns = () => {
                     }`}
                 >
                     {totalPages}
+                </button>
+            );
+        }
+
+        // Handle special cases for 2 and 3 total pages
+        if (totalPages === 2) {
+            buttons.push(
+                <button
+                    key={2}
+                    onClick={() => setCurrentPage(2)}
+                    className={`px-3 py-2 text-sm rounded ${currentPage === 2
+                        ? 'bg-[#01A382] text-white'
+                        : 'text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                    2
+                </button>
+            );
+        }
+
+        if (totalPages === 3) {
+            buttons.push(
+                <button
+                    key={2}
+                    onClick={() => setCurrentPage(2)}
+                    className={`px-3 py-2 text-sm rounded ${currentPage === 2
+                        ? 'bg-[#01A382] text-white'
+                        : 'text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                    2
+                </button>
+            );
+            buttons.push(
+                <button
+                    key={3}
+                    onClick={() => setCurrentPage(3)}
+                    className={`px-3 py-2 text-sm rounded ${currentPage === 3
+                        ? 'bg-[#01A382] text-white'
+                        : 'text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                    3
                 </button>
             );
         }
@@ -286,7 +241,7 @@ const TrailingReturns = () => {
             {/* Header with Search */}
             <div className="flex flex-col lg:flex-row justify-between items-center mb-8">
                 <h1 className="text-[26px] lg:text-[32px] font-normal text-[#0A1A3A]">
-                    Mutual Fund <span className="text-[#E6AF1C] font-semibold">Trailing Returns</span>
+                    {trailingReturnsData.title} <span className="text-[#E6AF1C] font-semibold">{trailingReturnsData.titleHighlight}</span>
                 </h1>
                 <div className="relative w-full lg:w-80 mt-[24px] lg:mt-0">
                     <svg className="absolute right-3 left-auto xl:right:auto xl:left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -308,27 +263,27 @@ const TrailingReturns = () => {
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Select Category</label>
                     <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
-                        <option>Equity: Flexi Cap</option>
-                        <option>Equity: Large Cap</option>
-                        <option>Equity: Mid Cap</option>
+                        {trailingReturnsData.filters.categories.map((category, index) => (
+                            <option key={index}>{category}</option>
+                        ))}
                     </select>
                 </div>
 
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Plan Type</label>
                     <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
-                        <option>Regular</option>
-                        <option>Direct</option>
+                        {trailingReturnsData.filters.planTypes.map((planType, index) => (
+                            <option key={index}>{planType}</option>
+                        ))}
                     </select>
                 </div>
 
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Select Period</label>
                     <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
-                        <option>1 Year</option>
-                        <option>3 Years</option>
-                        <option>5 Years</option>
-                        <option>10 Years</option>
+                        {trailingReturnsData.filters.selectPeriods.map((period, index) => (
+                            <option key={index}>{period}</option>
+                        ))}
                     </select>
                 </div>
 
@@ -353,16 +308,15 @@ const TrailingReturns = () => {
                         onChange={(e) => setShowEntries(e.target.value)}
                         className="px-3 py-1 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
                     >
-                        <option>10</option>
-                        <option>25</option>
-                        <option>50</option>
-                        <option>100</option>
+                        {trailingReturnsData.entriesOptions.map((option, index) => (
+                            <option key={index}>{option}</option>
+                        ))}
                     </select>
                     <span className="text-sm text-gray-600">Entries</span>
                 </div>
 
                 <div className="flex gap-8">
-                    {periods.map((period) => (
+                    {trailingReturnsData.periods.map((period) => (
                         <button
                             key={period}
                             onClick={() => setSelectedPeriod(period)}

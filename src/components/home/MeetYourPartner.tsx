@@ -1,27 +1,25 @@
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { data } from '../../data';
+
+const { home: homeData } = data;
 
 const MeetYourPartner = () => {
-  const features = [
-    "21+ Years Of Financial Expertise",
-    "Helped 200 Families Secure Their Future",
-    "Specialist In SIP, Mutual Funds & Family Portfolio Planning",
-    "Vision \"Har Ghar Me SIP, Har Parivaar Financially Strong\""
-  ];
+  const { meetYourPartner } = homeData;
 
   return (
     <section className="py-16 md:py-24 bg-[#0A1A3A] relative overflow-hidden">
     {/* Top Left Circle */}
       <img 
-        src="/images/partner-top-left-circle.png" 
+        src={meetYourPartner.decorativeImages.topLeft} 
         alt="" 
         className="absolute left-0 top-0 w-64 h-64 pointer-events-none"
       />
 
       {/* Bottom Right Circle */}
       <img 
-        src="/images/partner-bottom-right-circle.png" 
+        src={meetYourPartner.decorativeImages.bottomRight} 
         alt="" 
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
@@ -30,14 +28,14 @@ const MeetYourPartner = () => {
           {/* Left - Content */}
           <div className="">
             <div>
-              <p className="text-white text-[18px] lg:text-[20px] xl:text-[22px] mb-2">Meet Your Health Coach</p>
+              <p className="text-white text-[18px] lg:text-[20px] xl:text-[22px] mb-2">{meetYourPartner.subtitle}</p>
               <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#E6AF1C] font-semibold mb-[25px] lg:mb-[34px] xl:mb-[25px]">
-                Rajesh Choudhary
+                {meetYourPartner.name}
               </h2>
             </div>
 
             <div className="space-y-4">
-              {features.map((feature, index) => (
+              {meetYourPartner.features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <span className="text-white text-[16px] lg:text-[18px] xl:text-[20px]">•</span>
                   <p className="text-white text-[16px] lg:text-[18px] xl:text-[20px]">{feature}</p>
@@ -50,7 +48,7 @@ const MeetYourPartner = () => {
                 size="lg" 
                 className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
               >
-                About Us
+                {meetYourPartner.buttonText}
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
             </div>
@@ -60,8 +58,8 @@ const MeetYourPartner = () => {
           <div className="relative">
             <div className="rounded-[40px] overflow-hidden shadow-2xl">
               <img 
-                src="/images/founder.png" 
-                alt="Rajesh Choudhary" 
+                src={meetYourPartner.image} 
+                alt={meetYourPartner.name} 
                 className="w-full h-full object-cover"
               />
             </div>

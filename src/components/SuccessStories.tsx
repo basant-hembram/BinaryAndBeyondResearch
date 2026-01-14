@@ -1,33 +1,9 @@
 import { Card, CardContent } from './ui/card';
 import { Star, TrendingUp } from 'lucide-react';
+import { data } from '../data';
 
 const SuccessStories = () => {
-  const investors = [
-    {
-      name: "Amit Kumar",
-      location: "Ranchi",
-      returns: "45%",
-      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&auto=format&fit=crop"
-    },
-    {
-      name: "Ravi Tiwari",
-      location: "Jamshedpur",
-      returns: "38%",
-      image: "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?w=400&auto=format&fit=crop"
-    },
-    {
-      name: "Vikram Singh",
-      location: "Dhanbad",
-      returns: "52%",
-      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=400&auto=format&fit=crop"
-    },
-    {
-      name: "Rajiv Kumar",
-      location: "Bokaro",
-      returns: "41%",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop"
-    }
-  ];
+  const { successStories } = data.home;
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -37,7 +13,7 @@ const SuccessStories = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-[#0A1A3A] to-[#162d52] rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]">
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop" 
+                src={successStories.mainImage}
                 alt="Success Story" 
                 className="w-full h-full object-cover opacity-80"
               />
@@ -49,8 +25,8 @@ const SuccessStories = () => {
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0A1A3A]">2,500+</p>
-                    <p className="text-gray-600">Success Stories</p>
+                    <p className="text-3xl font-bold text-[#0A1A3A]">{successStories.stats.count}</p>
+                    <p className="text-gray-600">{successStories.stats.label}</p>
                   </div>
                 </div>
               </div>
@@ -60,14 +36,14 @@ const SuccessStories = () => {
           {/* Right - Content */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0A1A3A] mb-4">
-              <span className="text-[#E6AF1C]">Success Stories</span> of Our Investors
+              {successStories.title} <span className="text-[#E6AF1C]">{successStories.titleHighlight}</span> {successStories.subtitle}
             </h2>
             <p className="text-gray-600 mb-8">
-              Our investors have achieved remarkable returns through strategic planning and consistent investing.
+              {successStories.description}
             </p>
 
             <div className="grid grid-cols-2 gap-4">
-              {investors.map((investor, index) => (
+              {successStories.investors.map((investor, index) => (
                 <Card 
                   key={index}
                   className="hover:shadow-lg transition-all hover:border-[#E6AF1C] border-2"

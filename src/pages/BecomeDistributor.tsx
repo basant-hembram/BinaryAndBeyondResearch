@@ -8,18 +8,18 @@ import CareerSection from '../components/become-distributor/CareerSection';
 import OfferingsSection from '../components/become-distributor/OfferingsSection';
 import StepsSection from '../components/become-distributor/StepsSection';
 import ComplianceSection from '../components/become-distributor/ComplianceSection';
+import { data } from '../data';
 
 const BecomeDistributor = () => {
+  const distributorData = data.becomeDistributor;
+  
   return (
     <div className="bg-white">
       <div className='block lg:hidden'>
         <Banner
-          title="MF RESEARCH"
-          breadcrumbs={[
-            { label: 'HOME', path: '/' },
-            { label: 'MF RESEARCH', path: '/mf-research' }
-          ]}
-          backgroundImage="/images/banner-bg.jpg"
+          title={distributorData.banner.title}
+          breadcrumbs={distributorData.banner.breadcrumbs}
+          backgroundImage={distributorData.banner.backgroundImage}
         />
       </div>
       <HeroSection />

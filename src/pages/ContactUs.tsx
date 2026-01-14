@@ -2,17 +2,17 @@ import Banner from '../components/common/Banner';
 import ContactForm from '../components/contact-us/ContactForm';
 import ContactInfo from '../components/contact-us/ContactInfo';
 import ContactMap from '../components/contact-us/ContactMap';
+import { data } from '../data';
 
 const ContactUs = () => {
+  const contactData = data.contact;
+
   return (
     <div className="bg-white">
       <Banner 
-        title="We're here! Let's have a talk"
-        breadcrumbs={[
-          { label: 'Home', path: '/' },
-          { label: 'Contact Us', path: '/contact' }
-        ]}
-        backgroundImage="/images/contact-banner.jpg"
+        title={contactData.title}
+        breadcrumbs={contactData.breadcrumbs}
+        backgroundImage={contactData.backgroundImage}
       />
       
       {/* Contact Form and Info Section */}

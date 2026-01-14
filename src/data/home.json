@@ -1,0 +1,260 @@
+{
+  "financialProducts": {
+    "title": "Our Suite Of",
+    "titleHighlight": "Financial Products",
+    "description": "At Finyzer Assets, we offer a diverse array of innovative financial products, from advanced investment tools to comprehensive portfolio management solutions. Our products empower distributors to deliver exceptional value to their clients and drive growth.",
+    "buttonText": "Explore Product",
+    "products": [
+      {
+        "icon": "faHandHoldingDollar",
+        "title": "Mutual Fund"
+      },
+      {
+        "icon": "faBuildingColumns",
+        "title": "Corporate FD"
+      },
+      {
+        "icon": "faArrowUpRightDots",
+        "title": "Demat-trading"
+      },
+      {
+        "icon": "faPeopleRoof",
+        "title": "Term Insurance"
+      },
+      {
+        "icon": "faBriefcaseMedical",
+        "title": "Health Insurance"
+      },
+      {
+        "icon": "faCarBurst",
+        "title": "Motor Insurance"
+      },
+      {
+        "icon": "faCoins",
+        "title": "Loan Against Securities"
+      }
+    ]
+  },
+  "founders": {
+    "title": "Meet your",
+    "titleHighlight": "Finyzer Assets Founders",
+    "description": "At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.",
+    "buttonText": "Our Team",
+    "foundersList": [
+      {
+        "name": "Orlando Diggs",
+        "role": "Founder & CEO",
+        "image": "/images/orlando.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      },
+      {
+        "name": "Phoenix Baker",
+        "role": "Founding Member",
+        "image": "/images/phoenix.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      },
+      {
+        "name": "Drew Cano",
+        "role": "Founding Member",
+        "image": "/images/drew.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      }
+    ]
+  },
+  "mutualFundResources": {
+    "title": "Useful Mutual Fund",
+    "titleHighlight": "Information & Resources",
+    "description": "Get all the information you need from a single platform.",
+    "resources": [
+      {
+        "id": 1,
+        "icon": "faArrowUpRightDots",
+        "title": "Mutual Fund Trailing Returns",
+        "description": "Find out the best performing schemes across categories and time frame."
+      },
+      {
+        "id": 2,
+        "icon": "faHandHoldingDollar",
+        "title": "Mutual Fund Volatility Ranking",
+        "description": "Find out the risk quotient of every scheme here. Learn More"
+      },
+      {
+        "id": 3,
+        "icon": "faSackDollar",
+        "title": "Mutual Fund Quartile Ranking",
+        "description": "Check the relative performance of the schemes here."
+      },
+      {
+        "id": 4,
+        "icon": "faCoins",
+        "title": "Rolling Return vs Category",
+        "description": "Find out the consistency of a fund performance over here."
+      },
+      {
+        "id": 5,
+        "icon": "faMoneyBillTrendUp",
+        "title": "SIP Return Calculator",
+        "description": "What has an SIP in a particular scheme actually delivered for you. Check here."
+      },
+      {
+        "id": 6,
+        "icon": "faMoneyBillTransfer",
+        "title": "SWP Return Calculator",
+        "description": "How much is left in a scheme after taking out regular withdrawals."
+      }
+    ]
+  },
+  "sipCalculators": {
+    "title": "Check the various",
+    "titleHighlight": "calculators",
+    "calculators": [
+      {
+        "id": 1,
+        "icon": "faCalculator",
+        "title": "SIP Calculator"
+      },
+      {
+        "id": 2,
+        "icon": "faChartLine",
+        "title": "Step-Up SIP Calculator"
+      },
+      {
+        "id": 3,
+        "icon": "faCamera",
+        "title": "Lumpsum Calculator"
+      },
+      {
+        "id": 4,
+        "icon": "faSackDollar",
+        "title": "Goal Planner"
+      },
+      {
+        "id": 5,
+        "icon": "faUmbrella",
+        "title": "Retirement Planner"
+      },
+      {
+        "id": 6,
+        "icon": "faMoneyBill",
+        "title": "Financial Planning"
+      }
+    ]
+  },
+  "meetYourPartner": {
+    "subtitle": "Meet Your Health Coach",
+    "name": "Rajesh Choudhary",
+    "features": [
+      "21+ Years Of Financial Expertise",
+      "Helped 200 Families Secure Their Future",
+      "Specialist In SIP, Mutual Funds & Family Portfolio Planning",
+      "Vision \"Har Ghar Me SIP, Har Parivaar Financially Strong\""
+    ],
+    "buttonText": "About Us",
+    "image": "/images/founder.png",
+    "decorativeImages": {
+      "topLeft": "/images/partner-top-left-circle.png",
+      "bottomRight": "/images/partner-bottom-right-circle.png"
+    }
+  },
+  "testimonials": {
+    "title": "Don't Just",
+    "titleHighlight": "Take Our Words",
+    "subtitle": "Everything you need to know about the Finyzer Assets.",
+    "testimonialsList": [
+      {
+        "name": "Ankita Jain",
+        "role": "Co-Founder of Womenia",
+        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+        "image": "/images/ankita-jain.png"
+      },
+      {
+        "name": "Rahul Sharma",
+        "role": "Software Engineer",
+        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+        "image": "/images/rahul-sharma.png"
+      },
+      {
+        "name": "Ankita Jain",
+        "role": "Co-Founder of Womenia",
+        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+        "image": "/images/ankita-jain.png"
+      },
+      {
+        "name": "Rahul Sharma",
+        "role": "Software Engineer",
+        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+        "image": "/images/rahul-sharma.png"
+      }
+    ],
+    "decorativeImages": {
+      "topLeft": "/images/top-left-circle.png",
+      "bottomRight": "/images/bottom-right-circle.png"
+    }
+  },
+  "whyInvestors": {
+    "title": "Why investors trust",
+    "titleHighlight": "Finyzer Assets",
+    "subtitle": "Finyser Assets is India 's trusted Mutual fund Distributor",
+    "reasons": [
+      "7+ Years of experience in wealth management",
+      "SIP Specialist - Jharkhand Mutual Fund Distributor",
+      "200+ Happy Families",
+      "Dedicated Office at Sector-4 Bokaro, Jharkhand",
+      "105 Crore+ AUM under management"
+    ],
+    "decorativeImages": {
+      "topLeft": "/images/top-left-circle.png",
+      "bottomRight": "/images/bottom-right-circle.png"
+    }
+  },
+  "successStories": {
+    "title": "Jharkhand's Investors Are",
+    "titleHighlight": "Growing Their Wealth",
+    "subtitle": "Successfully",
+    "description": "Real results. Real people. Discover how ordinary investors from Jharkhand achieved extraordinary wealth through strategic mutual fund investments.",
+    "buttonText": "Start Your Success Story Today",
+    "stats": {
+      "count": "2,500+",
+      "label": "Success Stories"
+    },
+    "mainImage": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop",
+    "investors": [
+      {
+        "name": "Amit Kumar",
+        "location": "Ranchi",
+        "returns": "45%",
+        "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&auto=format&fit=crop"
+      },
+      {
+        "name": "Ravi Tiwari",
+        "location": "Jamshedpur",
+        "returns": "38%",
+        "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?w=400&auto=format&fit=crop"
+      },
+      {
+        "name": "Vikram Singh",
+        "location": "Dhanbad",
+        "returns": "52%",
+        "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=400&auto=format&fit=crop"
+      },
+      {
+        "name": "Rajiv Kumar",
+        "location": "Bokaro",
+        "returns": "41%",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop"
+      }
+    ]
+  }
+}

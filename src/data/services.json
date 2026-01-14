@@ -1,0 +1,144 @@
+{
+  "title": "Our Suite Of Financial Products",
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "Services",
+      "path": "/services"
+    }
+  ],
+  "backgroundImage": "/images/banner-bg.jpg",
+  "serviceCategories": [
+    {
+      "id": "mutual-fund",
+      "name": "Mutual fund",
+      "icon": "faHandHoldingDollar",
+      "expandable": true,
+      "items": [
+        {
+          "name": "Sip planning",
+          "id": "sip-planning",
+          "icon": "faCalendarCheck"
+        },
+        {
+          "name": "Tax Saving",
+          "id": "tax-saving",
+          "icon": "faPiggyBank"
+        },
+        {
+          "name": "Lumpsum Investment",
+          "id": "lumpsum-investment",
+          "icon": "faSackDollar"
+        },
+        {
+          "name": "Portfolio Review",
+          "id": "portfolio-review",
+          "icon": "faMagnifyingGlassDollar"
+        },
+        {
+          "name": "Goal based investing",
+          "id": "goal-based-investing",
+          "icon": "faBullseye"
+        }
+      ]
+    },
+    {
+      "id": "insurance",
+      "name": "Insurance",
+      "icon": "faHeartPulse",
+      "expandable": true,
+      "items": [
+        {
+          "name": "Health Insurance",
+          "id": "health-insurance",
+          "icon": "faBriefcaseMedical"
+        },
+        {
+          "name": "Motor Insurance",
+          "id": "motor-insurance",
+          "icon": "faCarBurst"
+        },
+        {
+          "name": "Life Insurance",
+          "id": "life-insurance",
+          "icon": "faUserInjured"
+        },
+        {
+          "name": "Term Insurance",
+          "id": "term-insurance",
+          "icon": "faPeopleRoof"
+        }
+      ]
+    },
+    {
+      "id": "loan-against-securities",
+      "name": "Loan against securities",
+      "icon": "faCoins",
+      "expandable": false
+    },
+    {
+      "id": "corporate-fd",
+      "name": "Corporate FD",
+      "icon": "faBriefcaseMedical",
+      "expandable": false
+    },
+    {
+      "id": "retirement-planning",
+      "name": "Retirement Planning",
+      "icon": "faPersonCane",
+      "expandable": false
+    },
+    {
+      "id": "child-education",
+      "name": "Child Education Planning",
+      "icon": "faUserGraduate",
+      "expandable": false
+    }
+  ],
+  "serviceContent": {
+    "mutual-fund": {
+      "title": "Mutual Fund",
+      "description": [
+        "Welcome to the gateway of financial prosperity! Dive into the realm of mutual funds where your dreams meet opportunity. Our curated selection of mutual funds isn't just about investing; it's about crafting your future.",
+        "Whether you're a seasoned investor or just starting your journey towards wealth creation, our platform is your compass. Let's embark together on a path of growth, security, and limitless possibilities. Start investing, start thriving.",
+        "Welcome to a realm where investment isn't just about numbers; it's about narratives. At our mutual fund company, we don't just offer opportunities; we curate stories of success, weaving together the threads of innovation, expertise, and vision. Invest with us, and you're not just investing in funds; you're investing in a partnership dedicated to sculpting your financial legacy.",
+        "Join us, where your aspirations meet our commitment to redefine the very fabric of wealth creation."
+      ]
+    }
+  },
+  "benefits": [
+    {
+      "icon": "faBullseye",
+      "title": "Achieve Your Financial Goals",
+      "description": "Our wealth management services are designed to help you achieve your specific financial goals, whether it's saving for retirement, funding education, buying a home, or growing your wealth",
+      "color": "bg-[#E6AF1C]"
+    },
+    {
+      "icon": "faSackDollar",
+      "title": "Optimal Returns",
+      "description": "Benefit from our team's expertise in crafting personalized investment strategies tailored to your unique goals and risk profile. Maximize your returns while managing risk effectively.",
+      "color": "bg-[#E6AF1C]"
+    },
+    {
+      "icon": "faHandshake",
+      "title": "Stronger Relationships",
+      "description": "Our wealth managers prioritize building lasting relationships with clients. Enjoy personalized attention, open communication,",
+      "color": "bg-[#E6AF1C]"
+    },
+    {
+      "icon": "faMoneyBillTransfer",
+      "title": "One Platform For All",
+      "description": "Enjoy seamless & easy access to comprehensive suite of wealth management services through our intuitive website. Experience the convenience of managing your finances on the go & track all.",
+      "color": "bg-[#E6AF1C]"
+    }
+  ],
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "subtitle": "Your Trusted",
+    "subtitleLine2": "Partner to Rely On",
+    "description": "Our commitment to excellence, cutting-edge technology, and personalized support ensures that you have a reliable ally in navigating the complexities of the financial world."
+  }
+}

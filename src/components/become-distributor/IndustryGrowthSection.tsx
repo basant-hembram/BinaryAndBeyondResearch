@@ -2,18 +2,16 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandHoldingUsd, faUserGroup, faSackDollar } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
+import { data } from '../../data';
 
-const growthData = [
-  { month: 'Apr', aum: 8, folios: 20, investors: 10 },
-  { month: 'May', aum: 13, folios: 22, investors: 9 },
-  { month: 'Jun', aum: 15, folios: 24, investors: 10 },
-  { month: 'Jul', aum: 18, folios: 27, investors: 10 },
-  { month: 'Aug', aum: 23, folios: 27, investors: 10 },
-  { month: 'Sep', aum: 28, folios: 26, investors: 11 },
-  { month: 'Oct', aum: 34, folios: 24, investors: 12 },
-];
+const iconMap: Record<string, any> = {
+  faHandHoldingUsd,
+  faUserGroup,
+  faSackDollar,
+};
 
 const IndustryGrowthSection = () => {
+  const { industryGrowth } = data.becomeDistributor;
   const [isXlScreen, setIsXlScreen] = useState(false);
 
   useEffect(() => {
@@ -32,39 +30,34 @@ const IndustryGrowthSection = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-normal text-[#0A1A3A] mb-4">
-              Mutual fund
+              {industryGrowth.title}
               <br />
-              <span className="text-[#E6AF1C] font-semibold">Industry Growth story</span>
+              <span className="text-[#E6AF1C] font-semibold">{industryGrowth.titleHighlight}</span>
             </h2>
 
             <p className="text-[#575455] text-[16px] xl:text-[18px] mb-8">
-              The Indian Mutual Fund Industry AUM has grown from Rs 1 Lakh crore
-              in May 2004 to Rs 75.36 lakh Cr in July 2025 translating into a growth
-              of more than 75 times in last 2 decades.
+              {industryGrowth.description}
             </p>
 
             <div className="flex flex-col lg:flex-row gap-6">
-              <div className='text-center lg:text-start'>
-                <FontAwesomeIcon icon={faHandHoldingUsd} className="text-[#0A1A3A] text-2xl mb-2" />
-                <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">₹ Rs 75.36 lakh Cr</div>
-                <p className="text-[#575455] text-[14px]">Mutual Fund AUM</p>
-              </div>
-              <div className='text-center lg:text-start pt-[30px] lg:px-[30px] lg:pt-[0] border-t lg:border-t-0 lg:border-l border-[#D9D9D9]'>
-                <FontAwesomeIcon icon={faUserGroup} className="text-[#0A1A3A] text-2xl mb-2" />
-                <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">₹ 24.57 Cr.</div>
-                <p className="text-[#575455] text-[14px]">MF Folios</p>
-              </div>
-              <div className='text-center lg:text-start pt-[30px] lg:px-[30px] lg:pt-[0] border-t lg:border-t-0 lg:border-l border-[#D9D9D9]'>
-                <FontAwesomeIcon icon={faSackDollar} className="text-[#0A1A3A] text-2xl mb-2" />
-                <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">₹ 5.59 Cr.</div>
-                <p className="text-[#575455] text-[14px]">Unique Investors</p>
-              </div>
+              {industryGrowth.stats.map((stat, index) => (
+                <div 
+                  key={index}
+                  className={`text-center lg:text-start ${
+                    index > 0 ? 'pt-[30px] lg:px-[30px] lg:pt-[0] border-t lg:border-t-0 lg:border-l border-[#D9D9D9]' : ''
+                  }`}
+                >
+                  <FontAwesomeIcon icon={iconMap[stat.icon]} className="text-[#0A1A3A] text-2xl mb-2" />
+                  <div className="text-[24px] font-normal text-[#E6AF1C] mb-1">{stat.value}</div>
+                  <p className="text-[#575455] text-[14px]">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="">
             <ResponsiveContainer width="100%" height={450}>
-              <BarChart data={growthData} barCategoryGap="20%" barGap={1} margin={{ bottom: 20, left: -20 }}>
+              <BarChart data={industryGrowth.chartData} barCategoryGap="20%" barGap={1} margin={{ bottom: 20, left: -20 }}>
                 <CartesianGrid stroke="#E6AF1C" vertical={false} />
                 <XAxis dataKey="month" axisLine={false} tick={{ fontSize: 14, fill: '#64748B' }} tickMargin={25} />
                 <YAxis axisLine={false} ticks={[0, 10, 20, 30, 40, 50, 60, 70]} domain={[0, 70]} tick={{ fontSize: 14, fill: '#64748B' }} width={45} />

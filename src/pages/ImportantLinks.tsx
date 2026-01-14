@@ -6,24 +6,24 @@ import EmailMobileUpdate from '../components/important-links/EmailMobileUpdate';
 import NomineeServices from '../components/important-links/NomineeServices';
 import Banner from '@/components/common/Banner';
 import HelpSection from '../components/important-links/HelpSection';
+import { data } from '../data';
 
 const ImportantLinks: React.FC = () => {
+    const importantLinksData = data.importantLinks;
+
     return (
         <div className="bg-white">
             <Banner
-                title="Important Links"
-                breadcrumbs={[
-                    { label: 'Home', path: '/' },
-                    { label: 'Important Links', path: '/important-links' }
-                ]}
-                backgroundImage="/images/terms-banner.jpg"
+                title={importantLinksData.title}
+                breadcrumbs={importantLinksData.breadcrumbs}
+                backgroundImage={importantLinksData.backgroundImage}
             />
 
             {/* Main Content */}
             <div className="mb-8">
                 <div className="container mx-auto pt-16">
                     <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">
-                        Important <span className="text-[#E6AF1C] font-semibold">Links</span>
+                        {importantLinksData.titlePrefix} <span className="text-[#E6AF1C] font-semibold">{importantLinksData.titleHighlight}</span>
                     </h2>
                 </div>
             </div>

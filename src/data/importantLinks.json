@@ -1,0 +1,117 @@
+{
+  "title": "Important Links",
+  "titleHighlight": "Links",
+  "titlePrefix": "Important",
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "Important Links",
+      "path": "/important-links"
+    }
+  ],
+  "backgroundImage": "/images/terms-banner.jpg",
+  "aadharBasedKyc": {
+    "title": "Aadhar Based KYC",
+    "links": [
+      {
+        "label": "KYC Validation Aadhar CVL:",
+        "url": "https://www.validate.cvlindia.com/CVLKRAVerification_V1/",
+        "displayUrl": "www.validate.cvlindia.com/CVLKRAVerification_V1/"
+      }
+    ]
+  },
+  "emailMobileUpdate": {
+    "title": "Email/Mobile Number Update",
+    "columns": [
+      {
+        "links": [
+          {
+            "label": "KYC MAIL MOBILE UPDATION KARVY",
+            "url": "https://www.camstar.com/PortalStaticUpdate.aspx",
+            "displayUrl": "www.camstar.com/PortalStaticUpdate.aspx"
+          },
+          {
+            "label": "MAIL MOBILE MODIFICATION CAMS",
+            "url": "https://www.camsonline.com/Investors/Investor-Service-requests/GoGreen/Update-email",
+            "displayUrl": "www.camsonline.com/Investors/Investor-Service-requests/GoGreen/Update-email"
+          },
+          {
+            "label": "MAIL MOB MODIFICATION KFINTECH",
+            "url": "https://www.mfs.kfintech.com/investor/Transact/ChangeEmailMail",
+            "displayUrl": "www.mfs.kfintech.com/investor/Transact/ChangeEmailMail"
+          }
+        ]
+      },
+      {
+        "links": [
+          {
+            "label": "KYC MAIL MOBILE UPDATION CAMS",
+            "url": "https://www.camstar.com/PortalStaticUpdate.aspx",
+            "displayUrl": "www.camstar.com/PortalStaticUpdate.aspx"
+          },
+          {
+            "label": "KYC MAIL MOBILE UPDATION CVLKRA",
+            "url": "https://www.validate.cvlindia.com/CVLKRAVerification_V1/",
+            "displayUrl": "www.validate.cvlindia.com/CVLKRAVerification_V1/"
+          }
+        ]
+      }
+    ]
+  },
+  "nonAadharKycUpdate": {
+    "title": "Non Aadhar KYC Update",
+    "links": [
+      {
+        "label": "KYC Validation Non Aadhar:",
+        "url": "https://www.mutualfund.adityabirlacapital.com/campaign/modification-of-kyc",
+        "displayUrl": "www.mutualfund.adityabirlacapital.com/campaign/modification-of-kyc"
+      },
+      {
+        "label": "KYC Validation Non Aadhar:",
+        "url": "https://www.mutualfund.adityabirlacapital.com/campaign/modification-of-kyc",
+        "displayUrl": "www.mutualfund.adityabirlacapital.com/campaign/modification-of-kyc"
+      }
+    ]
+  },
+  "nomineeServices": {
+    "title": "Nominee & Pan Services",
+    "description": "Nominee update and pan and aadhar linking",
+    "links": [
+      {
+        "label": "NOMINEE UPDATATION KFINTECH",
+        "url": "https://www.mfs.kfintech.com/investor/General/NomineeUpdation",
+        "displayUrl": "www.mfs.kfintech.com/investor/General/NomineeUpdation"
+      },
+      {
+        "label": "PAN-AADHAR LINK VERIFICATION",
+        "url": "https://www.camstar.com/pan_aadharlink.aspx",
+        "displayUrl": "www.camstar.com/pan_aadharlink.aspx"
+      }
+    ]
+  },
+  "kycRelatedServices": {
+    "title": "Kyc Related Services",
+    "links": [
+      {
+        "label": "KYC Checking",
+        "url": "https://www.cvlkra.com",
+        "displayUrl": "CVL KRA - © Copyright 2011. All rights reserved with CDSL Ventures Limited, India"
+      },
+      {
+        "label": "KYC Checking:",
+        "url": "https://www.cvlkra.com",
+        "displayUrl": "www.cvlkra.com"
+      }
+    ]
+  },
+  "helpSection": {
+    "title": "Confused!?",
+    "subtitle": "We will help you",
+    "description": "If you are facing any problem related to KYC, SIP, or Mutual funds, Fynser Assets team will assist you",
+    "callButtonText": "Call Now",
+    "whatsappButtonText": "Chat on WhatsApp"
+  }
+}

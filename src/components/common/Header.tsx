@@ -4,10 +4,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { data } from '../../data';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+    const headerData = data.header;
 
     return (
         <>
@@ -15,24 +17,29 @@ const Header = () => {
             <div className="bg-[#0A1A3A] text-white py-2 border-b border-[#E6AF1C]">
                 <div className="container flex justify-between items-center text-sm">
                     <div className="flex items-center gap-4">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6AF1C] transition-colors">
-                            <FontAwesomeIcon icon={faFacebook} size="lg" />
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6AF1C] transition-colors">
-                            <FontAwesomeIcon icon={faLinkedin} size="lg" />
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6AF1C] transition-colors">
-                            <FontAwesomeIcon icon={faInstagram} size="lg" />
-                        </a>
+                        {headerData.socialLinks.map((social) => {
+                            const iconMap: any = { faFacebook, faLinkedin, faInstagram };
+                            return (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-[#E6AF1C] transition-colors"
+                                >
+                                    <FontAwesomeIcon icon={iconMap[social.icon]} size="lg" />
+                                </a>
+                            );
+                        })}
                     </div>
                     <div className="flex items-center gap-4">
-                        <a href="tel:+919876543210" className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
+                        <a href={headerData.contact.phoneLink} className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
                             <FontAwesomeIcon icon={faPhone} size="sm" />
-                            <span>+91 98765 43210</span>
+                            <span>{headerData.contact.phone}</span>
                         </a> |
-                        <a href="#" className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
-                            <span>CONTACT US</span>
-                        </a>
+                        <Link to={headerData.contact.contactLink} className="flex items-center text-[12px] lg:text-[14px] gap-2 hover:text-[#E6AF1C]">
+                            <span>{headerData.contact.contactText}</span>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -45,8 +52,8 @@ const Header = () => {
                         <div className="flex items-center gap-3">
                             <Link to="/">
                                 <img
-                                    src="/images/Web_Logo.png"
-                                    alt="Finyzer Assets Logo"
+                                    src={headerData.logo.src}
+                                    alt={headerData.logo.alt}
                                     className="h-[48px] lg:h-[84px] w-auto"
                                 />
                             </Link>
@@ -54,12 +61,15 @@ const Header = () => {
 
                         {/* Desktop Navigation */}
                         <nav className="hidden xl:flex items-center gap-[15px]">
-                            <Link to="/" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Home</Link>
-                            <Link to="/about" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/about' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>About Us</Link>
-                            <Link to="/services" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/services' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Services</Link>
-                            <Link to="/calculator" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/calculator' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Calculator</Link>
-                            <Link to="/mf-research" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/mf-research' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>MF Research</Link>
-                            <Link to="/become-distributor" className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === '/become-distributor' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}>Become a Distributer</Link>
+                            {headerData.navigation.map((item) => (
+                                <Link
+                                    key={item.path}
+                                    to={item.path}
+                                    className={`px-[13px] py-[8px] font-medium border-b transition-colors ${location.pathname === item.path ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
                         </nav>
 
                         {/* Mobile Menu Button */}
@@ -77,12 +87,16 @@ const Header = () => {
                             }`}
                     >
                         <div className="flex flex-col gap-4 px-4">
-                            <Link to="/" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Home</Link>
-                            <Link to="/about" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/about' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>About Us</Link>
-                            <Link to="/services" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/services' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Services</Link>
-                            <Link to="/calculator" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/calculator' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Calculator</Link>
-                            <Link to="/mf-research" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/mf-research' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>MF Research</Link>
-                            <Link to="/become-distributor" className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === '/become-distributor' ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`} onClick={() => setIsMenuOpen(false)}>Become a Distributer</Link>
+                            {headerData.navigation.map((item) => (
+                                <Link
+                                    key={item.path}
+                                    to={item.path}
+                                    className={`font-medium py-[7px] text-right lg:text-left transition-colors border-b-2 ${location.pathname === item.path ? 'text-[#E6AF1C] border-[#E6AF1C]' : 'text-white hover:text-[#E6AF1C] border-transparent'}`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
                         </div>
                     </nav>
                 </div>

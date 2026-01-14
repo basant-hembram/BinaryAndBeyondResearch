@@ -1,17 +1,17 @@
 import Banner from '../components/common/Banner';
 import ServiceContent from '../components/services/ServiceContent';
 import ServiceBenefits from '../components/services/ServiceBenefits';
+import { data } from '../data';
 
 const Services = () => {
+  const servicesData = data.services;
+
   return (
     <div className="bg-white">
       <Banner 
-        title="Our Suite Of Financial Products"
-        breadcrumbs={[
-          { label: 'Home', path: '/' },
-          { label: 'Services', path: '/services' }
-        ]}
-       backgroundImage="/images/banner-bg.jpg"
+        title={servicesData.title}
+        breadcrumbs={servicesData.breadcrumbs}
+        backgroundImage={servicesData.backgroundImage}
       />
       <ServiceContent />
       <ServiceBenefits />

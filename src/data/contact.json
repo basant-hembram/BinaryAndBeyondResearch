@@ -1,0 +1,49 @@
+{
+  "title": "We're here! Let's have a talk",
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "Contact Us",
+      "path": "/contact"
+    }
+  ],
+  "backgroundImage": "/images/contact-banner.jpg",
+  "contactInfo": [
+    {
+      "type": "address",
+      "icon": "faLocationDot",
+      "content": "24/1 MG Road, Indiranagar, Bengaluru,<br />Karnataka 560038, India."
+    },
+    {
+      "type": "email",
+      "icon": "faEnvelope",
+      "content": "info@finyzerassets.com",
+      "link": "mailto:info@finyzerassets.com"
+    },
+    {
+      "type": "phone",
+      "icon": "faPhone",
+      "content": "+91 98765 43210",
+      "link": "tel:+919876543210"
+    },
+    {
+      "type": "whatsapp",
+      "icon": "faWhatsapp",
+      "content": "+91 98765 43210",
+      "link": "https://wa.me/919876543210"
+    },
+    {
+      "type": "hours",
+      "icon": "faClock",
+      "title": "Opening Hours",
+      "hours": [
+        "Monday – Friday: 10:00 AM to 7:00 PM",
+        "Saturday – 10:00 AM to 5:00 PM",
+        "Sunday - Closed"
+      ]
+    }
+  ]
+}

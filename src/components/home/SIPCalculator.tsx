@@ -1,16 +1,19 @@
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator, faCamera, faUmbrella, faMoneyBill, faSackDollar, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { data } from '../../data';
+
+const iconMap: Record<string, any> = {
+  faCalculator,
+  faCamera,
+  faUmbrella,
+  faMoneyBill,
+  faSackDollar,
+  faChartLine,
+};
 
 const SIPCalculator = () => {
-  const calculators = [
-    { icon: faCalculator, title: "SIP Calculator" },
-    { icon: faChartLine, title: "Step-Up SIP Calculator" },
-    { icon: faCamera, title: "Lumpsum Calculator" },
-    { icon: faSackDollar, title: "Goal Planner" },
-    { icon: faUmbrella, title: "Retirement Planner" },
-    { icon: faMoneyBill, title: "Financial Planning" }
-  ];
+  const { sipCalculators } = data.home;
 
   return (
     <section id="calculator" className="py-16 md:py-24 bg-white">
@@ -20,10 +23,10 @@ const SIPCalculator = () => {
           <div className="">
             <div>
               <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-2">
-                Know how much you might need, Do goal planning with
+                {sipCalculators.title}
               </h2>
               <h3 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C]">
-                Finyser Calculators
+                {sipCalculators.titleHighlight}
               </h3>
             </div>
 
@@ -33,10 +36,10 @@ const SIPCalculator = () => {
 
             {/* Calculators Grid - 2 columns */}
             <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mb-[45px] lg:mb-[53px] xl:mb-[65px]">
-              {calculators.map((calc, index) => (
-                <div key={index} className="flex items-center gap-3">
+              {sipCalculators.calculators.map((calc) => (
+                <div key={calc.id} className="flex items-center gap-3">
                   <div className="bg-[#E6AF1C] rounded-full p-3 flex items-center justify-center w-10 h-10 flex-shrink-0">
-                    <FontAwesomeIcon icon={calc.icon} className="text-white text-sm" />
+                    <FontAwesomeIcon icon={iconMap[calc.icon]} className="text-white text-sm" />
                   </div>
                   <span className="text-[#0A1A3A] font-medium text-sm">{calc.title}</span>
                 </div>

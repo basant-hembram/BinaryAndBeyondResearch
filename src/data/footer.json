@@ -1,0 +1,105 @@
+{
+  "companyInfo": {
+    "logo": {
+      "src": "/images/Web_Logo.png",
+      "alt": "Finyzer Assets Logo"
+    },
+    "disclaimer": "Mutual Fund investments are subject to market risks, read all scheme related documents carefully before investing. Past performance is not indicative of future performance."
+  },
+  "socialLinks": [
+    {
+      "name": "Facebook",
+      "url": "#",
+      "icon": "faFacebook"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "#",
+      "icon": "faLinkedinIn"
+    },
+    {
+      "name": "Instagram",
+      "url": "#",
+      "icon": "faInstagram"
+    }
+  ],
+  "quickLinks": {
+    "title": "QUICK LINKS",
+    "links": [
+      {
+        "label": "Our Services",
+        "path": "/services"
+      },
+      {
+        "label": "Latest Blogs",
+        "path": "/latest-blogs"
+      },
+      {
+        "label": "Our Team",
+        "path": "/our-team"
+      },
+      {
+        "label": "Testimonials",
+        "path": "/testimonials"
+      },
+      {
+        "label": "Annual Return",
+        "path": "#"
+      }
+    ]
+  },
+  "information": {
+    "title": "INFORMATION",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "path": "/privacy-policy"
+      },
+      {
+        "label": "Disclaimer",
+        "path": "/disclaimer"
+      },
+      {
+        "label": "Terms of use",
+        "path": "/terms-of-use"
+      },
+      {
+        "label": "Important Links",
+        "path": "/important-links"
+      },
+      {
+        "label": "Contact Us",
+        "path": "/contact"
+      }
+    ]
+  },
+  "contact": {
+    "title": "KEEP IN TOUCH",
+    "items": [
+      {
+        "type": "phone",
+        "icon": "faPhone",
+        "label": "+91 98765 43210",
+        "link": "tel:+919876543210"
+      },
+      {
+        "type": "whatsapp",
+        "icon": "faWhatsapp",
+        "label": "+91 98765 43210",
+        "link": "https://wa.me/919876543210"
+      },
+      {
+        "type": "email",
+        "icon": "faEnvelope",
+        "label": "info@finyzerassets.com",
+        "link": "mailto:info@finyzerassets.com"
+      },
+      {
+        "type": "address",
+        "icon": "faLocationDot",
+        "label": "24/1 MG Road, Indiranagar,<br />Bengaluru, Karnataka 560038,<br />India."
+      }
+    ]
+  },
+  "copyright": "© Copyright 2025, All Rights Reserved by Finyzer Assets"
+}

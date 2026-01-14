@@ -1,0 +1,154 @@
+{
+  "banner": {
+    "title": "Financial Tools & Calculators",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "Calculator",
+        "path": "/calculator"
+      }
+    ],
+    "backgroundImage": "/images/banner-bg.jpg"
+  },
+  "becomeACrorepati": {
+    "title": "Become A Crorepati Calculator",
+    "description": "Become A Crorepati Calculator Helps You Calculate How Much Money You Need To Save Monthly To Become A Crorepati.",
+    "fields": [
+      {
+        "id": "currentValue",
+        "label": "How many Crores (at current value) you would need to consider yourself wealthy (Rs)",
+        "min": 1000,
+        "max": 100000000,
+        "defaultValue": 50000
+      },
+      {
+        "id": "currentAge",
+        "label": "Your current age (in years)",
+        "min": 18,
+        "max": 60,
+        "defaultValue": 22
+      },
+      {
+        "id": "targetAge",
+        "label": "The age when you want to become a Crorepati (in years)",
+        "min": 25,
+        "max": 80,
+        "defaultValue": 60
+      },
+      {
+        "id": "inflationRate",
+        "label": "The expected rate of inflation over the years (% per annum)",
+        "min": 0,
+        "max": 15,
+        "defaultValue": 0
+      },
+      {
+        "id": "returnRate",
+        "label": "What rate of return would you expect your SIP investment to generate (% per annum)",
+        "min": 1,
+        "max": 30,
+        "defaultValue": 12
+      },
+      {
+        "id": "savings",
+        "label": "How much savings you have now (Rs)",
+        "min": 0,
+        "max": 10000000,
+        "defaultValue": 140260
+      }
+    ],
+    "chart": {
+      "colors": ["#01A382", "#E6AF1C"],
+      "legend": [
+        {
+          "color": "#01A382",
+          "label": "Amount Invested"
+        },
+        {
+          "color": "#E6AF1C",
+          "label": "Total Growth"
+        }
+      ]
+    },
+    "downloadButton": "Download PDF"
+  },
+  "calculatorButtons": {
+    "title": "Choose and explore our",
+    "titleHighlight": "Mutual fund Calculators",
+    "options": [
+      { "id": "crorepati", "name": "Become A Crorepati Calculator", "active": true },
+      { "id": "sip-step-up", "name": "Mutual Fund Sip Calculator Step Up" },
+      { "id": "target-amount", "name": "Target Amount SIP Calculator" },
+      { "id": "retirement", "name": "Retirement Planning Calculator" },
+      { "id": "asset-allocation", "name": "Asset Allocation Calculator" },
+      { "id": "composite", "name": "Composite Financial Goal Planner Calculator" },
+      { "id": "future-value", "name": "Future Value Calculator" },
+      { "id": "human-life", "name": "Human Life Value Calculator" },
+      { "id": "lumpsum", "name": "Lumpsum Target Calculator" },
+      { "id": "education", "name": "Education Planner Calculator" }
+    ]
+  },
+  "calculatorResults": {
+    "resultCards": [
+      {
+        "label": "Your targeted Wealth Amount",
+        "sublabel": "(Inflation adjusted)",
+        "value": "₹ 275,800,768",
+        "icon": "faArrowUpRightDots"
+      },
+      {
+        "label": "Growth of your Savings Amount",
+        "sublabel": "(12% per annum)",
+        "value": "₹ 26,399,810",
+        "icon": "faArrowUpRightDots"
+      },
+      {
+        "label": "Final Targeted Amount",
+        "sublabel": "(Minus growth of your savings amount)",
+        "value": "₹ 249,400,958",
+        "icon": "faArrowUpRightDots"
+      },
+      {
+        "label": "Number of years you need to save",
+        "sublabel": "",
+        "value": "35 Years",
+        "icon": "faArrowUpRightDots"
+      },
+      {
+        "label": "Monthly SIP investment required to become Crorepati",
+        "sublabel": "",
+        "value": "₹ 45,257",
+        "icon": "faArrowUpRightDots"
+      },
+      {
+        "label": "total Amount Invested through SIP in 35 years",
+        "sublabel": "",
+        "value": "₹ 19,007,940",
+        "icon": "faArrowUpRightDots"
+      },
+      {
+        "label": "Total Growth Amount",
+        "sublabel": "",
+        "value": "₹ 19,007,940",
+        "icon": "faArrowUpRightDots"
+      }
+    ],
+    "mutualFunds": {
+      "title": "Mutual Funds",
+      "titleHighlight": "that can make you a Crorepati",
+      "recommendations": [
+        {
+          "icon": "faHandPointRight",
+          "text": "Top Performing Mutual Funds to Invest"
+        },
+        {
+          "icon": "faHandPointRight",
+          "text": "Top Performing SIP Funds to Invest"
+        }
+      ]
+    }
+  }
+}

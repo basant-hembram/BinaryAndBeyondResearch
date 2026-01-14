@@ -1,16 +1,16 @@
 import Banner from '../components/common/Banner';
 import BlogList from '../components/blog/BlogList';
+import { data } from '../data';
 
 const LatestBlogs = () => {
+  const blogData = data.blog;
+  
   return (
     <div className="bg-white">
       <Banner 
-        title="Latest Blogs"
-        breadcrumbs={[
-          { label: 'HOME', path: '/' },
-          { label: 'LATEST BLOGS', path: '/latest-blogs' }
-        ]}
-       backgroundImage="/images/bl;og-banner.avif"
+        title={blogData.banner.title}
+        breadcrumbs={blogData.banner.breadcrumbs}
+        backgroundImage={blogData.banner.backgroundImage}
       />
       <BlogList />
     </div>

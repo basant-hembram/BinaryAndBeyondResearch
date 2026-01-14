@@ -1,35 +1,7 @@
 import BlogCard from './BlogCard';
+import { data } from '../../data';
 
-export const blogs = [
-  {
-    id: 1,
-    image: '/images/blog.png',
-    date: '18 Jan 2025 • Edition',
-    title: 'Navigating Market Volatility',
-    description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-  },
-  {
-    id: 2,
-    image: '/images/blog.png',
-    date: '18 Jan 2025 • Edition',
-    title: 'Navigating Market Volatility',
-    description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-  },
-  {
-    id: 3,
-    image: '/images/blog.png',
-    date: '18 Jan 2025 • Edition',
-    title: 'Navigating Market Volatility',
-    description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-  },
-  {
-    id: 4,
-    image: '/images/blog.png',
-    date: '18 Jan 2025 • Edition',
-    title: 'Navigating Market Volatility',
-    description: 'Investors and market participants are navigating through the uncertain environment with caution and strategic planning.',
-  },
-];
+export const blogs = data.blog.blogs;
 
 const BlogList = () => {
   const generateSlug = (title: string) => {

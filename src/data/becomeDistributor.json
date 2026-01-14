@@ -1,0 +1,246 @@
+{
+  "banner": {
+    "title": "MF RESEARCH",
+    "breadcrumbs": [
+      {
+        "label": "HOME",
+        "path": "/"
+      },
+      {
+        "label": "MF RESEARCH",
+        "path": "/mf-research"
+      }
+    ],
+    "backgroundImage": "/images/banner-bg.jpg"
+  },
+  "benefits": {
+    "title": "Benefits Of",
+    "titleHighlight": "Partnering With Us",
+    "leftColumnTitle": "Benefits",
+    "rightColumnTitle": "Explanations",
+    "items": [
+      {
+        "icon": "faHeadset",
+        "title": "Sales & Marketing support",
+        "description": "Ready Pastors, WhatsApp creatives, videos"
+      },
+      {
+        "icon": "faMagnifyingGlassDollar",
+        "title": "Research & Recommendations",
+        "description": "Model Portfolios and SIP ideas"
+      },
+      {
+        "icon": "faUserTie",
+        "title": "Dedicated Relationship Manager",
+        "description": "Single point of contact"
+      },
+      {
+        "icon": "faLaptop",
+        "title": "Cutting-Edge Platforms",
+        "description": "Online onboarding and tracking"
+      },
+      {
+        "icon": "faBriefcase",
+        "title": "Portfolio Analysis",
+        "description": "HNI & Retail client tools"
+      },
+      {
+        "icon": "faPercent",
+        "title": "Multiple products",
+        "description": "Health insurance, mutual fund, children's plan, loan against securities, etc"
+      },
+      {
+        "icon": "faGlobe",
+        "title": "Cent percent online and offline support",
+        "description": "Helping Dedicated Relationship Manager"
+      }
+    ],
+    "ctaButton": {
+      "text": "Join Finyzer Assets",
+      "icon": "faArrowRight"
+    }
+  },
+  "industryGrowth": {
+    "title": "Mutual fund",
+    "titleHighlight": "Industry Growth story",
+    "description": "The Indian Mutual Fund Industry AUM has grown from Rs 1 Lakh crore in May 2004 to Rs 75.36 lakh Cr in July 2025 translating into a growth of more than 75 times in last 2 decades.",
+    "stats": [
+      {
+        "icon": "faHandHoldingUsd",
+        "value": "₹ Rs 75.36 lakh Cr",
+        "label": "Mutual Fund AUM"
+      },
+      {
+        "icon": "faUserGroup",
+        "value": "₹ 24.57 Cr.",
+        "label": "MF Folios"
+      },
+      {
+        "icon": "faSackDollar",
+        "value": "₹ 5.59 Cr.",
+        "label": "Unique Investors"
+      }
+    ],
+    "chartData": [
+      { "month": "Apr", "aum": 8, "folios": 20, "investors": 10 },
+      { "month": "May", "aum": 13, "folios": 22, "investors": 9 },
+      { "month": "Jun", "aum": 15, "folios": 24, "investors": 10 },
+      { "month": "Jul", "aum": 18, "folios": 27, "investors": 10 },
+      { "month": "Aug", "aum": 23, "folios": 27, "investors": 10 },
+      { "month": "Sep", "aum": 28, "folios": 26, "investors": 11 },
+      { "month": "Oct", "aum": 34, "folios": 24, "investors": 12 }
+    ]
+  },
+  "offerings": {
+    "title": "Offerings",
+    "titleHighlight": "For Your Clients",
+    "description": "Our commitment to excellence, cutting-edge technology, and personalized support ensures that you have a reliable ally in navigating the complexities of the financial world.",
+    "items": [
+      { "icon": "faHandHoldingDollar", "title": "Readymade Mutual Fund Baskets" },
+      { "icon": "faLandmark", "title": "Free Financial Planner" },
+      { "icon": "faChartLine", "title": "Expert Rated Schemes" },
+      { "icon": "faLandmark", "title": "Govt Based Investment" },
+      { "icon": "faMoneyBillTransfer", "title": "Instant Redemption" },
+      { "icon": "faPiggyBank", "title": "Family Investment Tracker" }
+    ],
+    "ctaButton": {
+      "text": "Know More",
+      "icon": "faArrowRight"
+    }
+  },
+  "steps": {
+    "title": "Steps To Become A",
+    "titleHighlight1": "Mutual Fund Distributor",
+    "titleHighlight2": "Finyzer Assets",
+    "subtitle": "Boost your revenue by offering diverse financial instruments",
+    "image": {
+      "src": "/images/steps-to-become-a-mutual-fund-distributor.avif",
+      "alt": "Steps"
+    },
+    "items": [
+      {
+        "icon": "faGraduationCap",
+        "title": "Take online NISM V-A Training",
+        "content": "Complete the NISM V-A training program online at your convenience."
+      },
+      {
+        "icon": "faTrophy",
+        "title": "Pass NISM Exam",
+        "content": "NISM exams are conducted across multiple cities and towns in India. Candidate can choose their preferred venue, date and time slot. NISM charges a fees of Rs 3000+GST for booking the seat. This is a 2-hr exam with 100 Multiple Choice Questions. Candidates need to attain 50% marks. There is no negative marking. Finomatic team helps you in booking examination slot."
+      },
+      {
+        "icon": "faIdCard",
+        "title": "Obtain ARN Number",
+        "content": "After passing the exam, obtain your ARN (AMFI Registration Number) to start your distribution business."
+      },
+      {
+        "icon": "faHandshake",
+        "title": "Partner with Finyzer Assets",
+        "content": "Complete the registration process with Finyzer Assets and get access to our platform and support systems."
+      }
+    ]
+  },
+  "hero": {
+    "image": "/images/founder.png",
+    "title": "Become",
+    "titleHighlight": "A Successful",
+    "titleContinued": "Mutual Fund Distributor",
+    "subtitle": "Build a scalable income with India's fastest growing investment industry",
+    "description": "Partner with Finyser Assets and grow your mutual fund business with",
+    "features": [
+      {
+        "icon": "faLaptop",
+        "label": "Technology"
+      },
+      {
+        "icon": "faBookBookmark",
+        "label": "Research"
+      },
+      {
+        "icon": "faHandshake",
+        "label": "Dedicated support"
+      }
+    ],
+    "stats": [
+      {
+        "icon": "faHandHoldingUsd",
+        "value": "₹ 15+ Cr.",
+        "label": "SIP Book"
+      },
+      {
+        "icon": "faCoins",
+        "value": "₹ 1250+ Cr.",
+        "label": "Assets Under Management"
+      }
+    ],
+    "ctaButton": {
+      "text": "Join Finyzer Assets",
+      "icon": "faArrowRight"
+    },
+    "footerText": "21+ years of experience, a strong presence in Jharkhand, and 200+ families guided through SIPs, Mutual Funds, and portfolio planning."
+  },
+  "whyBecome": {
+    "title": "Why Become A Mutual Fund Distributor With",
+    "titleHighlight": "Finyser Assets",
+    "description": "Finyser Assets is a professionally managed mutual fund distribution platform helping partners scale their business through technology, research and local support.",
+    "image": "/images/why-become-mutual-fund-investor.avif",
+    "reasons": [
+      "1100+ Trusted Investors",
+      "Dedicated Relationship Manager",
+      "200+ Happy Families",
+      "200+ Happy Families"
+    ]
+  },
+  "career": {
+    "title": "Career In Mutual",
+    "titleHighlight": "Fund Distribution Business",
+    "subtitle": "Start Your Mutual Fund Distributor Career",
+    "description": "Anyone Who Wants To Build A Successful Career With Unlimited Income And Growth In The Growing Mutual Fund Industry Can Do Mutual Fund Distribution Business.",
+    "image": "/images/career-mutual-fund-distribution.avif",
+    "ctaButton": {
+      "text": "Apply Now",
+      "icon": "faArrowRight"
+    },
+    "decorativeImages": {
+      "topLeft": "/images/partner-top-left-circle.png",
+      "bottomRight": "/images/partner-bottom-right-circle.png"
+    }
+  },
+  "supportDistributors": {
+    "title": "We Actively",
+    "titleHighlight": "Support Distributors In",
+    "backgroundImage": "/images/support-distributors.png",
+    "locations": [
+      {
+        "icon": "faLocationDot",
+        "name": "Bokaro"
+      },
+      {
+        "icon": "faLocationDot",
+        "name": "Dhanbad,"
+      },
+      {
+        "icon": "faLocationDot",
+        "name": "Ranchi"
+      },
+      {
+        "icon": "faLocationDot",
+        "name": "Jamshedpur"
+      }
+    ]
+  },
+  "compliance": {
+    "title": "Compliance &",
+    "titleHighlight": "Disclaimer",
+    "descriptions": [
+      "Mutual fund investing is subject to market risks, read all schemes related documents carefully",
+      "Finyser Assets is an AMFI registered mutual fund distributor :"
+    ],
+    "arn": "ARN - 879786",
+    "ctaTitle": "Ready To Build Your Mutual Fund Business",
+    "ctaButton": {
+      "text": "Join As A Mutual Fund Distributor",
+      "icon": "faArrowRight"
+    }
+  }
+}

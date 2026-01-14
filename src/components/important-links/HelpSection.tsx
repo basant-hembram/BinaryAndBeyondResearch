@@ -2,26 +2,25 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { data } from '../../data';
 
 interface HelpSectionProps {
-    title?: string;
-    subtitle?: string;
-    description?: string;
-    callButtonText?: string;
-    whatsappButtonText?: string;
     onCallClick?: () => void;
     onWhatsAppClick?: () => void;
 }
 
 const HelpSection: React.FC<HelpSectionProps> = ({
-    title = "Confused!?",
-    subtitle = "We will help you",
-    description = "If you are facing any problem related to KYC, SIP, or Mutual funds, Fynser Assets team will assist you",
-    callButtonText = "Call Now",
-    whatsappButtonText = "Chat on WhatsApp",
     onCallClick,
     onWhatsAppClick
 }) => {
+    const { helpSection } = data.importantLinks;
+    const {
+        title = helpSection.title,
+        subtitle = helpSection.subtitle,
+        description = helpSection.description,
+        callButtonText = helpSection.callButtonText,
+        whatsappButtonText = helpSection.whatsappButtonText
+    } = helpSection;
     return (
         <div className="bg-gray-50 py-12">
             <div className="container mx-auto">

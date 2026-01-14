@@ -1,38 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandHoldingDollar, faBuildingColumns, faArrowUpRightDots, faPeopleRoof, faCoins, faBriefcaseMedical, faCarBurst, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../ui/button';
+import { data } from '../../data';
+
+const { home: homeData } = data;
+
+const iconMap: Record<string, any> = {
+  faHandHoldingDollar,
+  faBuildingColumns,
+  faArrowUpRightDots,
+  faPeopleRoof,
+  faCoins,
+  faBriefcaseMedical,
+  faCarBurst
+};
 
 const FinancialProducts = () => {
-  const products = [
-    {
-      icon: faHandHoldingDollar,
-      title: "Mutual Fund"
-    },
-    {
-      icon: faBuildingColumns,
-      title: "Corporate FD"
-    },
-    {
-      icon: faArrowUpRightDots,
-      title: "Demat-trading"
-    },
-    {
-      icon: faPeopleRoof,
-      title: "Term Insurance"
-    },
-    {
-      icon: faBriefcaseMedical,
-      title: "Health Insurance"
-    },
-    {
-      icon: faCarBurst,
-      title: "Motor Insurance"
-    },
-    {
-      icon: faCoins,
-      title: "Loan Against Securities"
-    }    
-  ];
+  const { financialProducts } = homeData;
 
   return (
     <section id="services" className="py-16 md:py-24 bg-[#E9E9EB] relative overflow-hidden">
@@ -41,14 +25,14 @@ const FinancialProducts = () => {
           {/* Left Content */}
           <div className="md:w-[40%]">
              <div>
-              <p className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">Our Suite Of</p>
+              <p className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">{financialProducts.title}</p>
               <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C] mb-[30px] lg:mb-[18px] xl:mb-[24px]">
-                Financial Products
+                {financialProducts.titleHighlight}
               </h2>
             </div>
 
             <p className="text-[#575455] text-[16px] lg:text-[16px] xl:text-[18px] !leading-[32px]">
-              At Finyzer Assets, we offer a diverse array of innovative financial products, from advanced investment tools to comprehensive portfolio management solutions. Our products empower distributors to deliver exceptional value to their clients and drive growth.
+              {financialProducts.description}
             </p>
 
             <div className="pt-[42px] lg:pt-[95px] xl:pt-[59px]">
@@ -56,7 +40,7 @@ const FinancialProducts = () => {
                 size="lg" 
                 className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
               >
-                Explore Product
+                {financialProducts.buttonText}
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
             </div>
@@ -64,13 +48,13 @@ const FinancialProducts = () => {
 
           {/* Right Products Grid */}
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-y-6 md:w-[60%]">
-            {products.map((product, index) => (
+            {financialProducts.products.map((product, index) => (
               <div 
                 key={index}
                 className="flex items-center gap-4"
               >
                 <div className="bg-[#E6AF1C] rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <FontAwesomeIcon icon={product.icon} className="text-white text-xl" />
+                  <FontAwesomeIcon icon={iconMap[product.icon]} className="text-white text-xl" />
                 </div>
                 <h4 className="font-medium text-[#0A1A3A] text-[16px]">
                   {product.title}

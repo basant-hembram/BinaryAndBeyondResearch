@@ -1,0 +1,55 @@
+{
+  "logo": {
+    "src": "/images/Web_Logo.png",
+    "alt": "Finyzer Assets Logo"
+  },
+  "socialLinks": [
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com",
+      "icon": "faFacebook"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com",
+      "icon": "faLinkedin"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com",
+      "icon": "faInstagram"
+    }
+  ],
+  "contact": {
+    "phone": "+91 98765 43210",
+    "phoneLink": "tel:+919876543210",
+    "contactText": "CONTACT US",
+    "contactLink": "/contact"
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "About Us",
+      "path": "/about"
+    },
+    {
+      "label": "Services",
+      "path": "/services"
+    },
+    {
+      "label": "Calculator",
+      "path": "/calculator"
+    },
+    {
+      "label": "MF Research",
+      "path": "/mf-research"
+    },
+    {
+      "label": "Become a Distributer",
+      "path": "/become-distributor"
+    }
+  ]
+}

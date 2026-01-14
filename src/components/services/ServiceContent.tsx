@@ -22,86 +22,28 @@ import {
     faUserGraduate,
     IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
+import { data } from '../../data';
 
-interface ServiceCategory {
-    id: string;
-    name: string;
-    icon: IconDefinition;
-    items?: { name: string; id: string; icon: IconDefinition }[];
-    expandable?: boolean;
-}
-
-const serviceCategories: ServiceCategory[] = [
-    {
-        id: 'mutual-fund',
-        name: 'Mutual fund',
-        icon: faHandHoldingDollar,
-        expandable: true,
-        items: [
-            { name: 'Sip planning', id: 'sip-planning', icon: faCalendarCheck },
-            { name: 'Tax Saving', id: 'tax-saving', icon: faPiggyBank },
-            { name: 'Lumpsum Investment', id: 'lumpsum-investment', icon: faSackDollar },
-            { name: 'Portfolio Review', id: 'portfolio-review', icon: faMagnifyingGlassDollar },
-            { name: 'Goal based investing', id: 'goal-based-investing', icon: faBullseye }
-        ]
-    },
-    {
-        id: 'insurance',
-        name: 'Insurance',
-        icon: faHeartPulse,
-        expandable: true,
-        items: [
-            { name: 'Health Insurance', id: 'health-insurance', icon: faBriefcaseMedical },
-            { name: 'Motor Insurance', id: 'motor-insurance', icon: faCarBurst },
-            { name: 'Life Insurance', id: 'life-insurance', icon: faUserInjured },
-            { name: 'Term Insurance', id: 'term-insurance', icon: faPeopleRoof }
-        ]
-    },
-    {
-        id: 'loan-against-securities',
-        name: 'Loan against securities',
-        icon: faCoins,
-        expandable: false
-    },
-    {
-        id: 'corporate-fd',
-        name: 'Corporate FD',
-        icon: faBriefcaseMedical,
-        expandable: false
-    },
-    {
-        id: 'retirement-planning',
-        name: 'Retirement Planning',
-        icon: faPersonCane,
-        expandable: false
-    },
-    {
-        id: 'corporate-fd-2',
-        name: 'Corporate FD',
-        icon: faBuildingColumns,
-        expandable: false
-    },
-    {
-        id: 'child-education',
-        name: 'Child Education Planning',
-        icon: faUserGraduate,
-        expandable: false
-    }
-];
-
-const serviceContent: Record<string, { title: string; description: string[] }> = {
-    'mutual-fund': {
-        title: 'Mutual Fund',
-        description: [
-            'Welcome to the gateway of financial prosperity! Dive into the realm of mutual funds where your dreams meet opportunity. Our curated selection of mutual funds isn\'t just about investing; it\'s about crafting your future.',
-            'Whether you\'re a seasoned investor or just starting your journey towards wealth creation, our platform is your compass. Let\'s embark together on a path of growth, security, and limitless possibilities. Start investing, start thriving.',
-            'Welcome to a realm where investment isn\'t just about numbers; it\'s about narratives. At our mutual fund company, we don\'t just offer opportunities; we curate stories of success, weaving together the threads of innovation, expertise, and vision. Invest with us, and you\'re not just investing in funds; you\'re investing in a partnership dedicated to sculpting your financial legacy.',
-            'Join us, where your aspirations meet our commitment to redefine the very fabric of wealth creation.'
-        ]
-    }
+const iconMap: Record<string, IconDefinition> = {
+    faHandHoldingDollar,
+    faCalendarCheck,
+    faPiggyBank,
+    faSackDollar,
+    faMagnifyingGlassDollar,
+    faBullseye,
+    faHeartPulse,
+    faBriefcaseMedical,
+    faCarBurst,
+    faUserInjured,
+    faPeopleRoof,
+    faCoins,
+    faPersonCane,
+    faBuildingColumns,
+    faUserGraduate
 };
 
 const ServiceContent = () => {
+    const { serviceCategories, serviceContent } = data.services;
     const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
     const [selectedService, setSelectedService] = useState<string>('mutual-fund');
 
@@ -117,7 +59,7 @@ const ServiceContent = () => {
         setSelectedService(serviceId);
     };
 
-    const currentContent = serviceContent[selectedService] || serviceContent['mutual-fund'];
+    const currentContent = serviceContent[selectedService as keyof typeof serviceContent] || serviceContent['mutual-fund'];
 
     return (
         <div className="py-16 bg-[#E9E9EB]">
@@ -148,7 +90,7 @@ const ServiceContent = () => {
                                             }`}
                                     >
                                         <div className="flex items-center gap-3">
-                                            <FontAwesomeIcon icon={category.icon} className={expandedCategories.includes(category.id) && category.expandable ? "text-[#E6AF1C]" : ""} />
+                                            <FontAwesomeIcon icon={iconMap[category.icon]} className={expandedCategories.includes(category.id) && category.expandable ? "text-[#E6AF1C]" : ""} />
                                             <span className={expandedCategories.includes(category.id) && category.expandable ? "text-[#E6AF1C] font-medium" : "font-medium"}>{category.name}</span>
                                         </div>
                                         {category.expandable && (
@@ -172,7 +114,7 @@ const ServiceContent = () => {
                                                     className={`border-t border-[#E6AF1C] first:border-t-0 w-full px-6 py-[14px] flex items-center gap-3 text-left text-white hover:text-[#E6AF1C] transition-colors ${selectedService === item.id ? 'text-[#E6AF1C]' : ''
                                                         }`}
                                                 >
-                                                    <FontAwesomeIcon icon={item.icon} className="w-4 h-4" />
+                                                    <FontAwesomeIcon icon={iconMap[item.icon]} className="w-4 h-4" />
                                                     <span className="">{item.name}</span>
                                                 </button>
                                             ))}
@@ -191,7 +133,7 @@ const ServiceContent = () => {
                             </h2>
 
                             <div className="space-y-[20px] text-[#575455] leading-[32px]">
-                                {currentContent.description.map((paragraph, index) => (
+                                {currentContent.description.map((paragraph: string, index: number) => (
                                     <p className='text-[18px]' key={index}>{paragraph}</p>
                                 ))}
                             </div>

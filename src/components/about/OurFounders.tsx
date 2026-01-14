@@ -1,45 +1,27 @@
 import { Card, CardContent } from '../ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faDribbble} from '@fortawesome/free-brands-svg-icons';
+import { data } from '../../data';
+
+const { about: aboutData } = data;
 
 const OurFounders = () => {
-   const founders = [
-    {
-      name: "Orlando Diggs",
-      role: "Founder & CEO",
-      image: "/images/orlando.png"
-    },
-    {
-      name: "Phoenix Baker",
-      role: "Founding Member",
-      image: "/images/phoenix.png"
-    },
-    {
-      name: "Drew Cano",
-      role: "Founding Member",
-      image: "/images/drew.png"
-    },
-    {
-      name: "Drew Cano",
-      role: "Founding Member",
-      image: "/images/drew.png"
-    }
-  ];
+  const { founders } = aboutData;
 
   return (
     <section className="py-16 md:py-24 bg-[#E9E9EB]">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
-            <span className="text-gray-700">Meet your </span>
-            <span className="text-[#E6AF1C] font-semibold">Finyser Assets Founders</span>
+            <span className="text-gray-700">{founders.title} </span>
+            <span className="text-[#E6AF1C] font-semibold">{founders.titleHighlight}</span>
           </h2>
           <p className="text-[#575455] text-[16px] lg:text-[18px] max-w-3xl mx-auto">
-            At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.
+            {founders.description}
           </p>
         </div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-6">
-            {founders.map((founder, index) => (
+            {founders.foundersList.map((founder, index) => (
               <Card
                 key={index}
                 className="overflow-hidden group"
@@ -59,19 +41,19 @@ const OurFounders = () => {
 
                   <div className="flex justify-start gap-3">
                     <a
-                      href="#"
+                      href={founder.social.twitter}
                       className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faTwitter} />
                     </a>
                     <a
-                      href="#"
+                      href={founder.social.linkedin}
                       className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                     <a
-                      href="#"
+                      href={founder.social.dribbble}
                       className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faDribbble} />

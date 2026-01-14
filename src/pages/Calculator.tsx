@@ -2,17 +2,17 @@ import Banner from '../components/common/Banner';
 import CalculatorButtons from '../components/calculator/CalculatorButtons';
 import BecomeACrorepatiCalculator from '../components/calculator/BecomeACrorepatiCalculator';
 import CalculatorResults from '../components/calculator/CalculatorResults';
+import { data } from '../data';
 
 const Calculator = () => {
+  const calculatorData = data.calculator;
+  
   return (
     <div className="bg-white">
       <Banner 
-        title="Financial Tools & Calculators"
-        breadcrumbs={[
-          { label: 'Home', path: '/' },
-          { label: 'Calculator', path: '/calculator' }
-        ]}
-        backgroundImage="/images/banner-bg.jpg"
+        title={calculatorData.banner.title}
+        breadcrumbs={calculatorData.banner.breadcrumbs}
+        backgroundImage={calculatorData.banner.backgroundImage}
       />
       <CalculatorButtons />
       <BecomeACrorepatiCalculator />

@@ -1,0 +1,134 @@
+{
+  "banner": {
+    "title": "India's Fastest Growing Mutual Fund<br />Distributor",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "About Us",
+        "path": "/about"
+      }
+    ],
+    "backgroundImage": "/images/banner-bg.jpg"
+  },
+  "title": "About Finyser Assets",
+  "description": [
+    "Started in 2018, Finyser Assets is the premier destination for wealth management, guiding our clients toward financial prosperity and security. Our goal is to surpass your expectations and maximize your returns with our personalized wealth management programs.",
+    "We are committed to empowering finance professionals by providing NISM training to those aspiring to become mutual fund distributors, ensuring they have the knowledge and skills required for success in this field."
+  ],
+  "stats": [
+    {
+      "value": "50k +",
+      "label": "Trusted Client"
+    },
+    {
+      "value": "2.2L +",
+      "label": "Investor Base"
+    }
+  ],
+  "image": {
+    "src": "/images/about-finyzer.avif",
+    "alt": "Team working"
+  },
+  "founders": {
+    "title": "Meet your",
+    "titleHighlight": "Finyser Assets Founders",
+    "description": "At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.",
+    "foundersList": [
+      {
+        "name": "Orlando Diggs",
+        "role": "Founder & CEO",
+        "image": "/images/orlando.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      },
+      {
+        "name": "Phoenix Baker",
+        "role": "Founding Member",
+        "image": "/images/phoenix.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      },
+      {
+        "name": "Drew Cano",
+        "role": "Founding Member",
+        "image": "/images/drew.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      },
+      {
+        "name": "Drew Cano",
+        "role": "Founding Member",
+        "image": "/images/drew.png",
+        "social": {
+          "twitter": "#",
+          "linkedin": "#",
+          "dribbble": "#"
+        }
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us As :",
+    "titleHighlight": "Your Trusted Investment Advisor",
+    "subtitle": "Why SIP/Investment With Us Works",
+    "reasons": [
+      "Personalized plan for every family",
+      "Quarterly review of performance",
+      "Rebalancing for the best long-term results",
+      "Clear & unbiased guidance",
+      "27x7 support on WhatsApp"
+    ],
+    "image": {
+      "src": "/images/why-choose-us.png",
+      "alt": "Investment advisor"
+    }
+  },
+  "whyTrustUs": {
+    "title": "Why investors trust",
+    "titleHighlight": "Finyzer Assets",
+    "subtitle": "Finyzer Assets is India's trusted Mutual fund Distributor",
+    "features": [
+      {
+        "icon": "faHandHoldingDollar",
+        "title": "7+ Years of experience in wealth management",
+        "description": "Find out the best performing schemes across categories and time frame."
+      },
+      {
+        "icon": "faPeopleRoof",
+        "title": "200+ Happy Families",
+        "description": "Find out the best performing schemes across categories and time frame."
+      },
+      {
+        "icon": "faSackDollar",
+        "title": "105 Crore+ AUM under management",
+        "description": "Find out the best performing schemes across categories and time frame."
+      },
+      {
+        "icon": "faCalculator",
+        "title": "SIP Specialist - Jharkhand Mutual Fund Distributor",
+        "description": "Find out the best performing schemes across categories and time frame."
+      },
+      {
+        "icon": "faBuilding",
+        "title": "Dedicated Office at Sector-4 Bokaro, Jharkhand",
+        "description": "Find out the best performing schemes across categories and time frame."
+      }
+    ],
+    "decorativeImages": {
+      "topLeft": "/images/top-left-circle.png",
+      "bottomRight": "/images/bottom-right-circle.png"
+    }
+  }
+}

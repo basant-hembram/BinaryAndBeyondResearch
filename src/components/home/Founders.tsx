@@ -3,25 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faLinkedin, faDribbble} from '@fortawesome/free-brands-svg-icons';
 import { Button } from '../ui/button';
+import { data } from '../../data';
+
+const { home: homeData } = data;
 
 const Founders = () => {
-  const founders = [
-    {
-      name: "Orlando Diggs",
-      role: "Founder & CEO",
-      image: "/images/orlando.png"
-    },
-    {
-      name: "Phoenix Baker",
-      role: "Founding Member",
-      image: "/images/phoenix.png"
-    },
-    {
-      name: "Drew Cano",
-      role: "Founding Member",
-      image: "/images/drew.png"
-    }
-  ];
+  const { founders } = homeData;
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
@@ -30,27 +17,27 @@ const Founders = () => {
           {/* Left side - Text content */}
           <div className="w-full xl:w-2/5">
             <div>
-              <p className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">Meet your</p>
+              <p className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A]">{founders.title}</p>
               <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C] mb-[30px] lg:mb-[18px] xl:mb-[24px]">
-                Finyzer Assets Founders
+                {founders.titleHighlight}
               </h2>
             </div>
             <p className="text-gray-600 mb-6">
-              At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.
+              {founders.description}
             </p>
             
             <Button 
                 size="lg" 
                 className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
               >
-                 Our Team
+                 {founders.buttonText}
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
           </div>
 
           {/* Right side - Founder cards */}
           <div className="w-full xl:w-3/5 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {founders.map((founder, index) => (
+            {founders.foundersList.map((founder, index) => (
               <Card
                 key={index}
                 className="overflow-hidden group"
@@ -70,19 +57,19 @@ const Founders = () => {
 
                   <div className="flex justify-start gap-3">
                     <a
-                      href="#"
+                      href={founder.social.twitter}
                       className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faTwitter} />
                     </a>
                     <a
-                      href="#"
+                      href={founder.social.linkedin}
                       className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                     <a
-                      href="#"
+                      href={founder.social.dribbble}
                       className="text-[#98A2B3] hover:text-[#E6AF1C] text-[24px] transition-colors"
                     >
                       <FontAwesomeIcon icon={faDribbble} />
