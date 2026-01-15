@@ -54,7 +54,7 @@ const Header = () => {
                                 <img
                                     src={headerData.logo.src}
                                     alt={headerData.logo.alt}
-                                    className="h-[48px] lg:h-[84px] w-auto"
+                                    className="h-[24px] lg:h-[50px] w-auto"
                                 />
                             </Link>
                         </div>

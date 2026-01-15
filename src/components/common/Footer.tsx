@@ -17,7 +17,7 @@ const Footer = () => {
               <img 
                 src={footerData.companyInfo.logo.src}
                 alt={footerData.companyInfo.logo.alt}
-                className="h-[48px] xl:h-[84px] w-auto"
+                className="h-[24px] xl:h-[50px] w-auto"
               />
               
             </div>
