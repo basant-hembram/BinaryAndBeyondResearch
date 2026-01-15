@@ -18,6 +18,11 @@
       "name": "Instagram",
       "url": "https://instagram.com",
       "icon": "faInstagram"
+    },
+    {
+      "name": "Youtube",
+      "url": "https://youtube.com",
+      "icon": "faYoutube"
     }
   ],
   "contact": {

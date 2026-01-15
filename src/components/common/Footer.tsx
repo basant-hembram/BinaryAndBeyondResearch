@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faLinkedinIn, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faLinkedinIn, faInstagram, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { data } from '../../data';
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3 mt-[50px]">
               {footerData.socialLinks.map((social) => {
-                const iconMap: any = { faFacebook, faLinkedinIn, faInstagram };
+                const iconMap: any = { faFacebook, faLinkedinIn, faInstagram, faYoutube };
                 return (
                   <a
                     key={social.name}

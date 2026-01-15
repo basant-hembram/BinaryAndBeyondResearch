@@ -2,7 +2,7 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faLinkedin, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
 
@@ -18,7 +18,7 @@ const Header = () => {
                 <div className="container max-md:px-4 flex justify-between items-center text-sm">
                     <div className="flex items-center gap-2 lg:gap-4">
                         {headerData.socialLinks.map((social) => {
-                            const iconMap: any = { faFacebook, faLinkedin, faInstagram };
+                            const iconMap: any = { faFacebook, faLinkedin, faInstagram, faYoutube};
                             return (
                                 <a
                                     key={social.name}

@@ -21,6 +21,11 @@
       "name": "Instagram",
       "url": "#",
       "icon": "faInstagram"
+    },
+     {
+      "name": "Youtube",
+      "url": "#",
+      "icon": "faYoutube"
     }
   ],
   "quickLinks": {
