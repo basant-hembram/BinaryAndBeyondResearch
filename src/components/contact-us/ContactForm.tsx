@@ -22,6 +22,12 @@ const ContactForm = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
   // Validation functions
   const validateName = (name: string): boolean => {
     return /^[A-Za-z\s]+$/.test(name);
@@ -54,11 +60,65 @@ const ContactForm = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (isFormValid()) {
-      console.log('Form submitted:', formData);
-      // Handle form submission
+    
+    if (!isFormValid()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          userType: formData.userType,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.',
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          userType: '',
+          message: '',
+          agreeToPolicy: false,
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.message || 'Failed to send message. Please try again.',
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please check your connection and try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -121,6 +181,14 @@ const ContactForm = () => {
         Get in <span className="text-[#E6AF1C] font-semibold">touch</span>
       </h2>
       <p className="text-[#575455] text-[18px] lg:text-[20px] mb-8">Our friendly team would love to hear from you.</p>
+
+      {submitStatus.type && (
+        <div className={`mb-6 p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+          <p className={`text-sm ${submitStatus.type === 'success' ? 'text-green-800' : 'text-red-800'}`}>
+            {submitStatus.message}
+          </p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -253,9 +321,9 @@ const ContactForm = () => {
         <Button 
           type="submit" 
           className="w-full h-[48px] bg-[#01A382] hover:bg-[#018f72] text-white py-[12px] text-base font-medium rounded-[10px] disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled={!isFormValid()}
+          disabled={!isFormValid() || isSubmitting}
         >
-          Send message
+          {isSubmitting ? 'Sending...' : 'Send message'}
         </Button>
       </form>
     </div>
