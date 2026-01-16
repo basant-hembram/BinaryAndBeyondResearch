@@ -31,7 +31,7 @@ const SIPCalculator = () => {
             </div>
 
             <p className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[18px] pt-[14px] lg:pt-[27px] xl:pt-[19px] mb-[34px] lg:mb-[28px] xl:mb-[28px]">
-              Zero Paperwork- Zero hassle - 100% Guidance
+              See how SIP Can help you achieve your financial goals
             </p>
 
             {/* Calculators Grid - 2 columns */}

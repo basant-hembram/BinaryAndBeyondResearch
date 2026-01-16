@@ -1,21 +1,21 @@
 {
   "financialProducts": {
-    "title": "Our Suite Of",
-    "titleHighlight": "Financial Products",
-    "description": "At Finyzer Assets, we offer a diverse array of innovative financial products, from advanced investment tools to comprehensive portfolio management solutions. Our products empower distributors to deliver exceptional value to their clients and drive growth.",
+    "title": "Our",
+    "titleHighlight": "Financial Solutions",
+    "description": "We provide a range of investment and protection solutions focused on helping individuals and families achieve long-term financial stability through disciplined and goal-based planning.",
     "buttonText": "Explore Product",
     "products": [
       {
         "icon": "faHandHoldingDollar",
-        "title": "Mutual Fund"
+        "title": "Mutual Funds"
       },
       {
         "icon": "faBuildingColumns",
-        "title": "Corporate FD"
+        "title": "orporate Fixed Deposits"
       },
       {
         "icon": "faArrowUpRightDots",
-        "title": "Demat-trading"
+        "title": "Systematic Investment Plans (SIPs)"
       },
       {
         "icon": "faPeopleRoof",
@@ -117,8 +117,8 @@
     ]
   },
   "sipCalculators": {
-    "title": "Check the various",
-    "titleHighlight": "calculators",
+    "title": "Plan Your wealth with",
+    "titleHighlight": "Smart Calculators",
     "calculators": [
       {
         "id": 1,
@@ -153,12 +153,12 @@
     ]
   },
   "meetYourPartner": {
-    "subtitle": "Meet Your Health Coach",
+    "subtitle": "Meet Your Wealth Coach",
     "name": "Rajesh Choudhary",
     "features": [
       "21+ Years Of Financial Expertise",
       "Helped 200 Families Secure Their Future",
-      "Specialist In SIP, Mutual Funds & Family Portfolio Planning",
+      "Specialist In SIP, Mutual Funds, Portfolio review & Goal Based Planning",
       "Vision \"Har Ghar Me SIP, Har Parivaar Financially Strong\""
     ],
     "buttonText": "About Us",
@@ -206,13 +206,13 @@
   "whyInvestors": {
     "title": "Why investors trust",
     "titleHighlight": "Finyzer Assets",
-    "subtitle": "Finyser Assets is India 's trusted Mutual fund Distributor",
+    "subtitle": "A trusted Mutual fund Distributor IN Jharkhand",
     "reasons": [
-      "7+ Years of experience in wealth management",
-      "SIP Specialist - Jharkhand Mutual Fund Distributor",
-      "200+ Happy Families",
+      "7+ Years of experience in wealth & investment planning/management",
+      "SIP Specialist WITH GOAL BASED iNVESTMENT APPROACH.",
+      "200+ Happy Families guided across Jharkhand along with other part of INDIA",
       "Dedicated Office at Sector-4 Bokaro, Jharkhand",
-      "105 Crore+ AUM under management"
+      "100+ Crore AUM under management"
     ],
     "decorativeImages": {
       "topLeft": "/images/top-left-circle.png",
