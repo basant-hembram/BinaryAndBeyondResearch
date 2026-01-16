@@ -1,6 +1,9 @@
 {
   "title": "Trusted Mutual Fund Distributor in Jharkhand",
-  "subtitle": "Finyzer Assets is Helping individuals and families achieve their financial goals through disciplined SIPs and long-term mutual fund investing.\\nAMFI-Registered Mutual Fund Distributor | Serving Bokaro, Dhanbad & Ranchi",
+  "subtitle": [
+   "Finyzer Assets is Helping individuals and families achieve their financial goals through disciplined SIPs and long-term mutual fund investing.",
+   "AMFI-Registered Mutual Fund Distributor | Serving Bokaro, Dhanbad & Ranchi."
+  ],
   "ctaButton": {
     "text": "Request A Call Back",
     "icon": "arrow-right"
