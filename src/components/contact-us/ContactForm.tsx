@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../ui/button';
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,18 +13,106 @@ const ContactForm = () => {
     agreeToPolicy: false,
   });
 
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    userType: '',
+    message: '',
+  });
+
+  // Validation functions
+  const validateName = (name: string): boolean => {
+    return /^[A-Za-z\s]+$/.test(name);
+  };
+
+  const validateEmail = (email: string): boolean => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    const digitsOnly = phone.replace(/[^0-9]/g, '');
+    return /^[0-9\s\-\+\(\)]+$/.test(phone) && digitsOnly.length >= 10;
+  };
+
+  // Check if form is valid
+  const isFormValid = (): boolean => {
+    return (
+      formData.firstName.trim() !== '' &&
+      validateName(formData.firstName) &&
+      formData.lastName.trim() !== '' &&
+      validateName(formData.lastName) &&
+      formData.email.trim() !== '' &&
+      validateEmail(formData.email) &&
+      formData.phone.trim() !== '' &&
+      validatePhone(formData.phone) &&
+      formData.userType !== '' &&
+      formData.message.trim() !== '' &&
+      formData.agreeToPolicy &&
+      Object.values(errors).every(error => error === '')
+    );
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission
+    if (isFormValid()) {
+      console.log('Form submitted:', formData);
+      // Handle form submission
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
+    const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+      [name]: newValue,
     });
+
+    // Validate on change
+    if (name === 'firstName' || name === 'lastName') {
+      if (value && !validateName(value)) {
+        setErrors({
+          ...errors,
+          [name]: 'Only alphabets and spaces are allowed',
+        });
+      } else {
+        setErrors({
+          ...errors,
+          [name]: '',
+        });
+      }
+    } else if (name === 'email') {
+      if (value && !validateEmail(value)) {
+        setErrors({
+          ...errors,
+          email: 'Please enter a valid email address',
+        });
+      } else {
+        setErrors({
+          ...errors,
+          email: '',
+        });
+      }
+    } else if (name === 'phone') {
+      if (value && !validatePhone(value)) {
+        const digitsOnly = value.replace(/[^0-9]/g, '');
+        const errorMsg = digitsOnly.length < 10 
+          ? 'Phone number must be at least 10 digits' 
+          : 'Please enter a valid phone number';
+        setErrors({
+          ...errors,
+          phone: errorMsg,
+        });
+      } else {
+        setErrors({
+          ...errors,
+          phone: '',
+        });
+      }
+    }
   };
 
   return (
@@ -36,46 +125,57 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-[#344054] text-[16px] mb-2">First name</label>
+            <label className="block text-[#344054] text-[16px] mb-2">
+              First name <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="firstName"
               placeholder="First name"
               value={formData.firstName}
               onChange={handleChange}
-              className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white"
+              className={`w-full px-[16px] py-[12px] border-2 ${errors.firstName ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white`}
               required
             />
+            {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
           </div>
           <div>
-            <label className="block text-[#344054] text-[16px] mb-2">Last name</label>
+            <label className="block text-[#344054] text-[16px] mb-2">
+              Last name <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="lastName"
               placeholder="Last name"
               value={formData.lastName}
               onChange={handleChange}
-              className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
+              className={`w-full px-[16px] py-[12px] border-2 ${errors.lastName ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white`}
               required
             />
+            {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
           </div>
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">Email</label>
+          <label className="block text-[#344054] text-[16px] mb-2">
+            Email <span className="text-red-500">*</span>
+          </label>
           <input
             type="email"
             name="email"
             placeholder="you@company.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white"
+            className={`w-full px-[16px] py-[12px] border-2 ${errors.email ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white`}
             required
           />
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">Phone number</label>
+          <label className="block text-[#344054] text-[16px] mb-2">
+            Phone number <span className="text-red-500">*</span>
+          </label>
           <div className="relative">
             <select className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent focus:border-[#E6AF1C] border-none focus:outline-none text-gray-700 pr-8 appearance-none cursor-pointer z-10">
               <option value="IN">IN</option>
@@ -91,14 +191,17 @@ const ContactForm = () => {
               placeholder="+91 (555) 000-0000"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full pl-24 pr-[16px] py-[12px] border-2 border-[#e6af1c80] rounded-[8px] focus:outline-none bg-white"
+              className={`w-full pl-24 pr-[16px] py-[12px] border-2 ${errors.phone ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none bg-white`}
               required
             />
           </div>
+          {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">User Type</label>
+          <label className="block text-[#344054] text-[16px] mb-2">
+            User Type <span className="text-red-500">*</span>
+          </label>
           <select
             name="userType"
             value={formData.userType}
@@ -114,7 +217,9 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">Message</label>
+          <label className="block text-[#344054] text-[16px] mb-2">
+            Message <span className="text-red-500">*</span>
+          </label>
           <textarea
             name="message"
             placeholder=""
@@ -138,14 +243,18 @@ const ContactForm = () => {
           />
           <label htmlFor="agreeToPolicy" className="text-sm text-gray-600">
             You agree to our friendly{' '}
-            <a href="#" className="text-gray-600 underline hover:text-[#01A382]">
+            <Link to="/privacy-policy" className="text-gray-600 underline hover:text-[#01A382]">
               privacy policy
-            </a>
-            .
+            </Link>
+            . <span className="text-red-500">*</span>
           </label>
         </div>
 
-        <Button type="submit" className="w-full h-[48px] bg-[#01A382] hover:bg-[#018f72] text-white py-[12px] text-base font-medium rounded-[10px]">
+        <Button 
+          type="submit" 
+          className="w-full h-[48px] bg-[#01A382] hover:bg-[#018f72] text-white py-[12px] text-base font-medium rounded-[10px] disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={!isFormValid()}
+        >
           Send message
         </Button>
       </form>
