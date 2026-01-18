@@ -86,10 +86,10 @@
     "titleHighlight": "Your Trusted Investment Advisor",
     "subtitle": "Why SIP/Investment With Us Works",
     "reasons": [
-      "Personalized plan for every family",
-      "Quarterly review of performance",
-      "Rebalancing for the best long-term results",
-      "Clear & unbiased guidance",
+      "Goal-Based SIP Planning Support : We design personalized SIP plans for child education goal, retirement goal, tax saving, and wealth creation goal aligned with your income and risk profile.",
+      "Quartley Portfolio performance update : Your investments performance every quarter, and clear performance updates are shared via WhatsApp—no confusion, no surprises.",
+      "Smart Rebalancing for Long-Term Growth : We rebalance portfolios based on market conditions to protect downside risk and optimize long-term returns.",
+      "Dedicated WhatsApp & Call Support : Get a dedicated relationship manager for quick support on SIPs, redemptions, and portfolio queries.",
       "27x7 support on WhatsApp"
     ],
     "image": {
@@ -100,32 +100,32 @@
   "whyTrustUs": {
     "title": "Why investors trust",
     "titleHighlight": "Finyzer Assets",
-    "subtitle": "Finyzer Assets is India's trusted Mutual fund Distributor",
+    "subtitle": "A trusted Mutual Fund Distributor company in India",
     "features": [
       {
         "icon": "faHandHoldingDollar",
-        "title": "7+ Years of experience in wealth management",
-        "description": "Find out the best performing schemes across categories and time frame."
+        "title": "7+ Years of Wealth Management Experience",
+        "description": "For over 7 years, we have been helping investors build long-term wealth through goal-based mutual fund planning and disciplined SIP investing."
       },
       {
         "icon": "faPeopleRoof",
         "title": "200+ Happy Families",
-        "description": "Find out the best performing schemes across categories and time frame."
+        "description": "More than 200 families across Jharkhand and other part of india trust us for SIP investments, tax planning, and long-term financial goals."
       },
       {
         "icon": "faSackDollar",
-        "title": "105 Crore+ AUM under management",
-        "description": "Find out the best performing schemes across categories and time frame."
+        "title": "₹100 Crore+ Assets Under Management",
+        "description": "An AUM of over ₹100 Crore reflects the confidence, consistency, and long-term relationships we have built with our investors."
       },
       {
         "icon": "faCalculator",
-        "title": "SIP Specialist - Jharkhand Mutual Fund Distributor",
-        "description": "Find out the best performing schemes across categories and time frame."
+        "title": "SIP Specialist - Jharkhand",
+        "description": "We specialize in SIP-based investments for: ✔ Child Education goal Planning support ✔ Retirement goal Planning Support ✔ Tax Saving (ELSS) ✔ Long-Term Wealth Creation"
       },
       {
         "icon": "faBuilding",
-        "title": "Dedicated Office at Sector-4 Bokaro, Jharkhand",
-        "description": "Find out the best performing schemes across categories and time frame."
+        "title": "Dedicated Office – Sector 4, Bokaro",
+        "description": "We have a dedicated office in Bokaro to provide walk-in support, documentation assistance, and personalized investment guidance."
       }
     ],
     "decorativeImages": {
