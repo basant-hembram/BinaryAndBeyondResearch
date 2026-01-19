@@ -4,14 +4,23 @@ A modern, responsive mutual fund distributor website built with React, TypeScrip
 
 ## Features
 
-- 🎨 Modern and responsive design
-- ⚡ Built with Vite for fast development
-- 🎯 TypeScript for type safety
-- 💅 Tailwind CSS for styling
-- 🧩 Shadcn/ui components
-- 📊 Interactive SIP Calculator with Recharts
-- 📱 Mobile-friendly responsive layout
+- 🎨 Modern and responsive design with Tailwind CSS
+- ⚡ Built with Vite for fast development and optimized builds
+- 🎯 TypeScript for type safety and better developer experience
+- 💅 Shadcn/ui component library for consistent UI
+- 📊 Interactive Financial Calculators (SIP, Lumpsum, SWP, etc.)
+- 📱 Fully responsive mobile-friendly layout
 - 🎭 Smooth animations and transitions
+- 📝 JSON-based content management system
+- 📰 Blog system with detailed article pages
+- 🔍 Mutual Fund research and trailing returns data
+- 👥 Team and testimonials showcase
+- 📧 Contact forms and inquiry management
+- 🖼️ Optimized AVIF image format for better performance
+- 🔐 Privacy Policy, Terms of Use, and Disclaimer pages
+- 🎓 Comprehensive "Become a Distributor" career section
+- 📋 Important links and resources section
+- 🔄 Backend server for form handling and API endpoints
 
 ## Getting Started
 
@@ -49,44 +58,125 @@ npm run preview
 ## Project Structure
 
 ```
-finyzer/
+FinyzerAssets/
 ├── src/
 │   ├── components/
-│   │   ├── ui/              # Shadcn/ui components
-│   │   ├── Header.tsx
-│   │   ├── Hero.tsx
-│   │   ├── WhyInvestors.tsx
-│   │   ├── MeetYourPartner.tsx
-│   │   ├── FinancialProducts.tsx
-│   │   ├── SIPCalculator.tsx
-│   │   ├── MutualFundResources.tsx
-│   │   ├── Founders.tsx
-│   │   ├── SuccessStories.tsx
+│   │   ├── ui/                          # Shadcn/ui components
+│   │   ├── common/                      # Common/shared components
+│   │   ├── home/                        # Home page components
+│   │   ├── about/                       # About page components
+│   │   │   ├── AboutSection.tsx
+│   │   │   ├── OurFounders.tsx
+│   │   │   ├── WhyChooseUs.tsx
+│   │   │   └── WhyTrustUs.tsx
+│   │   ├── become-distributor/          # Become Distributor page components
+│   │   │   ├── BenefitsSection.tsx
+│   │   │   ├── CareerSection.tsx
+│   │   │   ├── ComplianceSection.tsx
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── IndustryGrowthSection.tsx
+│   │   │   ├── OfferingsSection.tsx
+│   │   │   ├── StepsSection.tsx
+│   │   │   └── SupportDistributorsSection.tsx
+│   │   ├── blog/                        # Blog components
+│   │   ├── calculator/                  # Calculator components
+│   │   ├── contact-us/                  # Contact page components
+│   │   ├── services/                    # Services page components
+│   │   ├── mfresearch/                  # MF Research page components
+│   │   ├── important-links/             # Important Links page components
+│   │   └── SuccessStories.tsx
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── AboutUs.tsx
+│   │   ├── Services.tsx
+│   │   ├── BecomeDistributor.tsx
+│   │   ├── MFResearch.tsx
+│   │   ├── Calculator.tsx
+│   │   ├── BlogDetailPage.tsx
+│   │   ├── LatestBlogs.tsx
+│   │   ├── ContactUs.tsx
+│   │   ├── ImportantLinks.tsx
+│   │   ├── Team.tsx
 │   │   ├── Testimonials.tsx
-│   │   ├── FAQ.tsx
-│   │   └── Footer.tsx
+│   │   ├── PrivacyPolicy.tsx
+│   │   ├── TermsOfUse.tsx
+│   │   └── Disclaimer.tsx
+│   ├── data/
+│   │   ├── about.json
+│   │   ├── becomeDistributor.json
+│   │   ├── blog.json
+│   │   ├── calculator.json
+│   │   ├── contact.json
+│   │   ├── disclaimer.json
+│   │   ├── faq.json
+│   │   ├── footer.json
+│   │   ├── header.json
+│   │   ├── hero.json
+│   │   ├── home.json
+│   │   ├── importantLinks.json
+│   │   ├── mfresearch.json
+│   │   ├── privacyPolicy.json
+│   │   ├── services.json
+│   │   ├── team.json
+│   │   ├── termsOfUse.json
+│   │   ├── testimonials.json
+│   │   ├── trailingReturns.json
+│   │   └── index.ts
+│   ├── assets/
+│   │   ├── images/
+│   │   └── logo/
 │   ├── lib/
 │   │   └── utils.ts
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
 ├── public/
+│   └── images/
+│       ├── about-finyzer.avif
+│       ├── blog-banner.avif
+│       ├── career-mutual-fund-distribution.avif
+│       ├── contact.avif
+│       ├── finyser-calculator.avif
+│       └── ... (various image assets)
+├── server/
+│   ├── index.js
+│   ├── package.json
+│   └── README.md
 ├── index.html
 ├── package.json
 ├── tsconfig.json
+├── tsconfig.node.json
 ├── vite.config.ts
-└── tailwind.config.js
+├── vite-env.d.ts
+├── tailwind.config.js
+├── postcss.config.js
+├── CONTENT_MANAGEMENT_GUIDE.md
+└── README.md
 ```
 
 ## Technologies Used
 
-- **React** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **Shadcn/ui** - UI components
-- **Recharts** - Charts library
-- **Lucide React** - Icons
+### Frontend
+- **React 18** - UI library with hooks and modern patterns
+- **TypeScript** - Type safety and enhanced IDE support
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn/ui** - Customizable component library
+- **Recharts** - Charts library for financial visualizations
+- **Lucide React** - Modern icon library
+- **React Router** - Client-side routing
+
+### Backend
+- **Node.js** - Server runtime
+- **Express** - Web framework (likely based on server directory)
+
+### Build & Config
+- **PostCSS** - CSS processing
+- **ESBuild** - Fast JavaScript bundler (via Vite)
+
+### Content Management
+- **JSON-based data files** - Easy content updates without code changes
+- **AVIF image format** - Modern, highly compressed images
 
 ## Customization
 
