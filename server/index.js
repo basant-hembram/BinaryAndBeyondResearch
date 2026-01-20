@@ -2,7 +2,11 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const dns = require('dns');
 require('dotenv').config();
+
+// Fix for Hostinger IPv6 issue - TurboSMTP requires IPv4
+dns.setDefaultResultOrder('ipv4first');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,11 +24,11 @@ console.log('Secure:', process.env.SMTP_SECURE);
 console.log('User:', process.env.SMTP_USER);
 console.log('Pass:', process.env.SMTP_PASS ? '***' + process.env.SMTP_PASS.slice(-4) : 'NOT SET');
 
-// Create SMTP transporter
+// Create SMTP transporter for TurboSMTP
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+  host: process.env.SMTP_HOST || 'pro.turbo-smtp.com',
+  port: 587, // MUST be 587 for STARTTLS
+  secure: false, // MUST be false for STARTTLS (port 587)
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -34,14 +38,14 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// Note: Commenting out verify() as it may fail at startup but work when actually sending
-// transporter.verify((error, success) => {
-//   if (error) {
-//     console.error('SMTP connection error:', error);
-//   } else {
-//     console.log('SMTP server is ready to send emails');
-//   }
-// });
+// Verify SMTP connection
+transporter.verify((error, success) => {
+  if (error) {
+    console.error('SMTP connection error:', error);
+  } else {
+    console.log('SMTP server is ready to send emails');
+  }
+});
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
