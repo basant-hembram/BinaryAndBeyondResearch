@@ -1,10 +1,8 @@
-import dns from "dns";
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,24 +20,19 @@ console.log('Secure:', process.env.SMTP_SECURE);
 console.log('User:', process.env.SMTP_USER);
 console.log('Pass:', process.env.SMTP_PASS ? '***' + process.env.SMTP_PASS.slice(-4) : 'NOT SET');
 
-dns.setDefaultResultOrder("ipv4first");
-
 // Create SMTP transporter
 const transporter = nodemailer.createTransport({
-  host: "pro.turbo-smtp.com", //process.env.SMTP_HOST,
-  port: 587, //Number(process.env.SMTP_PORT),
-  secure: process.env.SMTP_SECURE === 'false', // true for 465, false for other ports
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
   auth: {
-    user: "2303c5eec4046322f60c", //process.env.SMTP_USER,
-    pass: "sPntG4uKziSLaBDVF26Z", //process.env.SMTP_PASS,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
   tls: {
     rejectUnauthorized: false
   }
 });
-
-await transporter.verify();
-console.log("SMTP ready");
 
 // Note: Commenting out verify() as it may fail at startup but work when actually sending
 // transporter.verify((error, success) => {
