@@ -4,6 +4,7 @@
   "description": "Backend API for Finyzer Assets",
   "main": "index.js",
   "scripts": {
+    "build": "echo 'No build required for Node.js server'",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
