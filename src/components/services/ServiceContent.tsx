@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 import {
     faArrowRight,
     faChevronDown,
@@ -46,6 +47,7 @@ const ServiceContent = () => {
     const { serviceCategories, serviceContent } = data.services;
     const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
     const [selectedService, setSelectedService] = useState<string>('mutual-fund');
+    const navigate = useNavigate();
 
     const toggleCategory = (categoryId: string) => {
         setExpandedCategories(prev =>
@@ -138,7 +140,7 @@ const ServiceContent = () => {
                                 ))}
                             </div>
 
-                            <Button size="lg" className="text-base flex items-center gap-2 mt-[20px]">
+                            <Button size="lg" className="text-base flex items-center gap-2 mt-[20px]" onClick={() => navigate('/contact')}>
                                 Enquiry Now
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </Button>

@@ -2,9 +2,11 @@ import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 const CareerSection = () => {
   const { career } = data.becomeDistributor;
+  const navigate = useNavigate();
 
   return (
     <section className="bg-[#0A1A3A] text-white py-24 relative overflow-hidden">
@@ -36,7 +38,7 @@ const CareerSection = () => {
             <p className="text-white text-[16px] lg:text-[18px] mb-8 leading-relaxed">
               {career.description}
             </p>
-            <Button className="bg-[#01A382] hover:bg-[#018f72] text-white px-8 py-6 text-[16px]">
+            <Button className="bg-[#01A382] hover:bg-[#018f72] text-white px-8 py-6 text-[16px]" onClick={() => navigate('/contact')}>
               {career.ctaButton.text} <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
             </Button>
           </div>

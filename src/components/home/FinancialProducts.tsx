@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandHoldingDollar, faBuildingColumns, faArrowUpRightDots, faPeopleRoof, faCoins, faBriefcaseMedical, faCarBurst, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../ui/button';
 import { data } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 const { home: homeData } = data;
 
@@ -17,6 +18,7 @@ const iconMap: Record<string, any> = {
 
 const FinancialProducts = () => {
   const { financialProducts } = homeData;
+  const navigate = useNavigate();
 
   return (
     <section id="services" className="py-16 md:py-24 bg-[#E9E9EB] relative overflow-hidden">
@@ -38,7 +40,7 @@ const FinancialProducts = () => {
             <div className="pt-[42px] lg:pt-[95px] xl:pt-[59px]">
               <Button 
                 size="lg" 
-                className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
+                className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2" onClick={() => navigate('/services')}
               >
                 {financialProducts.buttonText}
                 <FontAwesomeIcon icon={faArrowRight} />

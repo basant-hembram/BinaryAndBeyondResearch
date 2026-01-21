@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { data } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const heroData = data.hero;
+  const navigate = useNavigate();
 
   return (
     <section id="home" className="bg-gradient-to-br from-white to-gray-50 py-[48px] lg:py-[65px]">
@@ -26,7 +28,7 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 mt-[30px]">
-              <Button size="lg" className="text-base flex items-center gap-2">
+              <Button size="lg" className="text-base flex items-center gap-2" onClick={() => navigate('/contact')}>
                 {heroData.ctaButton.text}
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
