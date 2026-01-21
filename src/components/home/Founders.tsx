@@ -4,11 +4,13 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faLinkedin, faDribbble} from '@fortawesome/free-brands-svg-icons';
 import { Button } from '../ui/button';
 import { data } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 const { home: homeData } = data;
 
 const Founders = () => {
   const { founders } = homeData;
+  const navigate = useNavigate();
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
@@ -28,7 +30,7 @@ const Founders = () => {
             
             <Button 
                 size="lg" 
-                className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
+                className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2" onClick={() => navigate('/our-team')}
               >
                  {founders.buttonText}
                 <FontAwesomeIcon icon={faArrowRight} />

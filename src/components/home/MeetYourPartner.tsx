@@ -1,12 +1,14 @@
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import { data } from '../../data';
 
 const { home: homeData } = data;
 
 const MeetYourPartner = () => {
   const { meetYourPartner } = homeData;
+  const navigate = useNavigate();
 
   return (
     <section className="py-16 md:py-24 bg-[#0A1A3A] relative overflow-hidden">
@@ -47,6 +49,7 @@ const MeetYourPartner = () => {
               <Button 
                 size="lg" 
                 className="bg-[#00A896] hover:bg-[#008F7E] text-white flex items-center gap-2"
+                onClick={() => navigate('/about')}
               >
                 {meetYourPartner.buttonText}
                 <FontAwesomeIcon icon={faArrowRight} />

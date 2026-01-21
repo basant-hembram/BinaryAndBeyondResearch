@@ -2,6 +2,7 @@ import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightDots, faHandHoldingDollar, faSackDollar, faCoins, faMoneyBillTrendUp, faMoneyBillTransfer, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 const iconMap: Record<string, any> = {
   faArrowUpRightDots,
@@ -14,6 +15,7 @@ const iconMap: Record<string, any> = {
 
 const MutualFundResources = () => {
   const { mutualFundResources } = data.home;
+  const navigate = useNavigate();
 
   return (
     <section className="py-16 md:py-24 bg-[#E9E9EB] relative overflow-hidden">
@@ -62,7 +64,7 @@ const MutualFundResources = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg">
+          <Button className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg"  onClick={() => navigate('/mf-research')}>
             Explore MF Research
             <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
           </Button>
