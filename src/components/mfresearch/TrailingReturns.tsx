@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useMemo, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
@@ -70,7 +72,7 @@ const TrailingReturns = () => {
                 key="prev"
                 onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
-                className="px-3 py-2 text-sm text-gray-600 hover:text-[#01A382] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                className="px-3 py-2 text-sm text-[#575455] hover:text-[#01A382] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
             >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -86,7 +88,7 @@ const TrailingReturns = () => {
                 onClick={() => setCurrentPage(1)}
                 className={`px-3 py-2 text-sm rounded ${currentPage === 1
                     ? 'bg-[#01A382] text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    : 'text-[#575455] hover:bg-gray-100'
                 }`}
             >
                 1
@@ -101,7 +103,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(2)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === 2
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     2
@@ -117,7 +119,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(3)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === 3
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     3
@@ -128,7 +130,7 @@ const TrailingReturns = () => {
         // Ellipsis start
         if (showEllipsisStart) {
             buttons.push(
-                <span key="ellipsis-start" className="px-3 py-2 text-gray-600">
+                <span key="ellipsis-start" className="px-3 py-2 text-[#575455]">
                     ...
                 </span>
             );
@@ -137,7 +139,7 @@ const TrailingReturns = () => {
         // Ellipsis end
         if (showEllipsisEnd) {
             buttons.push(
-                <span key="ellipsis-end" className="px-3 py-2 text-gray-600">
+                <span key="ellipsis-end" className="px-3 py-2 text-[#575455]">
                     ...
                 </span>
             );
@@ -151,7 +153,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(totalPages - 1)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === totalPages - 1
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     {totalPages - 1}
@@ -167,7 +169,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(totalPages)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === totalPages
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     {totalPages}
@@ -183,7 +185,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(2)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === 2
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     2
@@ -198,7 +200,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(2)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === 2
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     2
@@ -210,7 +212,7 @@ const TrailingReturns = () => {
                     onClick={() => setCurrentPage(3)}
                     className={`px-3 py-2 text-sm rounded ${currentPage === 3
                         ? 'bg-[#01A382] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#575455] hover:bg-gray-100'
                     }`}
                 >
                     3
@@ -224,7 +226,7 @@ const TrailingReturns = () => {
                 key="next"
                 onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                 disabled={currentPage === totalPages}
-                className="px-3 py-2 text-sm text-gray-600 hover:text-[#01A382] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                className="px-3 py-2 text-sm text-[#575455] hover:text-[#01A382] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
             >
                 Next
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,7 +264,7 @@ const TrailingReturns = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Select Category</label>
-                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
+                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
                         {trailingReturnsData.filters.categories.map((category, index) => (
                             <option key={index}>{category}</option>
                         ))}
@@ -271,7 +273,7 @@ const TrailingReturns = () => {
 
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Plan Type</label>
-                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
+                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
                         {trailingReturnsData.filters.planTypes.map((planType, index) => (
                             <option key={index}>{planType}</option>
                         ))}
@@ -280,7 +282,7 @@ const TrailingReturns = () => {
 
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Select Period</label>
-                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
+                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
                         {trailingReturnsData.filters.selectPeriods.map((period, index) => (
                             <option key={index}>{period}</option>
                         ))}
@@ -292,7 +294,7 @@ const TrailingReturns = () => {
                         Search
                         <FontAwesomeIcon icon={faArrowUp} className="rotate-90" />
                     </button>
-                    <button className="bg-white hover:bg-gray-50 text-gray-700 px-4 py-2.5 rounded-md border border-gray-300 flex items-center gap-2">
+                    <button className="bg-white hover:bg-gray-50 text-[#4A4444] px-4 py-2.5 rounded-md border border-gray-300 flex items-center gap-2">
                         <FontAwesomeIcon icon={faArrowUp} />
                         Export
                     </button>
@@ -302,17 +304,17 @@ const TrailingReturns = () => {
             {/* Show Entries and Period Tabs */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6">
                 <div className="flex items-center gap-2 mb-[20px] lg:mb-0">
-                    <span className="text-sm text-gray-600">Show</span>
+                    <span className="text-sm text-[#575455]">Show</span>
                     <select
                         value={showEntries}
                         onChange={(e) => setShowEntries(e.target.value)}
-                        className="px-3 py-1 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="px-3 py-1 border border-gray-300 rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-teal-500"
                     >
                         {trailingReturnsData.entriesOptions.map((option, index) => (
                             <option key={index}>{option}</option>
                         ))}
                     </select>
-                    <span className="text-sm text-gray-600">Entries</span>
+                    <span className="text-sm text-[#575455]">Entries</span>
                 </div>
 
                 <div className="flex gap-8">
@@ -336,42 +338,42 @@ const TrailingReturns = () => {
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-white border-b border-gray-200">
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">SCHEME NAME</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">LAUNCH DATE</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">AUM<br />(CRORE)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">TER (%)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">1YR (%)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">RANK</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">3YR (%)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">RANK</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">5YR (%)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">RANK</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">10YR<br />(%)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">RANK</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">RTN<br />(%)</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">RANK</th>
-                            <th className="px-3 py-3 text-left text-[11px] font-medium text-gray-600 uppercase">SINCE<br />LAUNCH</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">SCHEME NAME</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">LAUNCH DATE</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">AUM<br />(CRORE)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">TER (%)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">1YR (%)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">RANK</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">3YR (%)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">RANK</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">5YR (%)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">RANK</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">10YR<br />(%)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">RANK</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">RTN<br />(%)</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">RANK</th>
+                            <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">SINCE<br />LAUNCH</th>
                         </tr>
                     </thead>
                     <tbody>
                         {currentPageData.length > 0 ? (
                             currentPageData.map((fund, index) => (
                                 <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.schemeName}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.launchDate}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.aum}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.ter}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year1Rtn}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year1Rank}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year3Rtn}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year3Rank}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year5Rtn}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year5Rank}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year10Rtn}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.year10Rank}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.rtnPercent}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.rtnRank}</td>
-                                    <td className="px-3 py-3 text-sm text-gray-700">{fund.sinceLaunch}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.schemeName}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.launchDate}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.aum}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.ter}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year1Rtn}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year1Rank}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year3Rtn}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year3Rank}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year5Rtn}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year5Rank}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year10Rtn}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.year10Rank}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.rtnPercent}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.rtnRank}</td>
+                                    <td className="px-3 py-3 text-sm text-[#4A4444]">{fund.sinceLaunch}</td>
                                 </tr>
                             ))
                         ) : (
@@ -387,7 +389,7 @@ const TrailingReturns = () => {
 
             {/* Pagination Info and Controls */}
             <div className="flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-[#575455]">
                     Showing {currentPageData.length > 0 ? ((currentPage - 1) * entriesPerPage + 1) : 0} to {Math.min(currentPage * entriesPerPage, filteredData.length)} of {filteredData.length} entries
                 </div>
                 {totalPages > 1 && (

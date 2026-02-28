@@ -1,11 +1,11 @@
-# Finyzer Assets
+# Binary and Beyond Research
 
-A modern, responsive mutual fund distributor website built with React, TypeScript, Tailwind CSS, and Shadcn/ui components.
+A modern, responsive mutual fund distributor website built with Next.js 14, TypeScript, Tailwind CSS, and Shadcn/ui components.
 
 ## Features
 
 - 🎨 Modern and responsive design with Tailwind CSS
-- ⚡ Built with Vite for fast development and optimized builds
+- ⚡ Built with Next.js 14 App Router for optimal performance
 - 🎯 TypeScript for type safety and better developer experience
 - 💅 Shadcn/ui component library for consistent UI
 - 📊 Interactive Financial Calculators (SIP, Lumpsum, SWP, etc.)
@@ -20,7 +20,8 @@ A modern, responsive mutual fund distributor website built with React, TypeScrip
 - 🔐 Privacy Policy, Terms of Use, and Disclaimer pages
 - 🎓 Comprehensive "Become a Distributor" career section
 - 📋 Important links and resources section
-- 🔄 Backend server for form handling and API endpoints
+- 🚀 SEO optimized with Next.js metadata
+- ⚙️ Server and Client Components for optimal bundle size
 
 ## Getting Started
 
@@ -41,12 +42,13 @@ npm install
 npm run dev
 ```
 
-3. Open your browser and navigate to `http://localhost:5173`
+3. Open your browser and navigate to `http://localhost:3000`
 
 ### Building for Production
 
 ```bash
 npm run build
+npm start
 ```
 
 ### Preview Production Build

@@ -1,4 +1,22 @@
 {
+  "ourExpertise": {
+    "title": "Our Expertise",
+    "description": "We combine strategy, creativity, and technology to deliver impactful digital solutions tailored to your business goals.",
+    "cards": [
+      {
+        "title": "Product Testing",
+        "image": "/images/product-testing.png"
+      },
+      {
+        "title": "Healthcare Market Research",
+        "image": "/images/healthcare-market-research.png"
+      },
+      {
+        "title": "Market Segmentation",
+        "image": "/images/market-segmentation.png"
+      }
+    ]
+  },
   "financialProducts": {
     "title": "Our",
     "titleHighlight": "Financial Solutions",
@@ -204,15 +222,16 @@
     }
   },
   "whyInvestors": {
-    "title": "Why investors trust",
-    "titleHighlight": "Finyzer Assets",
-    "subtitle": "A trusted Mutual fund Distributor IN Jharkhand",
+    "title": "What Makes",
+    "titleHighlight": "Binary and Beyond Research",
+    "titleEnd": "Reliable",
+    "subtitle": "We deliver independent, data-driven research backed by market expertise, rigorous analysis, and transparent methodology—helping investors make confident decisions.",
     "reasons": [
-      "7+ Years of experience in wealth & investment planning/management",
-      "SIP Specialist WITH GOAL BASED iNVESTMENT APPROACH.",
-      "200+ Happy Families guided across Jharkhand along with other part of INDIA",
-      "Dedicated Office at Sector-4 Bokaro, Jharkhand",
-      "100+ Crore AUM under management"
+      "Quality data and turnaround time",
+      "Unique Modus Operandi Hassle free one-stop solution",
+      "Organizational Experience",
+      "Extensive Experience",
+      "Past Experience In Research Agencies Of Global Repute"
     ],
     "decorativeImages": {
       "topLeft": "/images/top-left-circle.png",

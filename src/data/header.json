@@ -1,35 +1,8 @@
 {
   "logo": {
     "src": "/images/Web_Logo.png",
-    "alt": "Finyzer Assets Logo"
-  },
-  "socialLinks": [
-    {
-      "name": "Facebook",
-      "url": "https://facebook.com",
-      "icon": "faFacebook"
-    },
-    {
-      "name": "LinkedIn",
-      "url": "https://linkedin.com",
-      "icon": "faLinkedin"
-    },
-    {
-      "name": "Instagram",
-      "url": "https://instagram.com",
-      "icon": "faInstagram"
-    },
-    {
-      "name": "Youtube",
-      "url": "https://youtube.com",
-      "icon": "faYoutube"
-    }
-  ],
-  "contact": {
-    "phone": "+91 98765 43210",
-    "phoneLink": "tel:+919876543210",
-    "contactText": "CONTACT US",
-    "contactLink": "/contact"
+    "alt": "Binary and Beyond Research Logo",
+    "tagline": "Thinking Beyond the Algorithm"
   },
   "navigation": [
     {
@@ -41,20 +14,32 @@
       "path": "/about"
     },
     {
+      "label": "Our Work",
+      "path": "/our-work"
+    },
+    {
       "label": "Services",
       "path": "/services"
     },
     {
-      "label": "Calculator",
-      "path": "/calculator"
+      "label": "Panel Services",
+      "path": "/panel-services"
     },
     {
-      "label": "MF Research",
-      "path": "/mf-research"
+      "label": "Healthcare",
+      "path": "/healthcare"
     },
     {
-      "label": "Become a Distributer",
-      "path": "/become-distributor"
+      "label": "Career",
+      "path": "/career"
+    },
+    {
+      "label": "Membership",
+      "path": "/membership"
+    },
+    {
+      "label": "Contact Us",
+      "path": "/contact"
     }
   ]
 }

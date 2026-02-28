@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface BreadcrumbItem {
   label: string;
@@ -28,7 +28,7 @@ const Banner = ({ title, breadcrumbs, backgroundImage }: BannerProps) => {
             <div key={index} className="flex items-center gap-2">
               {index < breadcrumbs.length - 1 ? (
                 <>
-                  <Link to={item.path} className="hover:text-[#E6AF1C] transition-colors uppercase">
+                  <Link href={item.path} className="hover:text-[#E6AF1C] transition-colors uppercase">
                     {item.label}
                   </Link>
                   <span>/</span>

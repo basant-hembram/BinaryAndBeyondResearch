@@ -13,7 +13,7 @@ const OurFounders = () => {
       <div className="container max-md:px-4 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">
-            <span className="text-gray-700">{founders.title} </span>
+            <span className="text-[#4A4444]">{founders.title} </span>
             <span className="text-[#E6AF1C] font-semibold">{founders.titleHighlight}</span>
           </h2>
           <p className="text-[#575455] text-[16px] lg:text-[18px] max-w-3xl mx-auto">

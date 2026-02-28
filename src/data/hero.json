@@ -1,20 +1,25 @@
 {
-  "title": "Trusted Mutual Fund Distributor in Jharkhand",
-  "subtitle": [
-   "Finyzer Assets is Helping individuals and families achieve their financial goals through disciplined SIPs and long-term mutual fund investing.",
-   "AMFI-Registered Mutual Fund Distributor | Serving Bokaro, Dhanbad & Ranchi."
-  ],
+  "title": {
+    "line1": "Empowering",
+    "line2": "Innovation",
+    "line3": "Through Technology"
+  },
+  "subtitle": "Driven by curiosity and powered by technology, we push boundaries to create impactful digital ecosystems. Our mission is to turn ideas into intelligent innovations that shape tomorrow.",
   "ctaButton": {
     "text": "Request A Call Back",
     "icon": "arrow-right"
   },
   "image": {
-    "src": "/images/office-entrance.jpg",
-    "alt": "Modern Office"
+    "src": "/images/hero-banner.png",
+    "alt": "Digital Innovation"
+  },
+  "video": {
+    "src": "/images/hero-banner.mp4"
   },
   "branding": {
     "title": "Partnering for Success",
-    "companyName": "Finyzer Assets"
+    "companyName": "Binary and Beyond Research",
+    "subtitle": "(analytics)"
   },
   "stats": [
     {

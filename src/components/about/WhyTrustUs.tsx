@@ -58,7 +58,7 @@ const WhyTrustUs = () => {
                   <h4 className="font-bold text-[#0A1A3A] text-[16px] mb-2">
                     {feature.title}
                   </h4>
-                  <p className="text-gray-600 text-[16px] leading-relaxed">
+                  <p className="text-[#575455] text-[16px] leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

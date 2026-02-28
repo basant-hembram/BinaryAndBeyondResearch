@@ -1,92 +1,97 @@
+'use client';
+
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { data } from '../../data';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
   const heroData = data.hero;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
-    <section id="home" className="bg-gradient-to-br from-white to-gray-50 py-[48px] lg:py-[65px]">
-      <div className="container max-md:px-4 mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section id="home" className="relative bg-gradient-to-br from-gray-50 to-white pt-16 lg:pt-20">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="">
-            <h1 className="text-[32px] lg:text-[36px] xl:text-[48px] font-medium text-[#0A1A3A] !leading-[1.2]">
-              {heroData.title.split('<br></br>').map((line, index) => (
-                <span key={index}>
-                  {line}
-                  {index < heroData.title.split('<br></br>').length - 1 && <br />}
-                </span>
-              ))}
+          <div className="space-y-6">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-[500] !leading-[1.3]">
+              <span className="block text-[#4A4444]">{heroData.title.line1}</span>
+              <span className="block font-[600] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent">
+                {heroData.title.line2}
+              </span>
+              <span className="block text-[#4A4444]">{heroData.title.line3}</span>
             </h1>
-            <p className="text-[16px] lg:text-[16px] xl:text-[20px] text-[#575455] leading-relaxed mt-[25px]">
+            
+            <p className="text-base lg:text-lg text-[#575455] leading-relaxed">
               {heroData.subtitle}
             </p>
-            
-            <div className="flex flex-wrap gap-4 mt-[30px]">
-              <Button size="lg" className="text-base flex items-center gap-2" onClick={() => navigate('/contact')}>
+
+            <div className="pt-4">
+              <Button
+                size="lg"
+                className="bg-[#403373] hover:bg-purple-800 text-white px-8 py-6 text-base font-medium rounded-md flex items-center gap-2"
+                onClick={() => router.push('/contact')}
+              >
                 {heroData.ctaButton.text}
-                <FontAwesomeIcon icon={faArrowRight} />
+                <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
               </Button>
-            </div>            
+            </div>
           </div>
 
           {/* Right Content - Image */}
           <div className="relative">
-            <div className="bg-gray-200 rounded-[50px] overflow-hidden aspect-[4/3]">
-              <img 
-                src={heroData.image.src} 
-                alt={heroData.image.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>           
-            
+
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left - Branding */}
-            <div className="">
-              <h3 className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#0A1A3A] mb-2">
-                {heroData.branding.title}
-              </h3>
-              <div className="flex items-baseline gap-2">
-                <h2 className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#E6AF1C]">
-                  {heroData.branding.companyName}
-                </h2>
-                <span className="text-[20px] lg:text-[24px] xl:text-[28px] text-[#0A1A3A]"></span>
+        {/* Stats Section - White Card */}
+        <div className="mt-16 lg:mt-20 max-w-7xl -mb-20">
+          <div className="bg-white rounded-xl shadow-lg p-8 lg:p-10">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Left - Branding */}
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-[400] text-[#0A1A3A] mb-2">
+                  {heroData.branding.title}
+                </h3>
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-2xl lg:text-3xl font-[400] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent">
+                    {heroData.branding.companyName}
+                  </h2>
+                  <span className="text-2xl lg:text-3xl font-[400] text-[#0A1A3A]">
+                    {heroData.branding.subtitle}
+                  </span>
+                </div>
+              </div>
+
+              {/* Right - Stats */}
+              <div className="grid grid-cols-2 gap-8">
+                {heroData.stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className={`text-center ${index > 0 ? 'border-l-2 border-gray-200 pl-8' : ''}`}
+                  >
+                    <p className="text-3xl lg:text-4xl font-[500] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent mb-2">
+                      {stat.value}
+                    </p>
+                    <p className="text-sm lg:text-base text-[#4A4444] font-medium">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
-
-            {/* Right - Stats */}
-            <div className="grid grid-cols-2">
-              {heroData.stats.map((stat, index) => (
-                <div key={index} className={`text-center ${index > 0 ? 'border-l border-[#D9D9D9]' : ''}`}>
-                  <p className="text-[26px] lg:text-[32px] xl:text-[32px] text-[#E6AF1C] mb-2">{stat.value}</p>
-                  <p className="text-[16px] text-[#090914] font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
-        
       </div>
-
-      {/* WhatsApp Floating Button */}
-      <a
-        href={heroData.whatsapp.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-50 h-[64px] w-[64px] flex items-center justify-center"
-      >
-        <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-      </a>
+      <div className="absolute right-0 top-0 bottom-0 overflow-hidden shadow-2xl">
+        <img
+          src={heroData.image.src}
+          alt={heroData.image.alt}
+          className="h-full object-cover"
+        />
+      </div>
     </section>
   );
 };

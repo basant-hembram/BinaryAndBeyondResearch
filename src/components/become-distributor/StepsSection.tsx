@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp, faGraduationCap, faTrophy, faIdCard, faHandshake } from '@fortawesome/free-solid-svg-icons';

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,7 +35,7 @@ const BecomeACrorepatiCalculator = () => {
           <h2 className="text-[22px] lg:text-[24px] font-semibold text-[#E6AF1C] mb-2">
             {becomeACrorepati.title}
           </h2>
-          <p className="text-gray-600">
+          <p className="text-[#575455]">
             {becomeACrorepati.description}
           </p>
         </div>
@@ -44,7 +46,7 @@ const BecomeACrorepatiCalculator = () => {
             <div className='grid xl:grid-cols-2 gap-[47px]'>
               {/* Current Value Slider */}
               <div>
-                <label className="block text-gray-700 mb-3 text-sm">
+                <label className="block text-[#4A4444] mb-3 text-sm">
                   {becomeACrorepati.fields[0].label}
                 </label>
                 <div className="flex flex-col items-end w-full gap-[25px]">
@@ -52,7 +54,7 @@ const BecomeACrorepatiCalculator = () => {
                     type="text"
                     value={currentValue.toLocaleString('en-IN')}
                     readOnly
-                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
+                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-[#4A4444]"
                   />
                   <input
                     type="range"
@@ -70,7 +72,7 @@ const BecomeACrorepatiCalculator = () => {
 
               {/* Current Age Slider */}
               <div>
-                <label className="block text-gray-700 mb-3 text-sm">
+                <label className="block text-[#4A4444] mb-3 text-sm">
                   {becomeACrorepati.fields[1].label}
                 </label>
                 <div className="flex flex-col items-end w-full gap-[25px]">
@@ -78,7 +80,7 @@ const BecomeACrorepatiCalculator = () => {
                     type="text"
                     value={currentAge}
                     readOnly
-                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
+                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-[#4A4444]"
                   />
                   <input
                     type="range"
@@ -96,7 +98,7 @@ const BecomeACrorepatiCalculator = () => {
 
               {/* Target Age Slider */}
               <div>
-                <label className="block text-gray-700 mb-3 text-sm">
+                <label className="block text-[#4A4444] mb-3 text-sm">
                   {becomeACrorepati.fields[2].label}
                 </label>
                 <div className="flex flex-col items-end w-full gap-[25px]">
@@ -104,7 +106,7 @@ const BecomeACrorepatiCalculator = () => {
                     type="text"
                     value={targetAge}
                     readOnly
-                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
+                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-[#4A4444]"
                   />
                   <input
                     type="range"
@@ -122,7 +124,7 @@ const BecomeACrorepatiCalculator = () => {
 
               {/* Inflation Rate Slider */}
               <div>
-                <label className="block text-gray-700 mb-3 text-sm">
+                <label className="block text-[#4A4444] mb-3 text-sm">
                   {becomeACrorepati.fields[3].label}
                 </label>
                 <div className="flex flex-col items-end w-full gap-[25px]">
@@ -130,7 +132,7 @@ const BecomeACrorepatiCalculator = () => {
                     type="text"
                     value={inflationRate}
                     readOnly
-                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
+                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-[#4A4444]"
                   />
                   <input
                     type="range"
@@ -148,7 +150,7 @@ const BecomeACrorepatiCalculator = () => {
 
               {/* Return Rate Slider */}
               <div>
-                <label className="block text-gray-700 mb-3 text-sm">
+                <label className="block text-[#4A4444] mb-3 text-sm">
                   {becomeACrorepati.fields[4].label}
                 </label>
                 <div className="flex flex-col items-end w-full gap-[25px]">
@@ -156,7 +158,7 @@ const BecomeACrorepatiCalculator = () => {
                     type="text"
                     value={returnRate}
                     readOnly
-                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
+                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-[#4A4444]"
                   />
                   <input
                     type="range"
@@ -174,7 +176,7 @@ const BecomeACrorepatiCalculator = () => {
 
               {/* Savings Slider */}
               <div>
-                <label className="block text-gray-700 mb-3 text-sm">
+                <label className="block text-[#4A4444] mb-3 text-sm">
                   {becomeACrorepati.fields[5].label}
                 </label>
                 <div className="flex flex-col items-end w-full gap-[25px]">
@@ -182,7 +184,7 @@ const BecomeACrorepatiCalculator = () => {
                     type="text"
                     value={savings.toLocaleString('en-IN')}
                     readOnly
-                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-gray-700"
+                    className="w-40 px-4 py-2 rounded-md text-center bg-gray-200 text-[#4A4444]"
                   />
                   <input
                     type="range"

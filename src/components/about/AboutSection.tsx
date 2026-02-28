@@ -9,11 +9,11 @@ const AboutSection = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-6">
-                            <span className="text-gray-700">About </span>
+                            <span className="text-[#4A4444]">About </span>
                             <span className="text-[#E6AF1C] font-semibold">Finyser Assets</span>
                         </h2>
                         {aboutData.description.map((paragraph, index) => (
-                            <p key={index} className="text-gray-600 text-[14px] lg:text-[16px] mb-4 leading-relaxed">
+                            <p key={index} className="text-[#575455] text-[14px] lg:text-[16px] mb-4 leading-relaxed">
                                 {paragraph}
                             </p>
                         ))}

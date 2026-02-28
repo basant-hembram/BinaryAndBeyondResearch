@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,7 +20,7 @@ const BlogCard = ({ image, date, title, description, link }: BlogCardProps) => {
         <p className="text-[#575455] text-[14px] mb-4 line-clamp-3">{description}</p>
         <div className="flex items-center justify-between">
           <Link 
-            to={link}
+            href={link}
             className="inline-flex text-[14px] items-center gap-2 bg-[#01A382] hover:bg-[#018f72] text-white px-4 py-2 rounded-[5px] transition-colors"
           >
             Learn More

@@ -1,8 +1,10 @@
+'use client';
+
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator, faCamera, faUmbrella, faMoneyBill, faSackDollar, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const iconMap: Record<string, any> = {
   faCalculator,
@@ -15,7 +17,7 @@ const iconMap: Record<string, any> = {
 
 const SIPCalculator = () => {
   const { sipCalculators } = data.home;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section id="calculator" className="py-16 md:py-24 bg-white">
@@ -49,7 +51,7 @@ const SIPCalculator = () => {
             </div>
 
             <Button 
-              className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg" onClick={() => navigate('/calculator')}
+              className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg" onClick={() => router.push('/calculator')}
             >
               Calculate your Wealth
               <FontAwesomeIcon icon={faArrowRight} className="ml-2" />

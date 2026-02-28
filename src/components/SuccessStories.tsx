@@ -26,7 +26,7 @@ const SuccessStories = () => {
                   </div>
                   <div>
                     <p className="text-3xl font-bold text-[#0A1A3A]">{successStories.stats.count}</p>
-                    <p className="text-gray-600">{successStories.stats.label}</p>
+                    <p className="text-[#575455]">{successStories.stats.label}</p>
                   </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@ const SuccessStories = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#0A1A3A] mb-4">
               {successStories.title} <span className="text-[#E6AF1C]">{successStories.titleHighlight}</span> {successStories.subtitle}
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-[#575455] mb-8">
               {successStories.description}
             </p>
 
@@ -59,12 +59,12 @@ const SuccessStories = () => {
                         <h4 className="font-semibold text-[#0A1A3A] text-sm">
                           {investor.name}
                         </h4>
-                        <p className="text-xs text-gray-600">{investor.location}</p>
+                        <p className="text-xs text-[#575455]">{investor.location}</p>
                       </div>
                     </div>
                     
                     <div className="flex items-center justify-between pt-3 border-t">
-                      <span className="text-xs text-gray-600">Returns</span>
+                      <span className="text-xs text-[#575455]">Returns</span>
                       <span className="font-bold text-[#E6AF1C] text-lg">+{investor.returns}</span>
                     </div>
                     

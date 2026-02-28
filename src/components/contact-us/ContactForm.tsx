@@ -1,6 +1,8 @@
+'use client';
+
 import { useState } from 'react';
 import { Button } from '../ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -245,7 +247,7 @@ const ContactForm = () => {
             Phone number <span className="text-red-500">*</span>
           </label>
           <div className="relative">
-            <select className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent focus:border-[#E6AF1C] border-none focus:outline-none text-gray-700 pr-8 appearance-none cursor-pointer z-10">
+            <select className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent focus:border-[#E6AF1C] border-none focus:outline-none text-[#4A4444] pr-8 appearance-none cursor-pointer z-10">
               <option value="IN">IN</option>
               <option value="US">US</option>
               <option value="UK">UK</option>
@@ -309,9 +311,9 @@ const ContactForm = () => {
             className="mt-1 w-4 h-4"
             required
           />
-          <label htmlFor="agreeToPolicy" className="text-sm text-gray-600">
+          <label htmlFor="agreeToPolicy" className="text-sm text-[#575455]">
             You agree to our friendly{' '}
-            <Link to="/privacy-policy" className="text-gray-600 underline hover:text-[#01A382]">
+            <Link href="/privacy-policy" className="text-[#575455] underline hover:text-[#01A382]">
               privacy policy
             </Link>
             . <span className="text-red-500">*</span>

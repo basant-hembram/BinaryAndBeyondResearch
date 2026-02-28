@@ -1,3 +1,5 @@
+'use client';
+
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandHoldingUsd, faUserGroup, faSackDollar } from '@fortawesome/free-solid-svg-icons';

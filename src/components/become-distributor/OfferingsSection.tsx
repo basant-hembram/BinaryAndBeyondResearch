@@ -1,8 +1,10 @@
+'use client';
+
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faHandHoldingDollar, faLandmark, faChartLine, faMoneyBillTransfer, faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const iconMap: Record<string, any> = {
   faHandHoldingDollar,
@@ -15,7 +17,7 @@ const iconMap: Record<string, any> = {
 
 const OfferingsSection = () => {
   const { offerings } = data.becomeDistributor;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section className="container max-md:px-4 mx-auto py-16">
@@ -43,7 +45,7 @@ const OfferingsSection = () => {
               </div>
             ))}
           </div>
-          <Button className="bg-[#01A382] hover:bg-[#018f72] text-white text-[16px] px-8" onClick={() => navigate('/contact')}>
+          <Button className="bg-[#01A382] hover:bg-[#018f72] text-white text-[16px] px-8" onClick={() => router.push('/contact')}>
             {offerings.ctaButton.text} <FontAwesomeIcon icon={iconMap[offerings.ctaButton.icon]} className="ml-2" />
           </Button>
         </div>

@@ -1,12 +1,14 @@
+'use client';
+
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const ComplianceSection = () => {
   const { compliance } = data.becomeDistributor;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section className="container max-md:px-4 mx-auto py-16">
@@ -24,7 +26,7 @@ const ComplianceSection = () => {
           <h3 className="text-[26px] lg:text-[32px] xl:text-[36px] font-medium text-[#E6AF1C] mb-6">
             {compliance.ctaTitle}
           </h3>
-          <Button className="bg-[#01A382] hover:bg-[#018f72] text-white px-8" onClick={() => navigate('/contact')}>
+          <Button className="bg-[#01A382] hover:bg-[#018f72] text-white px-8" onClick={() => router.push('/contact')}>
             {compliance.ctaButton.text}{' '}
             <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
           </Button>

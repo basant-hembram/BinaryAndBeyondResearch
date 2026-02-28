@@ -1,8 +1,10 @@
+'use client';
+
 import { Button } from '../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightDots, faHandHoldingDollar, faSackDollar, faCoins, faMoneyBillTrendUp, faMoneyBillTransfer, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const iconMap: Record<string, any> = {
   faArrowUpRightDots,
@@ -15,7 +17,7 @@ const iconMap: Record<string, any> = {
 
 const MutualFundResources = () => {
   const { mutualFundResources } = data.home;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section className="py-16 md:py-24 bg-[#E9E9EB] relative overflow-hidden">
@@ -54,7 +56,7 @@ const MutualFundResources = () => {
                   <h4 className="font-bold text-[#0A1A3A] text-[16px] mb-2">
                     {resource.title}
                   </h4>
-                  <p className="text-gray-600 text-[16px] leading-relaxed">
+                  <p className="text-[#575455] text-[16px] leading-relaxed">
                     {resource.description}
                   </p>
                 </div>
@@ -64,7 +66,7 @@ const MutualFundResources = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg"  onClick={() => navigate('/mf-research')}>
+          <Button className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg"  onClick={() => router.push('/mf-research')}>
             Explore MF Research
             <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
           </Button>
