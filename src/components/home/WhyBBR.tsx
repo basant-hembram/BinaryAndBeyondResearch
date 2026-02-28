@@ -15,7 +15,7 @@ const iconMap: Record<string, any> = {
   faChartLine,
 };
 
-const SIPCalculator = () => {
+const WhyBBR = () => {
   const { sipCalculators } = data.home;
   const router = useRouter();
 
@@ -96,4 +96,4 @@ const SIPCalculator = () => {
   );
 };
 
-export default SIPCalculator;
+export default WhyBBR;

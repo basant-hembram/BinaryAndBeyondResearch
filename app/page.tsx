@@ -1,7 +1,7 @@
 import Hero from '@/components/home/Hero';
 import WhatMakes from '@/components/home/WhatMakes';
 import OurExpertise from '@/components/home/OurExpertise';
-import SIPCalculator from '@/components/home/SIPCalculator';
+import WhyBBR from '@/components/home/WhyBBR';
 import MutualFundResources from '@/components/home/MutualFundResources';
 import Founders from '@/components/home/Founders';
 import Testimonials from '@/components/home/Testimonials';
@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <WhatMakes />
       <OurExpertise />
-      <SIPCalculator />
+      <WhyBBR />
       <MutualFundResources />
       <Founders />
       <Testimonials />
