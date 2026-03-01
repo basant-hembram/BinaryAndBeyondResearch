@@ -16,7 +16,7 @@ const iconMap: Record<string, any> = {
 };
 
 const WhyBBR = () => {
-  const { sipCalculators } = data.home;
+  const { whyBBR } = data.home;
   const router = useRouter();
 
   return (
@@ -26,44 +26,36 @@ const WhyBBR = () => {
           {/* Left Content */}
           <div className="">
             <div>
-              <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-2">
-                {sipCalculators.title}
+              <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
+                {whyBBR.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold">
+                  {whyBBR.titleHighlight}
+                </span>
               </h2>
-              <h3 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#E6AF1C]">
-                {sipCalculators.titleHighlight}
-              </h3>
             </div>
 
             <p className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[18px] pt-[14px] lg:pt-[27px] xl:pt-[19px] mb-[34px] lg:mb-[28px] xl:mb-[28px]">
-              See how SIP Can help you achieve your financial goals
+              Binary and Beyond Research delivers independent, data-driven market insights backed by deep industry expertise and disciplined analysis. Our transparent approach and consistent performance help investors make informed and confident decisions.
             </p>
 
             {/* Calculators Grid - 2 columns */}
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mb-[45px] lg:mb-[53px] xl:mb-[65px]">
-              {sipCalculators.calculators.map((calc) => (
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
+              {whyBBR.calculators.map((calc) => (
                 <div key={calc.id} className="flex items-center gap-3">
-                  <div className="bg-[#E6AF1C] rounded-full p-3 flex items-center justify-center w-10 h-10 flex-shrink-0">
+                  <div className="bg-[#6B2E7E] rounded-full p-3 flex items-center justify-center w-10 h-10 flex-shrink-0">
                     <FontAwesomeIcon icon={iconMap[calc.icon]} className="text-white text-sm" />
                   </div>
                   <span className="text-[#0A1A3A] font-medium text-sm">{calc.title}</span>
                 </div>
               ))}
             </div>
-
-            <Button 
-              className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg" onClick={() => router.push('/calculator')}
-            >
-              Calculate your Wealth
-              <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-            </Button>
           </div>
 
           {/* Right Image */}
           <div className="relative lg:max-w-[620px] mx-auto pl-[100px] md:pl-[80px]">
             <div className="rounded-[40px] overflow-hidden shadow-2xl">
-              <img 
-                src="/images/finyser-calculator.avif" 
-                alt="Financial workspace with calculator and charts" 
+              <img
+                src="/images/finyser-calculator.avif"
+                alt="Financial workspace with calculator and charts"
                 className="w-full h-full object-cover"
               />
             </div>

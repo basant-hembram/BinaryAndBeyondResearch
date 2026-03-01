@@ -15,8 +15,8 @@ const iconMap: Record<string, any> = {
   faMoneyBillTransfer,
 };
 
-const MutualFundResources = () => {
-  const { mutualFundResources } = data.home;
+const WhyPeopleTrust = () => {
+  const { whyPeopleTrust } = data.home;
   const router = useRouter();
 
   return (
@@ -36,44 +36,34 @@ const MutualFundResources = () => {
       />
       <div className="container max-md:px-4 mx-auto">
         <div className="text-center mb-[53px]">
-          <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#090914] mb-2">
-            {mutualFundResources.title}
+          <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
+            {whyPeopleTrust.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold">{whyPeopleTrust.titleHighlight}</span>
           </h2>
-          <h3 className="text-[26px] lg:text-[32px] xl:text-[36px]">
-            {mutualFundResources.titleHighlight}
-          </h3>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-[44px] md:mb-[55px] xl:mb-[65px]">
-          {mutualFundResources.resources.map((resource) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {whyPeopleTrust.reasons.map((reason) => (
             <div
-              key={resource.id}
-              className="bg-white rounded-2xl p-6 border-2 border-[#E6AF1C] hover:shadow-xl transition-all duration-300"
+              key={reason.id}
+              className="bg-white rounded-2xl p-6 border border-[#602F7B] hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <FontAwesomeIcon icon={iconMap[resource.icon]} className="text-[#E6AF1C] text-[22px]" />
+                <FontAwesomeIcon icon={iconMap[reason.icon]} className="text-[#602F7B] text-[22px]" />
                 <div>
-                  <h4 className="font-bold text-[#0A1A3A] text-[16px] mb-2">
-                    {resource.title}
+                  <h4 className="font-bold text-[#090914] text-[16px] mb-2">
+                    {reason.title}
                   </h4>
                   <p className="text-[#575455] text-[16px] leading-relaxed">
-                    {resource.description}
+                    {reason.description}
                   </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="text-center">
-          <Button className="bg-[#00A896] hover:bg-[#008c7a] text-white px-8 py-6 rounded-lg"  onClick={() => router.push('/mf-research')}>
-            Explore MF Research
-            <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-          </Button>
-        </div>
       </div>
     </section>
   );
 };
 
-export default MutualFundResources;
+export default WhyPeopleTrust;

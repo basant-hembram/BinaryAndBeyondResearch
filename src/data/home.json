@@ -91,83 +91,66 @@
       }
     ]
   },
-  "mutualFundResources": {
-    "title": "Useful Mutual Fund",
-    "titleHighlight": "Information & Resources",
+  "whyPeopleTrust": {
+    "title": "Why People Trust",
+    "titleHighlight": "Binary and Beyond Research",
     "description": "Get all the information you need from a single platform.",
-    "resources": [
+    "reasons": [
       {
         "id": 1,
         "icon": "faArrowUpRightDots",
-        "title": "Mutual Fund Trailing Returns",
-        "description": "Find out the best performing schemes across categories and time frame."
+        "title": "Local Consumers",
+        "description": "Our Survey Audience includes more than 10 million people including National and overseas Consumers"
       },
       {
         "id": 2,
         "icon": "faHandHoldingDollar",
-        "title": "Mutual Fund Volatility Ranking",
-        "description": "Find out the risk quotient of every scheme here. Learn More"
+        "title": "B2B Decision Maker",
+        "description": "It includes of various B2B professionals starting from executive level to senior level professional who belongs to various industries"
       },
       {
         "id": 3,
         "icon": "faSackDollar",
-        "title": "Mutual Fund Quartile Ranking",
-        "description": "Check the relative performance of the schemes here."
+        "title": "Healthcare Decision Maker",
+        "description": "Our healthcare decision make consists of various Doctors, MD, Engineers. Various Multiple level surveys are made on healthcare before coming up to any decision"
       },
       {
         "id": 4,
         "icon": "faCoins",
-        "title": "Rolling Return vs Category",
-        "description": "Find out the consistency of a fund performance over here."
-      },
-      {
-        "id": 5,
-        "icon": "faMoneyBillTrendUp",
-        "title": "SIP Return Calculator",
-        "description": "What has an SIP in a particular scheme actually delivered for you. Check here."
-      },
-      {
-        "id": 6,
-        "icon": "faMoneyBillTransfer",
-        "title": "SWP Return Calculator",
-        "description": "How much is left in a scheme after taking out regular withdrawals."
+        "title": "Specialist Decision Maker",
+        "description": "We Offer data collection from segmented consumers as per our client’s requirement, which include a certain group of people with certain interest or demographic etc"
       }
     ]
   },
-  "sipCalculators": {
-    "title": "Plan Your wealth with",
-    "titleHighlight": "Smart Calculators",
+  "whyBBR": {
+    "title": "Why",
+    "titleHighlight": "Binary and Beyond Research",
     "calculators": [
       {
         "id": 1,
         "icon": "faCalculator",
-        "title": "SIP Calculator"
+        "title": "Quality data and turnaround time"
       },
       {
         "id": 2,
         "icon": "faChartLine",
-        "title": "Step-Up SIP Calculator"
+        "title": "Unique Modus Operandi Hassle free one-stop solution"
       },
       {
         "id": 3,
         "icon": "faCamera",
-        "title": "Lumpsum Calculator"
+        "title": "Organizational Experience"
       },
       {
         "id": 4,
         "icon": "faSackDollar",
-        "title": "Goal Planner"
+        "title": "Extensive Experience"
       },
       {
         "id": 5,
         "icon": "faUmbrella",
-        "title": "Retirement Planner"
-      },
-      {
-        "id": 6,
-        "icon": "faMoneyBill",
-        "title": "Financial Planning"
-      }
+        "title": "Past Experience In Research Agencies Of Global Repute"
+      }     
     ]
   },
   "meetYourPartner": {
@@ -187,33 +170,38 @@
     }
   },
   "testimonials": {
-    "title": "Don't Just",
-    "titleHighlight": "Take Our Words",
-    "subtitle": "Everything you need to know about the Finyzer Assets.",
+    "label": "TESTIMONIALS",
+    "title": "Look What Our",
+    "titleHighlight": "Customers Say!",
+    "subtitle": "Real feedback from real investors who have trusted Binary and Beyond Research to guide their financial journey.",
     "testimonialsList": [
       {
         "name": "Ankita Jain",
         "role": "Co-Founder of Womenia",
-        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
-        "image": "/images/ankita-jain.png"
+        "text": "Binary and Beyond Research truly changed how I approach investing. Their insights are data-driven, transparent, and incredibly easy to understand. I couldn't be happier with the results!",
+        "image": "/images/ankita-jain.png",
+        "rating": 4
       },
       {
         "name": "Rahul Sharma",
         "role": "Software Engineer",
-        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
-        "image": "/images/rahul-sharma.png"
+        "text": "I was skeptical at first, but the team at BBR proved me wrong. Their research is thorough and their recommendations have helped me grow my portfolio steadily over the past year.",
+        "image": "/images/rahul-sharma.png",
+        "rating": 5
       },
       {
-        "name": "Ankita Jain",
-        "role": "Co-Founder of Womenia",
-        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
-        "image": "/images/ankita-jain.png"
+        "name": "Priya Mehta",
+        "role": "Business Analyst",
+        "text": "The level of detail in their market reports is outstanding. Every decision I've made based on their analysis has been well-informed and profitable. Highly recommend their services.",
+        "image": "/images/ankita-jain.png",
+        "rating": 5
       },
       {
-        "name": "Rahul Sharma",
-        "role": "Software Engineer",
-        "text": "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
-        "image": "/images/rahul-sharma.png"
+        "name": "Vikram Das",
+        "role": "Entrepreneur",
+        "text": "What sets BBR apart is their commitment to clarity. No jargon, no fluff — just clean, actionable research that helps me make confident investment decisions every time.",
+        "image": "/images/rahul-sharma.png",
+        "rating": 4
       }
     ],
     "decorativeImages": {
@@ -221,7 +209,7 @@
       "bottomRight": "/images/bottom-right-circle.png"
     }
   },
-  "whyInvestors": {
+  "whatMakes": {
     "title": "What Makes",
     "titleHighlight": "Binary and Beyond Research",
     "titleEnd": "Reliable",
@@ -274,6 +262,53 @@
         "returns": "41%",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop"
       }
+    ]
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Explore how we've helped investors achieve their financial goals through data-driven research and disciplined strategies.",
+    "studies": [
+      {
+        "id": 1,
+        "title": "Online Shopping Behaviour",
+        "image": "/images/photo-1629425733761-caae3b5f2e50.avif"
+      },
+      {
+        "id": 2,
+        "title": "Mutual Fund Growth Analysis",
+        "image": "/images/photo-1713946598501-d6b32e7c2464.avif"
+      },
+      {
+        "id": 3,
+        "title": "SIP Investment Trends",
+        "image": "/images/photo-1762341104634-998bbee0ccba.avif"
+      },
+      {
+        "id": 4,
+        "title": "Healthcare Market Insights",
+        "image": "/images/photo-1758691736498-422201cc57da.avif"
+      },
+      {
+        "id": 5,
+        "title": "Equity Research Report",
+        "image": "/images/photo-1737660739682-238840037537.avif"
+      },
+      {
+        "id": 6,
+        "title": "Retirement Planning Study",
+        "image": "/images/photo-1639616239669-104e51ca79bc.avif"
+      }
+    ]
+  },
+  "clients": {
+    "heading": "Trusted by 100+ Companies across the globe!",
+    "logos": [
+      { "id": 1, "name": "Client 1", "image": "/images/clients/1.png" },
+      { "id": 2, "name": "Client 2", "image": "/images/clients/2.png" },
+      { "id": 3, "name": "Client 3", "image": "/images/clients/3.png" },
+      { "id": 4, "name": "Client 4", "image": "/images/clients/4.png" },
+      { "id": 5, "name": "Client 5", "image": "/images/clients/5.png" },
+      { "id": 6, "name": "Client 6", "image": "/images/clients/6.png" }
     ]
   }
 }
