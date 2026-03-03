@@ -22,8 +22,8 @@ const Testimonials = () => {
         <div className="bg-[#EBEBEB] rounded-3xl p-8 md:p-12 lg:p-16 grid md:grid-cols-2 gap-10 items-center">
 
           {/* Left */}
-          <div>
-            <p className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold text-[13px] tracking-[0.2em] uppercase mb-4">
+          <div data-gsap="fade-left">
+            <p className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold text-[13px] tracking-[0.2em] uppercase mb-4" data-gsap="gradient-shine">
               {testimonials.label}
             </p>
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#0A1A3A] mb-2">
@@ -53,6 +53,7 @@ const Testimonials = () => {
           </div>
 
           {/* Right — Vertical Swiper */}
+          <div data-gsap="fade-right">
           <Swiper
             modules={[Navigation]}
             direction="vertical"
@@ -103,6 +104,7 @@ const Testimonials = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          </div>
 
         </div>
       </div>

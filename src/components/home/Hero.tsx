@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-[500] !leading-[1.3]">
               <span className="block text-[#4A4444]">{heroData.title.line1}</span>
-              <span className="block font-[600] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent">
+              <span className="block font-[600] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent" data-gsap="gradient-shine">
                 {heroData.title.line2}
               </span>
               <span className="block text-[#4A4444]">{heroData.title.line3}</span>

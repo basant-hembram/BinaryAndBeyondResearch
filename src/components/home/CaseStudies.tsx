@@ -33,7 +33,7 @@ const CaseStudies = () => {
     <section className="py-16 md:py-24 bg-white overflow-x-hidden">
       {/* Header inside container */}
       <div className="container max-md:px-4 mx-auto">
-        <div className="flex items-start justify-between mb-10">
+        <div className="flex items-start justify-between mb-10" data-gsap="fade-up">
           <div>
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-[#0A1A3A] mb-2">
               {caseStudies.title}

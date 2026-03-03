@@ -47,7 +47,7 @@ const Clients = () => {
   return (
     <section className="py-14 bg-white">
       {/* Heading */}
-      <p className="text-center text-[#808080] text-[14px] mb-10 tracking-wide">
+      <p className="text-center text-[#808080] text-[14px] mb-10 tracking-wide" data-gsap="fade-up">
         {clients.heading}
       </p>
 

@@ -6,10 +6,12 @@ import WhyPeopleTrust from '@/components/home/WhyPeopleTrust';
 import CaseStudies from '@/components/home/CaseStudies';
 import Clients from '@/components/home/Clients';
 import Testimonials from '@/components/home/Testimonials';
+import ScrollAnimations from '@/components/home/ScrollAnimations';
 
 export default function Home() {
   return (
     <>
+      <ScrollAnimations />
       <Hero />
       <WhatMakes />
       <OurExpertise />

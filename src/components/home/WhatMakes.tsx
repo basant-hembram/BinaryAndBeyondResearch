@@ -24,9 +24,9 @@ const WhatMakes = () => {
       />
 
       <div className="container max-md:px-4 mx-auto relative z-10">
-        <div className="text-center mb-[20px] lg:mb-[24px] xl:mb-[28px]">
+        <div className="text-center mb-[20px] lg:mb-[24px] xl:mb-[28px]" data-gsap="fade-up">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
-            {whatMakes.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold">{whatMakes.titleHighlight}</span>
+            {whatMakes.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold" data-gsap="gradient-shine">{whatMakes.titleHighlight}</span>
             <br className='block'></br> {whatMakes.titleEnd}
           </h2>
           <p className="text-[16px] lg:text-[18px] xl:text-[20px] text-[#575455]">
@@ -34,7 +34,7 @@ const WhatMakes = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-y-6 md:gap-x-12">
+        <div className="grid md:grid-cols-2 gap-y-6 md:gap-x-12" data-gsap="stagger-up">
           {whatMakes.reasons.map((reason, index) => (
             <div key={index} className="flex items-start gap-2 md:gap-4">
               <FontAwesomeIcon icon={faHandPointRight} className="text-[#353572] text-[14px] lg:text-[16px] xl:text-[20px] mt-1" />

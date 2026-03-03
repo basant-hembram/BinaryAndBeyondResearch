@@ -35,13 +35,13 @@ const WhyPeopleTrust = () => {
         className="absolute right-0 bottom-0 w-64 h-64 pointer-events-none"
       />
       <div className="container max-md:px-4 mx-auto">
-        <div className="text-center mb-[53px]">
+        <div className="text-center mb-[53px]" data-gsap="fade-up">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
-            {whyPeopleTrust.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold">{whyPeopleTrust.titleHighlight}</span>
+            {whyPeopleTrust.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold" data-gsap="gradient-shine">{whyPeopleTrust.titleHighlight}</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6" data-gsap="stagger-up">
           {whyPeopleTrust.reasons.map((reason) => (
             <div
               key={reason.id}

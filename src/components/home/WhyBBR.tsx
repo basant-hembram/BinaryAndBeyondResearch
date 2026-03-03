@@ -24,10 +24,10 @@ const WhyBBR = () => {
       <div className="container max-md:px-4 mx-auto">
         <div className="grid xl:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="">
+          <div className="" data-gsap="fade-left">
             <div>
               <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
-                {whyBBR.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold">
+                {whyBBR.title} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold" data-gsap="gradient-shine">
                   {whyBBR.titleHighlight}
                 </span>
               </h2>
@@ -51,7 +51,7 @@ const WhyBBR = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:max-w-[620px] mx-auto pl-[100px] md:pl-[80px]">
+          <div className="relative lg:max-w-[620px] mx-auto pl-[100px] md:pl-[80px]" data-gsap="fade-right">
             <div className="rounded-[40px] overflow-hidden shadow-2xl">
               <img
                 src="/images/finyser-calculator.avif"
