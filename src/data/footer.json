@@ -4,7 +4,7 @@
       "src": "/images/Web_Logo.png",
       "alt": "Finyzer Assets Logo"
     },
-    "disclaimer": "Disclaimer:- Mutual Fund investments are subject to market risks, read all scheme related documents carefully before investing. Past performance is not indicative of future performance."
+    "disclaimer": "Binary & Beyond is the place to come for information and actionable results that will ensure customer satisfaction and help your business succeed."
   },
   "socialLinks": [
     {
@@ -21,12 +21,7 @@
       "name": "Instagram",
       "url": "#",
       "icon": "faInstagram"
-    },
-     {
-      "name": "Youtube",
-      "url": "#",
-      "icon": "faYoutube"
-    }
+    }    
   ],
   "quickLinks": {
     "title": "QUICK LINKS",
@@ -46,10 +41,6 @@
       {
         "label": "Testimonials",
         "path": "/testimonials"
-      },
-      {
-        "label": "Annual Return",
-        "path": "#"
       }
     ]
   },
@@ -67,10 +58,6 @@
       {
         "label": "Terms of use",
         "path": "/terms-of-use"
-      },
-      {
-        "label": "Important Links",
-        "path": "/important-links"
       },
       {
         "label": "Contact Us",

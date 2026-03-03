@@ -10,7 +10,7 @@ const Footer = () => {
   const footerData = data.footer;
   
   return (
-    <footer id="contact" className="bg-[#0A1A3A] text-white">
+    <footer id="contact" className="bg-gradient-to-b from-[#353572] to-[#602F7B] text-white">
       <div className="container max-md:px-4 mx-auto py-12">
         <div className="grid md:grid-cols-12 gap-12 mb-8">
           {/* Company Info */}
@@ -19,7 +19,7 @@ const Footer = () => {
               <img 
                 src={footerData.companyInfo.logo.src}
                 alt={footerData.companyInfo.logo.alt}
-                className="h-[24px] xl:h-[50px] w-auto"
+                className="h-[40px] xl:h-[80px] w-auto brightness-0 invert"
               />
               
             </div>
@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#E6AF1C] pt-6 mt-8">
+        <div className="border-t border-[#C9C9C9] pt-6 mt-8">
           <div className="text-center">
             <p className="text-white text-sm">
               {footerData.copyright}

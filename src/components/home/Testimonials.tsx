@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -15,11 +15,12 @@ const Testimonials = () => {
   const { testimonials } = homeData;
   const list = testimonials.testimonialsList;
   const swiperRef = useRef<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <section className="py-16 md:py-24">
       <div className="container max-md:px-4 mx-auto">
-        <div className="bg-[#EBEBEB] rounded-3xl p-8 md:p-12 lg:p-16 grid md:grid-cols-2 gap-10 items-center">
+        <div className="bg-[#EBEBEB] rounded-3xl p-8 md:p-12 lg:p-16 grid lg:grid-cols-2 gap-10 items-center">
 
           {/* Left */}
           <div data-gsap="fade-left">
@@ -53,7 +54,7 @@ const Testimonials = () => {
           </div>
 
           {/* Right — Vertical Swiper */}
-          <div data-gsap="fade-right">
+          <div data-gsap="fade-right" className="relative flex flex-col lg:flex-row gap-3">
           <Swiper
             modules={[Navigation]}
             direction="vertical"
@@ -62,6 +63,7 @@ const Testimonials = () => {
             loop={true}
             speed={600}
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             className="w-full !h-[280px] md:!h-[260px]"
           >
             {list.map((testimonial, index) => (
@@ -69,6 +71,7 @@ const Testimonials = () => {
                 <div className="bg-white rounded-2xl p-7 shadow-md h-full flex flex-col justify-between">
                   {/* Quote Icon */}
                   <div>
+                    <img src="/images/quote.png" alt="quote" className="h-8 w-8 mb-3" />
                     <p className="text-[#0A1A3A] text-[14px] lg:text-[15px] leading-relaxed">
                       {testimonial.text}
                     </p>
@@ -104,6 +107,22 @@ const Testimonials = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+            {/* Rectangular Dots */}
+            <div className="flex lg:flex-col justify-center gap-2">
+              {list.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => swiperRef.current?.slideToLoop(index)}
+                  className={`max-lg:h-[6px] lg:w-[6px] rounded-sm transition-all duration-300 ${
+                    activeIndex === index
+                      ? 'max-lg:w-[32px] lg:h-[32px] bg-[#602F7B]'
+                      : 'max-lg:w-[16px] lg:h-[16px] bg-[#C4C4C4]'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
         </div>
