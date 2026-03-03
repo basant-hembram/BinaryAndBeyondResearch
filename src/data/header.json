@@ -24,11 +24,7 @@
     {
       "label": "Panel Services",
       "path": "/panel-services"
-    },
-    {
-      "label": "Healthcare",
-      "path": "/healthcare"
-    },
+    },    
     {
       "label": "Career",
       "path": "/career"
