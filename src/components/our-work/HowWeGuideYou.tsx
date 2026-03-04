@@ -13,12 +13,12 @@ type Step = { id: number; title: string; image: string; description: string };
 
 const HowWeGuideYou = () => {
   const { howWeGuideYou } = ourWorkData;
-  const sectionRef       = useRef<HTMLElement>(null);
-  const stepsRef         = useRef<HTMLDivElement>(null);
-  const solidDesktopRef  = useRef<HTMLDivElement>(null);
-  const solidMobileRef   = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const stepsRef = useRef<HTMLDivElement>(null);
+  const solidDesktopRef = useRef<HTMLDivElement>(null);
+  const solidMobileRef = useRef<HTMLDivElement>(null);
   const dottedDesktopRef = useRef<HTMLDivElement>(null);
-  const dottedMobileRef  = useRef<HTMLDivElement>(null);
+  const dottedMobileRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current || !stepsRef.current) return;
@@ -34,20 +34,20 @@ const HowWeGuideYou = () => {
         dots: HTMLElement[]
       ) => {
         if (!dots.length || (!solidEl && !dottedEl)) return;
-        const cRect  = container.getBoundingClientRect();
-        const fRect  = dots[0].getBoundingClientRect();
-        const lRect  = dots[dots.length - 1].getBoundingClientRect();
-        const top    = fRect.top + fRect.height / 2 - cRect.top;
+        const cRect = container.getBoundingClientRect();
+        const fRect = dots[0].getBoundingClientRect();
+        const lRect = dots[dots.length - 1].getBoundingClientRect();
+        const top = fRect.top + fRect.height / 2 - cRect.top;
         const bottom = cRect.height - (lRect.top + lRect.height / 2 - cRect.top);
         [solidEl, dottedEl].forEach((el) => {
           if (!el) return;
-          el.style.top    = `${top}px`;
+          el.style.top = `${top}px`;
           el.style.bottom = `${bottom}px`;
         });
       };
 
       applyPosition(solidDesktopRef.current, dottedDesktopRef.current, dDots);
-      applyPosition(solidMobileRef.current,  dottedMobileRef.current,  mDots);
+      applyPosition(solidMobileRef.current, dottedMobileRef.current, mDots);
     };
 
     const raf = requestAnimationFrame(positionLines);
@@ -67,14 +67,14 @@ const HowWeGuideYou = () => {
             trigger: first,
             endTrigger: last,
             start: 'center 60%',
-            end:   'center 60%',
+            end: 'center 60%',
             scrub: 1,
           },
         });
       };
 
       if (dDots.length) revealLine(solidDesktopRef.current, dDots[0], dDots[dDots.length - 1]);
-      if (mDots.length) revealLine(solidMobileRef.current,  mDots[0], mDots[mDots.length - 1]);
+      if (mDots.length) revealLine(solidMobileRef.current, mDots[0], mDots[mDots.length - 1]);
 
       [...dDots, ...mDots].forEach((dot) => {
         ScrollTrigger.create({
@@ -82,9 +82,9 @@ const HowWeGuideYou = () => {
           start: 'center 60%',
           onEnter: () => {
             dot.style.backgroundColor = '#6B2E7E';
-            dot.style.borderColor     = '#6B2E7E';
-            dot.style.color           = '#ffffff';
-            dot.style.boxShadow       = '0 0 0 5px rgba(107,46,126,0.25)';
+            dot.style.borderColor = '#6B2E7E';
+            dot.style.color = '#ffffff';
+            dot.style.boxShadow = '0 0 0 5px rgba(107,46,126,0.25)';
           },
         });
       });
@@ -93,22 +93,26 @@ const HowWeGuideYou = () => {
         gsap.utils.toArray<HTMLElement>(cls).forEach((el) => {
           gsap.fromTo(el,
             { opacity: 0, x: xFrom },
-            { opacity: 1, x: 0, duration: 0.75, ease: 'power3.out',
-              scrollTrigger: { trigger: el, start: 'top 82%', toggleActions: 'play none none none' } }
+            {
+              opacity: 1, x: 0, duration: 0.75, ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 82%', toggleActions: 'play none none none' }
+            }
           );
         });
       };
-      slideIn('.step-img-left',  -70);
-      slideIn('.step-txt-right',  70);
-      slideIn('.step-txt-left',  -70);
-      slideIn('.step-img-right',  70);
+      slideIn('.step-img-left', -70);
+      slideIn('.step-txt-right', 70);
+      slideIn('.step-txt-left', -70);
+      slideIn('.step-img-right', 70);
 
       gsap.utils.toArray<HTMLElement>('.mob-step').forEach((block) => {
         const children = block.querySelectorAll<HTMLElement>('.mob-anim');
         gsap.fromTo(children,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out', stagger: 0.12,
-            scrollTrigger: { trigger: block, start: 'top 85%', toggleActions: 'play none none none' } }
+          {
+            opacity: 1, y: 0, duration: 0.55, ease: 'power3.out', stagger: 0.12,
+            scrollTrigger: { trigger: block, start: 'top 85%', toggleActions: 'play none none none' }
+          }
         );
       });
 
@@ -125,11 +129,13 @@ const HowWeGuideYou = () => {
     <section className="py-8 md:py-16 bg-white" ref={sectionRef}>
       <div className="container max-md:px-4 mx-auto">
 
-        <div className="mb-12 md:mb-16">
-          <h2 className="text-[18px] lg:text-[22px] font-bold tracking-[0.18em] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent uppercase mb-4">
-            {howWeGuideYou.label}
+        <div className="max-w-2xl">
+          <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold uppercase" data-gsap="fade-up">
+            <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold tracking-[0.2em]" data-gsap="gradient-shine">
+              {howWeGuideYou.label}
+            </span>
           </h2>
-          <p className="text-[#575455] text-[14px] lg:text-[16px] leading-relaxed max-w-2xl">
+          <p className="text-[#575455] text-[14px] lg:text-[16px] leading-relaxed">
             {howWeGuideYou.description}
           </p>
         </div>

@@ -11,6 +11,46 @@
     }
   ],
   "backgroundImage": "/images/banner-bg.jpg",
+  "pageHero": {
+    "title": "Services",
+    "subtitle": "Powering Your Growth with Expert Solutions"
+  },
+  "researchAnalysis": {
+    "title": "Research & Analysis Focused",
+    "description": "Problems lay in its answer itself. Only we have to find it systematically. So, we are here available with systematic ways to let you know the present market scenario and the behaviour of customers not only practically but also to the point including every pros and con. And we are here to guide you to lead the present market as well as product in the future market.",
+    "items": [
+      {
+        "title": "Product Testing",
+        "description": "We assist our client to understand customers' behaviour towards their products by providing pre-product testing and post product testing. Through our product testing, we guide our clients in their decisions on any new product launch or to enter a new market, along with the market position of their products for already launched products and improve their products with real-time data/feedback.",
+        "image": "/images/photo-1713946598501-d6b32e7c2464.avif"
+      },
+      {
+        "title": "Satisfactory and Loyal Approach",
+        "description": "To maintain a firm and leading place in the market, the main key feature is the growth of satisfied as well as loyal customers. So by this approach, we help our clients to take a close look of the factors that influence loyalty, advocacy and repeat purchase of products/ services.",
+        "image": "/images/photo-1639616239669-104e51ca79bc.avif"
+      },
+      {
+        "title": "Healthcare Market Research",
+        "description": "In healthcare the purchase of these services or products is never optional, a patient will buy any product or service according to dynamics and innovation. Healthcare Market Research helps to innovate by identifying practical and profitable ways to enhance products and services, as well as launch new offerings.",
+        "image": "/images/photo-1629425733761-caae3b5f2e50.avif"
+      },
+      {
+        "title": "Market Segmentation",
+        "description": "Customers' behaviour varies in respect of time, age, gender and lifestyle. So by this approach, we assist our clients to identify the most valuable customer segmentation for their product and service to gains maximum profits and ROI.",
+        "image": "/images/photo-1737660739682-238840037537.avif"
+      },
+      {
+        "title": "Advertising Testing",
+        "description": "By this approach, we help our clients to get the maximum opportunity in achieving their business goals and also helps on minimizing needless risk.",
+        "image": "/images/photo-1758691736498-422201cc57da.avif"
+      },
+      {
+        "title": "Brand Assessments",
+        "description": "By this approach, we help our clients to know the real value of their brands and positioning through the eyes of their target customers and to make necessary changes to adapt to a changing marketplace.",
+        "image": "/images/photo-1762341104634-998bbee0ccba.avif"
+      }
+    ]
+  },
   "serviceCategories": [
     {
       "id": "mutual-fund",
