@@ -1,0 +1,38 @@
+{
+  "banner": {
+    "title": "Panel Services",
+    "subtitle": "Accurate Panels. Actionable Results"
+  },
+  "overview": {
+    "image": "/images/photo-1516321497487-e288fb19713f.avif",
+    "title": "We Employ Latest Research Technology & Company",
+    "paragraphs": [
+      "Binary & Beyond is a leading provider of market research solutions, offering access to the most powerful online research panel with a reach of over 2 million individuals worldwide. Our strong network allows us to connect with a diverse pool of participants, enabling clients to gain valuable insights and concentrate on their core competencies.",
+      "Our comprehensive panel services provide clients with a one-stop-shop solution, streamlining the research process and allowing them to focus on their strategic objectives. We draw panel members from multiple sources, employing a broad array of recruitment techniques to ensure the selection of unique and highly responsive participants.",
+      "To maintain the effectiveness of our panel, we constantly refresh its composition. This approach aligns with our goal of integrating market research activities into a value-added, consumer-centered community that caters to the Internet mass market. By fostering engagement and participation, we create an environment conducive to gathering accurate and actionable data for our clients.",
+      "At Binary & Beyond, we are committed to delivering high-quality research outcomes and facilitating meaningful connections between businesses and their target audience. With our powerful online research panel and comprehensive services, we enable clients to unlock valuable insights while optimizing their resources.",
+      "In summary, our dedication to building the most powerful online research panel, combined with our one-stop-shop approach, ensures that clients can leverage our expertise and concentrate on their core competencies. We are focused on delivering exceptional market research solutions that drive informed decision-making and support business success"
+    ]
+  },
+  "professionalSection": {
+    "title": "Professional & Research-Oriented",
+    "description": "Our robust profiling can segment panels into highly targeted groups to meet bespoke specifications. We typically categorize our panelists into three types:",
+    "cards": [
+      {
+        "title": "B2B Industry Panels",
+        "description": "Our B2B panel consists of professionals with different levels of seniority, from the entry level to the top management from different industry sectors",
+        "image": "/images/photo-1639616239683-ca6243ed6a0c.avif"
+      },
+      {
+        "title": "Consumer Panels",
+        "description": "Our proprietary Consumer Panel is comprised of 1 million members that can deliver a representative sample of the online population",
+        "image": "/images/photo-1541560052-77ec1bbc09f7.avif"
+      },
+      {
+        "title": "Healthcare Panels",
+        "description": "We have extensive health care panel and along with our CATI team we can cater to even Niche segment. Please write to us for health care panel book.",
+        "image": "/images/photo-1628348068343-c6a848d2b6dd.avif"
+      }
+    ]
+  }
+}

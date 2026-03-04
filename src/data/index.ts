@@ -19,6 +19,7 @@ import becomeDistributorData from './becomeDistributor.json';
 import headerData from './header.json';
 import footerData from './footer.json';
 import ourWorkData from './ourWork.json';
+import panelServicesData from './panelServices.json';
 
 export const data = {
   hero: heroData,
@@ -41,6 +42,7 @@ export const data = {
   header: headerData,
   footer: footerData,
   ourWork: ourWorkData,
+  panelServices: panelServicesData,
 };
 
 // Type definitions for the data

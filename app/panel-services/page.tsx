@@ -1,12 +1,19 @@
+import ScrollAnimations from '@/components/common/ScrollAnimations';
+import PageHero from '@/components/common/PageHero';
+import PanelServicesContent from '@/components/panel-services/PanelServicesContent';
+import { data } from '@/data';
+
 export default function PanelServices() {
+  const panelServicesData = (data as any).panelServices;
+
   return (
-    <div className="bg-white min-h-screen">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">Panel Services</h1>
-        <p className="text-lg text-[#575455]">
-          Content coming soon...
-        </p>
-      </div>
+    <div className="bg-white">
+      <ScrollAnimations />
+      <PageHero
+        title={panelServicesData.banner.title}
+        subtitle={panelServicesData.banner.subtitle}
+      />
+      <PanelServicesContent />
     </div>
   );
 }
