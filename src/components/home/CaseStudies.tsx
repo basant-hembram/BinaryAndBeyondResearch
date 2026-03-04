@@ -30,7 +30,7 @@ const CaseStudies = () => {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-white overflow-x-hidden">
+    <section className="py-8 md:py-12 bg-white overflow-x-hidden">
       {/* Header inside container */}
       <div className="container max-md:px-4 mx-auto">
         <div className="flex items-start justify-between mb-10" data-gsap="fade-up">

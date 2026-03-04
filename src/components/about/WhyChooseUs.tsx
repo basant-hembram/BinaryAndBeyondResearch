@@ -1,47 +1,57 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
+import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { data } from '../../data';
 
 const { about: aboutData } = data;
 
 const WhyChooseUs = () => {
-  const { whyChooseUs } = aboutData;
+  const { whyChooseUs } = aboutData as any;
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-8 md:py-12">
       <div className="container max-md:px-4 mx-auto">
-        <h2 className="hidden lg:block xl:hidden text-[26px] lg:text-[32px] xl:text-[36px] mb-[38px]">
-          <span className="text-[#0A1A3A">{whyChooseUs.title} </span><br className='lg:block xl:hidden'></br>
-          <span className="text-[#E6AF1C] font-semibold">{whyChooseUs.titleHighlight.split(' ').slice(0, 1).join(' ')}<br className='hidden lg:hidden'></br>{whyChooseUs.titleHighlight.split(' ').slice(1).join(' ')}</span>
-        </h2>
-        <div className="grid lg:grid-cols-2 gap-12 items-start xl:items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+          {/* Left */}
           <div>
-            <h2 className="lg:hidden xl:block text-[26px] lg:text-[32px] xl:text-[36px] mb-6">
-              <span className="text-[#0A1A3A">{whyChooseUs.title} </span>
-              <span className="text-[#E6AF1C] font-semibold">{whyChooseUs.titleHighlight.split(' ').slice(0, 1).join(' ')}<br className='hidden lg:flex'></br>{whyChooseUs.titleHighlight.split(' ').slice(1).join(' ')}</span>
+             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
+              <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold tracking-[0.2em]">{whyChooseUs.label}</span>
             </h2>
-            <p className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[20px] mb-6 font-regular">
-              {whyChooseUs.subtitle}
+            <p className="text-[#575455] text-[14px] lg:text-[16px] leading-relaxed mb-8 whitespace-pre-line">
+              {whyChooseUs.description}
             </p>
-            <div className="space-y-[30px]">
-              {whyChooseUs.reasons.map((reason, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <FontAwesomeIcon
-                    icon={faHandPointRight}
-                    className="text-[#E6AF1C] text-lg flex-shrink-0"
-                  />
-                  <span className="text-[#575455] text-[16px] lg:text-[18px] xl:text-[20px] font-medium">
-                    {reason}
+            <div className="space-y-4">
+              {whyChooseUs.features.map((feature: any, index: number) => (
+                <div key={index} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-md">
+                  <div className="w-10 h-10 rounded-full bg-[linear-gradient(180deg,#353572_0%,#602F7B_100%)] flex items-center justify-center flex-shrink-0">
+                    <FontAwesomeIcon icon={faCloud} className="text-white text-[14px]" />
+                  </div>
+                  <span className="text-[#0A1A3A] text-[14px] lg:text-[15px] font-medium">
+                    {feature.title}
                   </span>
                 </div>
               ))}
             </div>
           </div>
-          <div>
+
+          {/* Right — Image Grid */}
+          <div className="grid grid-cols-2 grid-rows-2 gap-6 h-[380px] lg:h-[460px]">
+            <div className="row-span-2">
+              <img
+                src={whyChooseUs.images[0].src}
+                alt={whyChooseUs.images[0].alt}
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
             <img
-              src={whyChooseUs.image.src}
-              alt={whyChooseUs.image.alt}
-              className="rounded-[50px] w-full h-[240px] lg:h-[348px] xl:h-[446px] object-cover"
+              src={whyChooseUs.images[1].src}
+              alt={whyChooseUs.images[1].alt}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+            <img
+              src={whyChooseUs.images[2].src}
+              alt={whyChooseUs.images[2].alt}
+              className="w-full h-full object-cover rounded-2xl"
             />
           </div>
         </div>

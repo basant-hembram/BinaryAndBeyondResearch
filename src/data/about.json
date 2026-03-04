@@ -1,136 +1,67 @@
 {
   "banner": {
-    "title": "India's Fastest Growing Mutual Fund<br />Distributor",
+    "title": "About Us",
+    "subtitle": "Your Partner in Sustainable Growth",
     "breadcrumbs": [
-      {
-        "label": "Home",
-        "path": "/"
-      },
-      {
-        "label": "About Us",
-        "path": "/about"
-      }
+      { "label": "Home", "path": "/" },
+      { "label": "About Us", "path": "/about" }
     ],
     "backgroundImage": "/images/banner-bg.jpg"
   },
-  "title": "About Finyser Assets",
-  "description": [
-    "Finyzer Assets is an AMFI-registered Mutual Fund Distribution company based in Bokaro, Jharkhand, committed to helping individuals and families build long-term wealth through disciplined and goal-based investing.",
-    "We specialize in Systematic Investment Plans (SIPs), Mutual funds, and financial planning solutions designed to align with our clients’ life goals such as child education, retirement, wealth creation, and financial security.",
-    "With a strong local presence in Bokaro, Dhanbad, and Ranchi, we focus on creating clarity, consistency, and confidence in our clients’ financial journeys. Our approach is rooted in patience, proper planning, and long-term investment discipline, rather than short-term market speculation.",
-    "At Finyzer Assets, we believe that true wealth is built over time with the right guidance, discipline, and trust."
-  ],
-  "stats": [
-    {
-      "value": "50k +",
-      "label": "Trusted Client"
-    },
-    {
-      "value": "2.2L +",
-      "label": "Investor Base"
+  "aboutSection": {
+    "headingStart": "We employ",
+    "headingHighlight": "Latest Research Technology & Company",
+    "description": [
+      "Binary & Beyond is the place to come for information and actionable results that will ensure customer satisfaction and help your business succeed.",
+      "We offer end-to-end research collected from customers and businesses and help you to succeed your business with an in-depth understanding of the market. We work with our clients to identify wording or specification issues to prevent research problems before they happen."
+    ],
+    "ctaText": "View Case Studies",
+    "ctaLink": "/our-work",
+    "image": {
+      "src": "/images/about-banner.png",
+      "alt": "Research Technology"
     }
-  ],
-  "image": {
-    "src": "/images/about-finyzer.avif",
-    "alt": "Team working"
-  },
-  "founders": {
-    "title": "Meet your",
-    "titleHighlight": "Finyser Assets Founders",
-    "description": "At Finyzer Assets, we believe in the power of teamwork and collaboration to drive success. Meet the dedicated individuals who form the backbone of our organization and work tirelessly to empower our clients on their financial journey.",
-    "foundersList": [
-      {
-        "name": "Orlando Diggs",
-        "role": "Founder & CEO",
-        "image": "/images/orlando.png",
-        "social": {
-          "twitter": "#",
-          "linkedin": "#",
-          "dribbble": "#"
-        }
-      },
-      {
-        "name": "Phoenix Baker",
-        "role": "Founding Member",
-        "image": "/images/phoenix.png",
-        "social": {
-          "twitter": "#",
-          "linkedin": "#",
-          "dribbble": "#"
-        }
-      },
-      {
-        "name": "Drew Cano",
-        "role": "Founding Member",
-        "image": "/images/drew.png",
-        "social": {
-          "twitter": "#",
-          "linkedin": "#",
-          "dribbble": "#"
-        }
-      },
-      {
-        "name": "Drew Cano",
-        "role": "Founding Member",
-        "image": "/images/drew.png",
-        "social": {
-          "twitter": "#",
-          "linkedin": "#",
-          "dribbble": "#"
-        }
-      }
-    ]
   },
   "whyChooseUs": {
-    "title": "Why Choose Us As :",
-    "titleHighlight": "Your Trusted Investment Advisor",
-    "subtitle": "Why SIP/Investment With Us Works",
-    "reasons": [
-      "Goal-Based SIP Planning Support : We design personalized SIP plans for child education goal, retirement goal, tax saving, and wealth creation goal aligned with your income and risk profile.",
-      "Quartley Portfolio performance update : Your investments performance every quarter, and clear performance updates are shared via WhatsApp—no confusion, no surprises.",
-      "Smart Rebalancing for Long-Term Growth : We rebalance portfolios based on market conditions to protect downside risk and optimize long-term returns.",
-      "Dedicated WhatsApp & Call Support : Get a dedicated relationship manager for quick support on SIPs, redemptions, and portfolio queries.",
-      "27x7 support on WhatsApp"
-    ],
-    "image": {
-      "src": "/images/why-choose-us.png",
-      "alt": "Investment advisor"
-    }
-  },
-  "whyTrustUs": {
-    "title": "Why investors trust",
-    "titleHighlight": "Finyzer Assets",
-    "subtitle": "A trusted Mutual Fund Distributor company in India",
+    "label": "WHY CHOOSE US",
+    "description": "We treat our clients as partners and help them to contribute to each step towards success.\nWe partner with various industries such as Finance, Healthcare, Ecommerce, Technology, Power-Energy, retail, and consumer products and help them to understand the market and have a deep understanding of insights and strategies the business implications derived from it.",
     "features": [
-      {
-        "icon": "faHandHoldingDollar",
-        "title": "7+ Years of Wealth Management Experience",
-        "description": "For over 7 years, we have been helping investors build long-term wealth through goal-based mutual fund planning and disciplined SIP investing."
-      },
-      {
-        "icon": "faPeopleRoof",
-        "title": "200+ Happy Families",
-        "description": "More than 200 families across Jharkhand and other part of india trust us for SIP investments, tax planning, and long-term financial goals."
-      },
-      {
-        "icon": "faSackDollar",
-        "title": "₹100 Crore+ Assets Under Management",
-        "description": "An AUM of over ₹100 Crore reflects the confidence, consistency, and long-term relationships we have built with our investors."
-      },
-      {
-        "icon": "faCalculator",
-        "title": "SIP Specialist - Jharkhand",
-        "description": "We specialize in SIP-based investments for: ✔ Child Education goal Planning support ✔ Retirement goal Planning Support ✔ Tax Saving (ELSS) ✔ Long-Term Wealth Creation"
-      },
-      {
-        "icon": "faBuilding",
-        "title": "Dedicated Office – Sector 4, Bokaro",
-        "description": "We have a dedicated office in Bokaro to provide walk-in support, documentation assistance, and personalized investment guidance."
-      }
+      { "icon": "faCloud", "title": "High Quality Audience" },
+      { "icon": "faCloud", "title": "Unmatched Expertise" },
+      { "icon": "faCloud", "title": "Precise Result" },
+      { "icon": "faCloud", "title": "Qualified Staff" }
     ],
-    "decorativeImages": {
-      "topLeft": "/images/top-left-circle.png",
-      "bottomRight": "/images/bottom-right-circle.png"
-    }
+    "images": [
+      { "src": "/images/photo-1627599936744-51d288f89af4.avif", "alt": "Research 1" },
+      { "src": "/images/photo-1628348068343-c6a848d2b6dd.avif", "alt": "Research 2" },
+      { "src": "/images/wcu-3.png", "alt": "Research 3" }
+    ]
+  },
+  "corePrinciples": {
+    "label": "OUR CORE PRINCIPLES",
+    "title": "Our Core Principles",
+    "description": "Our Core Principles define who we are and guide every decision we make. They shape our vision, drive our mission, influence our philosophy, and reinforce the values that keep us accountable, innovative, and client-focused.",
+    "principles": [
+      {
+        "icon": "faEye",
+        "title": "Vision",
+        "description": "Transforming Industries with Data-Driven Innovation and Unparalleled Insights"
+      },
+      {
+        "icon": "faBullseye",
+        "title": "Mission",
+        "description": "Empowering Organizations with Actionable Intelligence and Strategic Decision-Making Support."
+      },
+      {
+        "icon": "faBrain",
+        "title": "Philosophy",
+        "description": "Ethics and Integrity: We uphold the highest ethical standards and integrity in all our operations. Our philosophy emphasizes transparency, confidentiality, and responsible handling of data."
+      },
+      {
+        "icon": "faHandshake",
+        "title": "Values",
+        "description": "Collaboration, Innovation: Fostering a culture of teamwork and embracing innovative approaches to drive client success."
+      }
+    ]
   }
 }
