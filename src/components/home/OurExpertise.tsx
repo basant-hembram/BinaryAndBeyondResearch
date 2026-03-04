@@ -156,7 +156,7 @@ const OurExpertise = () => {
         <div className='relative overflow-hidden max-md:p-5 p-10 rounded-3xl shadow-lg' style={{ backgroundColor: '#020B18' }}>
           <NetworkCanvas />
           {/* Header */}
-          <div className="relative mb-10 md:mb-14">
+          <div className="relative mb-10 md:mb-14" data-gsap="fade-up">
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] font-semibold text-white mb-4">
               {ourExpertise.title}
             </h2>
@@ -166,7 +166,7 @@ const OurExpertise = () => {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:items-end">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:items-end" data-gsap="stagger-up">
             {ourExpertise.cards.map((card: { title: string; image: string }, index: number) => {
               const isMiddle = index === 1;
               return (

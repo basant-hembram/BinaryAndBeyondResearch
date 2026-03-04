@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-gsap="stagger-up">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-[500] !leading-[1.3]">
               <span className="block text-[#4A4444]">{heroData.title.line1}</span>
               <span className="block font-[600] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent" data-gsap="gradient-shine">
@@ -47,7 +47,7 @@ const Hero = () => {
         </div>
 
         {/* Stats Section - White Card */}
-        <div className="mt-16 lg:mt-20 max-w-7xl -mb-20">
+        <div className="mt-16 lg:mt-20 max-w-7xl -mb-20" data-gsap="fade-up">
           <div className="bg-white rounded-xl shadow-lg p-8 lg:p-10">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Left - Branding */}
@@ -85,7 +85,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-0 top-0 bottom-0 overflow-hidden shadow-2xl">
+      <div className="absolute right-0 top-0 bottom-0 overflow-hidden shadow-2xl" data-gsap="fade-right">
         <img
           src={heroData.image.src}
           alt={heroData.image.alt}

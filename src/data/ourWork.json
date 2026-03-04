@@ -1,0 +1,42 @@
+{
+  "banner": {
+    "title": "Our Work",
+    "subtitle": "Delivering Results That Speak for Themselves"
+  },
+  "howWeGuideYou": {
+    "label": "HOW WE GUIDE YOU",
+    "description": "We guide you through every stage of your journey — from understanding your goals to delivering measurable results. With a clear strategy, transparent communication, and expert execution, we ensure you move forward with confidence and clarity.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Questionnaire designing",
+        "image": "/images/photo-1541560052-77ec1bbc09f7.avif",
+        "description": "No survey can achieve success without a well-designed questionnaire and is a very convenient way of collecting information from a large number of people within a period of time.\n\nQuestionnaire design is a multistage and complicated process that requires attention to many details at once. We design the questionnaire to ensure accurate data is collected so that the results are interpretable and generalisable."
+      },
+      {
+        "id": 2,
+        "title": "Survey Programming",
+        "image": "/images/photo-1627599936744-51d288f89af4.avif",
+        "description": "Our Tech Team use various latest technology to design and execute a survey. The Tech Team of Binary and Beyond is responsible for the blueprint, programming and testing all aspects of online surveys.\n\nUsing latest technologies and understanding the market, we ensure the survey design by us is engaging and interactive on the front end while maintaining the highest levels of quality and perfection in back-end end coding, logic, and quota work."
+      },
+      {
+        "id": 3,
+        "title": "Data Collection",
+        "image": "/images/photo-1628348068343-c6a848d2b6dd.avif",
+        "description": "Data collection is a systematic process of gathering observations or measurements.\n\n<strong>In-Person Data Collection:</strong> We collect data from traditional in-person research. In-person Data Collection by Binary and Beyond includes Product testing, Interviews, Including focus niche groups\n\n<strong>Online Data Collection:</strong> Binary and Beyond conducts Online Surveys, Video Surveys, Phone Surveys, web-based survey, Message board, and group discussion"
+      },
+      {
+        "id": 4,
+        "title": "Data Processing and Analysis",
+        "image": "/images/photo-1629425733761-caae3b5f2e50.avif",
+        "description": "Our Expert team of Data scientists process the raw data collected and convert it into more readable format. Processing is done using machine learning algorithms, it is important for data processing to be done correctly as not to negatively affect the end product, or data output.\n\n<strong>Ways of Data Processing:</strong>\n<ul><li>Transaction processing</li><li>Distributed processing</li><li>Real-time processing</li><li>Batch processing</li><li>Multiprocessing</li></ul>"
+      },
+      {
+        "id": 5,
+        "title": "Reports and Presentation",
+        "image": "/images/photo-1762341104634-998bbee0ccba.avif",
+        "description": "Before using the data to make any decision regarding the market place, Data is presented by our team in such a way that it gives you a clear view of the market place. Our team use different graphical techniques to visually show the reader the relationship between different data sets, to emphasise the nature of a particular aspect of the data or to geographically 'place' data appropriately on a map."
+      }
+    ]
+  }
+}

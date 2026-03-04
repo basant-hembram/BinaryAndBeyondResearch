@@ -1,12 +1,20 @@
+import ScrollAnimations from '@/components/common/ScrollAnimations';
+import PageHero from '@/components/common/PageHero';
+import HowWeGuideYou from '@/components/our-work/HowWeGuideYou';
+import { data } from '@/data';
+
 export default function OurWork() {
+  const ourWorkData = (data as any).ourWork;
+
   return (
-    <div className="bg-white min-h-screen">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Work</h1>
-        <p className="text-lg text-[#575455]">
-          Content coming soon...
-        </p>
-      </div>
+    <div className="bg-white">
+      <ScrollAnimations />
+      <PageHero
+        title={ourWorkData.banner.title}
+        subtitle={ourWorkData.banner.subtitle}
+      />
+      <HowWeGuideYou />
     </div>
   );
 }
+

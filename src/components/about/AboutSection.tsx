@@ -11,9 +11,9 @@ const AboutSection = () => {
       <div className="container max-md:px-4 mx-auto">
         <div className="grid lg:grid-cols-[60%_1fr] gap-12 items-start">
           {/* Left */}
-          <div>
+          <div data-gsap="fade-left">
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
-              {aboutSection.headingStart}{' '} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold">{aboutSection.headingHighlight}</span>
+              {aboutSection.headingStart}{' '} <br className='block md:hidden'></br> <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold" data-gsap="gradient-shine">{aboutSection.headingHighlight}</span>
             </h2>
             <img
               src={aboutSection.image.src}
@@ -23,7 +23,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right */}
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full" data-gsap="fade-right">
             {aboutSection.description.map((para: string, i: number) => (
               <p key={i} className="text-[#151D26] text-[14px] lg:text-[18px] leading-relaxed mb-4">
                 {para}

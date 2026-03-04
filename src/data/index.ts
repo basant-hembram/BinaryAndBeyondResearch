@@ -18,6 +18,7 @@ import trailingReturnsData from './trailingReturns.json';
 import becomeDistributorData from './becomeDistributor.json';
 import headerData from './header.json';
 import footerData from './footer.json';
+import ourWorkData from './ourWork.json';
 
 export const data = {
   hero: heroData,
@@ -39,6 +40,7 @@ export const data = {
   becomeDistributor: becomeDistributorData,
   header: headerData,
   footer: footerData,
+  ourWork: ourWorkData,
 };
 
 // Type definitions for the data

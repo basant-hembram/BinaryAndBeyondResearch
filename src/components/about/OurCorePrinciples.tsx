@@ -20,9 +20,9 @@ const OurCorePrinciples = () => {
         <div className="grid lg:grid-cols-[1fr_60%] gap-12 items-start">
 
           {/* Left */}
-          <div>
+          <div data-gsap="fade-left">
             <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-[15px] lg:mb-[17px] xl:mb-[13px] font-semibold">
-              <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold tracking-[0.2em]">
+              <span className="bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent font-semibold tracking-[0.2em]" data-gsap="gradient-shine">
                 {corePrinciples.label}
               </span>
             </h2>
@@ -32,7 +32,7 @@ const OurCorePrinciples = () => {
           </div>
 
           {/* Right — 2x2 Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-gsap="stagger-up">
             {corePrinciples.principles.map((principle: any, index: number) => (
               <div key={index} className="flex flex-col lg:flex-row gap-4">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#6B2E7E] rounded-full flex items-center justify-center">
