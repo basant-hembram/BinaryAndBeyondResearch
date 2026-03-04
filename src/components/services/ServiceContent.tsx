@@ -131,7 +131,7 @@ const ServiceContent = () => {
 
                     {/* Content Area */}
                     <div className="lg:col-span-9">
-                        <div className="bg-white rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px] p-8 lg:p-12">
+                        <div className="bg-none rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px] p-8 lg:p-12">
                             <h2 className="text-[28px] text-[#0A1A3A] mb-[20px]">
                                 Mutual <span className="text-[#E6AF1C] font-semibold">Fund</span>
                             </h2>

@@ -7,7 +7,7 @@ export default function OurWork() {
   const ourWorkData = (data as any).ourWork;
 
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <ScrollAnimations />
       <PageHero
         title={ourWorkData.banner.title}

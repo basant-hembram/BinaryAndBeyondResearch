@@ -50,7 +50,7 @@ const WhyTrustUs = () => {
           {whyTrustUs.features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 border-2 border-[#E6AF1C] hover:shadow-xl transition-all duration-300"
+              className="bg-none rounded-2xl p-6 border-2 border-[#E6AF1C] hover:shadow-xl transition-all duration-300"
             >
               <div className="flex flex-col lg:flex-row items-start gap-4">
                 <FontAwesomeIcon icon={iconMap[feature.icon]} className="text-[#E6AF1C] text-[22px]" />

@@ -7,7 +7,7 @@ export default function PanelServices() {
   const panelServicesData = (data as any).panelServices;
 
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <ScrollAnimations />
       <PageHero
         title={panelServicesData.banner.title}

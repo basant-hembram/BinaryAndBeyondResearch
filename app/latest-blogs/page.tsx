@@ -6,7 +6,7 @@ export default function LatestBlogs() {
   const blogData = data.blog;
   
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <Banner 
         title={blogData.banner.title}
         breadcrumbs={blogData.banner.breadcrumbs}

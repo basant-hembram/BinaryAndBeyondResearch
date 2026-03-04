@@ -10,7 +10,7 @@ const FAQ = () => {
   const faqData = data.faq;
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-none">
       <div className="container max-md:px-4 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] mb-4">

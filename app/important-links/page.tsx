@@ -12,7 +12,7 @@ export default function ImportantLinks() {
     const importantLinksData = data.importantLinks;
 
     return (
-        <div className="bg-white">
+        <div className="bg-none">
             <Banner
                 title={importantLinksData.title}
                 breadcrumbs={importantLinksData.breadcrumbs}

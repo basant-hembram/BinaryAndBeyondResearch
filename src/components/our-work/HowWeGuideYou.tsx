@@ -126,7 +126,7 @@ const HowWeGuideYou = () => {
   }, []);
 
   return (
-    <section className="py-8 md:py-16 bg-white" ref={sectionRef}>
+    <section className="py-8 md:py-16 bg-none" ref={sectionRef}>
       <div className="container max-md:px-4 mx-auto">
 
         <div className="max-w-2xl">

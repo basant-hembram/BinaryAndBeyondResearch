@@ -14,7 +14,7 @@ export default function BecomeDistributor() {
   const distributorData = data.becomeDistributor;
   
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <div className='block lg:hidden'>
         <Banner
           title={distributorData.banner.title}

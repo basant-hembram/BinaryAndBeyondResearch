@@ -7,7 +7,7 @@ export default function Services() {
   const servicesData = data.services as any;
 
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <ScrollAnimations />
       <PageHero title={servicesData.pageHero?.title} subtitle={servicesData.pageHero?.subtitle} />
       <ResearchAnalysisServices />

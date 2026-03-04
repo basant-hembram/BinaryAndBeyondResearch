@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
             </div>
             <div className="space-y-4" data-gsap="stagger-up">
               {whyChooseUs.features.map((feature: any, index: number) => (
-                <div key={index} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-md">
+                <div key={index} className="flex items-center gap-4 bg-none rounded-xl p-4 shadow-md">
                   <div className="w-10 h-10 rounded-full bg-[linear-gradient(180deg,#353572_0%,#602F7B_100%)] flex items-center justify-center flex-shrink-0">
                     <FontAwesomeIcon icon={faCloud} className="text-white text-[14px]" />
                   </div>

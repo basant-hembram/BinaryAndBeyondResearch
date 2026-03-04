@@ -1,332 +1,147 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
-import { Button } from '../ui/button';
 import Link from 'next/link';
+import { data } from '@/data';
 
 const ContactForm = () => {
+  const formConfig = (data as any).contact.form;
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
-    userType: '',
     message: '',
     agreeToPolicy: false,
   });
 
-  const [errors, setErrors] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    userType: '',
-    message: '',
-  });
-
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' });
 
-  // Validation functions
-  const validateName = (name: string): boolean => {
-    return /^[A-Za-z\s]+$/.test(name);
+  const validate = (name: string, value: string) => {
+    if (name === 'firstName' || name === 'lastName') {
+      return value && !/^[A-Za-z\s]+$/.test(value) ? 'Only letters allowed' : '';
+    }
+    if (name === 'email') {
+      return value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Invalid email address' : '';
+    }
+    if (name === 'phone') {
+      const digits = value.replace(/[^0-9]/g, '');
+      return value && digits.length < 10 ? 'Must be at least 10 digits' : '';
+    }
+    return '';
   };
 
-  const validateEmail = (email: string): boolean => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+    setFormData(prev => ({ ...prev, [name]: newValue }));
+    if (type !== 'checkbox') {
+      setErrors(prev => ({ ...prev, [name]: validate(name, value) }));
+    }
   };
 
-  const validatePhone = (phone: string): boolean => {
-    const digitsOnly = phone.replace(/[^0-9]/g, '');
-    return /^[0-9\s\-\+\(\)]+$/.test(phone) && digitsOnly.length >= 10;
-  };
-
-  // Check if form is valid
-  const isFormValid = (): boolean => {
-    return (
-      formData.firstName.trim() !== '' &&
-      validateName(formData.firstName) &&
-      formData.lastName.trim() !== '' &&
-      validateName(formData.lastName) &&
-      formData.email.trim() !== '' &&
-      validateEmail(formData.email) &&
-      formData.phone.trim() !== '' &&
-      validatePhone(formData.phone) &&
-      formData.userType !== '' &&
-      formData.message.trim() !== '' &&
-      formData.agreeToPolicy &&
-      Object.values(errors).every(error => error === '')
-    );
-  };
+  const isFormValid = () =>
+    formData.firstName.trim() &&
+    formData.lastName.trim() &&
+    formData.email.trim() &&
+    formData.phone.trim() &&
+    formData.message.trim() &&
+    formData.agreeToPolicy &&
+    Object.values(errors).every(e => !e);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!isFormValid()) {
-      return;
-    }
-
+    if (!isFormValid()) return;
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
-
     try {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      const response = await fetch(`${apiUrl}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          userType: formData.userType,
-          message: formData.message,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setSubmitStatus({
-          type: 'success',
-          message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.',
-        });
-        
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          userType: '',
-          message: '',
-          agreeToPolicy: false,
-        });
-      } else {
-        setSubmitStatus({
-          type: 'error',
-          message: data.message || 'Failed to send message. Please try again.',
-        });
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus({
-        type: 'error',
-        message: 'Failed to send message. Please check your connection and try again.',
-      });
+      await new Promise(r => setTimeout(r, 800));
+      setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '', agreeToPolicy: false });
+    } catch {
+      setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-    const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
-
-    setFormData({
-      ...formData,
-      [name]: newValue,
-    });
-
-    // Validate on change
-    if (name === 'firstName' || name === 'lastName') {
-      if (value && !validateName(value)) {
-        setErrors({
-          ...errors,
-          [name]: 'Only alphabets and spaces are allowed',
-        });
-      } else {
-        setErrors({
-          ...errors,
-          [name]: '',
-        });
-      }
-    } else if (name === 'email') {
-      if (value && !validateEmail(value)) {
-        setErrors({
-          ...errors,
-          email: 'Please enter a valid email address',
-        });
-      } else {
-        setErrors({
-          ...errors,
-          email: '',
-        });
-      }
-    } else if (name === 'phone') {
-      if (value && !validatePhone(value)) {
-        const digitsOnly = value.replace(/[^0-9]/g, '');
-        const errorMsg = digitsOnly.length < 10 
-          ? 'Phone number must be at least 10 digits' 
-          : 'Please enter a valid phone number';
-        setErrors({
-          ...errors,
-          phone: errorMsg,
-        });
-      } else {
-        setErrors({
-          ...errors,
-          phone: '',
-        });
-      }
-    }
-  };
+  const inputBase = 'w-full h-[48px] rounded-md border border-[#D0D5DD] bg-none px-4 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none focus:border-[#4D3D84]';
 
   return (
-    <div>
-      <h2 className="text-[26px] lg:text-[32px] xl:text-[36px] text-[#0A1A3A] mb-2">
-        Get in <span className="text-[#E6AF1C] font-semibold">touch</span>
-      </h2>
-      <p className="text-[#575455] text-[18px] lg:text-[20px] mb-8">Our friendly team would love to hear from you.</p>
+    <div data-gsap="fade-right">
+      <h2 className="text-[#151D26] text-[28px] md:text-[34px] font-semibold mb-2">{formConfig?.heading}</h2>
+      <p className="text-[#575455] text-[15px] mb-8">{formConfig?.subheading}</p>
 
       {submitStatus.type && (
-        <div className={`mb-6 p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
-          <p className={`text-sm ${submitStatus.type === 'success' ? 'text-green-800' : 'text-red-800'}`}>
-            {submitStatus.message}
-          </p>
+        <div className={`mb-6 p-4 rounded-lg text-sm ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+          {submitStatus.message}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-[#344054] text-[16px] mb-2">
-              First name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First name"
-              value={formData.firstName}
-              onChange={handleChange}
-              className={`w-full px-[16px] py-[12px] border-2 ${errors.firstName ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white`}
-              required
-            />
-            {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
+            <label className="block text-[#4A4A4A] text-[14px] mb-2">{formConfig?.fields?.firstName?.label}</label>
+            <input type="text" name="firstName" placeholder={formConfig?.fields?.firstName?.placeholder}
+              value={formData.firstName} onChange={handleChange}
+              className={`${inputBase} ${errors.firstName ? 'border-red-400' : ''}`} />
+            {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
           </div>
           <div>
-            <label className="block text-[#344054] text-[16px] mb-2">
-              Last name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last name"
-              value={formData.lastName}
-              onChange={handleChange}
-              className={`w-full px-[16px] py-[12px] border-2 ${errors.lastName ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white`}
-              required
-            />
-            {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
+            <label className="block text-[#4A4A4A] text-[14px] mb-2">{formConfig?.fields?.lastName?.label}</label>
+            <input type="text" name="lastName" placeholder={formConfig?.fields?.lastName?.placeholder}
+              value={formData.lastName} onChange={handleChange}
+              className={`${inputBase} ${errors.lastName ? 'border-red-400' : ''}`} />
+            {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
           </div>
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">
-            Email <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="you@company.com"
-            value={formData.email}
-            onChange={handleChange}
-            className={`w-full px-[16px] py-[12px] border-2 ${errors.email ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none focus:border-[#E6AF1C] bg-white`}
-            required
-          />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+          <label className="block text-[#4A4A4A] text-[14px] mb-2">{formConfig?.fields?.email?.label}</label>
+          <input type="email" name="email" placeholder={formConfig?.fields?.email?.placeholder}
+            value={formData.email} onChange={handleChange}
+            className={`${inputBase} ${errors.email ? 'border-red-400' : ''}`} />
+          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">
-            Phone number <span className="text-red-500">*</span>
-          </label>
-          <div className="relative">
-            <select className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent focus:border-[#E6AF1C] border-none focus:outline-none text-[#4A4444] pr-8 appearance-none cursor-pointer z-10">
-              <option value="IN">IN</option>
-              <option value="US">US</option>
-              <option value="UK">UK</option>
-            </select>
-            <svg className="absolute left-12 top-1/2 transform -translate-y-1/2 pointer-events-none z-10" width="12" height="8" viewBox="0 0 12 8" fill="none">
-              <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="+91 (555) 000-0000"
-              value={formData.phone}
-              onChange={handleChange}
-              className={`w-full pl-24 pr-[16px] py-[12px] border-2 ${errors.phone ? 'border-red-500' : 'border-[#e6af1c80]'} rounded-[8px] focus:outline-none bg-white`}
-              required
-            />
+          <label className="block text-[#4A4A4A] text-[14px] mb-2">{formConfig?.fields?.phone?.label}</label>
+          <div className={`w-full h-[48px] rounded-md border border-[#D0D5DD] bg-none px-3 flex items-center gap-2 text-[14px] focus-within:border-[#4D3D84] ${errors.phone ? 'border-red-400' : ''}`}>
+            <span className="text-[#4A4A4A] shrink-0 pr-2 border-r border-[#D0D5DD] flex items-center gap-1">
+              {formConfig?.fields?.phone?.code}
+              <svg viewBox="0 0 12 8" className="w-3 h-3 text-[#667085]" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </span>
+            <input type="tel" name="phone" placeholder={formConfig?.fields?.phone?.placeholder}
+              value={formData.phone} onChange={handleChange}
+              className="flex-1 h-full bg-transparent text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none" />
           </div>
-          {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+          {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
         </div>
 
         <div>
-          <label className="block text-[#344054] text-[16px] mb-2">
-            User Type <span className="text-red-500">*</span>
-          </label>
-          <select
-            name="userType"
-            value={formData.userType}
-            onChange={handleChange}
-            className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none bg-white text-gray-500"
-            required
-          >
-            <option value="">Select User Type</option>
-            <option value="investor">Investor</option>
-            <option value="distributor">Distributor</option>
-            <option value="other">Other</option>
-          </select>
+          <label className="block text-[#4A4A4A] text-[14px] mb-2">{formConfig?.fields?.message?.label}</label>
+          <textarea name="message" placeholder={formConfig?.fields?.message?.placeholder}
+            value={formData.message} onChange={handleChange} rows={5}
+            className="w-full rounded-md border border-[#D0D5DD] bg-none px-4 py-3 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none focus:border-[#4D3D84] resize-none" />
         </div>
 
-        <div>
-          <label className="block text-[#344054] text-[16px] mb-2">
-            Message <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            name="message"
-            placeholder=""
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full px-[16px] py-[12px] border-2 border-[#e6af1c80] focus:border-[#E6AF1C] rounded-[8px] focus:outline-none resize-none bg-white"
-            required
-          ></textarea>
-        </div>
-
-        <div className="flex items-start gap-2">
-          <input
-            type="checkbox"
-            name="agreeToPolicy"
-            id="agreeToPolicy"
-            checked={formData.agreeToPolicy}
-            onChange={handleChange}
-            className="mt-1 w-4 h-4"
-            required
-          />
-          <label htmlFor="agreeToPolicy" className="text-sm text-[#575455]">
+        <div className="flex items-center gap-2">
+          <input type="checkbox" name="agreeToPolicy" id="agreeToPolicy"
+            checked={formData.agreeToPolicy} onChange={handleChange}
+            className="w-4 h-4 rounded border border-[#D0D5DD] accent-[#4D3D84]" />
+          <label htmlFor="agreeToPolicy" className="text-[13px] text-[#575455]">
             You agree to our friendly{' '}
-            <Link href="/privacy-policy" className="text-[#575455] underline hover:text-[#01A382]">
-              privacy policy
-            </Link>
-            . <span className="text-red-500">*</span>
+            <Link href="/privacy-policy" className="underline hover:text-[#4D3D84]">privacy policy</Link>.
           </label>
         </div>
 
-        <Button 
-          type="submit" 
-          className="w-full h-[48px] bg-[#01A382] hover:bg-[#018f72] text-white py-[12px] text-base font-medium rounded-[10px] disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled={!isFormValid() || isSubmitting}
-        >
-          {isSubmitting ? 'Sending...' : 'Send message'}
-        </Button>
+        <button type="submit" disabled={!isFormValid() || isSubmitting}
+          className="w-full h-[48px] rounded-md bg-[#4D3D84] text-white text-[15px] font-medium disabled:opacity-50 disabled:cursor-not-allowed">
+          {isSubmitting ? 'Sending...' : formConfig?.submitText}
+        </button>
       </form>
     </div>
   );

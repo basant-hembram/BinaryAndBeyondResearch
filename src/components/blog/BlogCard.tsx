@@ -12,7 +12,7 @@ interface BlogCardProps {
 
 const BlogCard = ({ image, date, title, description, link }: BlogCardProps) => {
   return (
-    <div className="bg-white flex flex-col xl:flex-row gap-[24px] rounded-lg border border-[#E9EFFF] rounded-[10px] p-[15px] overflow-hidden">
+    <div className="bg-none flex flex-col xl:flex-row gap-[24px] rounded-lg border border-[#E9EFFF] rounded-[10px] p-[15px] overflow-hidden">
       <img src={image} alt={title} className="w-full h-48 object-cover rounded-[15px]" />
       <div className="">
         <p className="text-[#E6AF1C] text-[14px] font-semibold mb-2">{date}</p>

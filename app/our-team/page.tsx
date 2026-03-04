@@ -9,7 +9,7 @@ export default function Team() {
     const teamData = data.team;
 
     return (
-        <div className="bg-white">
+        <div className="bg-none">
             <Banner
                 title={teamData.title}
                 breadcrumbs={teamData.breadcrumbs}

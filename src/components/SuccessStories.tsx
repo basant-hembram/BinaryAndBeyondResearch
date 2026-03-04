@@ -6,7 +6,7 @@ const SuccessStories = () => {
   const { successStories } = data.home;
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-none">
       <div className="container max-md:px-4 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left - Image */}
@@ -19,7 +19,7 @@ const SuccessStories = () => {
               />
               
               {/* Overlay Stats */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white/95 rounded-xl p-6 backdrop-blur">
+              <div className="absolute bottom-8 left-8 right-8 bg-none/95 rounded-xl p-6 backdrop-blur">
                 <div className="flex items-center gap-4">
                   <div className="bg-[#E6AF1C] rounded-full p-4">
                     <TrendingUp className="w-8 h-8 text-white" />

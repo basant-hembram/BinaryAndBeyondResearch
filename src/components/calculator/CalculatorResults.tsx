@@ -26,7 +26,7 @@ const CalculatorResults = () => {
             {resultCards.map((card, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg border-2 border-[#E6AF1C] hover:shadow-lg transition-shadow"
+                className="bg-none p-6 rounded-lg border-2 border-[#E6AF1C] hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 flex items-start justify-center">

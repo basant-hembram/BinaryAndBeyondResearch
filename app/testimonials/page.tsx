@@ -7,7 +7,7 @@ export default function Testimonials() {
     const testimonialsData = data.testimonials;
 
     return (
-        <div className="bg-white">
+        <div className="bg-none">
             <Banner
                 title={testimonialsData.title}
                 breadcrumbs={testimonialsData.breadcrumbs}
@@ -30,7 +30,7 @@ export default function Testimonials() {
                     {/* Testimonials Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
                         {testimonialsData.testimonials.map((testimonial) => (
-                            <div key={testimonial.id} className="bg-white">
+                            <div key={testimonial.id} className="bg-none">
                                 <TestimonialCard
                                     name={testimonial.name}
                                     role={testimonial.role}

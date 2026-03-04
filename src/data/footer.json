@@ -31,16 +31,12 @@
         "path": "/services"
       },
       {
-        "label": "Latest Blogs",
-        "path": "/latest-blogs"
+        "label": "Panel Services",
+        "path": "/panel-services"
       },
       {
-        "label": "Our Team",
-        "path": "/our-team"
-      },
-      {
-        "label": "Testimonials",
-        "path": "/testimonials"
+        "label": "Career",
+        "path": "/career"
       }
     ]
   },
@@ -49,15 +45,11 @@
     "links": [
       {
         "label": "Privacy Policy",
-        "path": "/privacy-policy"
-      },
-      {
-        "label": "Disclaimer",
-        "path": "/disclaimer"
+        "path": "#"
       },
       {
         "label": "Terms of use",
-        "path": "/terms-of-use"
+        "path": "#"
       },
       {
         "label": "Contact Us",
@@ -83,13 +75,13 @@
       {
         "type": "email",
         "icon": "faEnvelope",
-        "label": "info@finyzerassets.com",
-        "link": "mailto:info@finyzerassets.com"
+        "label": "info@binaryandbeyondresearch.com",
+        "link": "mailto:info@binaryandbeyondresearch.com"
       },
       {
         "type": "address",
         "icon": "faLocationDot",
-        "label": "24/1 MG Road, Indiranagar,<br />Bengaluru, Karnataka 560038,<br />India."
+        "label": "Bengaluru, Karnataka 560072,<br />India."
       }
     ]
   },

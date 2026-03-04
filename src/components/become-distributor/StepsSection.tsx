@@ -36,7 +36,7 @@ const StepsSection = () => {
           </div>
           <div className="space-y-4">
             {stepsData.items.map((step, index) => (
-              <div key={index} className="bg-white rounded-lg border border-[#E6AF1C]">
+              <div key={index} className="bg-none rounded-lg border border-[#E6AF1C]">
                 <button
                   onClick={() => setExpandedStep(expandedStep === index ? null : index)}
                   className="w-full flex items-center justify-between p-5 text-left"

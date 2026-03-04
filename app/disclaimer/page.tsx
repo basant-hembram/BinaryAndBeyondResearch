@@ -5,7 +5,7 @@ export default function Disclaimer() {
     const disclaimerData = data.disclaimer;
 
     return (
-        <div className="bg-white">
+        <div className="bg-none">
             <Banner
                 title={disclaimerData.title}
                 breadcrumbs={disclaimerData.breadcrumbs}

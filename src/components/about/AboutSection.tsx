@@ -1,13 +1,21 @@
-import Link from 'next/link';
+'use client';
+
 import { data } from '../../data';
 
 const { about: aboutData } = data;
 
 const AboutSection = () => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   const { aboutSection } = aboutData as any;
 
   return (
-    <section className="py-8 md:py-12 bg-white">
+    <section className="py-8 md:py-12 bg-none">
       <div className="container max-md:px-4 mx-auto">
         <div className="grid lg:grid-cols-[60%_1fr] gap-12 items-start">
           {/* Left */}
@@ -29,12 +37,13 @@ const AboutSection = () => {
                 {para}
               </p>
             ))}
-            <Link
+            <a
               href={aboutSection.ctaLink}
+              onClick={(e) => handleScroll(e, aboutSection.ctaLink)}
               className="text-[#1F2541] font-semibold text-[16px] underline underline-offset-4 mt-2 w-fit hover:opacity-80 transition-opacity"
             >
               {aboutSection.ctaText}
-            </Link>
+            </a>
           </div>
         </div>
       </div>

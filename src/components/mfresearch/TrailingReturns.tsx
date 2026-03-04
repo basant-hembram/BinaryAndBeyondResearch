@@ -264,7 +264,7 @@ const TrailingReturns = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Select Category</label>
-                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
+                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-none text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
                         {trailingReturnsData.filters.categories.map((category, index) => (
                             <option key={index}>{category}</option>
                         ))}
@@ -273,7 +273,7 @@ const TrailingReturns = () => {
 
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Plan Type</label>
-                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
+                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-none text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
                         {trailingReturnsData.filters.planTypes.map((planType, index) => (
                             <option key={index}>{planType}</option>
                         ))}
@@ -282,7 +282,7 @@ const TrailingReturns = () => {
 
                 <div className="md:col-span-3">
                     <label className="block text-teal-500 text-sm font-medium mb-2">Select Period</label>
-                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
+                    <select className="w-full px-4 py-2.5 border-2 border-[#E6AF1C] rounded-md bg-none text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-[#E6AF1C]">
                         {trailingReturnsData.filters.selectPeriods.map((period, index) => (
                             <option key={index}>{period}</option>
                         ))}
@@ -294,7 +294,7 @@ const TrailingReturns = () => {
                         Search
                         <FontAwesomeIcon icon={faArrowUp} className="rotate-90" />
                     </button>
-                    <button className="bg-white hover:bg-gray-50 text-[#4A4444] px-4 py-2.5 rounded-md border border-gray-300 flex items-center gap-2">
+                    <button className="bg-none hover:bg-gray-50 text-[#4A4444] px-4 py-2.5 rounded-md border border-gray-300 flex items-center gap-2">
                         <FontAwesomeIcon icon={faArrowUp} />
                         Export
                     </button>
@@ -308,7 +308,7 @@ const TrailingReturns = () => {
                     <select
                         value={showEntries}
                         onChange={(e) => setShowEntries(e.target.value)}
-                        className="px-3 py-1 border border-gray-300 rounded-md bg-white text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="px-3 py-1 border border-gray-300 rounded-md bg-none text-[#4A4444] focus:outline-none focus:ring-2 focus:ring-teal-500"
                     >
                         {trailingReturnsData.entriesOptions.map((option, index) => (
                             <option key={index}>{option}</option>
@@ -334,10 +334,10 @@ const TrailingReturns = () => {
             </div>
 
             {/* Data Table */}
-            <div className="overflow-x-auto bg-white border border-gray-200 rounded-lg">
+            <div className="overflow-x-auto bg-none border border-gray-200 rounded-lg">
                 <table className="w-full border-collapse">
                     <thead>
-                        <tr className="bg-white border-b border-gray-200">
+                        <tr className="bg-none border-b border-gray-200">
                             <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">SCHEME NAME</th>
                             <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">LAUNCH DATE</th>
                             <th className="px-3 py-3 text-left text-[11px] font-medium text-[#575455] uppercase">AUM<br />(CRORE)</th>

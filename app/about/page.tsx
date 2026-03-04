@@ -10,7 +10,7 @@ export default function AboutUs() {
   const aboutData = data.about as any;
 
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <ScrollAnimations />
       <PageHero title={aboutData.banner.title} subtitle={aboutData.banner.subtitle} />
       <AboutSection />

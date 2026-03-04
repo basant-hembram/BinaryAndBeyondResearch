@@ -3,7 +3,7 @@ import MembershipContent from '@/components/membership/MembershipContent';
 
 export default function Membership() {
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <ScrollAnimations />
       <MembershipContent />
     </div>

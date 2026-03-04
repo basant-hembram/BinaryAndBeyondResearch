@@ -20,7 +20,7 @@ const WhyBBR = () => {
   const router = useRouter();
 
   return (
-    <section id="calculator" className="py-16 md:py-24 bg-white">
+    <section id="calculator" className="py-16 md:py-24 bg-none">
       <div className="container max-md:px-4 mx-auto">
         <div className="grid xl:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

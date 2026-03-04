@@ -8,7 +8,7 @@ export default function Calculator() {
   const calculatorData = data.calculator;
   
   return (
-    <div className="bg-white">
+    <div className="bg-none">
       <Banner 
         title={calculatorData.banner.title}
         breadcrumbs={calculatorData.banner.breadcrumbs}

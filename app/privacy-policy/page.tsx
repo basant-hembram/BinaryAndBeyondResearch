@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
     const privacyPolicyData = data.privacyPolicy;
 
     return (
-        <div className="bg-white">
+        <div className="bg-none">
             <Banner
                 title={privacyPolicyData.title}
                 breadcrumbs={privacyPolicyData.breadcrumbs}

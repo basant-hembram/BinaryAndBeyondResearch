@@ -43,18 +43,21 @@ const Header = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden xl:flex items-center gap-8">
+                    <nav className="hidden xl:flex items-center">
                         {headerData.navigation.map((item) => (
                             <Link
                                 key={item.path}
                                 href={item.path}
-                                className={`text-sm font-medium transition-colors hover:text-purple-600 ${
+                                className={`relative text-sm font-medium px-4 py-3 transition-colors hover:text-[#6B2E7E] ${
                                     pathname === item.path 
-                                        ? 'text-purple-600' 
+                                        ? 'bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent' 
                                         : isScrolled ? 'text-[#4A4444]' : 'text-gray-800'
                                 }`}
                             >
                                 {item.label}
+                                {pathname === item.path && (
+                                    <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[linear-gradient(90deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] rounded-full" />
+                                )}
                             </Link>
                         ))}
                     </nav>
@@ -73,7 +76,7 @@ const Header = () => {
 
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
-                    <nav className="xl:hidden pb-4 bg-white rounded-b-lg shadow-lg">
+                    <nav className="xl:hidden pb-4 bg-none rounded-b-lg shadow-lg">
                         <div className="flex flex-col gap-2">
                             {headerData.navigation.map((item) => (
                                 <Link

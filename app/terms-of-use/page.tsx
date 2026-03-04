@@ -5,7 +5,7 @@ export default function TermsOfUse() {
     const termsOfUseData = data.termsOfUse;
 
     return (
-        <div className="bg-white">
+        <div className="bg-none">
             <Banner
                 title={termsOfUseData.title}
                 breadcrumbs={termsOfUseData.breadcrumbs}
