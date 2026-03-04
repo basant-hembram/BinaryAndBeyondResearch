@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Join Our Team and Help Shape the Future of Binary & Beyond",
+    "description": "Binary & Beyond is a rapidly growing technology company that is revolutionizing the Market Research industry. We are a team of innovators, creators, and problem solvers who are passionate about making a difference in the world. We are currently seeking talented individuals to join our team and help us achieve our mission.",
+    "avatars": [
+      { "image": "/images/clients/1.png", "alt": "Team member 1" },
+      { "image": "/images/clients/2.png", "alt": "Team member 2" },
+      { "image": "/images/clients/3.png", "alt": "Team member 3" },
+      { "image": "/images/clients/4.png", "alt": "Team member 4" },
+      { "image": "/images/clients/5.png", "alt": "Team member 5" },
+      { "image": "/images/clients/6.png", "alt": "Team member 6" },
+      { "image": "/images/orlando.png", "alt": "Team member 7" },
+      { "image": "/images/phoenix.png", "alt": "Team member 8" }
+    ]
+  },
+  "application": {
+    "title": "Apply",
+    "titleHighlight": "Now",
+    "descriptionLine1": "We are looking for individuals who are passionate about making a difference and are committed to excellence.",
+    "descriptionLine2": "To apply, please submit your resume and cover letter through our online application form. Our recruitment team will review your application and contact you if you are selected for an interview.",
+    "image": "/images/about-finyzer.avif"
+  },
+  "form": {
+    "fields": {
+      "fullName": { "label": "Full name", "placeholder": "Enter Full Name" },
+      "email": { "label": "Email", "placeholder": "you@company.com" },
+      "phone": { "label": "Phone number", "code": "IN", "placeholder": "+91 (555) 000-0000" },
+      "resume": { "label": "Upload Resume", "buttonText": "Browse file", "note": "Format: pdf & Max file size: 25 MB" },
+      "message": { "label": "Message", "placeholder": "" }
+    },
+    "submitText": "Apply"
+  }
+}

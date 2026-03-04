@@ -20,6 +20,7 @@ import headerData from './header.json';
 import footerData from './footer.json';
 import ourWorkData from './ourWork.json';
 import panelServicesData from './panelServices.json';
+import careerData from './career.json';
 
 export const data = {
   hero: heroData,
@@ -43,6 +44,7 @@ export const data = {
   footer: footerData,
   ourWork: ourWorkData,
   panelServices: panelServicesData,
+  career: careerData,
 };
 
 // Type definitions for the data
