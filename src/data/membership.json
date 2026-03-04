@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "Join Our Membership Program",
+    "paragraphs": [
+      "At Binary & Beyond we value your opinions and insights. We are constantly seeking feedback from consumers like you to help our clients make informed business decisions and improve their products and services.",
+      "By participating in our market research studies, you have the opportunity to share your opinions and experiences on a variety of topics, ranging from consumer goods and services to healthcare and technology. Your feedback is essential to helping us understand what consumers like you want and need, and how we can better serve you in the future."
+    ]
+  },
+  "registration": {
+    "title": "Register",
+    "titleHighlight": "Now",
+    "paragraphs": [
+      "To get started, please fill out the registration form below. We ask for some basic information to help us match you with relevant studies. Rest assured that any personal information you provide will be kept confidential and used only for research purposes.",
+      "Once you have registered, you will receive notifications about upcoming studies that you may be eligible to participate in. Depending on the study, you may be asked to complete surveys, participate in focus groups, or test products and services. We will provide detailed instructions and support throughout the process, and compensate you for your time and participation.",
+      "Thank you for considering participating in our market research studies. Your feedback is invaluable to us, and we look forward to hearing from you soon!"
+    ],
+    "image": "/images/photo-1639616239683-ca6243ed6a0c.avif"
+  },
+  "form": {
+    "fields": {
+      "name": { "label": "Name", "placeholder": "Enter Full Name" },
+      "age": { "label": "Age", "placeholder": "Enter Age" },
+      "gender": { "label": "Gender", "placeholder": "Select Gender", "options": ["Male", "Female", "Non-binary", "Prefer not to say"] },
+      "email": { "label": "Email", "placeholder": "you@company.com" },
+      "phone": { "label": "Phone number", "code": "IN", "placeholder": "+91 (555) 000-0000" },
+      "zip": { "label": "ZIP Code", "placeholder": "Enter ZIP Code" }
+    },
+    "submitText": "Submit"
+  }
+}

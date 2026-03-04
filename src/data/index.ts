@@ -21,6 +21,7 @@ import footerData from './footer.json';
 import ourWorkData from './ourWork.json';
 import panelServicesData from './panelServices.json';
 import careerData from './career.json';
+import membershipData from './membership.json';
 
 export const data = {
   hero: heroData,
@@ -45,6 +46,7 @@ export const data = {
   ourWork: ourWorkData,
   panelServices: panelServicesData,
   career: careerData,
+  membership: membershipData,
 };
 
 // Type definitions for the data
