@@ -118,24 +118,41 @@ export default function ScrollAnimations() {
         );
       });
 
-      // --- gradient-shine (sweep gradient right → left on bg-clip-text spans) ---
+      // --- gradient-shine (sweep-in on scroll, then continuous shimmer loop) ---
       gsap.utils.toArray<HTMLElement>('[data-gsap="gradient-shine"]').forEach((el) => {
-        el.style.backgroundSize = '200% 100%';
-        gsap.fromTo(
+        // Override the background to include a bright shimmer highlight pass
+        el.style.backgroundColor=
+          '#0A1A3A';
+        el.style.backgroundSize = '300% 100%';
+        el.style.backgroundPosition = '200% center';
+
+        // Sweep in from right → left on first scroll-trigger
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+          },
+        });
+
+        tl.fromTo(
           el,
-          { backgroundPosition: '150% center', opacity: 0 },
+          { backgroundPosition: '200% center', opacity: 0 },
           {
             backgroundPosition: '0% center',
             opacity: 1,
             duration: 1.1,
             ease: 'power3.out',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 90%',
-              toggleActions: 'play none none none',
-            },
           }
-        );
+        ).to(el, {
+          // Continuous shimmer: slide the highlight across repeatedly
+          backgroundPosition: '-200% center',
+          duration: 3,
+          ease: 'none',
+          repeat: -1,
+          repeatDelay: 1.5,
+          delay: 0.3,
+        });
       });
     });
 

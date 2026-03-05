@@ -11,7 +11,7 @@ const Hero = () => {
   const router = useRouter();
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-50 to-white pt-16 lg:pt-20">
+    <section id="home" className="relative pt-8 lg:pt-10 2xl:pt-24">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -23,7 +23,7 @@ const Hero = () => {
               </span>
               <span className="block text-[#4A4444]">{heroData.title.line3}</span>
             </h1>
-            
+
             <p className="text-base lg:text-lg text-[#575455] leading-relaxed">
               {heroData.subtitle}
             </p>
@@ -41,8 +41,12 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative">
-
+          <div className="relative rounded-[50px] overflow-hidden aspect-[4/3]">
+            <img
+              src={heroData.image.src}
+              alt={heroData.image.alt}
+              className="object-cover 2xl:hidden"
+            />
           </div>
         </div>
 
@@ -85,7 +89,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-0 top-0 bottom-0 overflow-hidden shadow-2xl" data-gsap="fade-right">
+      <div className="absolute max-2xl:hidden right-0 top-0 bottom-0 overflow-hidden shadow-2xl" data-gsap="fade-right">
         <img
           src={heroData.image.src}
           alt={heroData.image.alt}
