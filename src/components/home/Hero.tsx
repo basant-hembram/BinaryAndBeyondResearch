@@ -41,11 +41,11 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative rounded-[50px] overflow-hidden aspect-[4/3]">
+          <div className="relative rounded-[50px] overflow-hidden aspect-[4/3] 2xl:hidden">
             <img
               src={heroData.image.src}
               alt={heroData.image.alt}
-              className="object-cover 2xl:hidden"
+              className="object-cover"
             />
           </div>
         </div>
