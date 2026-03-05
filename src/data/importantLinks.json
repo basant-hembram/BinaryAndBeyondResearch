@@ -112,6 +112,8 @@
     "subtitle": "We will help you",
     "description": "If you are facing any problem related to KYC, SIP, or Mutual funds, Fynser Assets team will assist you",
     "callButtonText": "Call Now",
-    "whatsappButtonText": "Chat on WhatsApp"
+    "callLink": "tel:+919916877477",
+    "whatsappButtonText": "Chat on WhatsApp",
+    "whatsappLink": "https://wa.me/919916877477"
   }
 }

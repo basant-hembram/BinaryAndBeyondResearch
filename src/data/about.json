@@ -37,6 +37,78 @@
       { "src": "/images/wcu-3.png", "alt": "Research 3" }
     ]
   },
+  "whyTrustUs": {
+    "decorativeImages": {
+      "topLeft": "/images/bg-grphix.png",
+      "bottomRight": "/images/bg-grphix.png"
+    },
+    "title": "Why Trust",
+    "titleHighlight": "Binary & Beyond Research?",
+    "subtitle": "We combine deep market expertise with transparent, data-driven insights to help you invest with confidence.",
+    "features": [
+      {
+        "icon": "faHandHoldingDollar",
+        "title": "AMFI Registered Mutual Fund Distributor",
+        "description": "We are a certified and AMFI-registered distributor, ensuring every recommendation follows regulatory guidelines and your best interests."
+      },
+      {
+        "icon": "faPeopleRoof",
+        "title": "Client-Centric Approach",
+        "description": "Your financial goals drive our recommendations. We build personalised investment strategies designed around your life, not just the market."
+      },
+      {
+        "icon": "faBuilding",
+        "title": "Pan-India & Global Presence",
+        "description": "With offices in India, the Middle East, and the USA, we serve investors across geographies with local expertise and global perspective."
+      },
+      {
+        "icon": "faSackDollar",
+        "title": "Transparent Fee Structure",
+        "description": "No hidden charges. Our straightforward fee model ensures you always know what you're paying for and why."
+      },
+      {
+        "icon": "faCalculator",
+        "title": "Research-Backed Recommendations",
+        "description": "Every fund recommendation is backed by rigorous quantitative and qualitative research, minimising risk and maximising long-term returns."
+      },
+      {
+        "icon": "faPeopleRoof",
+        "title": "Dedicated Relationship Managers",
+        "description": "You get a dedicated manager who understands your portfolio and is available to guide you through every market condition."
+      }
+    ]
+  },
+  "founders": {
+    "title": "Meet Our",
+    "titleHighlight": "Founders",
+    "description": "Our founders bring decades of combined experience in finance, research, and technology — united by a shared vision to make intelligent investing accessible to all.",
+    "foundersList": [
+      {
+        "image": "/images/photo-1629425733761-caae3b5f2e50.avif",
+        "name": "Rajesh Kumar",
+        "role": "Chief Executive Officer",
+        "social": { "twitter": "#", "linkedin": "#", "dribbble": "#" }
+      },
+      {
+        "image": "/images/photo-1639616239669-104e51ca79bc.avif",
+        "name": "Priya Sharma",
+        "role": "Chief Research Officer",
+        "social": { "twitter": "#", "linkedin": "#", "dribbble": "#" }
+      },
+      {
+        "image": "/images/photo-1713946598501-d6b32e7c2464.avif",
+        "name": "Anil Verma",
+        "role": "Chief Technology Officer",
+        "social": { "twitter": "#", "linkedin": "#", "dribbble": "#" }
+      },
+      {
+        "image": "/images/photo-1737660739682-238840037537.avif",
+        "name": "Sneha Patel",
+        "role": "Head of Partnerships",
+        "social": { "twitter": "#", "linkedin": "#", "dribbble": "#" }
+      }
+    ]
+  },
   "corePrinciples": {
     "label": "OUR CORE PRINCIPLES",
     "title": "Our Core Principles",
