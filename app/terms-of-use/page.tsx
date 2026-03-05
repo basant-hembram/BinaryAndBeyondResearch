@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Banner from '@/components/common/Banner';
 import { data } from '@/data';
+
+export const metadata: Metadata = {
+  title: 'Terms of Use | Binary and Beyond Research',
+  description: 'Review the terms and conditions governing your use of the Binary and Beyond Research website and services. By using our site, you agree to these terms.',
+  keywords: 'terms of use, terms and conditions, Binary and Beyond Research terms, website terms',
+};
 
 export default function TermsOfUse() {
     const termsOfUseData = data.termsOfUse;

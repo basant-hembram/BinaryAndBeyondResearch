@@ -13,9 +13,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Binary and Beyond Research - Mutual Fund Distribution & Investment Advisory',
-  description: 'Leading mutual fund distributor offering expert investment advisory, financial planning, and wealth management services.',
-  keywords: 'mutual funds, investment advisory, financial planning, wealth management, Binary and Beyond Research',
+  title: 'Binary and Beyond Research - Market Research & Investment Advisory',
+  description: 'Binary and Beyond Research delivers end-to-end market research, data-driven insights, panel services, and expert investment advisory to help businesses and investors make smarter decisions.',
+  keywords: 'market research, research analysis, panel services, product testing, healthcare market research, brand assessments, market segmentation, investment advisory, mutual funds, Binary and Beyond Research',
 };
 
 export default function RootLayout({

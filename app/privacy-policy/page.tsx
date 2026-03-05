@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Banner from '@/components/common/Banner';
 import { data } from '@/data';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Binary and Beyond Research',
+  description: 'Learn how Binary and Beyond Research collects, uses, and protects your personal data. Our privacy policy outlines your rights and our data handling practices.',
+  keywords: 'privacy policy, data protection, personal data, Binary and Beyond Research privacy',
+};
 
 export default function PrivacyPolicy() {
     const privacyPolicyData = data.privacyPolicy;

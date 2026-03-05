@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Banner from '@/components/common/Banner';
 import { data } from '@/data';
+
+export const metadata: Metadata = {
+  title: 'Disclaimer | Binary and Beyond Research',
+  description: 'Read the disclaimer for Binary and Beyond Research. Understand the limitations and terms applicable to the information and services provided on this website.',
+  keywords: 'disclaimer, Binary and Beyond Research disclaimer, terms, legal notice',
+};
 
 export default function Disclaimer() {
     const disclaimerData = data.disclaimer;

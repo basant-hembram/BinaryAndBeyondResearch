@@ -1,6 +1,14 @@
+import type { Metadata } from 'next';
 import ScrollAnimations from '@/components/common/ScrollAnimations';
 import PageHero from '@/components/common/PageHero';
 import ContactForm from '@/components/contact-us/ContactForm';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Binary and Beyond Research',
+  description: 'Get in touch with Binary and Beyond Research. Reach us at our offices in India, the Middle East, and the USA for market research, panel services, or investment advisory enquiries.',
+  keywords: 'contact Binary and Beyond Research, get in touch, office locations, India, Middle East, USA, research enquiry',
+};
+
 import ContactInfo from '@/components/contact-us/ContactInfo';
 import { data } from '@/data';
 

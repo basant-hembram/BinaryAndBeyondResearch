@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Banner from '@/components/common/Banner';
 import BlogDetail from '@/components/blog/BlogDetail';
 import { blogs } from '@/components/blog/BlogList';
@@ -7,6 +8,21 @@ import { data } from '@/data';
 const generateSlug = (title: string) => {
     return title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 };
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const blog = params.slug ? (data.blog.blogDetails as any)[params.slug] : null;
+    if (!blog) {
+        return {
+            title: 'Blog | Binary and Beyond Research',
+            description: 'Read the latest market research and investment insights from Binary and Beyond Research.',
+        };
+    }
+    return {
+        title: `${blog.title} | Binary and Beyond Research`,
+        description: blog.subtitle || 'Read this article on Binary and Beyond Research for expert market research and investment insights.',
+        keywords: `${blog.title}, market research, investment insights, Binary and Beyond Research`,
+    };
+}
 
 export default function BlogDetailPage({ params }: { params: { slug: string } }) {
     const slug = params.slug;
