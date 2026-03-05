@@ -12,7 +12,7 @@ export default function ResearchAnalysisServices() {
     const items = (section?.items ?? []) as ResearchAnalysisItem[];
 
     return (
-        <section className="relative overflow-hidden bg-[#F6F6F7] py-10 md:py-14 lg:py-16">
+        <section className="relative overflow-hidden py-10 md:py-14 lg:py-16">
 
             <div className="container max-md:px-4 mx-auto relative z-10">
                 <div className="max-w-4xl">
