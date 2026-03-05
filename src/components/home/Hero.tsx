@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
 
         {/* Stats Section - White Card */}
-        <div className="max-w-7xl -mb-20" data-gsap="fade-up">
+        <div className="mt-16 max-w-7xl -mb-20" data-gsap="fade-up">
           <div className="bg-white rounded-xl shadow-lg p-8 lg:p-10">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Left - Branding */}
