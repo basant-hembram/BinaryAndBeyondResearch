@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
 
 // Allowed MIME types
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/gif', 'image/svg+xml'];
@@ -26,18 +24,9 @@ export async function POST(request) {
       return NextResponse.json({ success: false, error: 'File too large. Max size is 5 MB' }, { status: 400 });
     }
 
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-    await mkdir(uploadDir, { recursive: true });
+    const base64 = `data:${file.type};base64,${buffer.toString('base64')}`;
 
-    // Sanitise original filename, then prefix with timestamp for uniqueness
-    const originalExt = path.extname(file.name).toLowerCase() || '.jpg';
-    const safeName = path.basename(file.name, originalExt).replace(/[^a-z0-9_-]/gi, '_').slice(0, 60);
-    const filename = `${Date.now()}-${safeName}${originalExt}`;
-    const filepath = path.join(uploadDir, filename);
-
-    await writeFile(filepath, buffer);
-
-    return NextResponse.json({ success: true, url: `/uploads/${filename}` });
+    return NextResponse.json({ success: true, url: base64 });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
