@@ -43,36 +43,14 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className='md:col-span-2'>
-            <h4 className="font-semibold text-[16px] mb-4">{footerData.quickLinks.title}</h4>
-            <ul className="space-y-[20px]">
-              {footerData.quickLinks.links.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.path} className="text-white hover:text-[#E6AF1C] transition-colors text-[16px]">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Our Location */}
+          <div className='md:col-span-4'>
+            <h4 className="font-semibold text-[16px] mb-4 uppercase">Our Location</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5566093101093!2d77.65899717592303!3d13.000186787317817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1149e693606d%3A0xa2914045c4276fec!2sBinaryandBeyondresearch!5e0!3m2!1sen!2sin!4v1773252650254!5m2!1sen!2sin" width="400" height="200" style={{border:0}} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
-          {/* Information */}
-          <div className='md:col-span-2 xl:pl-[50px]'>
-            <h4 className="font-semibold text-[16px] mb-4">{footerData.information.title}</h4>
-            <ul className="space-y-[20px]">
-              {footerData.information.links.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.path} className="text-white hover:text-[#E6AF1C] transition-colors text-[16px]">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className='md:col-span-4 xl:pl-[50px]'>
+           {/* Contact Info */}
+          <div className='md:col-span-4'>
             <h4 className="font-semibold text-[16px] mb-4">{footerData.contact.title}</h4>
             <ul className="space-y-[20px]">
               {footerData.contact.items.map((item, index) => {
@@ -97,6 +75,16 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#C9C9C9] pt-6 mt-8">
           <div className="text-center">
+            <ul className="flex justify-center gap-2 mb-2 items-center">
+              {footerData.information.links.map((link, index, arr) => (
+                <li key={index} className="flex items-center">
+                  <Link href={link.path} className="text-white hover:text-[#E6AF1C] transition-colors text-[14px]">
+                    {link.label}
+                  </Link>
+                  {index < arr.length - 1 && <span className="text-white ml-2">•</span>}
+                </li>
+              ))}
+            </ul>
             <p className="text-white text-sm">
               {footerData.copyright}
             </p>
