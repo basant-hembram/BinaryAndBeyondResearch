@@ -13,14 +13,14 @@ type Step = { id: number; title: string; image: string; description: string };
 
 const HowWeGuideYou = () => {
   const { howWeGuideYou } = ourWorkData;
-  const [steps, setSteps] = useState<Step[]>(howWeGuideYou.steps as Step[]);
+  const [steps, setSteps] = useState<Step[]>([]);
 
-  // Fetch live steps from MongoDB; fall back to static JSON if empty or on error
+  // Fetch live steps from MongoDB only
   useEffect(() => {
     fetch('/api/our-work')
       .then((r) => r.json())
       .then((json) => {
-        if (json.success && json.data.length > 0) {
+        if (json.success) {
           setSteps(
             json.data.map((item: any, idx: number) => ({
               id: item.order || idx + 1,
@@ -31,7 +31,7 @@ const HowWeGuideYou = () => {
           );
         }
       })
-      .catch(() => {/* keep static fallback */});
+      .catch(() => {});
   }, []);
   const sectionRef = useRef<HTMLElement>(null);
   const stepsRef = useRef<HTMLDivElement>(null);

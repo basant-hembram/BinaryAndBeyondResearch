@@ -13,15 +13,15 @@ export default function ResearchAnalysisServices() {
     const servicesData = data.services as any;
     const section = servicesData.researchAnalysis;
     const fallbackItems = (section?.items ?? []) as ResearchAnalysisItem[];
-    const [items, setItems] = useState<ResearchAnalysisItem[]>(fallbackItems);
+    const [items, setItems] = useState<ResearchAnalysisItem[]>([]);
 
     useEffect(() => {
         fetch('/api/services')
             .then((r) => r.json())
             .then((json) => {
-                if (json.success && json.data.length > 0) setItems(json.data);
+                if (json.success) setItems(json.data);
             })
-            .catch(() => {/* keep static fallback */});
+            .catch(() => {});
     }, []);
 
     return (

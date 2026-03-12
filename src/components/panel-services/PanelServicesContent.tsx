@@ -14,15 +14,15 @@ export default function PanelServicesContent() {
   const overview = panelServicesData?.overview;
   const professionalSection = panelServicesData?.professionalSection;
   const fallbackCards = (professionalSection?.cards ?? []) as PanelCard[];
-  const [cards, setCards] = useState<PanelCard[]>(fallbackCards);
+  const [cards, setCards] = useState<PanelCard[]>([]);
 
   useEffect(() => {
     fetch('/api/panel-services')
       .then((r) => r.json())
       .then((json) => {
-        if (json.success && json.data.length > 0) setCards(json.data);
+        if (json.success) setCards(json.data);
       })
-      .catch(() => {/* keep static fallback */});
+      .catch(() => {});
   }, []);
 
   return (
