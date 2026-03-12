@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { data } from '@/data';
 
 interface PanelCard {
@@ -10,7 +13,17 @@ export default function PanelServicesContent() {
   const panelServicesData = (data as any).panelServices;
   const overview = panelServicesData?.overview;
   const professionalSection = panelServicesData?.professionalSection;
-  const cards = (professionalSection?.cards ?? []) as PanelCard[];
+  const fallbackCards = (professionalSection?.cards ?? []) as PanelCard[];
+  const [cards, setCards] = useState<PanelCard[]>(fallbackCards);
+
+  useEffect(() => {
+    fetch('/api/panel-services')
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.success && json.data.length > 0) setCards(json.data);
+      })
+      .catch(() => {/* keep static fallback */});
+  }, []);
 
   return (
     <section className="relative overflow-hidden py-10 md:py-14 lg:py-16">

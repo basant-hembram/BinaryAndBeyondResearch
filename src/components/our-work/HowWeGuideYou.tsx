@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { data } from '../../data';
@@ -13,6 +13,26 @@ type Step = { id: number; title: string; image: string; description: string };
 
 const HowWeGuideYou = () => {
   const { howWeGuideYou } = ourWorkData;
+  const [steps, setSteps] = useState<Step[]>(howWeGuideYou.steps as Step[]);
+
+  // Fetch live steps from MongoDB; fall back to static JSON if empty or on error
+  useEffect(() => {
+    fetch('/api/our-work')
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.success && json.data.length > 0) {
+          setSteps(
+            json.data.map((item: any, idx: number) => ({
+              id: item.order || idx + 1,
+              title: item.title,
+              image: item.image,
+              description: item.description ?? '',
+            }))
+          );
+        }
+      })
+      .catch(() => {/* keep static fallback */});
+  }, []);
   const sectionRef = useRef<HTMLElement>(null);
   const stepsRef = useRef<HTMLDivElement>(null);
   const solidDesktopRef = useRef<HTMLDivElement>(null);
@@ -151,7 +171,7 @@ const HowWeGuideYou = () => {
           <div ref={solidMobileRef} className="md:hidden absolute left-5 -translate-x-1/2 w-[3px] pointer-events-none"
             style={{ background: 'linear-gradient(180deg,#353572 0%,#602F7B 50%,#A32787 75%,#6B2E7E 100%)' }} />
 
-          {howWeGuideYou.steps.map((step: Step, index: number) => {
+          {steps.map((step: Step, index: number) => {
             const isLeft = index % 2 === 0;
             return (
               <div key={step.id} className="relative py-10 md:py-14">

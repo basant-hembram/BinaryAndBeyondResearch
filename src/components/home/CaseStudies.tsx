@@ -16,6 +16,17 @@ const CaseStudies = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const [slidesOffset, setSlidesOffset] = useState(16);
+  const [studies, setStudies] = useState<typeof caseStudies.studies>([]);
+
+  // Fetch live data from MongoDB only
+  useEffect(() => {
+    fetch('/api/case-study')
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.success) setStudies(json.data);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const calculateOffset = () => {
@@ -87,8 +98,8 @@ const CaseStudies = () => {
           }}
           className="case-studies-swiper !overflow-visible"
         >
-          {caseStudies.studies.map((study) => (
-            <SwiperSlide key={study.id}>
+          {studies.map((study, idx) => (
+            <SwiperSlide key={(study as any)._id ?? (study as any).id ?? idx}>
               <div className="relative rounded-3xl overflow-hidden h-[320px] md:h-[360px] cursor-pointer group">
                 <img
                   src={study.image}

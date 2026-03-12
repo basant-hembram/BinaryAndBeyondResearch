@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { data } from '@/data';
 
 interface ResearchAnalysisItem {
@@ -9,7 +12,17 @@ interface ResearchAnalysisItem {
 export default function ResearchAnalysisServices() {
     const servicesData = data.services as any;
     const section = servicesData.researchAnalysis;
-    const items = (section?.items ?? []) as ResearchAnalysisItem[];
+    const fallbackItems = (section?.items ?? []) as ResearchAnalysisItem[];
+    const [items, setItems] = useState<ResearchAnalysisItem[]>(fallbackItems);
+
+    useEffect(() => {
+        fetch('/api/services')
+            .then((r) => r.json())
+            .then((json) => {
+                if (json.success && json.data.length > 0) setItems(json.data);
+            })
+            .catch(() => {/* keep static fallback */});
+    }, []);
 
     return (
         <section className="relative overflow-hidden py-10 md:py-14 lg:py-16">
