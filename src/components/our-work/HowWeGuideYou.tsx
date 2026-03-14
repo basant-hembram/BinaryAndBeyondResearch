@@ -11,9 +11,49 @@ const ourWorkData = (data as any).ourWork;
 
 type Step = { id: number; title: string; image: string; description: string };
 
+const SkeletonLoader = () => (
+  <div className="relative">
+    {[0, 1, 2].map((i) => (
+      <div key={i} className="relative py-10 md:py-14">
+        {/* Desktop skeleton */}
+        <div className="hidden md:grid grid-cols-[1fr_60px_1fr] items-center gap-0">
+          <div className="pr-10 flex justify-end">
+            <div className="w-full h-[300px] rounded-2xl bg-gray-200 animate-pulse" />
+          </div>
+          <div className="flex justify-center">
+            <div className="w-[42px] h-[42px] rounded-full bg-gray-200 animate-pulse" />
+          </div>
+          <div className="pl-10">
+            <div className="space-y-3">
+              <div className="h-5 w-24 rounded-full bg-gray-200 animate-pulse" />
+              <div className="h-6 w-3/4 rounded bg-gray-200 animate-pulse" />
+              <div className="h-4 w-full rounded bg-gray-200 animate-pulse" />
+              <div className="h-4 w-5/6 rounded bg-gray-200 animate-pulse" />
+              <div className="h-4 w-2/3 rounded bg-gray-200 animate-pulse" />
+            </div>
+          </div>
+        </div>
+        {/* Mobile skeleton */}
+        <div className="md:hidden flex gap-4">
+          <div className="flex-shrink-0">
+            <div className="w-[34px] h-[34px] rounded-full bg-gray-200 animate-pulse" />
+          </div>
+          <div className="flex-1 flex flex-col gap-3">
+            <div className="h-[200px] rounded-2xl bg-gray-200 animate-pulse" />
+            <div className="h-5 w-3/4 rounded bg-gray-200 animate-pulse" />
+            <div className="h-4 w-full rounded bg-gray-200 animate-pulse" />
+            <div className="h-4 w-5/6 rounded bg-gray-200 animate-pulse" />
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
 const HowWeGuideYou = () => {
   const { howWeGuideYou } = ourWorkData;
   const [steps, setSteps] = useState<Step[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // Fetch live steps from MongoDB only
   useEffect(() => {
@@ -31,7 +71,8 @@ const HowWeGuideYou = () => {
           );
         }
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
   const sectionRef = useRef<HTMLElement>(null);
   const stepsRef = useRef<HTMLDivElement>(null);
@@ -41,7 +82,7 @@ const HowWeGuideYou = () => {
   const dottedMobileRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !stepsRef.current) return;
+    if (!sectionRef.current || !stepsRef.current || !steps.length) return;
     const container = stepsRef.current;
 
     const positionLines = () => {
@@ -143,7 +184,7 @@ const HowWeGuideYou = () => {
       window.removeEventListener('resize', positionLines);
       ctx.revert();
     };
-  }, []);
+  }, [steps]);
 
   return (
     <section className="py-8 md:py-16 bg-none" ref={sectionRef}>
@@ -160,6 +201,7 @@ const HowWeGuideYou = () => {
           </p>
         </div>
 
+        {loading ? <SkeletonLoader /> : (
         <div className="relative" ref={stepsRef}>
 
           <div ref={dottedDesktopRef} className="hidden md:block absolute left-1/2 -translate-x-1/2 w-[2px] pointer-events-none"
@@ -235,6 +277,7 @@ const HowWeGuideYou = () => {
             );
           })}
         </div>
+        )}
       </div>
     </section>
   );

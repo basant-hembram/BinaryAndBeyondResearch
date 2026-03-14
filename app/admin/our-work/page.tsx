@@ -141,7 +141,7 @@ export default function AdminOurWorkPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
                 <input type="text" value={form.title} onChange={(e) => setField('title', e.target.value)} required className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />
               </div>
-              <ImageUpload label="Image" value={form.image} onChange={(url) => setField('image', url)} required />
+              <ImageUpload label="Image" value={form.image} onChange={(url) => setField('image', url)} required useBase64 />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Order</label>
                 <input type="number" value={form.order} onChange={(e) => setField('order', parseInt(e.target.value) || 0)} min={0} className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />

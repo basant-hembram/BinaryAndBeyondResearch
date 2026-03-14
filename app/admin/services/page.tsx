@@ -8,12 +8,9 @@ interface ServiceItem {
   title: string;
   description: string;
   image: string;
-  icon: string;
-  slug: string;
-  category: string;
 }
 
-const EMPTY: ServiceItem = { title: '', description: '', image: '', icon: '', slug: '', category: '' };
+const EMPTY: ServiceItem = { title: '', description: '', image: '' };
 
 export default function AdminServicesPage() {
   const [items, setItems]         = useState<ServiceItem[]>([]);
@@ -100,15 +97,13 @@ export default function AdminServicesPage() {
               <tr>
                 <th className="text-left px-4 py-3 font-medium text-gray-600">Preview</th>
                 <th className="text-left px-4 py-3 font-medium text-gray-600">Title</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Slug</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Category</th>
                 <th className="text-left px-4 py-3 font-medium text-gray-600">Description</th>
                 <th className="text-left px-4 py-3 font-medium text-gray-600 w-24">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {items.length === 0 ? (
-                <tr><td colSpan={6} className="text-center py-12 text-gray-400">No services yet. Click <strong>+ Add New</strong> to create one.</td></tr>
+                <tr><td colSpan={4} className="text-center py-12 text-gray-400">No services yet. Click <strong>+ Add New</strong> to create one.</td></tr>
               ) : items.map((item) => (
                 <tr key={item._id} className="hover:bg-gray-50">
                   <td className="px-4 py-3">
@@ -117,8 +112,6 @@ export default function AdminServicesPage() {
                     ) : <span className="text-gray-300">—</span>}
                   </td>
                   <td className="px-4 py-3 font-medium text-gray-900 max-w-[180px] truncate">{item.title}</td>
-                  <td className="px-4 py-3 text-gray-500">{item.slug || '—'}</td>
-                  <td className="px-4 py-3 text-gray-500">{item.category || '—'}</td>
                   <td className="px-4 py-3 text-gray-500 max-w-[200px] truncate">{item.description}</td>
                   <td className="px-4 py-3">
                     <div className="flex gap-3">
@@ -145,22 +138,10 @@ export default function AdminServicesPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
                 <input type="text" value={form.title} onChange={(e) => setField('title', e.target.value)} required className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />
               </div>
-              <ImageUpload label="Image" value={form.image} onChange={(url) => setField('image', url)} required />
+              <ImageUpload label="Image" value={form.image} onChange={(url) => setField('image', url)} required useBase64 />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description *</label>
                 <textarea value={form.description} onChange={(e) => setField('description', e.target.value)} required rows={4} className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent resize-none" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Slug</label>
-                <input type="text" value={form.slug} onChange={(e) => setField('slug', e.target.value)} placeholder="e.g. product-testing" className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                <input type="text" value={form.category} onChange={(e) => setField('category', e.target.value)} className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Icon</label>
-                <input type="text" value={form.icon} onChange={(e) => setField('icon', e.target.value)} placeholder="e.g. faHandHoldingDollar" className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />
               </div>
               <div className="flex gap-3 pt-2">
                 <button type="button" onClick={() => setShowModal(false)} className="flex-1 border border-gray-300 text-gray-700 px-4 py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors">Cancel</button>

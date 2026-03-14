@@ -18,7 +18,7 @@
     "ctaText": "View Case Studies",
     "ctaLink": "#case-studies",
     "image": {
-      "src": "/images/about-banner.png",
+      "src": "/images/about-banner.jpg",
       "alt": "Research Technology"
     }
   },
@@ -32,7 +32,7 @@
       { "icon": "faCloud", "title": "Qualified Staff" }
     ],
     "images": [
-      { "src": "/images/photo-1627599936744-51d288f89af4.avif", "alt": "Research 1" },
+      { "src": "/images/high-quality-audience.jpg", "alt": "Research 1" },
       { "src": "/images/photo-1628348068343-c6a848d2b6dd.avif", "alt": "Research 2" },
       { "src": "/images/wcu-3.png", "alt": "Research 3" }
     ]

@@ -14,6 +14,7 @@ export default function ResearchAnalysisServices() {
     const section = servicesData.researchAnalysis;
     const fallbackItems = (section?.items ?? []) as ResearchAnalysisItem[];
     const [items, setItems] = useState<ResearchAnalysisItem[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('/api/services')
@@ -21,7 +22,8 @@ export default function ResearchAnalysisServices() {
             .then((json) => {
                 if (json.success) setItems(json.data);
             })
-            .catch(() => {});
+            .catch(() => {})
+            .finally(() => setLoading(false));
     }, []);
 
     return (
@@ -41,7 +43,29 @@ export default function ResearchAnalysisServices() {
 
                 <div className="relative mt-14 md:mt-16">
                     <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-[#CFCFD1]" />
-                    {items.map((item, index) => {
+                    {loading ? (
+                        [0, 1, 2].map((i) => {
+                            const imageFirst = i % 2 === 0;
+                            return (
+                                <div key={i} className={`${i !== 2 ? 'border-b border-[#CFCFD1]' : ''}`}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2">
+                                        <div className={`px-0 py-7 md:px-8 md:py-10 lg:px-10 ${imageFirst ? '' : 'md:order-2'}`}>
+                                            <div className="h-[220px] md:h-[260px] lg:h-[300px] w-full rounded-2xl bg-gray-200 animate-pulse" />
+                                        </div>
+                                        <div className={`px-0 py-7 md:px-8 md:py-10 lg:px-10 flex items-center ${imageFirst ? '' : 'md:order-1'}`}>
+                                            <div className="w-full space-y-4">
+                                                <div className="h-8 w-3/4 rounded bg-gray-200 animate-pulse" />
+                                                <div className="h-4 w-full rounded bg-gray-200 animate-pulse" />
+                                                <div className="h-4 w-5/6 rounded bg-gray-200 animate-pulse" />
+                                                <div className="h-4 w-2/3 rounded bg-gray-200 animate-pulse" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })
+                    ) : (
+                    items.map((item, index) => {
                         const imageFirst = index % 2 === 0;
 
                         return (
@@ -68,7 +92,7 @@ export default function ResearchAnalysisServices() {
                                 </div>
                             </article>
                         );
-                    })}
+                    }))}
                 </div>
             </div>
         </section>

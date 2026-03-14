@@ -7,10 +7,10 @@ interface Props {
   value: string;
   onChange: (url: string) => void;
   required?: boolean;
-  hideUrlInput?: boolean;
+  useBase64?: boolean;
 }
 
-export default function ImageUpload({ label, value, onChange, required, hideUrlInput }: Props) {
+export default function ImageUpload({ label, value, onChange, required, useBase64 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState('');
@@ -18,6 +18,19 @@ export default function ImageUpload({ label, value, onChange, required, hideUrlI
   const handleFile = async (file: File) => {
     setUploading(true);
     setUploadError('');
+    if (useBase64) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        onChange(reader.result as string);
+        setUploading(false);
+      };
+      reader.onerror = () => {
+        setUploadError('Failed to read file');
+        setUploading(false);
+      };
+      reader.readAsDataURL(file);
+      return;
+    }
     try {
       const fd = new FormData();
       fd.append('file', file);
@@ -82,20 +95,6 @@ export default function ImageUpload({ label, value, onChange, required, hideUrlI
 
       {uploadError && (
         <p className="text-xs text-red-500 mt-1">{uploadError}</p>
-      )}
-
-      {/* Manual URL fallback */}
-      {!hideUrlInput && (
-        <div className="mt-2">
-          <input
-            type="text"
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            required={required}
-            placeholder="or paste an image URL  e.g. /images/photo.avif"
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent"
-          />
-        </div>
       )}
 
       {/* Live preview */}

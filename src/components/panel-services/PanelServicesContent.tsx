@@ -15,6 +15,7 @@ export default function PanelServicesContent() {
   const professionalSection = panelServicesData?.professionalSection;
   const fallbackCards = (professionalSection?.cards ?? []) as PanelCard[];
   const [cards, setCards] = useState<PanelCard[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('/api/panel-services')
@@ -22,7 +23,8 @@ export default function PanelServicesContent() {
       .then((json) => {
         if (json.success) setCards(json.data);
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -64,21 +66,35 @@ export default function PanelServicesContent() {
           </p>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-gsap="stagger-up">
-            {cards.map((card) => (
-              <article key={card.title} className="bg-transparent">
-                <div className="overflow-hidden rounded-2xl mb-4">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="h-[190px] md:h-[210px] w-full object-cover"
-                  />
+            {loading ? (
+              [0, 1, 2].map((i) => (
+                <div key={i} className="bg-transparent">
+                  <div className="h-[190px] md:h-[210px] w-full rounded-2xl bg-gray-200 animate-pulse mb-4" />
+                  <div className="h-7 w-3/4 rounded bg-gray-200 animate-pulse mb-3" />
+                  <div className="space-y-2">
+                    <div className="h-4 w-full rounded bg-gray-200 animate-pulse" />
+                    <div className="h-4 w-5/6 rounded bg-gray-200 animate-pulse" />
+                    <div className="h-4 w-2/3 rounded bg-gray-200 animate-pulse" />
+                  </div>
                 </div>
-                <h4 className="text-[#151D26] text-[28px] md:text-[32px] font-semibold leading-[1.2] tracking-[-0.02em]">
-                  {card.title}
-                </h4>
-                <p className="mt-2 text-[#575455] text-[14px] md:text-[16px] leading-[1.65]">{card.description}</p>
-              </article>
-            ))}
+              ))
+            ) : (
+              cards.map((card) => (
+                <article key={card.title} className="bg-transparent">
+                  <div className="overflow-hidden rounded-2xl mb-4">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="h-[190px] md:h-[210px] w-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-[#151D26] text-[28px] md:text-[32px] font-semibold leading-[1.2] tracking-[-0.02em]">
+                    {card.title}
+                  </h4>
+                  <p className="mt-2 text-[#575455] text-[14px] md:text-[16px] leading-[1.65]">{card.description}</p>
+                </article>
+              ))
+            )}
           </div>
         </div>
       </div>

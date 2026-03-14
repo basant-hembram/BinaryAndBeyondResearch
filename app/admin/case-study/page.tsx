@@ -156,7 +156,7 @@ export default function AdminCaseStudyPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
                 <input type="text" value={form.title} onChange={(e) => setField('title', e.target.value)} required className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#403373] focus:border-transparent" />
               </div>
-              <ImageUpload label="Image" value={form.image} onChange={(url) => setField('image', url)} hideUrlInput />
+              <ImageUpload label="Image" value={form.image} onChange={(url) => setField('image', url)} useBase64 />
 
               <div className="flex gap-3 pt-2">
                 <button type="button" onClick={() => setShowModal(false)} className="flex-1 border border-gray-300 text-gray-700 px-4 py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors">Cancel</button>

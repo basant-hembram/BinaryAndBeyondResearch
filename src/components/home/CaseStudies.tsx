@@ -17,6 +17,7 @@ const CaseStudies = () => {
   const nextRef = useRef<HTMLButtonElement>(null);
   const [slidesOffset, setSlidesOffset] = useState(16);
   const [studies, setStudies] = useState<typeof caseStudies.studies>([]);
+  const [loading, setLoading] = useState(true);
 
   // Fetch live data from MongoDB only
   useEffect(() => {
@@ -25,7 +26,8 @@ const CaseStudies = () => {
       .then((json) => {
         if (json.success) setStudies(json.data);
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
 
   useEffect(() => {
@@ -98,7 +100,19 @@ const CaseStudies = () => {
           }}
           className="case-studies-swiper !overflow-visible"
         >
-          {studies.map((study, idx) => (
+          {loading
+            ? Array.from({ length: 4 }).map((_, idx) => (
+                <SwiperSlide key={`skeleton-${idx}`}>
+                  <div className="relative rounded-3xl overflow-hidden h-[320px] md:h-[360px] animate-pulse bg-gray-200">
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-400/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 space-y-2">
+                      <div className="h-4 bg-gray-400 rounded w-3/4" />
+                      <div className="h-3 bg-gray-400 rounded w-1/2" />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))
+            : studies.map((study, idx) => (
             <SwiperSlide key={(study as any)._id ?? (study as any).id ?? idx}>
               <div className="relative rounded-3xl overflow-hidden h-[320px] md:h-[360px] cursor-pointer group">
                 <img
