@@ -31,13 +31,19 @@ const Header = () => {
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3">
+                    <Link href="/" className="flex items-center gap-3 ">
                         <img
                             src={headerData.logo.src}
                             alt={headerData.logo.alt}
-                            className={`w-auto transition-all duration-300 ${isScrolled ? 'h-14' : 'h-16 lg:h-20'
+                            className={`w-auto transition-all duration-300 ${isScrolled ? 'h-14' : 'h-14 lg:h-16'
                                 }`}
                         />
+                        <div className="flex flex-col leading-[1.1]">
+                            <span className={`font-poppins text-[0.95rem] font-bold tracking-[0.01em] ${isScrolled || pathname !== '/' ? 'text-[#4A4444]' : 'text-white/55'}`}>
+                                Binary <span className="text-[#A32787]">&amp;</span> Beyond
+                            </span>
+                            <span className={`font-poppins text-[0.6rem] font-normal tracking-[0.12em] uppercase ${isScrolled || pathname !== '/' ? 'text-[#4A4444]' : 'text-white/45'}`}>Research</span>
+                        </div>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -90,16 +96,16 @@ const Header = () => {
                                     {item.label}
                                 </Link>
                             ))}
-                             <Link
-                                    href="/contact"
-                                    className={`py-2 px-4 text-sm font-medium transition-colors hover:bg-gray-50 rounded ${pathname === '/contact'
-                                        ? 'text-purple-600 bg-purple-50'
-                                        : 'text-[#4A4444]'
-                                        }`}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Contact
-                                </Link>
+                            <Link
+                                href="/contact"
+                                className={`py-2 px-4 text-sm font-medium transition-colors hover:bg-gray-50 rounded ${pathname === '/contact'
+                                    ? 'text-purple-600 bg-purple-50'
+                                    : 'text-[#4A4444]'
+                                    }`}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Contact
+                            </Link>
                         </div>
                     </nav>
                 )}
