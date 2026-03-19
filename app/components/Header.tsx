@@ -22,12 +22,11 @@ const Header = () => {
     }, []);
 
     return (
-        <header 
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                isScrolled 
-                    ? 'bg-white shadow-md border-b border-gray-200 py-3' 
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+                    ? 'bg-white shadow-md border-b border-gray-200 py-3'
                     : 'bg-transparent py-4'
-            }`}
+                }`}
         >
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center">
@@ -36,9 +35,8 @@ const Header = () => {
                         <img
                             src={headerData.logo.src}
                             alt={headerData.logo.alt}
-                            className={`w-auto transition-all duration-300 ${
-                                isScrolled ? 'h-14' : 'h-16 lg:h-20'
-                            }`}
+                            className={`w-auto transition-all duration-300 ${isScrolled ? 'h-14' : 'h-16 lg:h-20'
+                                }`}
                         />
                     </Link>
 
@@ -48,11 +46,10 @@ const Header = () => {
                             <Link
                                 key={item.path}
                                 href={item.path}
-                                className={`relative text-sm font-medium px-4 py-3 transition-colors hover:text-[#6B2E7E] ${
-                                    pathname === item.path 
-                                        ? 'bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent' 
-                                        : isScrolled ? 'text-[#4A4444]' : 'text-gray-800'
-                                }`}
+                                className={`relative text-sm font-medium px-4 py-3 transition-colors hover:text-[#6B2E7E] ${pathname === item.path
+                                        ? 'bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent'
+                                        : (isScrolled || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'
+                                    }`}
                             >
                                 {item.label}
                                 {pathname === item.path && (
@@ -61,12 +58,14 @@ const Header = () => {
                             </Link>
                         ))}
                     </nav>
+                    <Link href="/contact" className={`border border-[rgba(163,39,135,0.28)] bg-[rgba(163,39,135,0.07)] backdrop-blur-[10px] px-6 py-2.5 rounded-full text-[0.85rem] font-poppins cursor-pointer transition-[border-color,background] duration-300 hover:border-[#A32787] hover:bg-[rgba(181,111,255,0.1)] ${(isScrolled || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'}`}>
+                        Contact Us
+                    </Link>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className={`xl:hidden p-2 transition-colors ${
-                            isScrolled ? 'text-[#4A4444]' : 'text-gray-800'
-                        }`}
+                        className={`xl:hidden p-2 transition-colors ${(isScrolled || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'
+                            }`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle menu"
                     >
@@ -82,11 +81,10 @@ const Header = () => {
                                 <Link
                                     key={item.path}
                                     href={item.path}
-                                    className={`py-2 px-4 text-sm font-medium transition-colors hover:bg-gray-50 rounded ${
-                                        pathname === item.path 
-                                            ? 'text-purple-600 bg-purple-50' 
+                                    className={`py-2 px-4 text-sm font-medium transition-colors hover:bg-gray-50 rounded ${pathname === item.path
+                                            ? 'text-purple-600 bg-purple-50'
                                             : 'text-[#4A4444]'
-                                    }`}
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.label}

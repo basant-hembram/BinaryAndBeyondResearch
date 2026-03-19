@@ -59,6 +59,9 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -68,10 +71,30 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(24px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        badgePulse: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%':       { opacity: '0.5', transform: 'scale(0.8)' },
+        },
+        gradShift: {
+          '0%':   { backgroundPosition: '0% 50%' },
+          '50%':  { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'fade-up':   'fadeUp 0.7s ease both',
+        'fade-up-1': 'fadeUp 0.7s 0.15s ease both',
+        'fade-up-2': 'fadeUp 0.7s 0.3s ease both',
+        'fade-up-3': 'fadeUp 0.7s 0.45s ease both',
+        'fade-up-4': 'fadeUp 0.7s 0.6s ease both',
+        'badge-pulse': 'badgePulse 2s ease-in-out infinite',
+        'grad-shift': 'gradShift 5s ease infinite',
       },
     },
   },

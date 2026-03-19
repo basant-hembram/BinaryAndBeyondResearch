@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MainContent from '../components/MainContent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
@@ -18,9 +19,9 @@ export default function FrontendLayout({
         className="pointer-events-none select-none fixed top-0 right-0 w-[420px] lg:w-[580px] xl:w-[680px] object-contain z-0 opacity-100"
       />
       <Header />
-      <main className="relative z-10 pt-[112px]">
+      <MainContent>
         {children}
-      </main>
+      </MainContent>
       <a
         href="#"
         target="_blank"

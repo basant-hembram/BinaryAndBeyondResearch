@@ -1,101 +1,69 @@
 'use client';
 
-import { Button } from '../ui/button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { data } from '../../data';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
+import { data } from '../../data';
+
+const MatrixRain = dynamic(() => import('./MatrixRain'), { ssr: false });
 
 const Hero = () => {
   const heroData = data.hero;
   const router = useRouter();
 
   return (
-    <section id="home" className="relative pt-8 lg:pt-10 2xl:pt-24">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6" data-gsap="stagger-up">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-[500] !leading-[1.3]">
-              <span className="block text-[#4A4444]">{heroData.title.line1}</span>
-              <span className="block font-[600] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent" data-gsap="gradient-shine">
-                {heroData.title.line2}
-              </span>
-              <span className="block text-[#4A4444]">{heroData.title.line3}</span>
-            </h1>
+    <section id="home" className="bg-[#0e0b1a] relative min-h-screen flex items-center justify-center">
 
-            <p className="text-base lg:text-lg text-[#575455] leading-relaxed">
-              {heroData.subtitle}
-            </p>
+      {/* Matrix background */}
+      <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(ellipse_at_60%_40%,rgba(96,47,123,0.25)_0%,rgba(53,53,114,0.15)_50%,transparent_80%)] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_center,rgba(14,11,26,0.35)_0%,rgba(14,11,26,0.72)_100%)] before:z-[4] before:pointer-events-none after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30%] after:bg-[linear-gradient(to_top,#0e0b1a,transparent)] after:z-[4] after:pointer-events-none">
+        <MatrixRain />
+      </div>
 
-            <div className="pt-4">
-              <Button
-                size="lg"
-                className="bg-[#403373] hover:bg-purple-800 text-white px-8 py-6 text-base font-medium rounded-md flex items-center gap-2"
-                onClick={() => router.push('/contact')}
-              >
-                {heroData.ctaButton.text}
-                <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
-              </Button>
+      {/* Content */}
+      <div className="relative z-[5] p-10 max-w-[960px] w-full text-center flex flex-col items-center justify-center max-[900px]:p-6">
+
+        <div className="inline-flex items-center gap-2 border border-[rgba(163,39,135,0.28)] bg-[rgba(181,111,255,0.08)] text-[#d05fcb] pl-[10px] pr-4 py-1.5 rounded-full text-[0.78rem] font-normal tracking-[0.06em] uppercase mb-8 animate-fade-up">
+          <span className="w-[7px] h-[7px] rounded-full bg-[#A32787] shadow-[0_0_8px_#A32787] animate-badge-pulse" />
+          Thinking Beyond the Algorithm
+        </div>
+
+        <h1 className="font-poppins font-extrabold text-[clamp(2.8rem,4.5vw,4.2rem)] leading-[1.08] text-white tracking-[-0.02em] mb-7 animate-fade-up-1">
+          {heroData.title.line1}<br />
+          <span className="bg-[linear-gradient(120deg,#A32787,#602F7B,#353572)] bg-clip-text text-transparent">
+            {heroData.title.line2}
+          </span><br />
+          {heroData.title.line3}.
+        </h1>
+
+        <p className="text-white/50 text-[1.05rem] font-light leading-7 max-w-[500px] mb-12 animate-fade-up-2 text-center">
+          {heroData.subtitle}
+        </p>
+
+        <div className="flex gap-4 items-center animate-fade-up-3">
+          <button
+            onClick={() => router.push('/contact')}
+            className="relative overflow-hidden bg-[linear-gradient(135deg,#A32787,#6B2E7E,#602F7B,#353572)] [background-size:200%_200%] animate-grad-shift text-white border-none py-4 px-9 rounded-full font-poppins text-[0.95rem] font-bold tracking-[0.03em] cursor-pointer shadow-[0_0_30px_rgba(163,39,135,0.45)] transition-[transform,box-shadow] duration-[250ms] hover:-translate-y-0.5 hover:shadow-[0_0_50px_rgba(163,39,135,0.65)] before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transition-[background] before:duration-[250ms] hover:before:bg-white/[0.06]"
+          >
+            {heroData.ctaButton.text} &rarr;
+          </button>
+        </div>
+
+        <div className="flex gap-12 mt-[72px] pt-9 border-t border-white/[0.08] animate-fade-up-4 justify-center">
+          {heroData.stats.map((stat, index) => (
+            <div key={index}>
+              <div className="font-poppins text-[1.8rem] font-extrabold text-white">
+                {stat.value}<span className="text-[#c040a0]"></span>
+              </div>
+              <div className="text-[0.78rem] text-white/35 uppercase tracking-[0.1em] mt-1">{stat.label}</div>
             </div>
-          </div>
-
-          {/* Right Content - Image */}
-          <div className="relative rounded-[50px] overflow-hidden aspect-[4/3] 2xl:hidden">
-            <img
-              src={heroData.image.src}
-              alt={heroData.image.alt}
-              className="object-cover"
-            />
+          ))}
+          <div>
+            <div className="font-poppins text-[1.8rem] font-extrabold text-white">&infin;</div>
+            <div className="text-[0.78rem] text-white/35 uppercase tracking-[0.1em] mt-1">Collaboration</div>
           </div>
         </div>
 
-        {/* Stats Section - White Card */}
-        <div className="mt-16 max-w-7xl -mb-20" data-gsap="fade-up">
-          <div className="bg-white rounded-xl shadow-lg p-8 lg:p-10">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              {/* Left - Branding */}
-              <div>
-                <h3 className="text-2xl lg:text-3xl font-[400] text-[#0A1A3A] mb-2">
-                  {heroData.branding.title}
-                </h3>
-                <div className="flex flex-col gap-2">
-                  <h2 className="text-2xl lg:text-3xl font-[400] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent">
-                    {heroData.branding.companyName}
-                  </h2>
-                  <span className="text-2xl lg:text-3xl font-[400] text-[#0A1A3A]">
-                    {heroData.branding.subtitle}
-                  </span>
-                </div>
-              </div>
+      </div>
 
-              {/* Right - Stats */}
-              <div className="grid grid-cols-2 gap-8">
-                {heroData.stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className={`text-center ${index > 0 ? 'border-l-2 border-gray-200 pl-8' : ''}`}
-                  >
-                    <p className="text-3xl lg:text-4xl font-[500] bg-[linear-gradient(180deg,#353572_0%,#602F7B_50%,#A32787_75%,#6B2E7E_100%)] bg-clip-text text-transparent mb-2">
-                      {stat.value}
-                    </p>
-                    <p className="text-sm lg:text-base text-[#4A4444] font-medium">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute max-2xl:hidden right-0 top-0 bottom-0 overflow-hidden shadow-2xl" data-gsap="fade-right">
-        <img
-          src={heroData.image.src}
-          alt={heroData.image.alt}
-          className="h-full object-cover"
-        />
-      </div>
     </section>
   );
 };
