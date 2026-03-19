@@ -8,7 +8,7 @@ const WhatMakes = () => {
   const { whatMakes } = homeData;
 
   return (
-    <section id="about" className="pt-[180px] pb-16 md:pb-24 bg-[#fff] relative overflow-hidden">
+    <section id="about" className="pt-16 pb-16 md:pb-24 bg-[#fff] relative overflow-hidden">
       {/* Top Left Circle */}
       <img
         src={whatMakes.decorativeImages.topLeft}
