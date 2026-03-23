@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '/admin', label: 'Dashboard', icon: '⊞' },
@@ -13,6 +13,12 @@ const NAV_ITEMS = [
 
 export default function AdminNav() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  async function handleLogout() {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    router.replace('/admin/login');
+  }
 
   return (
     <aside className="w-64 min-h-screen bg-[#0A1A3A] text-white flex flex-col flex-shrink-0">
@@ -44,13 +50,19 @@ export default function AdminNav() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-white/10">
+      <div className="p-4 border-t border-white/10 space-y-2">
         <Link
           href="/"
           className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition-colors"
         >
           ← View Website
         </Link>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-2 text-xs text-gray-400 hover:text-red-400 transition-colors w-full text-left"
+        >
+          ↩ Sign Out
+        </button>
       </div>
     </aside>
   );
