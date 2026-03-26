@@ -65,7 +65,7 @@ const Clients = () => {
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="h-8 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  className="h-8 w-auto object-contain transition-all duration-300"
                 />
               </span>
             ))}

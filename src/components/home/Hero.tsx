@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-[5] p-10 max-w-[960px] w-full text-center flex flex-col items-center justify-center max-[900px]:p-6">
+      <div className="relative z-[5] px-6 max-w-[960px] w-full text-center flex flex-col items-center justify-center max-[900px]:p-6">
 
         <div className="inline-flex items-center gap-2 border border-[rgba(163,39,135,0.28)] bg-[rgba(181,111,255,0.08)] text-[#d05fcb] pl-[10px] pr-4 py-1.5 rounded-full text-[0.78rem] font-normal tracking-[0.06em] uppercase mb-8 animate-fade-up">
           <span className="w-[7px] h-[7px] rounded-full bg-[#A32787] shadow-[0_0_8px_#A32787] animate-badge-pulse" />
@@ -34,7 +34,7 @@ const Hero = () => {
           {heroData.title.line3}.
         </h1>
 
-        <p className="text-white/50 text-[1.05rem] font-light leading-7 max-w-[500px] mb-12 animate-fade-up-2 text-center">
+        <p className="text-white/50 text-[1.05rem] font-light leading-7 max-w-[500px] mb-[30px] animate-fade-up-2 text-center">
           {heroData.subtitle}
         </p>
 
@@ -47,18 +47,18 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="flex gap-12 mt-[72px] pt-9 border-t border-white/[0.08] animate-fade-up-4 justify-center">
+        <div className="flex gap-8 mt-[30px] pt-8 border-t border-white/[0.08] animate-fade-up-4 justify-between">
           {heroData.stats.map((stat, index) => (
             <div key={index}>
-              <div className="font-poppins text-[1.8rem] font-extrabold text-white">
-                {stat.value}<span className="text-[#c040a0]"></span>
+              <div className="font-poppins text-[1.8rem] max-[900px]:text-[1.2rem] font-bold text-white">
+                {stat.value}<span className="text-[#c040a0] ml-2">+</span>
               </div>
-              <div className="text-[0.78rem] text-white/35 uppercase tracking-[0.1em] mt-1">{stat.label}</div>
+              <div className="max-[900px]:text-[0.7rem] text-[0.78rem] text-white/35 uppercase tracking-[0.1em] mt-1">{stat.label}</div>
             </div>
           ))}
           <div>
-            <div className="font-poppins text-[1.8rem] font-extrabold text-white">&infin;</div>
-            <div className="text-[0.78rem] text-white/35 uppercase tracking-[0.1em] mt-1">Collaboration</div>
+            <div className="font-poppins text-[1.8rem] max-[900px]:text-[1.2rem] font-bold text-white">&infin;</div>
+            <div className="max-[900px]:text-[0.7rem] text-[0.78rem] text-white/35 uppercase tracking-[0.1em] mt-1">Collaboration</div>
           </div>
         </div>
 
