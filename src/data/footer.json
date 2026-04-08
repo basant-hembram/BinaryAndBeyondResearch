@@ -23,33 +23,16 @@
       "icon": "faInstagram"
     }    
   ],
-  "quickLinks": {
-    "title": "QUICK LINKS",
-    "links": [
-      {
-        "label": "Our Services",
-        "path": "/services"
-      },
-      {
-        "label": "Panel Services",
-        "path": "/panel-services"
-      },
-      {
-        "label": "Career",
-        "path": "/career"
-      }
-    ]
-  },
   "information": {
     "title": "INFORMATION",
     "links": [
       {
         "label": "Privacy Policy",
-        "path": "#"
+        "path": "/privacy-policy"
       },
       {
         "label": "Terms of use",
-        "path": "#"
+        "path": "/terms-of-use"
       }
     ]
   },

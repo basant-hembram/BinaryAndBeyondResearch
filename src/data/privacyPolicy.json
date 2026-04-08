@@ -3,15 +3,77 @@
   "titleHighlight": "Policy",
   "sections": [
     {
-      "id": "our-commitment",
-      "title": "Our Commitment",
+      "id": "introduction",
+      "title": "Introduction",
       "paragraphs": [
-        "Finyzer Assets Fintech Services Private Limited (Finyzer Assets) is a mutual fund distributor (ARN 130604) registered with AMFI and is also engaged in providing other financial and related services. To enable this, Finyzer Assets would need to complete user's Know Your Clients (KYC) in accordance with regulatory/government and legal agencies and authorities; your Personal Data may be provided/verified or updated in this process with respective regulatory agencies as per the regulations applicable at that time. This Privacy Policy outlines how Finyzer Assets collects, uses, disclose, and safeguard your data when you use services or interact with Finyzer Assets through the website or any other platforms.",
-        "Finyzer Assets is governed by the provisions of applicable laws in India including the Information Technology Act, 2000, Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 and and Digital Personal Data Protection Act, 2023 and such other rules/regulations (Collectively hereinafter referred to as \"Applicable Law(s)\"), as amended from time to time, to maintain the privacy of your Personal Data. Finyzer Assets collect and process your Personal Data only to the extent necessary for Finyzer Assets to process your requirement(s) in accordance with such Applicable Laws. In case you choose not to share your Personal Data as required with Finyzer Assets, Finyzer Assets may not be able to provide you the services.",
-        "Finyzer Assets collects and generates various data points about you. Data by which you are identified is termed as \"Personal Data\". Personal Data does not include the Data that is freely available or accessible in the public domain. Your privacy is of utmost importance to Finyzer Assets and the protection of your Personal Data is a key commitment for Finyzer Assets."
+        "BINARY AND BEYOND RESEARCH is a leading provider of online market research. We endeavour to conform to the ESOMAR Code of Conduct. BINARY AND BEYOND RESEARCH collects information from Panel members during and after registration with a Panel – including, but not limited to, during participation in a survey, additional profiling questions, and in connection with the receipt and redemption of rewards and incentives. Your email address is required to validate your account and send you email invitations to participate in our upcoming surveys and potentially to process requested rewards for survey participation.",
+        "BINARY AND BEYOND RESEARCH Panel does not sell, share, rent, or trade personally identifiable information with these parties for their promotional purposes, and hope you enjoy your active participation in our community. BINARY AND BEYOND RESEARCH Panel invites its site visitors to join an online panel community of willing respondents to express opinions on various topics. BINARY AND BEYOND RESEARCH assists firms, governments, and political, or other entities in making better decisions with the information provided by its users mostly through online surveys.",
+        "BINARY AND BEYOND RESEARCH is committed to protecting the privacy of our clients, panel lists, and visitors and therefore developed the following Privacy Policy. This Privacy Policy is governed by our Member Agreement."
+      ]
+    },
+    {
+      "id": "panel-registration",
+      "title": "Panel Registration & Profile Information",
+      "paragraphs": [
+        "BINARY AND BEYOND RESEARCH Panel encourages panel members to supply current and accurate information at the time of registration and to update demographic information throughout their membership. Such information includes but is not limited to gender, income level, birth date, position of employment, industry employed, decision-making authority, and medical conditions as such details will assist in pre-qualifying panel members for survey opportunities and for topics that would be of interest to them. Such information facilitates our ability to send surveys corresponding to their area of interest and expertise.",
+        "Participation in BINARY AND BEYOND RESEARCH Panel and all survey invitations are always voluntary and a participant can opt out of participating in any particular market research opportunity or terminate their membership altogether. A member desiring to terminate his or her membership with BINARY AND BEYOND RESEARCH may terminate their membership by (a) following the instructions set forth in their membership account, (b) sending an email request to info@binaryandbeyondresearch.com from the email address associated with their membership, or (c) selecting the opt-out link contained in each email invitation sent to members of our panel and following the applicable steps.",
+        "Each terminating option method used to opt-out deactivates the member's account and permanently terminates their membership (including any applicable redemption reward points earned) associated with their membership. Terminated member accounts will not receive any further survey invitations. BINARY AND BEYOND RESEARCH will retain the personal information of a terminated member for an indefinite period of time. Even after termination of membership, BINARY AND BEYOND RESEARCH will continue to protect such personal information in accordance with this Privacy Policy."
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies",
+      "paragraphs": [
+        "Our site uses Cookies for, but is not limited to, the following situations: during registration, setting language preference or other settings, and survey forms. Cookies are very common bits of electronic information stored on a user's computer to provide the information needed by the user on a regular basis. Cookies are frequently used to save site customisations and site login information and will NOT affect the performance of your computer.",
+        "Cookies are used only temporarily during the time you are actively completing a survey or filling out the registration forms on our site. No personally identifiable information is transmitted via the cookies we use."
+      ]
+    },
+    {
+      "id": "ip-address",
+      "title": "IP Address & Digital Fingerprinting",
+      "paragraphs": [
+        "BINARY AND BEYOND RESEARCH may collect the Internet Protocol Address (the \"IP Address\") that is publicly available from accessing the site. BINARY AND BEYOND RESEARCH collects, uses, maintains, secures, and discloses IP Addresses in accordance with Applicable Laws and Codes.",
+        "BINARY AND BEYOND RESEARCH, and/or a third-party provider, may also collect certain information automatically, such as (i) your device or computer and its capabilities, including, but not limited to, the operating system, IP address, the applications or programs on your device or computer, browser identifier, device carrier, time zone, device type, network status, browser type, unique device identification number, media access control address, carrier user ID, international mobile equipment identity, locale and other information that alone or in combination may be used to uniquely identify your device or computer; and (ii) your activities in connection with BINARY AND BEYOND RESEARCH's Services, including, without limitation, survey data and responses, and reward, incentive, and/or sweepstakes information. BINARY AND BEYOND RESEARCH, and/or a third-party provider, may use such 'digital fingerprinting' to assist our clients in establishing and ensuring the integrity of survey results.",
+        "BINARY AND BEYOND RESEARCH will not interfere with or disrupt the control or use of a computer or alter, modify, or functionally change the settings of a computer."
+      ]
+    },
+    {
+      "id": "user-control",
+      "title": "Your Control Over Personal Information",
+      "paragraphs": [
+        "BINARY AND BEYOND RESEARCH feels that you should control your personal information. If at any time you wish to change the information furnished to BINARY AND BEYOND RESEARCH, you may do so by logging in to your account and deleting or changing personal information.",
+        "In accordance with applicable laws, BINARY AND BEYOND RESEARCH might be required to collect social security numbers or other tax IDs of panel members for tax purposes in connection with incentive fulfilment.",
+        "We make every effort to preserve user privacy; however, we may need to disclose personal information when required by law. Such instances include but are not limited to a judicial proceeding, a court order, or a legal process served on our site."
+      ]
+    },
+    {
+      "id": "third-party-services",
+      "title": "Third Party Services",
+      "paragraphs": [
+        "Occasionally BINARY AND BEYOND RESEARCH may utilise trusted third parties for email list management or email distribution. Additionally, BINARY AND BEYOND RESEARCH may use third-party list management providers to match panel members to members of other lists or panels or to validate the accuracy of personal information provided by the panelist. Third parties may be used to provide BINARY AND BEYOND RESEARCH with data they have collected about you unrelated to your membership and append this data to your demographic profile. In such cases, only a minimum amount of data is transferred to these third parties as needed to enable them to perform specific functions.",
+        "BINARY AND BEYOND RESEARCH Panel may provide you with the ability to voluntarily link or connect to websites maintained and/or operated by third parties. BINARY AND BEYOND RESEARCH does not endorse, warranty, and is not responsible for: (i) the Third Party Websites and the policies and practices in connection with the Third Party Websites; or (ii) the products, services, surveys, and/or opportunities advertised, offered, and/or sold by, through or in connection with the Third Party Websites. Please carefully review all policies, and the terms and conditions, applicable to any Third Party Websites."
+      ]
+    },
+    {
+      "id": "business-transfer",
+      "title": "Business Transfer",
+      "paragraphs": [
+        "In the unforeseen event that another company or entity acquires some or all of the assets related to the site, or if we experience some other change of control events such as insolvency, merger, bankruptcy, or receivership, we reserve the right to include any or all Personal Information among the assets transferred to the acquiring company."
+      ]
+    },
+    {
+      "id": "changes-to-policy",
+      "title": "Changes to This Privacy Policy",
+      "paragraphs": [
+        "By agreeing to participate in BINARY AND BEYOND RESEARCH Panel you signify your acceptance of the terms and conditions of this Privacy Policy. BINARY AND BEYOND RESEARCH hereby reserves the right to make changes to this Privacy Policy at any time. We encourage you to periodically review this Privacy Policy. Your continued participation after any revisions to this Privacy Policy constitutes your acceptance of this Privacy Policy, as amended, modified, or updated.",
+        "If you have questions or concerns regarding this Privacy Policy, you can contact us at info@binaryandbeyondresearch.com."
       ]
     }
   ],
+  "pageHero": {
+    "title": "Privacy Policy",
+    "subtitle": "BINARY AND BEYOND RESEARCH is committed to protecting the privacy of our clients, panel lists, and visitors. Please read our Privacy Policy carefully to understand how we collect and use your information."
+  },
   "breadcrumbs": [
     {
       "label": "Home",
