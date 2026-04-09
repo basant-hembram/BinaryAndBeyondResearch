@@ -24,7 +24,7 @@
       "firstName": { "label": "First name", "placeholder": "First name" },
       "lastName": { "label": "Last name", "placeholder": "Last name" },
       "email": { "label": "Email", "placeholder": "you@company.com" },
-      "phone": { "label": "Phone number", "code": "US", "placeholder": "+1(555)000-0000" },
+      "phone": { "label": "Phone number", "code": "IN", "placeholder": "+91 (555) 000-0000" },
       "message": { "label": "Message", "placeholder": "Leave us a message..." }
     },
     "privacyText": "You agree to our friendly privacy policy.",

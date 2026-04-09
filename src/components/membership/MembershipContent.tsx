@@ -1,6 +1,21 @@
+'use client';
+
+import { useState } from 'react';
 import { data } from '@/data';
 
 export default function MembershipContent() {
+  const [phone, setPhone] = useState('+91');
+  const [phoneError, setPhoneError] = useState('');
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const suffix = value.startsWith('+91')
+      ? value.slice(3).replace(/[^0-9]/g, '').slice(0, 10)
+      : '';
+    const newPhone = '+91' + suffix;
+    setPhone(newPhone);
+    setPhoneError(suffix && suffix.length < 10 ? 'Must be at least 10 digits' : '');
+  };
     const membershipData = (data as any).membership;
     const hero = membershipData?.hero;
     const registration = membershipData?.registration;
@@ -99,14 +114,17 @@ export default function MembershipContent() {
                             {/* Phone */}
                             <div>
                                 <label className="block text-[#4A4A4A] text-[14px] mb-2">{form?.fields?.phone?.label}</label>
-                                <div className="w-full h-[48px] rounded-md border border-[#C9BEB0] px-3 flex items-center gap-2 text-[14px]">
+                                <div className={`w-full h-[48px] rounded-md border px-3 flex items-center gap-2 text-[14px] focus-within:border-[#4D3D84] ${phoneError ? 'border-red-400' : 'border-[#C9BEB0]'}`}>
                                     <span className="text-[#4A4A4A] shrink-0 pr-2 border-r border-[#C9BEB0]">{form?.fields?.phone?.code} ▾</span>
                                     <input
                                         type="tel"
                                         placeholder={form?.fields?.phone?.placeholder}
+                                        value={phone}
+                                        onChange={handlePhoneChange}
                                         className="flex-1 h-full bg-transparent text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none"
                                     />
                                 </div>
+                                {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
                             </div>
 
                             {/* ZIP */}

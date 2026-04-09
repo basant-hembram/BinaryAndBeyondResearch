@@ -11,7 +11,7 @@ const ContactForm = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
+    phone: '+91',
     message: '',
     agreeToPolicy: false,
   });
@@ -28,14 +28,24 @@ const ContactForm = () => {
       return value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Invalid email address' : '';
     }
     if (name === 'phone') {
-      const digits = value.replace(/[^0-9]/g, '');
-      return value && digits.length < 10 ? 'Must be at least 10 digits' : '';
+      const stripped = value.startsWith('+91') ? value.slice(3) : value;
+      const digits = stripped.replace(/[^0-9]/g, '');
+      return stripped && digits.length < 10 ? 'Must be at least 10 digits' : '';
     }
     return '';
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
+    if (name === 'phone') {
+      const suffix = value.startsWith('+91')
+        ? value.slice(3).replace(/[^0-9]/g, '').slice(0, 10)
+        : '';
+      const ensured = '+91' + suffix;
+      setFormData(prev => ({ ...prev, phone: ensured }));
+      setErrors(prev => ({ ...prev, phone: validate('phone', ensured) }));
+      return;
+    }
     const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
     setFormData(prev => ({ ...prev, [name]: newValue }));
     if (type !== 'checkbox') {
@@ -47,7 +57,7 @@ const ContactForm = () => {
     formData.firstName.trim() &&
     formData.lastName.trim() &&
     formData.email.trim() &&
-    formData.phone.trim() &&
+    formData.phone.trim() !== '+91' &&
     formData.message.trim() &&
     formData.agreeToPolicy &&
     Object.values(errors).every(e => !e);
@@ -60,7 +70,7 @@ const ContactForm = () => {
     try {
       await new Promise(r => setTimeout(r, 800));
       setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
-      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '', agreeToPolicy: false });
+      setFormData({ firstName: '', lastName: '', email: '', phone: '+91', message: '', agreeToPolicy: false });
     } catch {
       setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
     } finally {
