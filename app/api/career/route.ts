@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import nodemailer, { type SendMailOptions } from 'nodemailer';
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const attachments: nodemailer.Attachment[] = [];
+    const attachments: NonNullable<SendMailOptions['attachments']> = [];
     if (resume && resume.size > 0) {
       const buffer = Buffer.from(await resume.arrayBuffer());
       attachments.push({
