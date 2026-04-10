@@ -68,7 +68,18 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
     try {
-      await new Promise(r => setTimeout(r, 800));
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+      if (!res.ok) throw new Error('Failed');
       setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
       setFormData({ firstName: '', lastName: '', email: '', phone: '+91', message: '', agreeToPolicy: false });
     } catch {
