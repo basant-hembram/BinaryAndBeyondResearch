@@ -3,9 +3,14 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, lastName, email, phone, message } = await req.json();
+    const formData = await req.formData();
+    const fullName = formData.get('fullName') as string;
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const message = formData.get('message') as string;
+    const resume = formData.get('resume') as File | null;
 
-    if (!firstName || !lastName || !email || !phone || !message) {
+    if (!fullName || !email || !phone || !message) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
     }
 
@@ -19,11 +24,22 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    const attachments: nodemailer.Attachment[] = [];
+    if (resume && resume.size > 0) {
+      const buffer = Buffer.from(await resume.arrayBuffer());
+      attachments.push({
+        filename: resume.name,
+        content: buffer,
+        contentType: resume.type,
+      });
+    }
+
     await transporter.sendMail({
       from: `"Binary & Beyond Research" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
-      subject: `[BBR Enquiry] ${firstName} ${lastName} reached out via the website`,
+      subject: `[BBR Career Application] ${fullName} applied via the website`,
+      attachments,
       html: `
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +57,7 @@ export async function POST(req: NextRequest) {
           <tr>
             <td style="background:linear-gradient(135deg,#353572 0%,#602F7B 50%,#A32787 100%);padding:36px 40px;text-align:center;">
               <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;letter-spacing:0.5px;">Binary &amp; Beyond Research</h1>
-              <p style="margin:8px 0 0;color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:1px;text-transform:uppercase;">New Website Enquiry</p>
+              <p style="margin:8px 0 0;color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:1px;text-transform:uppercase;">New Career Application</p>
             </td>
           </tr>
 
@@ -49,15 +65,14 @@ export async function POST(req: NextRequest) {
           <tr>
             <td style="background:#ffffff;padding:36px 40px;">
               <p style="margin:0 0 24px;color:#151D26;font-size:15px;line-height:1.6;">
-                You have received a new message through the contact form on your website. Here are the details:
+                A new job application has been submitted through your website. Here are the applicant's details:
               </p>
 
-              <!-- Detail rows -->
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td style="padding:12px 16px;background:#f9f7ff;border-left:4px solid #4D3D84;border-radius:4px;margin-bottom:10px;">
+                  <td style="padding:12px 16px;background:#f9f7ff;border-left:4px solid #4D3D84;border-radius:4px;">
                     <p style="margin:0;font-size:11px;color:#8A8A8A;text-transform:uppercase;letter-spacing:0.8px;">Full Name</p>
-                    <p style="margin:4px 0 0;font-size:15px;color:#151D26;font-weight:600;">${firstName} ${lastName}</p>
+                    <p style="margin:4px 0 0;font-size:15px;color:#151D26;font-weight:600;">${fullName}</p>
                   </td>
                 </tr>
                 <tr><td style="height:10px;"></td></tr>
@@ -79,18 +94,24 @@ export async function POST(req: NextRequest) {
                 <tr><td style="height:10px;"></td></tr>
                 <tr>
                   <td style="padding:12px 16px;background:#f9f7ff;border-left:4px solid #4D3D84;border-radius:4px;">
-                    <p style="margin:0;font-size:11px;color:#8A8A8A;text-transform:uppercase;letter-spacing:0.8px;">Message</p>
+                    <p style="margin:0;font-size:11px;color:#8A8A8A;text-transform:uppercase;letter-spacing:0.8px;">Resume</p>
+                    <p style="margin:4px 0 0;font-size:15px;color:#151D26;font-weight:600;">${resume && resume.size > 0 ? `${resume.name} (attached)` : 'Not provided'}</p>
+                  </td>
+                </tr>
+                <tr><td style="height:10px;"></td></tr>
+                <tr>
+                  <td style="padding:12px 16px;background:#f9f7ff;border-left:4px solid #4D3D84;border-radius:4px;">
+                    <p style="margin:0;font-size:11px;color:#8A8A8A;text-transform:uppercase;letter-spacing:0.8px;">Cover Message</p>
                     <p style="margin:4px 0 0;font-size:15px;color:#151D26;line-height:1.7;">${message.replace(/\n/g, '<br/>')}</p>
                   </td>
                 </tr>
               </table>
 
-              <!-- CTA -->
               <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:28px;">
                 <tr>
                   <td align="center">
                     <a href="mailto:${email}" style="display:inline-block;background:linear-gradient(135deg,#4D3D84,#A32787);color:#ffffff;text-decoration:none;font-size:14px;font-weight:600;padding:12px 32px;border-radius:6px;letter-spacing:0.3px;">
-                      Reply to ${firstName}
+                      Reply to ${fullName}
                     </a>
                   </td>
                 </tr>
@@ -102,7 +123,7 @@ export async function POST(req: NextRequest) {
           <tr>
             <td style="background:#f4f4f7;padding:20px 40px;text-align:center;border-top:1px solid #e8e8ee;">
               <p style="margin:0;font-size:12px;color:#8A8A8A;">
-                This email was sent from the contact form at
+                This email was sent from the careers form at
                 <a href="https://binaryandbeyondresearch.com" style="color:#4D3D84;text-decoration:none;">binaryandbeyondresearch.com</a>
               </p>
             </td>
@@ -119,7 +140,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Contact form error:', error);
-    return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 });
+    console.error('Career form error:', error);
+    return NextResponse.json({ error: 'Failed to send application.' }, { status: 500 });
   }
 }

@@ -1,11 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { data } from '@/data';
 
 export default function CareerContent() {
+  const careerData = (data as any).career;
+  const hero = careerData?.hero;
+  const application = careerData?.application;
+  const form = careerData?.form;
+
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('+91');
   const [phoneError, setPhoneError] = useState('');
+  const [resume, setResume] = useState<File | null>(null);
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' });
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -15,10 +27,40 @@ export default function CareerContent() {
     setPhone('+91' + suffix);
     setPhoneError(suffix && suffix.length < 10 ? 'Must be at least 10 digits' : '');
   };
-    const careerData = (data as any).career;
-    const hero = careerData?.hero;
-    const application = careerData?.application;
-    const form = careerData?.form;
+
+  const isFormValid = () =>
+    fullName.trim() &&
+    email.trim() &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) &&
+    phone !== '+91' &&
+    !phoneError &&
+    message.trim();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isFormValid()) return;
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+    try {
+      const fd = new FormData();
+      fd.append('fullName', fullName);
+      fd.append('email', email);
+      fd.append('phone', phone);
+      fd.append('message', message);
+      if (resume) fd.append('resume', resume);
+
+      const res = await fetch('/api/career', { method: 'POST', body: fd });
+      if (!res.ok) throw new Error('Failed');
+      setSubmitStatus({ type: 'success', message: 'Thank you! Your application has been submitted successfully.' });
+      setFullName(''); setEmail(''); setPhone('+91'); setMessage(''); setResume(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    } catch {
+      setSubmitStatus({ type: 'error', message: 'Failed to send application. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
 
     return (
         <section className="relative overflow-hidden py-8 md:py-10 lg:py-12">
@@ -68,13 +110,20 @@ export default function CareerContent() {
                     </div>
 
                     <div data-gsap="fade-left">
-                        <div className="space-y-4">
+                        {submitStatus.type && (
+                            <div className={`mb-4 p-4 rounded-lg text-sm ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                                {submitStatus.message}
+                            </div>
+                        )}
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <label className="block text-[#4A4A4A] text-[14px] mb-2">{form?.fields?.fullName?.label}</label>
                                 <input
                                     type="text"
                                     placeholder={form?.fields?.fullName?.placeholder}
-                                    className="w-full h-[48px] rounded-md border border-[#C9BEB0] bg-transparent px-4 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none"
+                                    value={fullName}
+                                    onChange={e => setFullName(e.target.value)}
+                                    className="w-full h-[48px] rounded-md border border-[#C9BEB0] bg-transparent px-4 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none focus:border-[#4D3D84]"
                                 />
                             </div>
 
@@ -83,7 +132,9 @@ export default function CareerContent() {
                                 <input
                                     type="email"
                                     placeholder={form?.fields?.email?.placeholder}
-                                    className="w-full h-[48px] rounded-md border border-[#C9BEB0] bg-transparent px-4 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none"
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                    className="w-full h-[48px] rounded-md border border-[#C9BEB0] bg-transparent px-4 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none focus:border-[#4D3D84]"
                                 />
                             </div>
 
@@ -104,10 +155,20 @@ export default function CareerContent() {
 
                             <div>
                                 <label className="block text-[#4A4A4A] text-[14px] mb-2">{form?.fields?.resume?.label}</label>
-                                <div className="h-[108px] rounded-md border border-dashed border-[#C9BEB0] flex flex-col items-center justify-center text-center px-4">
-                                    <button type="button" className="text-[#151D26] text-[14px] font-medium">
-                                        {form?.fields?.resume?.buttonText}
-                                    </button>
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept=".pdf,.doc,.docx"
+                                    className="hidden"
+                                    onChange={e => setResume(e.target.files?.[0] ?? null)}
+                                />
+                                <div
+                                    className="h-[108px] rounded-md border border-dashed border-[#C9BEB0] flex flex-col items-center justify-center text-center px-4 cursor-pointer hover:border-[#4D3D84] transition-colors"
+                                    onClick={() => fileInputRef.current?.click()}
+                                >
+                                    <p className="text-[#151D26] text-[14px] font-medium">
+                                        {resume ? resume.name : form?.fields?.resume?.buttonText}
+                                    </p>
                                     <p className="text-[11px] text-[#7E7E7E] mt-1">{form?.fields?.resume?.note}</p>
                                 </div>
                             </div>
@@ -116,17 +177,20 @@ export default function CareerContent() {
                                 <label className="block text-[#4A4A4A] text-[14px] mb-2">{form?.fields?.message?.label}</label>
                                 <textarea
                                     placeholder={form?.fields?.message?.placeholder}
-                                    className="w-full h-[120px] rounded-md border border-[#C9BEB0] bg-transparent px-4 py-3 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none resize-none"
+                                    value={message}
+                                    onChange={e => setMessage(e.target.value)}
+                                    className="w-full h-[120px] rounded-md border border-[#C9BEB0] bg-transparent px-4 py-3 text-[14px] text-[#151D26] placeholder:text-[#8A8A8A] outline-none resize-none focus:border-[#4D3D84]"
                                 />
                             </div>
 
                             <button
-                                type="button"
-                                className="w-full h-[48px] rounded-md bg-[#4D3D84] text-white text-[16px] font-medium"
+                                type="submit"
+                                disabled={!isFormValid() || isSubmitting}
+                                className="w-full h-[48px] rounded-md bg-[#4D3D84] text-white text-[16px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {form?.submitText}
+                                {isSubmitting ? 'Submitting...' : form?.submitText}
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
