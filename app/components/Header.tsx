@@ -47,7 +47,7 @@ const Header = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden xl:flex items-center">
+                    <nav className="hidden md:flex items-center">
                         {headerData.navigation.map((item) => (
                             <Link
                                 key={item.path}
@@ -64,13 +64,13 @@ const Header = () => {
                             </Link>
                         ))}
                     </nav>
-                    <Link href="/contact" className={`border border-[rgba(163,39,135,0.28)] max-xl:hidden bg-[rgba(163,39,135,0.07)] backdrop-blur-[10px] px-6 py-2.5 rounded-full text-[0.85rem] font-poppins cursor-pointer transition-[border-color,background] duration-300 hover:border-[#A32787] hover:bg-[rgba(181,111,255,0.1)] ${(isScrolled || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'}`}>
+                    <Link href="/contact" className={`border border-[rgba(163,39,135,0.28)] max-md:hidden bg-[rgba(163,39,135,0.07)] backdrop-blur-[10px] px-6 py-2.5 rounded-full text-[0.85rem] font-poppins cursor-pointer transition-[border-color,background] duration-300 hover:border-[#A32787] hover:bg-[rgba(181,111,255,0.1)] ${(isScrolled || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'}`}>
                         Contact Us
                     </Link>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className={`xl:hidden p-2 transition-colors ${(isScrolled || isMenuOpen || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'
+                        className={`md:hidden p-2 transition-colors ${(isScrolled || isMenuOpen || pathname !== '/') ? 'text-[#4A4444]' : 'text-white/55'
                             }`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle menu"
